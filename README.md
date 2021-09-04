@@ -1,18 +1,36 @@
-# Project
+# graph-drill
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This is a rapid prototype of a hierarchical graph viewer. Each node is expected to be assigned a community
+using a hierarchical technique such as Louvain or Leiden. The communities will then be color-coded, and zooming
+will drill down into the visible/selected communities.
 
-As the maintainer of this project, please make a few updates:
+# Getting started
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+This is a typical node/React project. Here is what you'll need to get running:
+
+1. Install [node.js](https://nodejs.org/en/download/) for your platform
+2. Install [yarn](https://classic.yarnpkg.com/en/docs/install)
+
+After those dependencies are installed, from a command line:
+
+1. `yarn install` - will get app dependencies downloaded and installed (see dependencies section below)
+2. `yarn start` - will run the dev server and launch the app in your browser, usually at http://localhost:3000
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app locally. Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+
+### `yarn bundle`
+
+Builds the app for production to the `build` folder.
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
@@ -26,8 +44,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.

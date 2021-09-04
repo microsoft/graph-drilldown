@@ -1,0 +1,12 @@
+{
+	"extends": "plugin:@essex/eslint-plugin/release",
+	"rules": {
+		// conflicts with 'tsconfig.paths' setting
+		"import/no-unresolved": 0,
+
+		// Reconsider when OSS'ing
+		"@typescript-eslint/no-explicit-any": 0,
+		"@typescript-eslint/no-non-null-assertion": 0,
+		"@typescript-eslint/explicit-module-boundary-types": 0
+	}
+}

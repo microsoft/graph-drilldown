@@ -1,0 +1,10 @@
+.yarn/
+lib/
+dist/
+build/
+.yarnrc.yml
+yarn.lock
+.pnp.js
+data/
+scripts/
+public/

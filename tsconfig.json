@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"incremental": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"target": "esnext",
+		"strict": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": false,
+		"jsx": "react",
+		"skipLibCheck": true,
+		"lib": ["esnext", "dom"],
+		"paths": {
+			"~/*": ["./src/*"]
+		}
+	},
+	"exclude": ["**/node_modules/**", "**/__tests__/**"]
+}

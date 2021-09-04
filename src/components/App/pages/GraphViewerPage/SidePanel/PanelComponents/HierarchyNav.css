@@ -1,0 +1,71 @@
+/* ————————————————————–
+    Tree core styles
+  */
+
+/* ————————————————————–
+    Tree rows
+  */
+.tree li {
+	line-height: 1.2;
+	position: relative;
+}
+
+.tree {
+	padding: 2px;
+}
+
+.tree > li:last-child {
+	padding-bottom: 0;
+}
+
+/* ————————————————————–
+    Tree labels
+  */
+.tree_label {
+	position: relative;
+	display: inline-block;
+	max-height: 20px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 4px;
+	margin-top: 8px;
+}
+
+/* ————————————————————–
+    Tree branches
+  */
+
+.tree_label:after {
+	position: absolute;
+	top: 0;
+	left: -1.5em;
+	display: block;
+	height: 0.5em;
+	width: 1.75em;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	border-radius: 0 0 0 0.3em;
+	content: '';
+}
+
+#list-item-0:after {
+	position: absolute;
+	top: 0;
+	left: -1.5em;
+	display: block;
+	height: 0.5em;
+	width: 1em;
+	border-radius: 0 0 0 0.3em;
+	content: '';
+}
+
+.tree li:last-child:before {
+	height: 1em;
+	bottom: default;
+}
+
+.tree > li:last-child:before {
+	display: none;
+}

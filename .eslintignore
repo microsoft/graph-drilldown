@@ -1,0 +1,10 @@
+build
+dist
+lib
+static
+node_modules
+webapp.d.ts
+.yarn/
+*.d.ts
+scripts/
+.pnp.js
