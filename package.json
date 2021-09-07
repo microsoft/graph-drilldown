@@ -73,6 +73,7 @@
 		"@types/dotenv-webpack": "^7",
 		"@types/eslint": "^7",
 		"@types/express": "^4.17.11",
+		"@types/gh-pages": "^3",
 		"@types/prettier": "^2",
 		"@types/query-string": "^6.2.0",
 		"@types/react-infinite-scroller": "^1.2.1",
@@ -85,6 +86,7 @@
 		"eslint": "^7.28.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"file-loader": "^6.2.0",
+		"gh-pages": "^3.2.3",
 		"husky": "^6.0.0",
 		"lint-staged": "^11.0.0",
 		"ncp": "^2.0.0",
@@ -109,7 +111,8 @@
 		"lint:fix": "yarn lint --fix",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
-		"git_is_clean": "essex git-is-clean"
+		"git_is_clean": "essex git-is-clean",
+		"publish:ghpages": "gh-pages --src build"
 	},
 	"browserslist": {
 		"production": [

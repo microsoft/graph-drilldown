@@ -73,6 +73,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/dotenv-webpack", "npm:7.0.3"],
             ["@types/eslint", "npm:7.2.13"],
             ["@types/express", "npm:4.17.11"],
+            ["@types/gh-pages", "npm:3.2.0"],
             ["@types/jest", "npm:24.9.1"],
             ["@types/node", "npm:14.17.0"],
             ["@types/prettier", "npm:2.3.0"],
@@ -101,6 +102,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["express", "npm:4.17.1"],
             ["file-loader", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:6.2.0"],
+            ["gh-pages", "npm:3.2.3"],
             ["husky", "npm:6.0.0"],
             ["lineupjs", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:3.3.1"],
             ["lint-staged", "npm:11.0.0"],
@@ -6346,6 +6348,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/gh-pages", [
+        ["npm:3.2.0", {
+          "packageLocation": "./.yarn/cache/@types-gh-pages-npm-3.2.0-e485e7a066-4ad40ae6db.zip/node_modules/@types/gh-pages/",
+          "packageDependencies": [
+            ["@types/gh-pages", "npm:3.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/glob", [
         ["npm:7.1.3", {
           "packageLocation": "./.yarn/cache/@types-glob-npm-7.1.3-44516e2aab-e0eef12285.zip/node_modules/@types/glob/",
@@ -12098,6 +12109,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["email-addresses", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/email-addresses-npm-3.1.0-332eec577b-e911985f09.zip/node_modules/email-addresses/",
+          "packageDependencies": [
+            ["email-addresses", "npm:3.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["emittery", [
         ["npm:0.7.2", {
           "packageLocation": "./.yarn/cache/emittery-npm-0.7.2-4a6f20265e-908cd933d4.zip/node_modules/emittery/",
@@ -13325,6 +13345,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["filename-reserved-regex", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/filename-reserved-regex-npm-2.0.0-5d8c6e337c-323a0020fd.zip/node_modules/filename-reserved-regex/",
+          "packageDependencies": [
+            ["filename-reserved-regex", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["filenamify", [
+        ["npm:4.3.0", {
+          "packageLocation": "./.yarn/cache/filenamify-npm-4.3.0-e6531169ab-5b71a7ff8e.zip/node_modules/filenamify/",
+          "packageDependencies": [
+            ["filenamify", "npm:4.3.0"],
+            ["filename-reserved-regex", "npm:2.0.0"],
+            ["strip-outer", "npm:1.0.1"],
+            ["trim-repeated", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["fill-range", [
         ["npm:4.0.0", {
           "packageLocation": "./.yarn/cache/fill-range-npm-4.0.0-95a6e45784-dbb5102467.zip/node_modules/fill-range/",
@@ -13758,6 +13799,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["fs-extra", [
+        ["npm:8.1.0", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/",
+          "packageDependencies": [
+            ["fs-extra", "npm:8.1.0"],
+            ["graceful-fs", "npm:4.2.6"],
+            ["jsonfile", "npm:4.0.0"],
+            ["universalify", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:9.1.0", {
           "packageLocation": "./.yarn/cache/fs-extra-npm-9.1.0-983c2ddb4c-ba71ba32e0.zip/node_modules/fs-extra/",
           "packageDependencies": [
@@ -13971,6 +14022,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["getpass", "npm:0.1.7"],
             ["assert-plus", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["gh-pages", [
+        ["npm:3.2.3", {
+          "packageLocation": "./.yarn/cache/gh-pages-npm-3.2.3-de723c58be-0a6e92180c.zip/node_modules/gh-pages/",
+          "packageDependencies": [
+            ["gh-pages", "npm:3.2.3"],
+            ["async", "npm:2.6.3"],
+            ["commander", "npm:2.20.3"],
+            ["email-addresses", "npm:3.1.0"],
+            ["filenamify", "npm:4.3.0"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["fs-extra", "npm:8.1.0"],
+            ["globby", "npm:6.1.0"]
           ],
           "linkType": "HARD",
         }]
@@ -14361,6 +14428,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/dotenv-webpack", "npm:7.0.3"],
             ["@types/eslint", "npm:7.2.13"],
             ["@types/express", "npm:4.17.11"],
+            ["@types/gh-pages", "npm:3.2.0"],
             ["@types/jest", "npm:24.9.1"],
             ["@types/node", "npm:14.17.0"],
             ["@types/prettier", "npm:2.3.0"],
@@ -14389,6 +14457,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["express", "npm:4.17.1"],
             ["file-loader", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:6.2.0"],
+            ["gh-pages", "npm:3.2.3"],
             ["husky", "npm:6.0.0"],
             ["lineupjs", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:3.3.1"],
             ["lint-staged", "npm:11.0.0"],
@@ -16954,6 +17023,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["jsonfile", [
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/jsonfile-npm-4.0.0-10ce3aea15-6447d6224f.zip/node_modules/jsonfile/",
+          "packageDependencies": [
+            ["jsonfile", "npm:4.0.0"],
+            ["graceful-fs", "npm:4.2.6"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:6.1.0", {
           "packageLocation": "./.yarn/cache/jsonfile-npm-6.1.0-20a4796cee-7af3b8e1ac.zip/node_modules/jsonfile/",
           "packageDependencies": [
@@ -22911,6 +22988,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["strip-outer", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/strip-outer-npm-1.0.1-4ed024bb0a-f8d65d33ca.zip/node_modules/strip-outer/",
+          "packageDependencies": [
+            ["strip-outer", "npm:1.0.1"],
+            ["escape-string-regexp", "npm:1.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["style-loader", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/style-loader-npm-2.0.0-b9a5c4a2aa-21425246a5.zip/node_modules/style-loader/",
@@ -23558,6 +23645,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/trim-off-newlines-npm-1.0.1-1a87bef78d-ca644908ca.zip/node_modules/trim-off-newlines/",
           "packageDependencies": [
             ["trim-off-newlines", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["trim-repeated", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/trim-repeated-npm-1.0.0-1152152315-e25c235305.zip/node_modules/trim-repeated/",
+          "packageDependencies": [
+            ["trim-repeated", "npm:1.0.0"],
+            ["escape-string-regexp", "npm:1.0.5"]
           ],
           "linkType": "HARD",
         }]
