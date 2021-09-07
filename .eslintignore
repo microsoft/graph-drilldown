@@ -8,3 +8,4 @@ webapp.d.ts
 *.d.ts
 scripts/
 .pnp.js
+.pnp.cjs
