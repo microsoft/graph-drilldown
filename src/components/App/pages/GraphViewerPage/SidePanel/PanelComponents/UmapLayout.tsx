@@ -19,7 +19,7 @@ export const UmapLayout: React.FC<UmapLayoutProps> = memo(function UmapLayout({
 }) {
 	return (
 		<>
-			{AUTOLAYOUT_URL !== undefined ? (
+			{Boolean(AUTOLAYOUT_URL) ? (
 				<DefaultButton text={'UMAP'} onClick={onClick} />
 			) : null}
 		</>
