@@ -1,6 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
+  pull-request:
   push:
     branches:
       - main
@@ -9,7 +10,7 @@ jobs:
   deploy-documentation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
