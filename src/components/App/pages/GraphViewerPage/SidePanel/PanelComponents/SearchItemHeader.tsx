@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Text, MessageBar, MessageBarType } from '@fluentui/react'
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import styled from 'styled-components'
 
 interface ItemHeaderProps {

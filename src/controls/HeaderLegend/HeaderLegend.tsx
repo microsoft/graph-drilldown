@@ -8,7 +8,7 @@ import { Dashes } from './Dashes'
 import { Dots } from './Dots'
 import { LegendLabel } from './LegendLabel'
 import { NumericRangeText } from './NumericRangeText'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 
 // TODO: width should flex

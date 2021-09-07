@@ -2,17 +2,18 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { FC, Suspense } from 'react'
 import { FileList } from '../../../FileList'
 import { LeftSidePanel } from './LeftSidePanel'
-import React from 'react'
+
 import styled from 'styled-components'
 
-export const DataManagerPage: React.FC = () => {
+export const DataManagerPage: FC = () => {
 	return (
 		<Container>
-			<React.Suspense fallback={<Placeholder />}>
+			<Suspense fallback={<Placeholder />}>
 				<LeftSidePanel />
-			</React.Suspense>
+			</Suspense>
 			<Content>
 				<DropContainer>
 					<FileList />

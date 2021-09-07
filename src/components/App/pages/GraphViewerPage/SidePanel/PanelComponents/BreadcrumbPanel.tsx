@@ -8,7 +8,7 @@ import {
 	IBreadcrumbStyles,
 	IStyleFunctionOrObject,
 } from '@fluentui/react'
-import React, { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import { ROOT_COMMUNITY_ID } from '~/constants'
 import {
 	useNavigationState,

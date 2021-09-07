@@ -4,7 +4,7 @@
  */
 import { ColorSelectorProps } from './types'
 import { ColorPicker, IColor } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 export const ManualPicker: React.FC<ColorSelectorProps> = ({

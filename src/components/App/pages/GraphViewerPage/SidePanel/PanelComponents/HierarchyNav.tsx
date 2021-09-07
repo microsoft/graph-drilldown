@@ -5,7 +5,7 @@
 import { ActionButton, IIconProps } from '@fluentui/react'
 import { SelectionState } from '@thematic/core'
 import { useThematic } from '@thematic/react'
-import React, { memo, useMemo, useCallback } from 'react'
+import { memo, useMemo, useCallback } from 'react'
 
 import './HierarchyNav.css'
 import styled from 'styled-components'

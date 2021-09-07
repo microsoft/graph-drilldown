@@ -9,7 +9,7 @@ import { ScaledPicker } from './ScaledPicker'
 import { ThematicPalettePicker } from './ThematicPalettePicker'
 import { ColorSelectorProps } from './types'
 import { Pivot, PivotItem } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 /**

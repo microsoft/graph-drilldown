@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import React from 'react'
+
 import styled from 'styled-components'
 import { useArqueroEdgeTable } from '~/arquero'
 import { ColorSelector } from '~/controls/ColorSelector/ColorSelector'

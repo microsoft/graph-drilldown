@@ -7,7 +7,7 @@ import { NumericRangeEditor } from '../NumericRangeEditor'
 import { NumericSelectorProps } from './types'
 import { Dropdown } from '@fluentui/react'
 import { table } from 'arquero'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { columnTypes } from '~/arquero'
 

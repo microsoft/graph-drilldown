@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { HeaderLegend } from '../../controls/HeaderLegend'
-import React from 'react'
+
 import { useNodeCount } from '~/arquero'
 import { useNodeOpacityEncoding } from '~/state'
 

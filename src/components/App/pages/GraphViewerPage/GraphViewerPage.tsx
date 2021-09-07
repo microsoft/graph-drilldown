@@ -12,7 +12,7 @@ import {
 	useLayoutStyle,
 	useResizeHandlers,
 } from './hooks'
-import React, { useRef, useMemo, useState, memo } from 'react'
+import { Suspense, useRef, useMemo, useState, memo } from 'react'
 import { RndResizeStartCallback } from 'react-rnd'
 import styled from 'styled-components'
 
@@ -46,22 +46,22 @@ export const GraphViewerPage: React.FC = memo(function GraphViewerPage() {
 
 	return (
 		<Container ref={ref}>
-			<React.Suspense fallback={<Placeholder />}>
+			<Suspense fallback={<Placeholder />}>
 				<LeftSidePanel
 					style={leftSidePanelStyle}
 					height={height}
 					width={leftPanelWidth}
 				/>
-			</React.Suspense>
-			<React.Suspense fallback={<Placeholder />}>
+			</Suspense>
+			<Suspense fallback={<Placeholder />}>
 				<RightSidePanel style={rightSidePanelStyle} />
-			</React.Suspense>
+			</Suspense>
 			<GraphContainer style={graphContainerStyle}>
-				<React.Suspense fallback={<StyledSpinnner />}>
+				<Suspense fallback={<StyledSpinnner />}>
 					<GraphPanelContainer style={graphStyle}>
 						<GraphPanel width={width} height={graphHeight} />
 					</GraphPanelContainer>
-				</React.Suspense>
+				</Suspense>
 				<ResizableBrowser
 					width={browserWidth}
 					handleResizeStop={handleResizeStop}

@@ -7,7 +7,7 @@ import { useCreateRenderer } from './hooks/useCreateRenderer'
 import { useSaveImage } from './hooks/useSaveImage'
 import { Spinner, ActionButton } from '@fluentui/react'
 import { GraphRenderer } from '@graspologic/renderer'
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import styled from 'styled-components'
 
 const DEFAULT_IMAGE_SETTINGS = {

@@ -25,7 +25,7 @@ import { NodeListItem } from './NodeListItem'
 import { SearchItemHeader } from './SearchItemHeader'
 import { Pivot, PivotItem } from '@fluentui/react'
 import { desc, from } from 'arquero'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 const ItemStyles = {

@@ -25,7 +25,7 @@ import {
 	CollapsiblePanelContainer,
 } from '@essex-js-toolkit/themed-components'
 import { format } from 'd3-format'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import { useEdgeCount, useNodeCount } from '~/arquero'
 import { QuickDrop } from '~/components/QuickDrop'

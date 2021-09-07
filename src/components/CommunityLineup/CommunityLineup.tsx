@@ -4,7 +4,7 @@
  */
 import { ItemMap, CommunityLineupProps } from './types'
 import { ThematicLineup, ColumnConfig } from '@essex-js-toolkit/thematic-lineup'
-import React, { memo, useCallback, useMemo } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import './CommunityLineup.css'
 import {

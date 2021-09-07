@@ -11,7 +11,7 @@ import {
 	ISpinnerStyleProps,
 	IStyleFunctionOrObject,
 } from '@fluentui/react'
-import React from 'react'
+
 
 export const COMMANDBAR_HEIGHT = 32
 export const COMMANDBAR_MARGIN = 12

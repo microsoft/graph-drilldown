@@ -6,7 +6,7 @@ import { Encoding } from '../../types'
 import { DomainBrush } from '../DomainBrush'
 import { Label } from '@fluentui/react'
 import { format } from 'd3-format'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 export interface NumericRangeEditorProps {

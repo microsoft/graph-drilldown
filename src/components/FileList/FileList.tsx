@@ -5,7 +5,7 @@
 import { DataFile } from '../../types'
 import { FileUploadMessage } from '../App/commands/modals/panels/FileUploadMessage'
 import { DefaultButton } from '@fluentui/react'
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import styled from 'styled-components'
 import {
 	useArqueroBigTable,

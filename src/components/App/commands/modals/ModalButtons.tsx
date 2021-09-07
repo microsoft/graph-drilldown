@@ -8,7 +8,7 @@ import { ModalButton, ButtonOptions } from './ModalButton'
 import { ModalContainer } from './ModalContainer'
 import { FileDropPanel } from './panels/FileDropPanel'
 import { SettingsContainer } from './panels/SettingsContainer'
-import React, { memo, useState, useCallback, useMemo } from 'react'
+import { memo, useState, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 const buttonMap: ButtonOptions[] = [

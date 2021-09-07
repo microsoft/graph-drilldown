@@ -4,7 +4,7 @@
  */
 import { ModalButtons } from './modals/ModalButtons'
 import { Navigation } from './navigation'
-import React from 'react'
+
 import styled from 'styled-components'
 import { COMMANDBAR_HEIGHT, COMMANDBAR_MARGIN, PANEL_WIDTH } from '~/styles'
 

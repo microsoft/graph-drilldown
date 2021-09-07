@@ -5,7 +5,7 @@
 import { NumericSelectorProps } from './types'
 import { Slider } from '@fluentui/react'
 import { useDebounceFn } from 'ahooks'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import './ManualPicker.css'
 

@@ -6,7 +6,7 @@ import { LazyCachingSwitch } from './LazyCachingSwitch'
 import { CommandBar } from './commands'
 import { usePresetData, useTestFiles, useUrlFiles } from './hooks'
 import { GraphViewerPage, DataManagerPage } from './pages'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
 

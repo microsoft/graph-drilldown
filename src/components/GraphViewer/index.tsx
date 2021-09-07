@@ -26,7 +26,7 @@ import {
 	HighlightHoveredNode,
 } from '@graspologic/react'
 import { GraphRenderer } from '@graspologic/renderer'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import { NodeCollection } from '~/arquero'
 import {

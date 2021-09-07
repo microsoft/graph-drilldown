@@ -2,7 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import React, { useEffect, useMemo, useState } from 'react'
+import {
+	Children,
+	CSSProperties,
+	isValidElement,
+	useEffect,
+	useMemo,
+	useState,
+} from 'react'
 import { withRouter } from 'react-router-dom'
 
 /**
@@ -25,8 +32,8 @@ export const LazyCachingSwitch = withRouter(({ location, children }) => {
 		let isDirty = false
 		// first route match wins, mimicking behavior from Switch
 		let foundFirst = false
-		React.Children.forEach(children, child => {
-			if (!foundFirst && React.isValidElement(child)) {
+		Children.forEach(children, child => {
+			if (!foundFirst && isValidElement(child)) {
 				const { path } = child.props
 				const matched = location.pathname.match(`^${path}$`)
 				if (matched) {
@@ -47,11 +54,11 @@ export const LazyCachingSwitch = withRouter(({ location, children }) => {
 
 	// second iteration creates a set of rendered components from the cache, hidden if not matched
 	const rendered = useMemo(() => {
-		return React.Children.map(children, child => {
-			if (React.isValidElement(child)) {
+		return Children.map(children, child => {
+			if (isValidElement(child)) {
 				const { path } = child.props
 				const matched = location.pathname.match(`^${path}$`)
-				const style: React.CSSProperties = {}
+				const style: CSSProperties = {}
 				if (!matched) {
 					style.display = 'none'
 				}

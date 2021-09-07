@@ -5,7 +5,7 @@
 import { useThematicColorScale } from '../../hooks/graph'
 import { ColorEncoding } from '../../types'
 import { useThematic } from '@thematic/react'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 const ITEM_GAP = 2
 

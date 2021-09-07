@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { useHoveredNode, useSelectedCommunity } from '~/state'
 import { useVisibleNodeMap } from '~/state/caches'

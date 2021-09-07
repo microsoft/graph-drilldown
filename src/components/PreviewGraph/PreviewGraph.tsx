@@ -4,7 +4,7 @@
  */
 import { GraphViewer } from '../GraphViewer'
 import { useThematic } from '@thematic/react'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { useInternedGraph } from '~/state/caches'
 
 export interface PreviewGraphProps {

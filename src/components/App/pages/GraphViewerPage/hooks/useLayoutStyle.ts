@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { HEADER_HEIGHT } from '~/styles'
 interface ILayoutStyle {
 	leftSidePanelStyle: React.CSSProperties

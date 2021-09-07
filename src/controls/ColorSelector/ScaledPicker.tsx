@@ -9,7 +9,7 @@ import { ColorSelectorProps } from './types'
 import { Dropdown } from '@fluentui/react'
 import { ScaleDropdown } from '@thematic/fluent'
 import { table } from 'arquero'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 export const ScaledPicker: React.FC<ColorSelectorProps> = ({

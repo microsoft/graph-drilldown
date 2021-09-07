@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { IButtonProps, IconButton } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 interface RouterLinkIconButtonProps extends RouteComponentProps, IButtonProps {

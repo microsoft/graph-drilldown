@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { RouterLinkIconButton } from '../../../../controls/RouterLinkIconButton'
-import React from 'react'
+
 import { useLocation } from 'react-router-dom'
 
 export const Navigation: React.FC = () => {

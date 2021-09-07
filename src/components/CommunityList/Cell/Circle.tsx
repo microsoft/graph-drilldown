@@ -5,7 +5,7 @@
 import { useHoveredColor } from '../hooks'
 import { empty, blank, zero } from './common/defaultParams'
 import { CellComponentProps } from './common/types'
-import React from 'react'
+
 
 export const Circle: React.FC<CellComponentProps> = ({
 	community,

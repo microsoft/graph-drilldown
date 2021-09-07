@@ -6,7 +6,7 @@ import { ColorEncoding } from '../../types'
 import { VerticalNominalChips } from './VerticalNominalChips'
 import { useDimensions } from '@essex-js-toolkit/hooks'
 import { Label } from '@fluentui/react'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 
 const ITEM_HEIGHT = 16

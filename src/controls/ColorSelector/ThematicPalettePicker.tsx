@@ -6,7 +6,7 @@ import { listThematicColors } from '../../utils/theme'
 import { ColorSelectorProps } from './types'
 import { getNamedSchemeColor } from '@thematic/color'
 import { useThematic } from '@thematic/react'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 export const ThematicPalettePicker: React.FC<ColorSelectorProps> = ({

@@ -7,7 +7,7 @@ import { FileDrop } from '../../controls/FileDrop'
 import { variants } from '../../styles'
 import { FileOrigin, ItemType } from '../../types'
 import { DefaultButton, Text } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import {
 	useArqueroAddTable,

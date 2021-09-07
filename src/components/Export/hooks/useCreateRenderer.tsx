@@ -5,7 +5,7 @@
 import { GraphViewer } from '../../GraphViewer'
 import { GraphRenderer } from '@graspologic/renderer'
 import { ThematicProvider, useThematic } from '@thematic/react'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from 'recoil'
 import { useDynamicCameraBounds } from '~/hooks/graph'
