@@ -104,11 +104,12 @@
 		"typecheck": "tsc -b .",
 		"bundle": "essex bundle --webpack",
 		"assets": "ncp public build",
-		"ci": "run-s clean lint typecheck bundle assets",
+		"ci": "run-s clean lint typecheck bundle assets git_is_clean",
 		"lint": "essex lint --strict",
 		"lint:fix": "yarn lint --fix",
 		"prettify": "essex prettify",
-		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose"
+		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
+		"git_is_clean": "essex git-is-clean"
 	},
 	"browserslist": {
 		"production": [

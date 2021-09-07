@@ -12,6 +12,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
 		"noImplicitAny": false,
+		"noEmit": true,
 		"jsx": "react",
 		"skipLibCheck": true,
 		"lib": ["esnext", "dom"],
