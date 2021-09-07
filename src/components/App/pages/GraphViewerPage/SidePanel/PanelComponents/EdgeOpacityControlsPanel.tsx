@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { EdgeOpacityControls } from '../../../../../controls/EdgeOpacityControls'
-import React from 'react'
+
 import styled from 'styled-components'
 
 export const EdgeOpacityControlsPanel = () => {

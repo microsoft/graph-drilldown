@@ -9,7 +9,7 @@ import { ScaleType } from '@thematic/core'
 import { ScaleTypeChoiceGroup } from '@thematic/fluent'
 import { table } from 'arquero'
 import { format } from 'd3-format'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { useColumnHistogram, useColumnStats } from '~/arquero'
 

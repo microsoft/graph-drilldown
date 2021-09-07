@@ -5,7 +5,7 @@
 import { useBarTextForegroundColor, useHoveredColor } from '../hooks'
 import { empty, zero, blank } from './common/defaultParams'
 import { CellComponentProps } from './common/types'
-import React from 'react'
+
 
 export const Bar: React.FC<CellComponentProps> = ({
 	community,

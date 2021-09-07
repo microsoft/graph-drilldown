@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { IconButton } from '@fluentui/react'
-import React, { memo, useCallback } from 'react'
+import { memo, useCallback } from 'react'
 export interface ModalButtonProp extends ButtonOptions {
 	onClick: (title: string) => void
 }

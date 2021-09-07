@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { EdgeColorControls } from '../../../../../controls/EdgeColorControls'
-import React from 'react'
+
 import styled from 'styled-components'
 
 export const EdgeColorControlsPanel = () => {

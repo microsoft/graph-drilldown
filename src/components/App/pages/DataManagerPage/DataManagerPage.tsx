@@ -4,15 +4,16 @@
  */
 import { FileList } from '../../../FileList'
 import { LeftSidePanel } from './LeftSidePanel'
-import React from 'react'
+import { FC, Suspense } from 'react'
+
 import styled from 'styled-components'
 
-export const DataManagerPage: React.FC = () => {
+export const DataManagerPage: FC = () => {
 	return (
 		<Container>
-			<React.Suspense fallback={<Placeholder />}>
+			<Suspense fallback={<Placeholder />}>
 				<LeftSidePanel />
-			</React.Suspense>
+			</Suspense>
 			<Content>
 				<DropContainer>
 					<FileList />

@@ -5,7 +5,7 @@
 import { UmapLayout } from './UmapLayout'
 import { DefaultButton, Spinner, Toggle } from '@fluentui/react'
 import { all, not, table } from 'arquero'
-import React, { memo, useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import {
 	useArqueroBigTable,

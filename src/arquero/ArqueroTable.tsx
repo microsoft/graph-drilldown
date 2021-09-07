@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { table } from 'arquero'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 export interface ArqueroTableProps {
 	table: table

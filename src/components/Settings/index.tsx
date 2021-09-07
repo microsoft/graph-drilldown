@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Settings as AutoSettings } from '@essex-js-toolkit/themed-components'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 interface SettingsProps {
 	settings: any
 	groups?: any

@@ -4,7 +4,7 @@
  */
 import { BrowserOptions } from '../../types'
 import { Pivot, PivotItem } from '@fluentui/react'
-import React, { memo, useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import styled from 'styled-components'
 // control style height for pivot items, doesn't seem like option in Pivot Style Props?
 import './Pivot.css'

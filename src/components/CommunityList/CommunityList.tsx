@@ -5,7 +5,7 @@
 import { CommunityRow } from './CommunityRow'
 import { useColumns } from './hooks'
 import { desc } from 'arquero'
-import React, { useMemo, useCallback } from 'react'
+import { useMemo, useCallback } from 'react'
 import styled from 'styled-components'
 import { CommunityCollection } from '~/arquero'
 import {

@@ -5,7 +5,7 @@
 import { ColorEncoding } from '../../types'
 import { useIsNominal } from './hooks'
 import { format } from 'd3-format'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { getPrecision } from '~/arquero'
 

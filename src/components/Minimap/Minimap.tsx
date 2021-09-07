@@ -15,7 +15,7 @@ import { useAOIBounds } from './hooks'
 import { usePlotTheme } from './hooks/theme'
 import { GraphContainer, InputGraph } from '@graspologic/graph'
 import { GraphView, NodeSetHighlight, Nodes } from '@graspologic/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import { NodeCollection } from '~/arquero'
 

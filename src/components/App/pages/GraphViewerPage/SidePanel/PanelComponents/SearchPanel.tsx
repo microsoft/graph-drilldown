@@ -17,7 +17,7 @@ import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
 import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
 import { op, table } from 'arquero'
-import React, { useCallback, useState, useMemo } from 'react'
+import { useCallback, useState, useMemo } from 'react'
 import styled from 'styled-components'
 
 export interface SearchByIndex {

@@ -4,7 +4,7 @@
  */
 import { empty } from './common/defaultParams'
 import { CellComponentProps } from './common/types'
-import React from 'react'
+
 
 export const Text: React.FC<CellComponentProps> = ({ community, column }) => {
 	const { accessor = empty } = column

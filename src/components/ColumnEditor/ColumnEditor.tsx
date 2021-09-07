@@ -4,7 +4,7 @@
  */
 import { ColumnDef } from '../../types'
 import { IconButton } from '@fluentui/react'
-import React, { useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { useArqueroColumnList, useArqueroRemoveColumns } from '~/arquero'
 import { useNodeColorEncoding, useBrowserColumns } from '~/state'

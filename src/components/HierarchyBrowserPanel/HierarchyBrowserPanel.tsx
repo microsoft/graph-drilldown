@@ -17,7 +17,7 @@ import {
 	ICardOverviewSettings,
 	ITableSettings,
 } from '@essex-js-toolkit/hierarchy-browser'
-import React, { memo, useMemo, useCallback } from 'react'
+import { memo, useMemo, useCallback } from 'react'
 import styled from 'styled-components'
 import { findNodesTableForParent } from '~/arquero'
 import {

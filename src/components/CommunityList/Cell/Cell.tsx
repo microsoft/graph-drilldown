@@ -6,7 +6,7 @@ import { Column, ElementStyles, Mark } from '../types'
 import { Bar } from './Bar'
 import { Circle } from './Circle'
 import { Text } from './Text'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Community } from '~/types'
 
 interface CellProps {

@@ -4,7 +4,7 @@
  */
 import { PreviewGraph } from '../../../PreviewGraph'
 import { QuickDrop } from '../../../QuickDrop'
-import React from 'react'
+
 import styled from 'styled-components'
 import { useSettings } from '~/state'
 import { PANEL_WIDTH } from '~/styles'

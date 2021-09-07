@@ -6,7 +6,7 @@ import { Community } from '../../types'
 import { Cell } from './Cell'
 import { Column, CommunityRowStyles, TableRowStyles } from './types'
 import { SelectionState } from '@thematic/core'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 interface CommunityRowProps {

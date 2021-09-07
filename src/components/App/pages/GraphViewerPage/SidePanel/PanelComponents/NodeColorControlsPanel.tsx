@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { NodeColorControls } from '../../../../../controls/NodeColorControls'
-import React from 'react'
+
 import styled from 'styled-components'
 
 export const NodeColorControlsPanel = () => {

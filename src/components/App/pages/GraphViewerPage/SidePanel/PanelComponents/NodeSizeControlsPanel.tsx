@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { NodeSizeControls } from '../../../../../controls/NodeSizeControls'
-import React from 'react'
+
 import styled from 'styled-components'
 
 export const NodeSizeControlsPanel = () => {

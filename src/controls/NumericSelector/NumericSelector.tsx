@@ -7,7 +7,7 @@ import { ManualPicker } from './ManualPicker'
 import { ScaledPicker } from './ScaledPicker'
 import { NumericSelectorProps } from './types'
 import { Pivot, PivotItem } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 /**

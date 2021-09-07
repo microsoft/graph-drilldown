@@ -6,7 +6,7 @@ import { rect, svg, text } from '@thematic/d3'
 import { useThematic } from '@thematic/react'
 import { scaleLinear } from 'd3-scale'
 import { select } from 'd3-selection'
-import React, { memo, useLayoutEffect, useRef, useState, useMemo } from 'react'
+import { memo, useLayoutEffect, useRef, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { chooseScale } from '~/thematic/chooseScale'
 

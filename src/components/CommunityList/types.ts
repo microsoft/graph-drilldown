@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Color } from '@thematic/color'
-import React from 'react'
+
 export enum Mark {
 	None,
 	Circle,

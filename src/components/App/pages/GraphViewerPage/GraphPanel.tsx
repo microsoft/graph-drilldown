@@ -4,7 +4,7 @@
  */
 import { GraphViewer } from '../../../GraphViewer'
 import { GraphRenderer } from '@graspologic/renderer'
-import React, { useCallback, memo } from 'react'
+import { useCallback, memo } from 'react'
 import styled from 'styled-components'
 import { useArqueroHoveredNodes } from '~/arquero'
 import { useDynamicCameraBounds, useInputGraph } from '~/hooks/graph'

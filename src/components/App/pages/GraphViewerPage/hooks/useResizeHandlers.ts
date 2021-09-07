@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { IPosition } from './useGraphDimensions'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { ResizableDelta, Position } from 'react-rnd'
 import { COMMANDBAR_HEIGHT } from '~/styles'
 export enum CSSFilter {

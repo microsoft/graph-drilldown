@@ -6,7 +6,7 @@ import { ColorEncoding, NumericEncoding } from '../../types'
 import { useLegendColorScale, useLegendNumericScale } from './hooks'
 import { useThematic } from '@thematic/react'
 import { scaleLinear } from 'd3-scale'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 export interface DotsProps {
 	colorEncoding?: ColorEncoding

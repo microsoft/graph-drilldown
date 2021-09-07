@@ -4,7 +4,7 @@
  */
 import { SearchBox, IconButton } from '@fluentui/react'
 import { useDebounceFn } from 'ahooks'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 const searchBoxStyle = {

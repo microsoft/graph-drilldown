@@ -4,7 +4,7 @@
  */
 import { ColumnEditor } from '../../../../../ColumnEditor'
 import { DefaultButton } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import {
 	useArqueroBigTable,

@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Spinner, SpinnerSize } from '@fluentui/react'
-import React from 'react'
+
 import { SPINNER_STYLE } from '~/styles'
 
 export const StyledSpinnner = () => {

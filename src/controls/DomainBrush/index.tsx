@@ -7,7 +7,7 @@ import { Sparkbar } from './Sparkbar'
 import { useDimensions } from '@essex-js-toolkit/hooks'
 import { Label, TextField } from '@fluentui/react'
 import { format } from 'd3-format'
-import React, { useCallback, useMemo, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 
 interface DomainBrushProps {

@@ -4,7 +4,7 @@
  */
 import { NumberSpinButton } from '@essex-js-toolkit/themed-components'
 import { TextField } from '@fluentui/react'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 export interface ImageSaveSettings {
