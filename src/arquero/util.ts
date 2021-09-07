@@ -5,7 +5,7 @@
 import { ColumnStats } from '../types'
 import { TableCollection } from './TableCollection'
 import { one } from './table'
-import { histogram } from '@essex-js-toolkit/toolbox'
+import { histogram, Histogram } from '@essex-js-toolkit/toolbox'
 // eslint-disable-next-line
 import { op, table } from 'arquero'
 import { precisionFixed } from 'd3-format'
@@ -49,20 +49,20 @@ export function getColumnStats(table: table, name?: string): ColumnStats {
 }
 
 // compute a suggested precision based on 100 divisions of the data range
-export function getPrecision(domain = [0, 1], values?: number[]) {
+export function getPrecision(domain = [0, 1], values?: number[]): number {
 	const spread = domain[1] - domain[0]
 	const whole = checkWhole(values)
 	return whole ? 0 : precisionFixed(spread / 100)
 }
 
-function checkWhole(numbers?: number[]) {
+function checkWhole(numbers?: number[]): boolean {
 	if (!numbers) {
 		return false
 	}
 	return numbers.every(n => Number.isInteger(n))
 }
 
-export function getColumnHistogram(table: table, name?: string) {
+export function getColumnHistogram(table: table, name?: string): Histogram {
 	if (!table || table.numRows() === 0 || !name) {
 		return []
 	}
@@ -83,7 +83,7 @@ export function getColumnHistogram(table: table, name?: string) {
  * @param table
  * @param column
  */
-export function binTableColumn(table: table, column: string) {
+export function binTableColumn(table: table, column: string): any[] {
 	const quantileOps = new Array(100).fill(1).reduce((acc, cur, idx) => {
 		acc[idx] = op.quantile(column, idx / 100)
 		return acc

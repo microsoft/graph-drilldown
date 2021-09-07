@@ -9,7 +9,7 @@
 		"@essex-js-toolkit/hooks": "3.0.0",
 		"@essex-js-toolkit/thematic-lineup": "^1.1.5",
 		"@essex-js-toolkit/themed-components": "^1.2.0",
-		"@essex-js-toolkit/toolbox": "2.0.0",
+		"@essex-js-toolkit/toolbox": "2.0.1",
 		"@fluentui/font-icons-mdl2": "^8.1.0",
 		"@fluentui/react": "^8.14.5",
 		"@graspologic/graph": "0.7.0-13",
@@ -59,7 +59,7 @@
 		"react-router-dom": "^5.2.0",
 		"recoil": "^0.0.13",
 		"regenerator-runtime": "^0.13.8",
-		"tslib": "^2.2.0"
+		"tslib": "^2.3.1"
 	},
 	"devDependencies": {
 		"@babel/runtime": "^7.14.0",
@@ -93,7 +93,7 @@
 		"prettier": "^2.3.1",
 		"raw-loader": "^4.0.2",
 		"styled-components": "^5.3.0",
-		"typescript": "^4.2.4",
+		"typescript": "^4.4.2",
 		"url-loader": "^4.1.1",
 		"webpack": "^5.36.2",
 		"worker-loader": "^3.0.8"
@@ -101,13 +101,15 @@
 	"scripts": {
 		"clean": "essex clean build",
 		"start": "essex serve",
+		"typecheck": "tsc -b .",
 		"bundle": "essex bundle --webpack",
 		"assets": "ncp public build",
-		"ci": "run-s clean lint bundle assets",
+		"ci": "run-s clean lint typecheck bundle assets git_is_clean",
 		"lint": "essex lint --strict",
-		"lint:fix": "essex lint --strict --fix",
+		"lint:fix": "yarn lint --fix",
 		"prettify": "essex prettify",
-		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose"
+		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
+		"git_is_clean": "essex git-is-clean"
 	},
 	"browserslist": {
 		"production": [
