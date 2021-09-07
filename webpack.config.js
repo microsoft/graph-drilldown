@@ -5,13 +5,11 @@
 const { configure } = require('@essex/webpack-config')
 require('dotenv').config()
 
+const AUTOLAYOUT_URL = process.env.AUTOLAYOUT_URL
+
 const base = configure({
 	pnp: true,
-	environment: env => {
-		return {
-			AUTOLAYOUT_URL: process.env.AUTOLAYOUT_URL,
-		}
-	},
+	environment: () => (AUTOLAYOUT_URL ? { AUTOLAYOUT_URL } : {}),
 })
 
 const lineupRules = [

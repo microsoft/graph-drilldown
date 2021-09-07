@@ -1,0 +1,40 @@
+name: CI
+on: [push, pull_request]
+env:
+  WEBAPP_STORAGE_ACCOUNT: graphdrilldown
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
+    steps:
+      - name: Install Prerequisites
+        run: sudo apt install mesa-common-dev libxi-dev
+
+      - name: Use Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Verification
+        run: yarn ci
+        env:
+          CI: true
+
+      - name: Deploy Static Webapp
+        run: yarn build:webapp:integ && yarn deploy:webapp
+        if: matrix.node-version == '14.x' && github.ref == 'refs/heads/dev'
+        env:
+          CI: true
+          WEBAPP_STORAGE_ACCOUNT: ${{ env.WEBAPP_STORAGE_ACCOUNT }}
+          WEBAPP_STORAGE_KEY: ${{ secrets.WEBAPP_STORAGE_KEY }}
+          # TODO: define this github secret
+          #AUTOLAYOUT_URL: ${{ secrets.AUTOLAYOUT_URL }}
