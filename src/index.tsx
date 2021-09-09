@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { App } from './components/App'
+import { showCookieConsent } from './consent'
 import { useTheme } from './state'
 import { ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
@@ -29,6 +30,20 @@ const ConfiguredApp = () => (
 		<ThemedApp />
 	</RecoilRoot>
 )
-const root = document.createElement('div')
-document.body.appendChild(root)
-ReactDOM.render(<ConfiguredApp />, root)
+
+function mount(): void {
+	ReactDOM.render(<ConfiguredApp />, document.getElementById('root'))
+}
+
+function bootstrap(): void {
+	try {
+		mount()
+		showCookieConsent({
+			onConsent: c => console.log('consent changed', c),
+		})
+	} catch (err) {
+		console.error('error initializing application', err)
+	}
+}
+
+bootstrap()
