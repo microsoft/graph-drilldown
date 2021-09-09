@@ -30,7 +30,7 @@ jobs:
           CI: true
 
       - name: Deploy Static Webapp
-        run: yarn build:webapp:integ && yarn deploy:webapp
+        run: yarn deploy
         if: matrix.node-version == '14.x' && github.ref == 'refs/heads/main'
         env:
           CI: true
