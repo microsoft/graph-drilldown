@@ -4,40 +4,48 @@
  */
 import { FC, memo } from 'react'
 import styled from 'styled-components'
+import { manageConsent } from '../../consent'
 
 export const Footer: FC = memo(function Footer() {
 	return (
 		<FooterEl>
-			<Link href={constants.privacyUrl}>Privacy and Cookies</Link>
+			<Link href={constants.privacyUrl}>Privacy</Link>
+			{' | '}
+			<Link id={'managecookies'} onClick={manageConsent}>
+				Cookies
+			</Link>
 			{' | '}
 			<Link href={constants.termsOfUseUrl}>Terms of Use</Link>
 			{' | '}
 			<Link href={constants.trademarksUrl}>Trademarks</Link>
 			{' | '}
-			<Link>{constants.copyright}</Link>
+			<Link href={constants.microsoft}>{constants.copyright}</Link>
 		</FooterEl>
 	)
 })
 
 const Link: FC<{
 	href?: string
+	id?: string
 	className?: string
 	style?: React.CSSProperties
-}> = memo(function Link({ className, children, href, style }) {
+	onClick?: () => void
+}> = memo(function Link({ id, className, children, href, style, onClick }) {
 	return href == null ? (
-		<div style={style} className={className}>
+		<LinkDiv style={style} className={className} id={id} onClick={onClick}>
 			{children}
-		</div>
+		</LinkDiv>
 	) : (
-		<a
+		<LinkA
 			target="_blank"
 			rel="noreferrer"
 			href={href}
 			style={style}
 			className={className}
+			id={id}
 		>
 			{children}
-		</a>
+		</LinkA>
 	)
 })
 
@@ -56,5 +64,15 @@ const constants = {
 	privacyUrl: 'https://go.microsoft.com/fwlink/?LinkId=521839',
 	termsOfUseUrl: 'https://go.microsoft.com/fwlink/?LinkID=206977',
 	trademarksUrl: 'https://www.microsoft.com/trademarks',
+	microsoft: 'https://www.microsoft.com',
 	copyright: `©️ ${new Date().getFullYear()} Microsoft`,
 }
+
+const LinkDiv = styled.div`
+	cursor: pointer;
+`
+const LinkA = styled.a`
+	cursor: pointer;
+	text-decoration: none !important;
+	color: rgb(241, 241, 241);
+`

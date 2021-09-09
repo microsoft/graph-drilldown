@@ -30,6 +30,7 @@ let currentConsent: Consent = {
 	Analytics: false,
 	SocialMedia: false,
 }
+let consentUtil: any
 const NOOP = () => {
 	/*nothing*/
 }
@@ -50,7 +51,7 @@ export function showCookieConsent({
 			if (err) {
 				console.error('error initalizing WcpConsent', err)
 			} else {
-				currentConsent = consent
+				consentUtil = consent
 				onConsent(consent)
 			}
 		},
@@ -64,4 +65,8 @@ export function showCookieConsent({
 
 export function getConsent(): Consent {
 	return currentConsent
+}
+
+export function manageConsent(): void {
+	consentUtil.manageConsent()
 }
