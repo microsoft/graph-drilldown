@@ -9,7 +9,7 @@ import { ApplicationStyles } from '@thematic/react'
 
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import './index.css'
 
 const ThemedApp = () => {
@@ -29,7 +29,6 @@ const ConfiguredApp = () => (
 		<ThemedApp />
 	</RecoilRoot>
 )
-
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<ConfiguredApp />, root)

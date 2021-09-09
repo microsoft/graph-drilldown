@@ -114,13 +114,6 @@ export const RightSidePanel: React.FC<RightSidePanelProps> = ({ style }) => {
 						<QuickDrop dropWidthSize={40} dropHeightSize={20} compact />
 					</CollapsiblePanel>
 				</CollapsiblePanelContainer>
-				<Privacy>
-					<a href="https://go.microsoft.com/fwlink/?LinkId=521839">
-						Privacy &amp; Cookies
-					</a>
-					<br />
-					This application does not collect any data or use cookies.
-				</Privacy>
 			</DisplayRelative>
 		</Container>
 	)
