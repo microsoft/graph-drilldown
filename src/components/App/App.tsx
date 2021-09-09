@@ -2,13 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { Footer } from '../Footer'
 import { LazyCachingSwitch } from './LazyCachingSwitch'
 import { CommandBar } from './commands'
 import { usePresetData, useTestFiles, useUrlFiles } from './hooks'
 import { GraphViewerPage, DataManagerPage } from './pages'
 import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
-import { Footer } from '../Footer'
 import styled from 'styled-components'
 
 export const App: React.FC = () => {

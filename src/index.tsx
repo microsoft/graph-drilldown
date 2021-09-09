@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { App } from './components/App'
+import { showCookieConsent } from './consent'
 import { useTheme } from './state'
 import { ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
@@ -10,7 +11,6 @@ import { ApplicationStyles } from '@thematic/react'
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
-import { showCookieConsent } from './consent'
 import './index.css'
 
 const ThemedApp = () => {

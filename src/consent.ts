@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-declare var WcpConsent: any
+declare const WcpConsent: any
 
 export interface ConsentOptions {
 	/**

@@ -5,7 +5,7 @@
 import { FC, memo } from 'react'
 import styled from 'styled-components'
 
-export const Footer: FC = memo(() => {
+export const Footer: FC = memo(function Footer() {
 	return (
 		<FooterEl>
 			<Link href={constants.privacyUrl}>Privacy and Cookies</Link>
@@ -49,7 +49,7 @@ const FooterEl = styled.footer`
 	flex-direction: row;
 	align-items: center;
 	align-content: center;
-	justify-content: space-between;	
+	justify-content: space-between;
 `
 
 const constants = {
