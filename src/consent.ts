@@ -70,3 +70,10 @@ export function getConsent(): Consent {
 export function manageConsent(): void {
 	consentUtil.manageConsent()
 }
+
+// show consent banner immediately
+showCookieConsent({
+	onConsent: c => {
+		console.log('consent changed', c)
+	},
+})
