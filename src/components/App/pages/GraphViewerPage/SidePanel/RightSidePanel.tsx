@@ -125,13 +125,6 @@ const Container = styled.div`
 const DisplayRelative = styled.div`
 	position: relative;
 `
-
-const Privacy = styled.div`
-	margin-top: 10px;
-	text-align: center;
-	font-size: 0.7em;
-`
-
 const pretty = format(',')
 
 const NodesHeader = () => {

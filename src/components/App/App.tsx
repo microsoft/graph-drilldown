@@ -7,8 +7,8 @@ import { CommandBar } from './commands'
 import { usePresetData, useTestFiles, useUrlFiles } from './hooks'
 import { GraphViewerPage, DataManagerPage } from './pages'
 import { useMemo } from 'react'
-import { HashRouter, Route } from 'react-router-dom'
 import CookieBanner from 'react-cookie-banner'
+import { HashRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const App: React.FC = () => {

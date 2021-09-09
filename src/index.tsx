@@ -9,7 +9,7 @@ import { ApplicationStyles } from '@thematic/react'
 
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import './index.css'
 
 const ThemedApp = () => {
