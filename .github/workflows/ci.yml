@@ -34,7 +34,7 @@ jobs:
         if: matrix.node-version == '14.x' && github.ref == 'refs/heads/main'
         env:
           CI: true
-          WEBAPP_STORAGE_ACCOUNT: ${{ env.WEBAPP_STORAGE_ACCOUNT }}
-          WEBAPP_STORAGE_KEY: ${{ secrets.WEBAPP_STORAGE_KEY }}
+          STORAGE_ACCOUNT: ${{ env.WEBAPP_STORAGE_ACCOUNT }}
+          STORAGE_KEY: ${{ secrets.WEBAPP_STORAGE_KEY }}
           # TODO: define this github secret
           #AUTOLAYOUT_URL: ${{ secrets.AUTOLAYOUT_URL }}
