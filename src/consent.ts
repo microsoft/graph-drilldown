@@ -37,7 +37,7 @@ const NOOP = () => {
 
 export function showCookieConsent({
 	theme = 'dark',
-	elementId = 'consent-banner',
+	elementId = 'cookie-banner',
 	onConsent = NOOP,
 }: ConsentOptions = {}): void {
 	const element = document.getElementById(elementId)
