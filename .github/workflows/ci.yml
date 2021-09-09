@@ -31,7 +31,7 @@ jobs:
 
       - name: Deploy Static Webapp
         run: yarn build:webapp:integ && yarn deploy:webapp
-        if: matrix.node-version == '14.x' && github.ref == 'refs/heads/dev'
+        if: matrix.node-version == '14.x' && github.ref == 'refs/heads/main'
         env:
           CI: true
           WEBAPP_STORAGE_ACCOUNT: ${{ env.WEBAPP_STORAGE_ACCOUNT }}
