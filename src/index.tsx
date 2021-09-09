@@ -10,6 +10,7 @@ import { ApplicationStyles } from '@thematic/react'
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
+import { showCookieConsent } from './consent'
 import './index.css'
 
 const ThemedApp = () => {
@@ -29,6 +30,20 @@ const ConfiguredApp = () => (
 		<ThemedApp />
 	</RecoilRoot>
 )
-const root = document.createElement('div')
-document.body.appendChild(root)
-ReactDOM.render(<ConfiguredApp />, root)
+
+function mount(): void {
+	ReactDOM.render(<ConfiguredApp />, document.getElementById('root'))
+}
+
+function bootstrap(): void {
+	try {
+		mount()
+		showCookieConsent({
+			onConsent: c => console.log('consent changed', c),
+		})
+	} catch (err) {
+		console.error('error initializing application', err)
+	}
+}
+
+bootstrap()
