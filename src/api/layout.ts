@@ -6,7 +6,7 @@ import { EdgeCollection } from '~/arquero'
 import { AUTOLAYOUT_URL } from '~/constants'
 
 /**
- * Transforms and edge list to the POST payload JSON.
+ * Transforms an edge list to the POST payload JSON.
  * @param edges
  */
 function edgesToPOST(edges: EdgeCollection) {
@@ -26,6 +26,15 @@ function createPOSTBody(edges: EdgeCollection) {
 	}
 }
 
+/**
+ * This function invokes a service that uses graspologic autolayout.
+ * It can be configured by assigning the AUTOLAYOUT_URL environment variable
+ * at deployment time. If the variable is missing, the UMAP button will not be
+ * visible in the interface.
+ * See https://graspologic.readthedocs.io/en/latest/reference/layouts.html#automatic-graph-layout
+ * @param edges 
+ * @returns 
+ */
 export async function umapLayout(edges: EdgeCollection) {
 	const body = createPOSTBody(edges)
 	return fetch(AUTOLAYOUT_URL, {
