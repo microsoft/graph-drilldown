@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { table, op } from 'arquero'
+import { op } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { normalizeXY } from '~/arquero'
 
 /**
@@ -11,7 +12,7 @@ import { normalizeXY } from '~/arquero'
  * as it will consolidate blocks of color in strips.
  * @param nodes
  */
-export async function layoutGrid(nodes: table): Promise<table> {
+export async function layoutGrid(nodes: ColumnTable): Promise<ColumnTable> {
 	return new Promise(resolve => {
 		const ranked = nodes
 			.params({

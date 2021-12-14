@@ -73,19 +73,26 @@ export const SearchItems: React.FC<SearchItemsProps> = ({
 					const key = searchNodeTable.getter('node.id')
 					let found
 					const cols = listColumnDefs(searchNodeTable.table)
-					searchNodeTable.scan((idx: number, data: any, stop: () => void) => {
-						const id = key(idx)
-						if (nodeid === id && !found) {
-							const obj = cols.reduce((acc, col) => {
-								const accessor = searchNodeTable.getter(col.name)
-								const val = accessor(idx)
-								acc[col.name] = val
-								return acc
-							}, {})
-							found = obj
-							stop()
-						}
-					}, true)
+					searchNodeTable.scan(
+						(
+							idx: number | undefined,
+							data: any,
+							stop: (() => void) | undefined,
+						) => {
+							const id = key(idx)
+							if (nodeid === id && !found) {
+								const obj = cols.reduce((acc, col) => {
+									const accessor = searchNodeTable.getter(col.name)
+									const val = accessor(idx)
+									acc[col.name] = val
+									return acc
+								}, {})
+								found = obj
+								stop && stop()
+							}
+						},
+						true,
+					)
 					if (found) {
 						const commId = found['community.id']
 						if (commId) {

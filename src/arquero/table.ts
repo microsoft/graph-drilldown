@@ -4,7 +4,8 @@
  */
 import { ROOT_COMMUNITY_ID } from '../constants'
 import { ColumnDef } from '../types'
-import { all, not, op, table } from 'arquero'
+import { all, not, op } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
  * Extracts the objects from a single-row table.
@@ -14,7 +15,7 @@ import { all, not, op, table } from 'arquero'
  */
 // TODO: this is pretty basic, but the intent would be to provide optional
 // transformers per column or as a whole
-export function one(table: table): { [key: string]: any } {
+export function one(table: ColumnTable): { [key: string]: any } {
 	return table.objects()[0]
 }
 
@@ -24,7 +25,7 @@ export function one(table: table): { [key: string]: any } {
  * @param prefix prefix to add to column names
  * @param exclude exclusion list if you want to retain some original columns
  */
-export function rename(table: table, prefix: string, exclude?: string[]) {
+export function rename(table: ColumnTable, prefix: string, exclude?: string[]) {
 	const ex = new Set(exclude)
 	return table.columnNames().reduce((obj: any, name: string) => {
 		if (ex.has(name) || name.startsWith(prefix)) {
@@ -36,11 +37,11 @@ export function rename(table: table, prefix: string, exclude?: string[]) {
 	}, {})
 }
 
-export function hasColumn(table: table, column: string) {
+export function hasColumn(table: ColumnTable, column: string) {
 	return table.columnNames().some(name => name === column)
 }
 
-export function columnTypes(table: table) {
+export function columnTypes(table: ColumnTable) {
 	if (table.numRows() === 0) {
 		return []
 	}
@@ -50,7 +51,7 @@ export function columnTypes(table: table) {
 	}))
 }
 
-export function recomputeCommunityStats(table: table, force?: boolean) {
+export function recomputeCommunityStats(table: ColumnTable, force?: boolean) {
 	const selected = force
 		? table.select(not(['community.nodeCount', 'community.childCount']))
 		: table
@@ -70,10 +71,10 @@ export function recomputeCommunityStats(table: table, force?: boolean) {
  * @param fallback
  */
 function ensureColumn(
-	table: table,
+	table: ColumnTable,
 	name: string,
 	variants: string[],
-	fallback: (table: table) => table,
+	fallback: (table: ColumnTable) => ColumnTable,
 ) {
 	if (hasColumn(table, name)) {
 		return table
@@ -97,7 +98,7 @@ function ensureColumn(
  * In the worst case, we select the first column.
  * @param table
  */
-function ensureNodeId(table: table) {
+function ensureNodeId(table: ColumnTable) {
 	return ensureColumn(table, 'node.id', ['id', 'ID', 'nodeId'], table => {
 		// just pick the first - this is risky, but sometimes we don't have a header at all
 		const column = table.columnNames()[0]
@@ -113,7 +114,7 @@ function ensureNodeId(table: table) {
  * present we just default to '0' as an id
  * @param table
  */
-function ensureCommunityId(table: table) {
+function ensureCommunityId(table: ColumnTable) {
 	return ensureColumn(
 		table,
 		'community.id',
@@ -126,7 +127,7 @@ function ensureCommunityId(table: table) {
 	)
 }
 
-function ensureParentCommunityId(table: table) {
+function ensureParentCommunityId(table: ColumnTable) {
 	return ensureColumn(
 		table,
 		'community.pid',
@@ -146,7 +147,7 @@ function ensureParentCommunityId(table: table) {
 // TEMP: make sure there are no empties, which some csvs have
 // use our -1 default.
 // TODO: use empty as default instead of -1, which need broader refactor
-function fixPid(table: table) {
+function fixPid(table: ColumnTable) {
 	return table
 		.params({
 			pid: ROOT_COMMUNITY_ID,
@@ -156,7 +157,7 @@ function fixPid(table: table) {
 		})
 }
 
-function ensureX(table: table) {
+function ensureX(table: ColumnTable) {
 	return ensureColumn(table, 'node.x', ['x', 'X'], table => {
 		return table.derive({
 			'node.x': () => Math.random(),
@@ -164,7 +165,7 @@ function ensureX(table: table) {
 	})
 }
 
-function ensureY(table: table) {
+function ensureY(table: ColumnTable) {
 	return ensureColumn(table, 'node.y', ['y', 'Y'], table => {
 		return table.derive({
 			'node.y': () => Math.random(),
@@ -172,7 +173,7 @@ function ensureY(table: table) {
 	})
 }
 
-function ensureD(table: table) {
+function ensureD(table: ColumnTable) {
 	return ensureColumn(table, 'node.d', ['d', 'D', 'size', 'weight'], table => {
 		return table.derive({
 			'node.d': () => 1,
@@ -180,7 +181,7 @@ function ensureD(table: table) {
 	})
 }
 
-function ensureNodeLabel(table: table) {
+function ensureNodeLabel(table: ColumnTable) {
 	return ensureColumn(table, 'node.label', ['label', 'name'], table => {
 		return table.derive({
 			'node.label': (d: any) => d['node.id'],
@@ -188,7 +189,7 @@ function ensureNodeLabel(table: table) {
 	})
 }
 
-function ensureEdgeSource(table: table) {
+function ensureEdgeSource(table: ColumnTable) {
 	return ensureColumn(table, 'edge.source', ['source', 'src'], table => {
 		return table.derive({
 			'edge.source': () => '0',
@@ -196,7 +197,7 @@ function ensureEdgeSource(table: table) {
 	})
 }
 
-function ensureEdgeTarget(table: table) {
+function ensureEdgeTarget(table: ColumnTable) {
 	return ensureColumn(table, 'edge.target', ['target', 'tgt'], table => {
 		return table.derive({
 			'edge.target': () => '1',
@@ -204,7 +205,7 @@ function ensureEdgeTarget(table: table) {
 	})
 }
 
-function ensureEdgeWeight(table: table) {
+function ensureEdgeWeight(table: ColumnTable) {
 	return ensureColumn(table, 'edge.weight', ['weight', 'value'], table => {
 		return table.derive({
 			'edge.weight': () => 1,
@@ -212,7 +213,7 @@ function ensureEdgeWeight(table: table) {
 	})
 }
 
-function ensureEdgeId(table: table) {
+function ensureEdgeId(table: ColumnTable) {
 	return ensureColumn(table, 'edge.id', ['id', 'edgeId'], table => {
 		return table.derive({
 			'edge.id': (d: any) => `${d['edge.source']}-${d['edge.target']}`,
@@ -221,7 +222,7 @@ function ensureEdgeId(table: table) {
 }
 
 // normalizes x and y in a single operation because we need to maintain aspect ratio
-export function normalizeXY(table: table) {
+export function normalizeXY(table: ColumnTable) {
 	const bounds = table.rollup({
 		xMin: op.min('node.x'),
 		xMax: op.max('node.x'),
@@ -246,7 +247,7 @@ export function normalizeXY(table: table) {
 		})
 }
 
-function normalizeD(table: table) {
+function normalizeD(table: ColumnTable) {
 	// for the node size, the range should always be positive
 	// we usually specify a minimum of 5 in the files - we do
 	// not want those going to 0 once normalized, so here we
@@ -271,7 +272,7 @@ const prefixes = {
 // our current "data model" expects every column to have a type prefix
 // used for filtering views, etc.
 // this will find any unprefixed columns and add the specified one to them
-function prefixRemaining(table: table, prefix: string) {
+function prefixRemaining(table: ColumnTable, prefix: string) {
 	const columns = table.columnNames(name => {
 		const pref = name.split('.')[0]
 		return !prefixes[pref]
@@ -289,7 +290,10 @@ function prefixRemaining(table: table, prefix: string) {
  * @param table
  * @param functions
  */
-export function chain(table: table, functions: ((table: table) => table)[]) {
+export function chain(
+	table: ColumnTable,
+	functions: ((table: ColumnTable) => ColumnTable)[],
+) {
 	return functions.reduce((acc, cur) => cur(acc), table)
 }
 
@@ -298,7 +302,7 @@ export function chain(table: table, functions: ((table: table) => table)[]) {
  * @param table
  * @param type
  */
-export function initializeNodeTable(table: table, fromEdges = false) {
+export function initializeNodeTable(table: ColumnTable, fromEdges = false) {
 	const starter = fromEdges
 		? table
 				.fold(['source', 'target'])
@@ -323,11 +327,11 @@ export function initializeNodeTable(table: table, fromEdges = false) {
 	])
 }
 
-export function initializeJoinTable(table: table) {
+export function initializeJoinTable(table: ColumnTable) {
 	return chain(table, [ensureNodeId, ensureCommunityId])
 }
 
-export function initializeEdgeTable(table: table) {
+export function initializeEdgeTable(table: ColumnTable) {
 	return chain(table, [
 		ensureEdgeSource,
 		ensureEdgeTarget,
@@ -337,14 +341,17 @@ export function initializeEdgeTable(table: table) {
 	])
 }
 
-export function initializeCommunityTable(table: table) {
+export function initializeCommunityTable(table: ColumnTable) {
 	return chain(table, [
 		ensureCommunityId,
 		table => prefixRemaining(table, 'community'),
 	])
 }
 
-export function joinNodeCommunityTables(nodes: table, communities: table) {
+export function joinNodeCommunityTables(
+	nodes: ColumnTable,
+	communities: ColumnTable,
+) {
 	const leftKey = 'node.id'
 	const rightKey = 'node.id'
 
@@ -379,8 +386,8 @@ export function joinNodeCommunityTables(nodes: table, communities: table) {
  * @param rightKey
  */
 export function joinWithReplace(
-	left: table,
-	right: table,
+	left: ColumnTable,
+	right: ColumnTable,
 	joinDefinition: any,
 ) {
 	return left.join(right, joinDefinition, [not(right.columnNames()), all()])
@@ -397,8 +404,8 @@ export function joinWithReplace(
  * @param rightKey optional explicit right key, otherwise it will use 'id'
  */
 export function joinDataTables(
-	left: table,
-	right: table,
+	left: ColumnTable,
+	right: ColumnTable,
 	type: string,
 	leftKey?: string,
 	rightKey = 'id',
@@ -420,8 +427,8 @@ export function joinDataTables(
 	// and (b) auto-generate an incremental id if none appears present
 	const toMerge = right
 		// rename all new columns with their prefix except the id
-		.select((table: table) => rename(table, `${type}.`, [rightKey]))
-		.select((table: table) => table.columnNames(filter))
+		.select((table: ColumnTable) => rename(table, `${type}.`, [rightKey]))
+		.select((table: ColumnTable) => table.columnNames(filter))
 	return left.join(toMerge, [joinKey, rightKey], [all(), not(rightKey)])
 }
 
@@ -430,7 +437,7 @@ export function joinDataTables(
  * @param main current fully-populated table with joined communities
  * @param communities flat community list to rollup childCount
  */
-export function checkAndAddChildCount(main: table) {
+export function checkAndAddChildCount(main: ColumnTable) {
 	if (hasColumn(main, 'community.childCount')) {
 		return main
 	}
@@ -458,7 +465,7 @@ export function checkAndAddChildCount(main: table) {
  * This checks the main table for a community.nodeCount column and computes if missing
  * @param main current fully-populated table with joined communities
  */
-export function checkAndAddNodeCount(main: table) {
+export function checkAndAddNodeCount(main: ColumnTable) {
 	if (hasColumn(main, 'community.nodeCount')) {
 		return main
 	}
@@ -477,7 +484,7 @@ export function checkAndAddNodeCount(main: table) {
  * @param readOnlyNames
  */
 export function listColumnDefs(
-	table: table,
+	table: ColumnTable,
 	readOnlyNames?: Set<string>,
 ): ColumnDef[] {
 	if (table.numRows() === 0) {
@@ -491,12 +498,16 @@ export function listColumnDefs(
 	}))
 }
 
-export function listColumnNames(table: table): string[] {
+export function listColumnNames(table: ColumnTable): string[] {
 	const defs = listColumnDefs(table)
 	return defs.map(d => d.name)
 }
 
-export function findGroupIndices(table: table, field: string, value: any) {
+export function findGroupIndices(
+	table: ColumnTable,
+	field: string,
+	value: any,
+) {
 	if (table.numRows() > 0) {
 		const groups = table.groups()
 		const index = groups.rows.findIndex(

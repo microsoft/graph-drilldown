@@ -7,18 +7,18 @@ import { DomainBrush } from '../DomainBrush'
 import { Label } from '@fluentui/react'
 import { ScaleType } from '@thematic/core'
 import { ScaleTypeChoiceGroup } from '@thematic/fluent'
-import { table } from 'arquero'
 import { format } from 'd3-format'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { useColumnHistogram, useColumnStats } from '~/arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export interface NumericDomainEditorProps {
 	/**
 	 * table the encoding will be binding to, so we can lookup stats
 	 * or column names as needed
 	 */
-	table: table
+	table: ColumnTable
 	encoding: Encoding
 	onChange: (encoding: Partial<Encoding>) => void
 }

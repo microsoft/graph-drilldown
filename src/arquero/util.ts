@@ -7,10 +7,11 @@ import { TableCollection } from './TableCollection'
 import { one } from './table'
 import { histogram, Histogram } from '@essex-js-toolkit/toolbox'
 // eslint-disable-next-line
-import { op, table } from 'arquero'
+import { op } from 'arquero'
 import { precisionFixed } from 'd3-format'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
-export function getColumnStats(table: table, name?: string): ColumnStats {
+export function getColumnStats(table: ColumnTable, name?: string): ColumnStats {
 	if (!table || table.numRows() === 0 || table.numCols() === 0 || !name) {
 		return {
 			dataType: '',
@@ -32,7 +33,7 @@ export function getColumnStats(table: table, name?: string): ColumnStats {
 			q05: op.quantile(name, 0.05),
 			q95: op.quantile(name, 0.95),
 			q99: op.quantile(name, 0.99),
-			unique: op.unique(name),
+			unique: op.array_agg_distinct(name),
 		}),
 	)
 
@@ -62,7 +63,10 @@ function checkWhole(numbers?: number[]): boolean {
 	return numbers.every(n => Number.isInteger(n))
 }
 
-export function getColumnHistogram(table: table, name?: string): Histogram {
+export function getColumnHistogram(
+	table: ColumnTable,
+	name?: string,
+): Histogram {
 	if (!table || table.numRows() === 0 || !name) {
 		return []
 	}
@@ -83,7 +87,7 @@ export function getColumnHistogram(table: table, name?: string): Histogram {
  * @param table
  * @param column
  */
-export function binTableColumn(table: table, column: string): any[] {
+export function binTableColumn(table: ColumnTable, column: string): any[] {
 	const quantileOps = new Array(100).fill(1).reduce((acc, cur, idx) => {
 		acc[idx] = op.quantile(column, idx / 100)
 		return acc
@@ -113,7 +117,7 @@ export function binTableColumn(table: table, column: string): any[] {
 	})
 
 	// fill the bins
-	table.scan((idx: number) => {
+	table.scan((idx: number | undefined) => {
 		const value = table.get(column, idx)
 		const binIndex = bins.findIndex(bin => value >= bin.x0 && value < bin.x1)
 		// bin maxes are exclusive except for the last bin

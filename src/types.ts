@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { ScaleType } from '@thematic/core'
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export interface TableBackedItem {
 	id: string
@@ -43,7 +43,7 @@ export interface Edge extends TableBackedItem {
 export type ItemType = 'node' | 'community' | 'edge' | 'join'
 
 export interface TableDef {
-	table: table
+	table: ColumnTable
 	// NOTE: these are the supported types of aggregation
 	// however, there is no reason this can't allow completely arbitrary "types"
 	type: ItemType
@@ -82,7 +82,7 @@ export interface DataFile {
 	 * If the user has indicated whether this is nodes, edges, etc.
 	 */
 	tableType?: ItemType
-	table?: table
+	table?: ColumnTable
 	rows?: number
 }
 

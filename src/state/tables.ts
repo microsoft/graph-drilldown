@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import {
 	atom,
 	selector,
@@ -12,10 +12,11 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 import { findNodesTableForCommunity, getNodeStats } from '~/arquero'
+import * as aq from 'arquero'
 
-export const bigTableState = atom<table>({
+export const bigTableState = atom<ColumnTable>({
 	key: 'big-table',
-	default: table(),
+	default: aq.table({}),
 	// this is required so that arquero can update indexes under the hood
 	dangerouslyAllowMutability: true,
 })
@@ -33,14 +34,14 @@ export function useResetBigTable() {
 }
 // keep ahold of a pre-grouped copy of the big table,
 // because all of our interactions are based around communities
-const groupedCommunitiesTableState = selector<table>({
+const groupedCommunitiesTableState = selector<ColumnTable>({
 	key: 'grouped-community-table',
 	dangerouslyAllowMutability: true,
 	get: ({ get }) => {
 		console.log('deriving pre-grouped community table')
 		const bigTable = get(bigTableState)
 		if (bigTable.numRows() === 0) {
-			return table()
+			return aq.table({})
 		}
 		console.time('groupby community state')
 		const grouped = bigTable.groupby('community.id')
@@ -53,14 +54,14 @@ export function useGroupedByCommunityTable() {
 	return useRecoilValue(groupedCommunitiesTableState)
 }
 
-export const groupedParentsTableState = selector<table>({
+export const groupedParentsTableState = selector<ColumnTable>({
 	key: 'grouped-parent-community-table',
 	dangerouslyAllowMutability: true,
 	get: ({ get }) => {
 		console.log('deriving pre-grouped parent community table')
 		const bigTable = get(bigTableState)
 		if (bigTable.numRows() === 0) {
-			return table()
+			return aq.table({})
 		}
 		console.time('groupby parent state')
 		const grouped = bigTable.groupby('community.pid')
@@ -74,7 +75,7 @@ export function useGroupedByParentTable() {
 }
 
 // returns a table representing only the nodes for the selected community
-export const communityNodesTableState = selectorFamily<table, string>({
+export const communityNodesTableState = selectorFamily<ColumnTable, string>({
 	key: 'community-nodes-table',
 	get:
 		cid =>
@@ -91,13 +92,13 @@ export function useCommunityNodesTable(cid: string) {
 }
 
 // creates a single row per community in the app (just grabbing the first from each group in the big table)
-const communitiesTableState = selector<table>({
+const communitiesTableState = selector<ColumnTable>({
 	key: 'communities-table',
 	get: ({ get }) => {
 		const byCommunity = get(groupedCommunitiesTableState)
 		console.time('communities state')
 		const groups = byCommunity.groups()
-		const tbl = groups ? byCommunity.reify(groups.rows) : table()
+		const tbl = groups ? byCommunity.reify(groups.rows) : aq.table({})
 		console.timeEnd('communities state')
 		return tbl
 	},
@@ -129,9 +130,9 @@ export function useNodeStatsByCommunity(cid: string, quantile: number) {
 // standalone edge table
 // we don't want to join that with the node/community table,
 // as it would be massive and not useful
-export const edgeTableState = atom<table>({
+export const edgeTableState = atom<ColumnTable>({
 	key: 'edge-table',
-	default: table(),
+	default: aq.table({}),
 	dangerouslyAllowMutability: true,
 })
 

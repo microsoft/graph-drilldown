@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useMemo } from 'react'
 
 export interface ArqueroTableProps {
-	table: table
+	table: ColumnTable
 	/**
 	 * Direct pass-through to Arquero table options
 	 */
@@ -36,7 +36,8 @@ export const ArqueroTable: React.FC<ArqueroTableProps> = ({
 				thead: 'display:none;',
 			}
 		}
-		return table.toHTML(opts)
+
+		return table.toHTML()
 	}, [table, options, hideHeaders])
 	return <div style={style} dangerouslySetInnerHTML={{ __html: html }} />
 }

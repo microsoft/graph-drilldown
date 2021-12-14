@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { extension } from './util'
-import { fromCSV, table } from 'arquero'
+import { fromCSV } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 const identity = (d: any) => d
 
@@ -23,12 +24,12 @@ const fns = {
 	target: identity,
 }
 
-export async function fetchDSVTable(url: string) {
+export async function fetchDSVTable(url: string): Promise<ColumnTable> {
 	const content = await fetch(url).then(res => res.text())
 	return parseDSVTable(url, content)
 }
 
-export function parseDSVTable(filename: string, content: string): table {
+export function parseDSVTable(filename: string, content: string): ColumnTable {
 	const ext = extension(filename)
 	const table = fromCSV(content, {
 		header: true,

@@ -4,7 +4,7 @@
  */
 import { UmapLayout } from './UmapLayout'
 import { DefaultButton, Spinner, Toggle } from '@fluentui/react'
-import { all, not, table } from 'arquero'
+import { all, not } from 'arquero'
 import { memo, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import {
@@ -15,6 +15,7 @@ import {
 import { executeLayout, Layout as LayoutType } from '~/layout'
 import { useFeatures, useGraphViewType, useSetGraphViewType } from '~/state'
 import { ViewType } from '~/types'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export const Layout: React.FC = memo(function Layout() {
 	const nodes = useArqueroBigTable()
@@ -27,7 +28,7 @@ export const Layout: React.FC = memo(function Layout() {
 	const performLayout = useCallback(
 		(type: LayoutType) => {
 			console.log('performing layout', type)
-			const finalize = (table: table) => {
+			const finalize = (table: ColumnTable) => {
 				console.log('layout complete', type)
 				table.print()
 				const merged = nodes.join(

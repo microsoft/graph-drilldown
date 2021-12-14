@@ -30,10 +30,12 @@ export interface SearchByIndex {
 
 export const SearchPanel: React.FC = () => {
 	const [searchText, setSearchText] = useState<string | undefined>()
-	const [searchNodeTable, setSearchNodeTable] =
-		useState<NodeCollection | undefined>()
-	const [searchTable, setSearchTable] =
-		useState<CommunityCollection | undefined>()
+	const [searchNodeTable, setSearchNodeTable] = useState<
+		NodeCollection | undefined
+	>()
+	const [searchTable, setSearchTable] = useState<
+		CommunityCollection | undefined
+	>()
 	const [isExpanded, setIsExpanded] = useState<boolean>(false)
 	const [errorMsg, setErrorMsg] = useState<string | undefined>()
 	const [isInFocus, setIsInFocus] = useState<boolean>(false)
@@ -72,7 +74,7 @@ export const SearchPanel: React.FC = () => {
 	)
 
 	const getMatchingValuesByRow = useCallback(
-		(columns: string[]): [table, table] => {
+		(columns: string[]): [CommunityCollection, NodeCollection] => {
 			const matches: SearchByIndex[] = []
 			modifiedTable.scan(row => {
 				const o = columns.reduce(
@@ -114,15 +116,15 @@ export const SearchPanel: React.FC = () => {
 			)
 			const matchTable = communities
 				.params({ match: communityIds })
-				.filter((d: any, $: any) => op.includes($.match, d['community.id']))
+				.filter((d: any, $: any) => op.includes($.match, d['community.id'], 0))
 				.ungroup()
 
 			const nodeMatchTable = modifiedTable
 				.params({ match: Array.from(nodeids), commIds: nodeCommIds })
 				.filter(
 					(d: any, $: any) =>
-						op.includes($.match, d['node.id']) &&
-						op.includes($.commIds, d['community.id']),
+						op.includes($.match, d['node.id'], 0) &&
+						op.includes($.commIds, d['community.id'], 0),
 				)
 				.ungroup()
 			const ccTable = new CommunityCollection(matchTable)

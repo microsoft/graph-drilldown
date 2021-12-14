@@ -1,5 +1,6 @@
 // eslint-disable-next-line
-import { op, table } from 'arquero'
+import { op } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export interface ArqueroNode {
 	['node.id']: string
@@ -12,7 +13,7 @@ export interface ArqueroNode {
  * @param table assumed pre-grouped table (e.g., by parent id)
  * @param quantile
  */
-export function getNodeStats(table: table, quantile = 1) {
+export function getNodeStats(table: ColumnTable, quantile = 1) {
 	if (!table || table.numRows() === 0 || quantile === 1) {
 		return [
 			{

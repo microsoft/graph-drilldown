@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { table } from 'arquero'
 import { useEffect } from 'react'
 import { fetchUrl } from '~/api'
 import { useSetArqueroBigTable, useSetArqueroEdgeTable } from '~/arquero'
@@ -41,13 +42,19 @@ export function useTestFiles(bundle: FileBundle) {
 
 			const files: FileBundle = {}
 
-			const [nodesTable, joinTable, communitiesTable, edgesTable] =
-				await Promise.all([
-					nodesFile?.url && fetchUrl(nodesFile.url),
-					joinFile?.url && fetchUrl(joinFile.url),
-					communitiesFile?.url && fetchUrl(communitiesFile.url),
-					edgesFile?.url && fetchUrl(edgesFile.url),
-				])
+			const nodesTable = nodesFile?.url && (await fetchUrl(nodesFile.url))
+			const joinTable = joinFile?.url && (await fetchUrl(joinFile.url))
+			const communitiesTable =
+				communitiesFile?.url && (await fetchUrl(communitiesFile.url))
+			const edgesTable = edgesFile?.url && (await fetchUrl(edgesFile.url))
+
+			// let [nodesTable, joinTable, communitiesTable, edgesTable] =
+			// 	await Promise.all([
+			// 		nodesFile?.url && fetchUrl(nodesFile.url),
+			// 		joinFile?.url && fetchUrl(joinFile.url),
+			// 		communitiesFile?.url && fetchUrl(communitiesFile.url),
+			// 		edgesFile?.url && fetchUrl(edgesFile.url),
+			// 	])
 
 			let nodes
 			let edges
@@ -55,7 +62,7 @@ export function useTestFiles(bundle: FileBundle) {
 			// TODO: this is basically just recreating the logic in useArqueroAddTable hook
 			// however, we have to do all the joins and set the tables at once because we won't get another render loop
 			// note that the order of nodes -> join -> communities -> edges is *required* to layer properly
-			if (nodesFile) {
+			if (nodesTable && nodesFile) {
 				console.log('loading nodes file from url', nodesFile.url)
 				console.time('nodes')
 				nodes = initializeNodeTable(nodesTable)
@@ -66,7 +73,7 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('nodes')
 			}
-			if (joinFile) {
+			if (joinFile && joinTable) {
 				console.log('loading join file from url', joinFile.url)
 				console.time('join')
 				const join = initializeJoinTable(joinTable)
@@ -80,7 +87,7 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('join')
 			}
-			if (communitiesFile) {
+			if (communitiesFile && communitiesTable) {
 				console.log('loading communities file from url', communitiesFile.url)
 				console.time('communities')
 				files.communities = {
@@ -93,7 +100,7 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('communities')
 			}
-			if (edgesFile) {
+			if (edgesFile && edgesTable) {
 				console.log('loading edges file from url', edgesFile.url)
 				console.time('edges')
 				edges = initializeEdgeTable(edgesTable)

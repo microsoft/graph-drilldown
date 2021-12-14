@@ -4,7 +4,8 @@
  */
 import { NodeCollection } from './TableCollection'
 import { findGroupIndices } from './table'
-import { table } from 'arquero'
+import * as aq from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
  * Gets a table of just the nodes for a matching community.
@@ -20,11 +21,11 @@ import { table } from 'arquero'
  */
 export function findNodesTableForCommunity(
 	cid: string | undefined,
-	byParent: table,
-	byCommunity: table,
+	byParent: ColumnTable,
+	byCommunity: ColumnTable,
 ) {
 	if (!cid) {
-		return table()
+		return aq.table({})
 	}
 
 	const pidx = findGroupIndices(byParent, 'community.pid', cid)
@@ -39,8 +40,8 @@ export function findNodesTableForCommunity(
 // this is duplicative of findNodesTableForCommunity, but retaining the indices allows us to avoid reify
 export function findNodesCollectionForCommunity(
 	cid: string | undefined,
-	byParent: table,
-	byCommunity: table,
+	byParent: ColumnTable,
+	byCommunity: ColumnTable,
 ) {
 	if (!cid) {
 		return new NodeCollection()
@@ -60,7 +61,7 @@ export function findNodesCollectionForCommunity(
  * @param pid
  * @param byParent
  */
-export function findNodesTableForParent(pid: string, byParent: table) {
+export function findNodesTableForParent(pid: string, byParent: ColumnTable) {
 	const pidx = findGroupIndices(byParent, 'community.pid', pid)
 	return byParent.reify(pidx)
 }

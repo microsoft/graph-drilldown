@@ -3,12 +3,14 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { NodeCollection } from './TableCollection'
-import { table, op, desc } from 'arquero'
+import { op, desc } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
+import * as aq from 'arquero'
 
 export function getEdgesFromTableByID(
 	selectedId: string,
-	nodeTable: table,
-	edges: table,
+	nodeTable: ColumnTable,
+	edges: ColumnTable,
 ) {
 	if (selectedId) {
 		console.log('selected id', selectedId)
@@ -19,9 +21,12 @@ export function getEdgesFromTableByID(
 }
 
 // joins the community ids for edge source/target into the edge table
-function joinNodeCommunities(edges: table, nodes: table): table {
+function joinNodeCommunities(
+	edges: ColumnTable,
+	nodes: ColumnTable,
+): ColumnTable {
 	if (edges.numRows() === 0) {
-		return table()
+		return aq.table({})
 	}
 
 	const derived = edges
@@ -36,7 +41,7 @@ function joinNodeCommunities(edges: table, nodes: table): table {
 	return derived
 }
 
-function hashNodeField(nodes: table, field: string) {
+function hashNodeField(nodes: ColumnTable, field: string) {
 	const hash: any = {}
 	const id = nodes.getter('node.id')
 	const cid = nodes.getter(field)
@@ -45,9 +50,13 @@ function hashNodeField(nodes: table, field: string) {
 }
 
 // for a given community, finds all the connected sibling counts via edges
-function getNeighbors(selectedId: string, joined: table, nodes: table): table {
+function getNeighbors(
+	selectedId: string,
+	joined: ColumnTable,
+	nodes: ColumnTable,
+): ColumnTable {
 	if (joined.numRows() === 0 && nodes.numRows() === 0) {
-		return table()
+		return aq.table({})
 	}
 
 	const cFiltered = joined
@@ -86,7 +95,10 @@ function getNeighbors(selectedId: string, joined: table, nodes: table): table {
  * @param edges
  * @param nodes
  */
-export function filterEdgesToNodes(edges: table, nodes: NodeCollection): table {
+export function filterEdgesToNodes(
+	edges: ColumnTable,
+	nodes: NodeCollection,
+): ColumnTable {
 	if (edges.numRows() === 0) {
 		return edges
 	}
