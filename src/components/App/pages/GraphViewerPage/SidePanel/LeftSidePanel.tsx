@@ -99,7 +99,7 @@ export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 						</Text>
 					</HeaderLabel>
 					<CommunityPanelContainer tabIndex={0} style={communityPanelStyle}>
-						{<CommunityPanel />}
+						<CommunityPanel />
 					</CommunityPanelContainer>
 				</CommunityContainer>
 				{miniMap}

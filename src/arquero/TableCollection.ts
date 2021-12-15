@@ -22,7 +22,7 @@ class TableItemFacade implements TableBackedItem {
 		return this._table.columnNames()
 	}
 	get(col: string) {
-		return this._table.get(col, this._index)
+		return this._table.column(col)?.get(this._index)
 	}
 	get id() {
 		return this.get(this._id)
@@ -129,7 +129,7 @@ export class TableCollection<T> {
 		const output: T[] = []
 		this.scan(idx => {
 			const n = new this._Ctor(this._table, idx, this._prefix)
-			if (!idx) return
+			if (idx === undefined) return
 			output.push(callback(n, idx))
 		}, ordered)
 		return output
@@ -137,7 +137,7 @@ export class TableCollection<T> {
 	forEach(callback: Callback<T>, ordered = false) {
 		this.scan((idx: number | undefined) => {
 			const n = new this._Ctor(this._table, idx)
-			if (!idx) return
+			if (idx === undefined) return
 			callback(n, idx)
 		}, ordered)
 	}
@@ -183,7 +183,7 @@ export class TableCollection<T> {
 		const arr: T[] = []
 		const ratio = Math.floor(1 / proportion)
 		this.scan((idx: number | undefined) => {
-			if (idx && idx % ratio === 0) {
+			if (idx !== undefined && idx % ratio === 0) {
 				arr.push(new this._Ctor(this._table, idx))
 			}
 		})

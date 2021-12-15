@@ -42,19 +42,13 @@ export function useTestFiles(bundle: FileBundle) {
 
 			const files: FileBundle = {}
 
-			const nodesTable = nodesFile?.url && (await fetchUrl(nodesFile.url))
-			const joinTable = joinFile?.url && (await fetchUrl(joinFile.url))
-			const communitiesTable =
-				communitiesFile?.url && (await fetchUrl(communitiesFile.url))
-			const edgesTable = edgesFile?.url && (await fetchUrl(edgesFile.url))
-
-			// let [nodesTable, joinTable, communitiesTable, edgesTable] =
-			// 	await Promise.all([
-			// 		nodesFile?.url && fetchUrl(nodesFile.url),
-			// 		joinFile?.url && fetchUrl(joinFile.url),
-			// 		communitiesFile?.url && fetchUrl(communitiesFile.url),
-			// 		edgesFile?.url && fetchUrl(edgesFile.url),
-			// 	])
+			let [nodesTable, joinTable, communitiesTable, edgesTable] =
+				await Promise.all([
+					nodesFile?.url && fetchUrl(nodesFile.url),
+					joinFile?.url && fetchUrl(joinFile.url),
+					communitiesFile?.url && fetchUrl(communitiesFile.url),
+					edgesFile?.url && fetchUrl(edgesFile.url),
+				])
 
 			let nodes
 			let edges

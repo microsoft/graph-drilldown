@@ -48,7 +48,7 @@ export function deriveSmallMultiplePositions(table: ColumnTable): PositionMap {
 		.count()
 		.orderby(desc('count'))
 		.scan((idx: number | undefined) => {
-			if (!idx) return
+			if (idx === undefined) return
 			const indices = partitions[idx]
 			indices.forEach((index: number) => {
 				positions[id(index)] = layout(cell, x(index), y(index))
