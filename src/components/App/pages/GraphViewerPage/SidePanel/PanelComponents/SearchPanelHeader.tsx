@@ -2,8 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { SearchBox, IconButton } from '@fluentui/react'
-import { useDebounceFn } from 'ahooks'
+import { SearchBox, IconButton, Spinner, SpinnerSize } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -28,6 +27,7 @@ interface SearchPanelHeaderProps {
 	onClear: () => void
 	onSearch: () => void
 	onFocusChange: (state: boolean) => void
+	isSearching: boolean
 }
 export const SearchPanelHeader = ({
 	disabled,
@@ -35,18 +35,10 @@ export const SearchPanelHeader = ({
 	onSearch,
 	onClear,
 	onFocusChange,
+	isSearching,
 }: SearchPanelHeaderProps) => {
 	const focusCallback = useCallback(() => onFocusChange(true), [onFocusChange])
 	const blurCallback = useCallback(() => onFocusChange(false), [onFocusChange])
-
-	const useDebounce = useDebounceFn(
-		(event, newValue) => {
-			onChange(event, newValue)
-		},
-		{
-			wait: 500,
-		},
-	)
 
 	return (
 		<Label>
@@ -54,24 +46,22 @@ export const SearchPanelHeader = ({
 				placeholder="Search graph"
 				styles={searchBoxStyle}
 				disabled={disabled}
-				onChange={(
-					event?: React.ChangeEvent<HTMLInputElement>,
-					newValue?: string,
-				) => useDebounce.run(event, newValue)}
+				onChange={onChange}
 				onClear={onClear}
 				onSearch={onSearch}
 				onFocus={focusCallback}
 				onBlur={blurCallback}
 			/>
-
 			<IconButton
-				iconProps={searchIcon}
+				iconProps={!isSearching ? searchIcon : {}}
 				styles={searchButtonStyle}
 				title="Search"
 				ariaLabel={'Search'}
 				disabled={disabled}
 				onClick={onSearch}
-			/>
+			>
+				{isSearching && <Spinner size={SpinnerSize.xSmall} />}
+			</IconButton>
 		</Label>
 	)
 }

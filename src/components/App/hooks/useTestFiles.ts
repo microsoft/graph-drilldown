@@ -42,7 +42,7 @@ export function useTestFiles(bundle: FileBundle) {
 
 			const files: FileBundle = {}
 
-			let [nodesTable, joinTable, communitiesTable, edgesTable] =
+			const [nodesTable, joinTable, communitiesTable, edgesTable] =
 				await Promise.all([
 					nodesFile?.url && fetchUrl(nodesFile.url),
 					joinFile?.url && fetchUrl(joinFile.url),

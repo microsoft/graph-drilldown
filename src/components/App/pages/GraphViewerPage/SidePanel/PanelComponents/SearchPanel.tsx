@@ -16,9 +16,10 @@ import {
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
 import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
-import { op, table } from 'arquero'
+import { op } from 'arquero'
 import { useCallback, useState, useMemo } from 'react'
 import styled from 'styled-components'
+import { useDebounceFn } from 'ahooks'
 
 export interface SearchByIndex {
 	index: number
@@ -39,6 +40,7 @@ export const SearchPanel: React.FC = () => {
 	const [isExpanded, setIsExpanded] = useState<boolean>(false)
 	const [errorMsg, setErrorMsg] = useState<string | undefined>()
 	const [isInFocus, setIsInFocus] = useState<boolean>(false)
+	const [isSearching, setIsSearching] = useState<boolean>(false)
 	const setSelectedNode = useSetSelectedNodes()
 	const modifiedTable = useTableColumnsByType('string')
 	const columns = listColumnNames(modifiedTable)
@@ -153,33 +155,48 @@ export const SearchPanel: React.FC = () => {
 		setIsExpanded,
 	])
 
-	const onSearch = useCallback(() => {
+	const useSearchDebounce = useDebounceFn(
+		() => {
+			searchByText()
+		},
+		{
+			wait: 10,
+		},
+	)
+
+	const searchByText = useCallback(() => {
+		// filter out community.pid, need to figure out properly display if we choose to include it
+		const cols = columns.filter(d => d !== 'community.pid')
+		const [matchTable, matchingValues] = getMatchingValuesByRow(cols)
+		if (matchingValues.size < 1) {
+			setErrorMsg(`No results found for ${searchText}`)
+		}
+		setIsExpanded(true)
+		setSearchTable(matchTable)
+		setSearchNodeTable(matchingValues)
+		setIsSearching(false)
+	}, [
+		searchText,
+		columns,
+		setSearchNodeTable,
+		getMatchingValuesByRow,
+		setSearchTable,
+		setErrorMsg,
+		setIsExpanded,
+		setIsSearching,
+	])
+
+	const onSearch = useCallback(async () => {
 		if (!searchText) {
 			onClear()
 		} else {
 			setErrorMsg(undefined)
 			if (columns.length > 0) {
-				// filter out community.pid, need to figure out properly display if we choose to include it
-				const cols = columns.filter(d => d !== 'community.pid')
-				const [matchTable, matchingValues] = getMatchingValuesByRow(cols)
-				if (matchingValues.size < 1) {
-					setErrorMsg(`No results found for ${searchText}`)
-				}
-				setIsExpanded(true)
-				setSearchTable(matchTable)
-				setSearchNodeTable(matchingValues)
+				setIsSearching(true)
+				useSearchDebounce.run()
 			}
 		}
-	}, [
-		searchText,
-		columns,
-		setSearchNodeTable,
-		onClear,
-		getMatchingValuesByRow,
-		setSearchTable,
-		setErrorMsg,
-		setIsExpanded,
-	])
+	}, [searchText, columns, onClear, setErrorMsg, setIsSearching])
 
 	const onChange = useCallback(
 		(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string): any => {
@@ -198,6 +215,7 @@ export const SearchPanel: React.FC = () => {
 				onSearch={onSearch}
 				onClear={onClear}
 				onFocusChange={onFocusChange}
+				isSearching={isSearching}
 			/>
 		),
 		[disabled, onClear, onChange, onSearch, onFocusChange],
