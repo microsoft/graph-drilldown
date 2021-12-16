@@ -62,24 +62,27 @@ export const SearchPanel: React.FC = () => {
 	const setSelectedCommunity = useSetSelectedCommunity()
 
 	const getColumnByRow = useCallback(
-		(col, row): [string, boolean] => {
+		(col, row, searchValue): [string, boolean] => {
 			const stringValue = modifiedTable.get(col, row)
 			let isInSearch = false
-			if (stringValue.indexOf(searchText) > -1) {
+			if (stringValue.indexOf(searchValue) > -1) {
 				isInSearch = true
 			}
 			return [stringValue, isInSearch]
 		},
-		[modifiedTable, searchText],
+		[modifiedTable],
 	)
 
 	const getMatchingValuesByRow = useCallback(
-		(columns: string[]): [CommunityCollection, NodeCollection] => {
+		(
+			columns: string[],
+			searchValue: string,
+		): [CommunityCollection, NodeCollection] => {
 			const matches: SearchByIndex[] = []
 			modifiedTable.scan(row => {
 				const o = columns.reduce(
 					(acc, col) => {
-						const [value, isInSearch] = getColumnByRow(col, row)
+						const [value, isInSearch] = getColumnByRow(col, row, searchValue)
 						if (isInSearch) {
 							acc.isInSearch = true
 							acc.matchColumns.push(col)
@@ -154,57 +157,69 @@ export const SearchPanel: React.FC = () => {
 	])
 
 	const useSearchDebounce = useDebounceFn(
-		() => {
-			searchByText()
+		(searchValue: string) => {
+			searchByText(searchValue)
 		},
 		{
-			wait: 10,
+			wait: 10, //wait to search to show spinner
 		},
 	)
 
-	const searchByText = useCallback(() => {
-		// filter out community.pid, need to figure out properly display if we choose to include it
-		const cols = columns.filter(d => d !== 'community.pid')
-		const [matchTable, matchingValues] = getMatchingValuesByRow(cols)
-		if (matchingValues.size < 1) {
-			setErrorMsg(`No results found for ${searchText}`)
-		}
-		setIsExpanded(true)
-		setSearchTable(matchTable)
-		setSearchNodeTable(matchingValues)
-		setIsSearching(false)
-	}, [
-		searchText,
-		columns,
-		setSearchNodeTable,
-		getMatchingValuesByRow,
-		setSearchTable,
-		setErrorMsg,
-		setIsExpanded,
-		setIsSearching,
-	])
-
-	const onSearch = useCallback(async () => {
-		if (!searchText) {
-			onClear()
-		} else {
-			setErrorMsg(undefined)
-			if (columns.length > 0) {
-				setIsSearching(true)
-				useSearchDebounce.run()
+	const searchByText = useCallback(
+		(searchValue: string) => {
+			// filter out community.pid, need to figure out properly display if we choose to include it
+			const cols = columns.filter(d => d !== 'community.pid')
+			const [matchTable, matchingValues] = getMatchingValuesByRow(
+				cols,
+				searchValue,
+			)
+			if (matchingValues.size < 1) {
+				setErrorMsg(`No results found for ${searchText}`)
 			}
-		}
-	}, [
-		searchText,
-		columns,
-		onClear,
-		setErrorMsg,
-		setIsSearching,
-		useSearchDebounce,
-	])
+			setIsExpanded(true)
+			setSearchTable(matchTable)
+			setSearchNodeTable(matchingValues)
+			setIsSearching(false)
+		},
+		[
+			searchText,
+			columns,
+			setSearchNodeTable,
+			getMatchingValuesByRow,
+			setSearchTable,
+			setErrorMsg,
+			setIsExpanded,
+			setIsSearching,
+		],
+	)
+
+	const onSearch = useCallback(
+		(searchValue?: string) => {
+			if (!searchText && !searchValue) {
+				onClear()
+			} else {
+				if (!searchValue) {
+					searchValue = searchText as string
+				}
+				setErrorMsg(undefined)
+				if (columns.length > 0) {
+					setIsSearching(true)
+					useSearchDebounce.run(searchValue)
+				}
+			}
+		},
+		[
+			searchText,
+			columns,
+			onClear,
+			setErrorMsg,
+			setIsSearching,
+			useSearchDebounce,
+		],
+	)
 
 	const onChange = useCallback(
-		(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string): any => {
+		(newValue: string): any => {
 			setSearchText(newValue)
 		},
 		[setSearchText],
