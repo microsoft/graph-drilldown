@@ -22,7 +22,8 @@ import {
 	listColumnDefs,
 } from './table'
 import { PositionMap } from '@graspologic/graph'
-import { not } from 'arquero'
+import { not, table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import {
 	useHoveredCommunity,
@@ -42,8 +43,6 @@ import {
 	useUniqueNodes,
 } from '~/state'
 import { useCachedColumnHistogram, useCachedColumnStats } from '~/state/caches'
-import ColumnTable from 'arquero/dist/types/table/column-table'
-import * as aq from 'arquero'
 
 export function useArqueroBigTable() {
 	return useBigTable()
@@ -188,7 +187,7 @@ export function useArqueroVisibleCommunities() {
 				.ungroup()
 			return filtered
 		}
-		return aq.table({})
+		return table({})
 	}, [pid, communities])
 	return useMemo(() => new CommunityCollection(tbl), [tbl])
 }
@@ -261,7 +260,7 @@ export function useTableColumnsByType(dataType: string) {
 		const valueTable = bigTable.select(columns)
 		return valueTable
 	}
-	return aq.table({})
+	return table({})
 }
 
 // for a list of communities, get a map of [cid]: nodepositions[]

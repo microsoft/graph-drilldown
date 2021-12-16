@@ -8,8 +8,8 @@ import { one } from './table'
 import { histogram, Histogram } from '@essex-js-toolkit/toolbox'
 // eslint-disable-next-line
 import { op } from 'arquero'
-import { precisionFixed } from 'd3-format'
 import ColumnTable from 'arquero/dist/types/table/column-table'
+import { precisionFixed } from 'd3-format'
 
 export function getColumnStats(table: ColumnTable, name?: string): ColumnStats {
 	if (!table || table.numRows() === 0 || table.numCols() === 0 || !name) {

@@ -16,10 +16,10 @@ import {
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
 import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
+import { useDebounceFn } from 'ahooks'
 import { op } from 'arquero'
 import { useCallback, useState, useMemo } from 'react'
 import styled from 'styled-components'
-import { useDebounceFn } from 'ahooks'
 
 export interface SearchByIndex {
 	index: number
@@ -31,12 +31,10 @@ export interface SearchByIndex {
 
 export const SearchPanel: React.FC = () => {
 	const [searchText, setSearchText] = useState<string | undefined>()
-	const [searchNodeTable, setSearchNodeTable] = useState<
-		NodeCollection | undefined
-	>()
-	const [searchTable, setSearchTable] = useState<
-		CommunityCollection | undefined
-	>()
+	const [searchNodeTable, setSearchNodeTable] =
+		useState<NodeCollection | undefined>()
+	const [searchTable, setSearchTable] =
+		useState<CommunityCollection | undefined>()
 	const [isExpanded, setIsExpanded] = useState<boolean>(false)
 	const [errorMsg, setErrorMsg] = useState<string | undefined>()
 	const [isInFocus, setIsInFocus] = useState<boolean>(false)
@@ -196,7 +194,14 @@ export const SearchPanel: React.FC = () => {
 				useSearchDebounce.run()
 			}
 		}
-	}, [searchText, columns, onClear, setErrorMsg, setIsSearching])
+	}, [
+		searchText,
+		columns,
+		onClear,
+		setErrorMsg,
+		setIsSearching,
+		useSearchDebounce,
+	])
 
 	const onChange = useCallback(
 		(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string): any => {
@@ -218,7 +223,7 @@ export const SearchPanel: React.FC = () => {
 				isSearching={isSearching}
 			/>
 		),
-		[disabled, onClear, onChange, onSearch, onFocusChange],
+		[disabled, onClear, onChange, onSearch, onFocusChange, isSearching],
 	)
 
 	return (

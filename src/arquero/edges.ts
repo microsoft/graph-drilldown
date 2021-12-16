@@ -4,8 +4,8 @@
  */
 import { NodeCollection } from './TableCollection'
 import { op, desc } from 'arquero'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 import * as aq from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export function getEdgesFromTableByID(
 	selectedId: string,

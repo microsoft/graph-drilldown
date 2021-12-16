@@ -5,6 +5,7 @@
 import { UmapLayout } from './UmapLayout'
 import { DefaultButton, Spinner, Toggle } from '@fluentui/react'
 import { all, not } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { memo, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import {
@@ -15,7 +16,6 @@ import {
 import { executeLayout, Layout as LayoutType } from '~/layout'
 import { useFeatures, useGraphViewType, useSetGraphViewType } from '~/state'
 import { ViewType } from '~/types'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export const Layout: React.FC = memo(function Layout() {
 	const nodes = useArqueroBigTable()

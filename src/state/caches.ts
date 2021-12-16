@@ -11,6 +11,7 @@ import { settingsState } from './settings'
 import { communityNodesTableState, edgeTableState } from './tables'
 import { edgesVisibleState } from './vis'
 import { GraphContainer } from '@graspologic/graph'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useEffect } from 'react'
 import {
 	atom,
@@ -26,7 +27,6 @@ import {
 	getColumnStats,
 	NodeCollection,
 } from '~/arquero'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 
 // this is a map of color strings to bgra values,
 // the color parsing is very expensive.

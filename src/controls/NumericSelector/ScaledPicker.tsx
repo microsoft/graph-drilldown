@@ -6,10 +6,10 @@ import { NumericDomainEditor } from '../NumericDomainEditor'
 import { NumericRangeEditor } from '../NumericRangeEditor'
 import { NumericSelectorProps } from './types'
 import { Dropdown } from '@fluentui/react'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { columnTypes } from '~/arquero'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export const ScaledPicker: React.FC<NumericSelectorProps> = ({
 	table,

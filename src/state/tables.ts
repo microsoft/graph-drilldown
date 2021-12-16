@@ -12,11 +12,11 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 import { findNodesTableForCommunity, getNodeStats } from '~/arquero'
-import * as aq from 'arquero'
+import { table } from 'arquero'
 
 export const bigTableState = atom<ColumnTable>({
 	key: 'big-table',
-	default: aq.table({}),
+	default: table({}),
 	// this is required so that arquero can update indexes under the hood
 	dangerouslyAllowMutability: true,
 })
@@ -41,7 +41,7 @@ const groupedCommunitiesTableState = selector<ColumnTable>({
 		console.log('deriving pre-grouped community table')
 		const bigTable = get(bigTableState)
 		if (bigTable.numRows() === 0) {
-			return aq.table({})
+			return table({})
 		}
 		console.time('groupby community state')
 		const grouped = bigTable.groupby('community.id')
@@ -61,7 +61,7 @@ export const groupedParentsTableState = selector<ColumnTable>({
 		console.log('deriving pre-grouped parent community table')
 		const bigTable = get(bigTableState)
 		if (bigTable.numRows() === 0) {
-			return aq.table({})
+			return table({})
 		}
 		console.time('groupby parent state')
 		const grouped = bigTable.groupby('community.pid')
@@ -98,7 +98,7 @@ const communitiesTableState = selector<ColumnTable>({
 		const byCommunity = get(groupedCommunitiesTableState)
 		console.time('communities state')
 		const groups = byCommunity.groups()
-		const tbl = groups ? byCommunity.reify(groups.rows) : aq.table({})
+		const tbl = groups ? byCommunity.reify(groups.rows) : table({})
 		console.timeEnd('communities state')
 		return tbl
 	},
@@ -132,7 +132,7 @@ export function useNodeStatsByCommunity(cid: string, quantile: number) {
 // as it would be massive and not useful
 export const edgeTableState = atom<ColumnTable>({
 	key: 'edge-table',
-	default: aq.table({}),
+	default: table({}),
 	dangerouslyAllowMutability: true,
 })
 

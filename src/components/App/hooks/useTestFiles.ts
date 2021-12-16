@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { table } from 'arquero'
 import { useEffect } from 'react'
 import { fetchUrl } from '~/api'
 import { useSetArqueroBigTable, useSetArqueroEdgeTable } from '~/arquero'

@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import ColumnTable from 'arquero/dist/types/table/column-table'
 import { fetchDSVTable } from './dsv'
 import { extension } from './util'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
  * Fetch a file visible to the application in csv or tsv format,
