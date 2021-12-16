@@ -8,9 +8,9 @@ import { NumericDomainEditor } from '../NumericDomainEditor'
 import { ColorSelectorProps } from './types'
 import { Dropdown } from '@fluentui/react'
 import { ScaleDropdown } from '@thematic/fluent'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export const ScaledPicker: React.FC<ColorSelectorProps> = ({
 	table,

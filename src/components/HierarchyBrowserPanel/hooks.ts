@@ -12,6 +12,8 @@ import {
 	IHierarchyDataResponse,
 	IHierarchyNeighborResponse,
 } from '@essex-js-toolkit/hierarchy-browser'
+import ColumnTable from 'arquero/dist/types/table/column-table'
+import { TableData } from 'arquero/dist/types/table/table'
 import { useMemo } from 'react'
 import {
 	findNodesCollectionForCommunity,
@@ -23,7 +25,6 @@ import {
 	useGroupedByCommunityTable,
 	useGroupedByParentTable,
 } from '~/state'
-import ColumnTable from 'arquero/dist/types/table/column-table'
 
 interface NodeAccum {
 	[id: string]: string | number
@@ -143,7 +144,7 @@ function getNeighborIds(counts: ColumnTable, communityId: string) {
 		counts.scan(
 			(
 				idx?: number | undefined,
-				data?: object | any[] | undefined,
+				data?: TableData | any[] | undefined,
 				stop?: (() => void) | undefined,
 			) => {
 				const k = key(idx)

@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { table } from 'arquero'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 import {
 	atom,
@@ -12,7 +13,6 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 import { findNodesTableForCommunity, getNodeStats } from '~/arquero'
-import { table } from 'arquero'
 
 export const bigTableState = atom<ColumnTable>({
 	key: 'big-table',
