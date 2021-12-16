@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 import { ViewType } from '../../types'
 import { featuresState } from '../features'
-import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 
 export const graphViewState = atom<ViewType>({
 	key: 'graph-view',
