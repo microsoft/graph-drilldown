@@ -113,5 +113,8 @@
 		"webpack": "^5.36.2",
 		"worker-loader": "^3.0.8"
 	},
+	"resolutions": {
+		"typescript": "4.5.4"
+	},
 	"packageManager": "yarn@3.1.1"
 }
