@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Community, Edge, ItemType, Node, TableBackedItem } from '../types'
-import * as aq from 'arquero'
+//importing as aqtable because there's already a param named table in this file
+import { table as aqtable } from 'arquero'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 import { TableData } from 'arquero/dist/types/table/table'
 
@@ -78,7 +79,11 @@ class EdgeFacade extends TableItemFacade implements Edge {
 type Callback<T> = (item: T, index: number) => any
 
 export class TableCollection<T> {
+<<<<<<< HEAD
 	private _table: ColumnTable = aq.table({})
+=======
+	private _table: ColumnTable = aqtable({})
+>>>>>>> origin/main
 	private _prefix: string
 	private _Ctor: any
 	private _indices: number[] | undefined
