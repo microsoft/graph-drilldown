@@ -25,11 +25,7 @@ function joinNodeCommunities(
 	nodes: ColumnTable,
 ): ColumnTable {
 	if (edges.numRows() === 0) {
-<<<<<<< HEAD
-		return aq.table({})
-=======
 		return table({})
->>>>>>> origin/main
 	}
 
 	const derived = edges
@@ -59,11 +55,7 @@ function getNeighbors(
 	nodes: ColumnTable,
 ): ColumnTable {
 	if (joined.numRows() === 0 && nodes.numRows() === 0) {
-<<<<<<< HEAD
-		return aq.table({})
-=======
 		return table({})
->>>>>>> origin/main
 	}
 
 	const cFiltered = joined

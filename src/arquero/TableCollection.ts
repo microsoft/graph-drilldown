@@ -79,11 +79,7 @@ class EdgeFacade extends TableItemFacade implements Edge {
 type Callback<T> = (item: T, index: number) => any
 
 export class TableCollection<T> {
-<<<<<<< HEAD
-	private _table: ColumnTable = aq.table({})
-=======
 	private _table: ColumnTable = aqtable({})
->>>>>>> origin/main
 	private _prefix: string
 	private _Ctor: any
 	private _indices: number[] | undefined
