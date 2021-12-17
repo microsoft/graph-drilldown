@@ -3,8 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { NodeCollection } from './TableCollection'
-import { op, desc } from 'arquero'
-import * as aq from 'arquero'
+import { table, op, desc } from 'arquero'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export function getEdgesFromTableByID(
@@ -26,7 +25,7 @@ function joinNodeCommunities(
 	nodes: ColumnTable,
 ): ColumnTable {
 	if (edges.numRows() === 0) {
-		return aq.table({})
+		return table({})
 	}
 
 	const derived = edges
@@ -56,7 +55,7 @@ function getNeighbors(
 	nodes: ColumnTable,
 ): ColumnTable {
 	if (joined.numRows() === 0 && nodes.numRows() === 0) {
-		return aq.table({})
+		return table({})
 	}
 
 	const cFiltered = joined

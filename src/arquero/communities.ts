@@ -4,7 +4,7 @@
  */
 import { NodeCollection } from './TableCollection'
 import { findGroupIndices } from './table'
-import * as aq from 'arquero'
+import { table } from 'arquero'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
@@ -25,7 +25,7 @@ export function findNodesTableForCommunity(
 	byCommunity: ColumnTable,
 ) {
 	if (!cid) {
-		return aq.table({})
+		return table({})
 	}
 
 	const pidx = findGroupIndices(byParent, 'community.pid', cid)
