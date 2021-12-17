@@ -41,22 +41,15 @@ export function useTestFiles(bundle: FileBundle) {
 
 			const files: FileBundle = {}
 
-			const [nodesTable, joinTable, communitiesTable, edgesTable] =
-				await Promise.all([
-					nodesFile?.url && fetchUrl(nodesFile.url),
-					joinFile?.url && fetchUrl(joinFile.url),
-					communitiesFile?.url && fetchUrl(communitiesFile.url),
-					edgesFile?.url && fetchUrl(edgesFile.url),
-				])
-
 			let nodes
 			let edges
 
 			// TODO: this is basically just recreating the logic in useArqueroAddTable hook
 			// however, we have to do all the joins and set the tables at once because we won't get another render loop
 			// note that the order of nodes -> join -> communities -> edges is *required* to layer properly
-			if (nodesTable && nodesFile) {
+			if (nodesFile) {
 				console.log('loading nodes file from url', nodesFile.url)
+				const nodesTable = await fetchUrl(nodesFile.url)
 				console.time('nodes')
 				nodes = initializeNodeTable(nodesTable)
 				files.nodes = {
@@ -66,8 +59,9 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('nodes')
 			}
-			if (joinFile && joinTable) {
+			if (joinFile) {
 				console.log('loading join file from url', joinFile.url)
+				const joinTable = await fetchUrl(joinFile.url)
 				console.time('join')
 				const join = initializeJoinTable(joinTable)
 				files.join = {
@@ -80,8 +74,9 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('join')
 			}
-			if (communitiesFile && communitiesTable) {
+			if (communitiesFile) {
 				console.log('loading communities file from url', communitiesFile.url)
+				const communitiesTable = await fetchUrl(communitiesFile.url)
 				console.time('communities')
 				files.communities = {
 					...communitiesFile,
@@ -93,8 +88,9 @@ export function useTestFiles(bundle: FileBundle) {
 				}
 				console.timeEnd('communities')
 			}
-			if (edgesFile && edgesTable) {
+			if (edgesFile) {
 				console.log('loading edges file from url', edgesFile.url)
+				const edgesTable = await fetchUrl(edgesFile.url)
 				console.time('edges')
 				edges = initializeEdgeTable(edgesTable)
 				files.edges = {
