@@ -7,7 +7,7 @@ import { layoutGrid } from './grid'
 import { layoutRandom } from './random'
 import { Layout } from './types'
 import { layoutUmap } from './umap'
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 export * from './fa2'
 export * from './grid'
@@ -25,18 +25,18 @@ export * from './types'
  */
 export async function executeLayout(
 	type: Layout,
-	nodes?: table,
-	edges?: table,
+	nodes?: ColumnTable,
+	edges?: ColumnTable,
 	options?: any,
 ) {
 	switch (type) {
 		case Layout.Random:
-			return layoutRandom(nodes)
+			return nodes && layoutRandom(nodes)
 		case Layout.Grid:
-			return layoutGrid(nodes)
+			return nodes && layoutGrid(nodes)
 		case Layout.FA2:
-			return layoutFa2(edges, nodes, options)
+			return edges && layoutFa2(edges, nodes, options)
 		case Layout.UMAP:
-			return layoutUmap(edges)
+			return edges && layoutUmap(edges)
 	}
 }

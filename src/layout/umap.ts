@@ -4,13 +4,14 @@
  */
 import { umapLayout } from '../api'
 import { EdgeCollection, normalizeXY } from '../arquero'
-import { from, table } from 'arquero'
+import { from } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
  * Runs our autolayout umap - note that this mostly just thunks over to the web service.
  * @param edges
  */
-export async function layoutUmap(edges: table) {
+export async function layoutUmap(edges: ColumnTable) {
 	const positions = await umapLayout(new EdgeCollection(edges))
 	const transformed = positions.map(n => ({
 		'node.id': n.id,

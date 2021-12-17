@@ -11,7 +11,7 @@ import { settingsState } from './settings'
 import { communityNodesTableState, edgeTableState } from './tables'
 import { edgesVisibleState } from './vis'
 import { GraphContainer } from '@graspologic/graph'
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useEffect } from 'react'
 import {
 	atom,
@@ -125,7 +125,7 @@ export function useVisibleNodeMap(cid: string) {
 // generate a unique key for storing cached values related to a table
 // warning: this isn't entirely guaranteed to be unique, but should
 // cover any expected scenarios we encounter (right?)
-function tableKey(table: table) {
+function tableKey(table: ColumnTable) {
 	return `${table.columnNames().join('-')}-${table.numRows()}`
 }
 
@@ -134,7 +134,7 @@ const cachedColumnStatsState = atomFamily<ColumnStats | undefined, string>({
 	default: undefined,
 })
 
-export function useCachedColumnStats(table: table, field?: string) {
+export function useCachedColumnStats(table: ColumnTable, field?: string) {
 	const key = `${tableKey(table)}-${field}`
 	const [cached, setCached] = useRecoilState(cachedColumnStatsState(key))
 	useEffect(() => {
@@ -151,7 +151,7 @@ const cachedColumnHistogramState = atomFamily<any[] | undefined, string>({
 	default: undefined,
 })
 
-export function useCachedColumnHistogram(table: table, field?: string) {
+export function useCachedColumnHistogram(table: ColumnTable, field?: string) {
 	const key = `${tableKey(table)}-${field}`
 	const [cached, setCached] = useRecoilState(cachedColumnHistogramState(key))
 	useEffect(() => {

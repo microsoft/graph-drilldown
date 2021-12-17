@@ -3,26 +3,27 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { PositionMap } from '@graspologic/graph'
-import { desc, table } from 'arquero'
+import { desc } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 // TODO: we may want to provide fallback checks for
 // position columns, in the case that arbitrary non-layout data was
 // loaded by the user
 
-function getters(table: table) {
+function getters(table: ColumnTable) {
 	return {
 		id: table.getter('node.id'),
 		x: table.getter('node.x'),
 		y: table.getter('node.y'),
 	}
 }
-export function deriveLayoutPositions(table: table): PositionMap {
+export function deriveLayoutPositions(table: ColumnTable): PositionMap {
 	const positions = {} as PositionMap
 	if (table.numRows() === 0) {
 		return positions
 	}
 	const { id, x, y } = getters(table)
-	table.scan((idx: number) => {
+	table.scan((idx: number | undefined) => {
 		positions[id(idx)] = {
 			x: x(idx),
 			y: y(idx),
@@ -31,7 +32,7 @@ export function deriveLayoutPositions(table: table): PositionMap {
 	return positions
 }
 
-export function deriveSmallMultiplePositions(table: table): PositionMap {
+export function deriveSmallMultiplePositions(table: ColumnTable): PositionMap {
 	const positions: PositionMap = {}
 	if (table.numRows() === 0) {
 		return positions
@@ -46,7 +47,8 @@ export function deriveSmallMultiplePositions(table: table): PositionMap {
 	grouped
 		.count()
 		.orderby(desc('count'))
-		.scan((idx: number) => {
+		.scan((idx: number | undefined) => {
+			if (idx === undefined) return
 			const indices = partitions[idx]
 			indices.forEach((index: number) => {
 				positions[id(index)] = layout(cell, x(index), y(index))

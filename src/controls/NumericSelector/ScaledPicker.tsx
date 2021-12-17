@@ -6,7 +6,7 @@ import { NumericDomainEditor } from '../NumericDomainEditor'
 import { NumericRangeEditor } from '../NumericRangeEditor'
 import { NumericSelectorProps } from './types'
 import { Dropdown } from '@fluentui/react'
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { columnTypes } from '~/arquero'
@@ -63,7 +63,7 @@ export const ScaledPicker: React.FC<NumericSelectorProps> = ({
 }
 
 // for opacity, we can only allow numeric bindings
-function useFieldDropdownOptions(table: table) {
+function useFieldDropdownOptions(table: ColumnTable) {
 	return useMemo(() => {
 		const types = columnTypes(table)
 		return types

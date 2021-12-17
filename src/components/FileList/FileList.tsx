@@ -44,7 +44,7 @@ export const FileList: React.FC = () => {
 					<DefaultButton text="Clear all" onClick={handleResetClick} />
 				) : null}
 			</Reset>
-			{selectedFile ? (
+			{selectedFile && selectedFile.table ? (
 				<Viewer>
 					<h3>{selectedFile.url}</h3>
 					<ArqueroTable table={selectedFile?.table} options={{ limit: 10 }} />

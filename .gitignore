@@ -27,3 +27,5 @@ yarn-error.log*
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+
+public/data/msft*

@@ -20,6 +20,12 @@ const lineupRules = [
 		},
 	},
 	{
+		test: /\.m?js/,
+		resolve: {
+			fullySpecified: false,
+		},
+	},
+	{
 		test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 		loader: 'file-loader',
 	},
@@ -30,7 +36,8 @@ base.module.rules = [...base.module.rules, ...lineupRules]
 const aliasFields = base.resolve.aliasFields || []
 base.resolve = {
 	...base.resolve,
-
+	//.mjs required for apache-arrow
+	extensions: ['.ts', '.mjs', '.js', '.tsx'],
 	// mjolnir.js relies on this functionality
 	// it has a "browser" package.json property that it uses to define which
 	// scripts to load

@@ -23,6 +23,7 @@ import {
 } from './table'
 import { PositionMap } from '@graspologic/graph'
 import { not, table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import {
 	useHoveredCommunity,
@@ -76,7 +77,7 @@ export function useArqueroAddTable() {
 	const setBigTable = useSetArqueroBigTable()
 	const setEdgeTable = useSetArqueroEdgeTable()
 	return useCallback(
-		(newTable: table, type: string) => {
+		(newTable: ColumnTable, type: string) => {
 			console.log('adding table/columns', type)
 			newTable.print()
 			let updated = bigTable
@@ -153,11 +154,11 @@ export function useEdgeCount() {
 	return edges.numRows()
 }
 
-export function useColumnStats(table: table, field?: string) {
+export function useColumnStats(table: ColumnTable, field?: string) {
 	return useCachedColumnStats(table, field)
 }
 
-export function useColumnHistogram(table: table, field?: string) {
+export function useColumnHistogram(table: ColumnTable, field?: string) {
 	return useCachedColumnHistogram(table, field)
 }
 
@@ -186,7 +187,7 @@ export function useArqueroVisibleCommunities() {
 				.ungroup()
 			return filtered
 		}
-		return table()
+		return table({})
 	}, [pid, communities])
 	return useMemo(() => new CommunityCollection(tbl), [tbl])
 }
@@ -259,7 +260,7 @@ export function useTableColumnsByType(dataType: string) {
 		const valueTable = bigTable.select(columns)
 		return valueTable
 	}
-	return table()
+	return table({})
 }
 
 // for a list of communities, get a map of [cid]: nodepositions[]

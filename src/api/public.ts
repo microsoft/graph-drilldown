@@ -4,13 +4,14 @@
  */
 import { fetchDSVTable } from './dsv'
 import { extension } from './util'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 
 /**
  * Fetch a file visible to the application in csv or tsv format,
  * such as from the public folder or any other no-auth url
  * @param url
  */
-export async function fetchUrl(url: string) {
+export async function fetchUrl(url: string): Promise<ColumnTable> {
 	const ext = extension(url)
 	switch (ext) {
 		case 'csv':

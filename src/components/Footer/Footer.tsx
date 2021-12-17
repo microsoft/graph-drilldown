@@ -9,17 +9,19 @@ import styled from 'styled-components'
 export const Footer: FC = memo(function Footer() {
 	return (
 		<FooterEl>
-			<Link href={constants.privacyUrl}>Privacy</Link>
-			{' | '}
-			<Link id={'managecookies'} onClick={manageConsent}>
-				Cookies
-			</Link>
-			{' | '}
-			<Link href={constants.termsOfUseUrl}>Terms of Use</Link>
-			{' | '}
-			<Link href={constants.trademarksUrl}>Trademarks</Link>
-			{' | '}
-			<Link href={constants.microsoft}>{constants.copyright}</Link>
+			<Container>
+				<Link href={constants.privacyUrl}>Privacy</Link>
+				{' | '}
+				<Link id={'managecookies'} onClick={manageConsent}>
+					Cookies
+				</Link>
+				{' | '}
+				<Link href={constants.termsOfUseUrl}>Terms of Use</Link>
+				{' | '}
+				<Link href={constants.trademarksUrl}>Trademarks</Link>
+				{' | '}
+				<Link href={constants.microsoft}>{constants.copyright}</Link>
+			</Container>
 		</FooterEl>
 	)
 })
@@ -50,6 +52,10 @@ const Link: FC<{
 })
 
 const FooterEl = styled.footer`
+	width: 100%;
+`
+
+const Container = styled.div`
 	width: 500px;
 	height: 20px;
 	font-size: 12px;
@@ -58,6 +64,7 @@ const FooterEl = styled.footer`
 	align-items: center;
 	align-content: center;
 	justify-content: space-between;
+	margin: auto;
 `
 
 const constants = {

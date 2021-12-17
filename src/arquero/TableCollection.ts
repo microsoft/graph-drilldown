@@ -3,13 +3,16 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Community, Edge, ItemType, Node, TableBackedItem } from '../types'
-import { table as createTable, table } from 'arquero'
+//importing as aqtable because there's already a param named table in this file
+import { table as aqtable } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
+import { TableData } from 'arquero/dist/types/table/table'
 
 class TableItemFacade implements TableBackedItem {
-	private _table: table
+	private _table: ColumnTable
 	private _index: number
 	private _id: string
-	constructor(table: table, index: number, prefix: ItemType) {
+	constructor(table: ColumnTable, index: number, prefix: ItemType) {
 		this._table = table
 		this._index = index
 		this._id = `${prefix}.id`
@@ -21,7 +24,7 @@ class TableItemFacade implements TableBackedItem {
 		return this._table.columnNames()
 	}
 	get(col: string) {
-		return this._table.get(col, this._index)
+		return this._table.column(col)?.get(this._index)
 	}
 	get id() {
 		return this.get(this._id)
@@ -29,7 +32,7 @@ class TableItemFacade implements TableBackedItem {
 }
 
 class NodeFacade extends TableItemFacade implements Node {
-	constructor(table: table, index: number) {
+	constructor(table: ColumnTable, index: number) {
 		super(table, index, 'node')
 	}
 	get x() {
@@ -44,7 +47,7 @@ class NodeFacade extends TableItemFacade implements Node {
 }
 
 class CommunityFacade extends TableItemFacade implements Community {
-	constructor(table: table, index: number) {
+	constructor(table: ColumnTable, index: number) {
 		super(table, index, 'community')
 	}
 	get pid() {
@@ -59,7 +62,7 @@ class CommunityFacade extends TableItemFacade implements Community {
 }
 
 class EdgeFacade extends TableItemFacade implements Edge {
-	constructor(table: table, index: number) {
+	constructor(table: ColumnTable, index: number) {
 		super(table, index, 'edge')
 	}
 	get source() {
@@ -76,11 +79,15 @@ class EdgeFacade extends TableItemFacade implements Edge {
 type Callback<T> = (item: T, index: number) => any
 
 export class TableCollection<T> {
-	private _table: table = createTable()
+	private _table: ColumnTable = aqtable({})
 	private _prefix: string
 	private _Ctor: any
-	private _indices: Uint32Array | undefined
-	constructor(table: table | undefined, prefix: string, indices?: Uint32Array) {
+	private _indices: number[] | undefined
+	constructor(
+		table: ColumnTable | undefined,
+		prefix: string,
+		indices?: number[],
+	) {
 		if (table) {
 			this._table = table
 		}
@@ -102,7 +109,7 @@ export class TableCollection<T> {
 			this._indices = indices
 		}
 	}
-	get table(): table {
+	get table(): ColumnTable {
 		return this._table
 	}
 	get size(): number {
@@ -124,19 +131,21 @@ export class TableCollection<T> {
 		const output: T[] = []
 		this.scan(idx => {
 			const n = new this._Ctor(this._table, idx, this._prefix)
+			if (idx === undefined) return
 			output.push(callback(n, idx))
 		}, ordered)
 		return output
 	}
 	forEach(callback: Callback<T>, ordered = false) {
-		this.scan((idx: number) => {
+		this.scan((idx: number | undefined) => {
 			const n = new this._Ctor(this._table, idx)
+			if (idx === undefined) return
 			callback(n, idx)
 		}, ordered)
 	}
 	toMap(): Map<string, T> {
 		const map = new Map<string, T>()
-		this.scan((idx: number) => {
+		this.scan((idx: number | undefined) => {
 			const n = new this._Ctor(this._table, idx)
 			const id = n.id
 			map.set(id, n)
@@ -145,7 +154,7 @@ export class TableCollection<T> {
 	}
 	toSet(): Set<T> {
 		const set = new Set<T>()
-		this.scan((idx: number) => {
+		this.scan((idx: number | undefined) => {
 			const n = new this._Ctor(this._table, idx)
 			set.add(n)
 		})
@@ -153,7 +162,7 @@ export class TableCollection<T> {
 	}
 	toArray(ordered = false): T[] {
 		const arr: T[] = []
-		this.scan((idx: number) => {
+		this.scan((idx: number | undefined) => {
 			arr.push(new this._Ctor(this._table, idx))
 		}, ordered)
 		return arr
@@ -175,8 +184,8 @@ export class TableCollection<T> {
 	sample(proportion: number): T[] {
 		const arr: T[] = []
 		const ratio = Math.floor(1 / proportion)
-		this.scan((idx: number) => {
-			if (idx % ratio === 0) {
+		this.scan((idx: number | undefined) => {
+			if (idx !== undefined && idx % ratio === 0) {
 				arr.push(new this._Ctor(this._table, idx))
 			}
 		})
@@ -192,7 +201,11 @@ export class TableCollection<T> {
 	 * @param ordered
 	 */
 	scan(
-		callback: (row: number, data: any, stop: () => void) => void,
+		callback: (
+			row?: number | undefined,
+			data?: TableData | any[] | undefined,
+			stop?: (() => void) | undefined,
+		) => void,
 		ordered = false,
 	) {
 		// note that we assume provided indices are already ordered
@@ -211,19 +224,19 @@ export class TableCollection<T> {
 }
 
 export class CommunityCollection extends TableCollection<Community> {
-	constructor(table?: table, indices?: Uint32Array) {
+	constructor(table?: ColumnTable, indices?: number[]) {
 		super(table, 'community', indices)
 	}
 }
 
 export class NodeCollection extends TableCollection<Node> {
-	constructor(table?: table, indices?: Uint32Array) {
+	constructor(table?: ColumnTable, indices?: number[]) {
 		super(table, 'node', indices)
 	}
 }
 
 export class EdgeCollection extends TableCollection<Edge> {
-	constructor(table?: table, indices?: Uint32Array) {
+	constructor(table?: ColumnTable, indices?: number[]) {
 		super(table, 'edge', indices)
 	}
 }

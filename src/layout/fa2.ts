@@ -4,7 +4,8 @@
  */
 import { GraphContainer } from '@graspologic/graph'
 import { LayoutWorkerManager } from '@graspologic/layout-core'
-import { from, table } from 'arquero'
+import { from } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
 import { ArqueroNode, normalizeXY } from '~/arquero'
 
 function getFa2Worker() {
@@ -13,7 +14,7 @@ function getFa2Worker() {
 }
 
 // this gets the nodes + edges ready for the graspologic layout worker
-function prepGraph(edgeTable: table, nodeTable?: table) {
+function prepGraph(edgeTable: ColumnTable, nodeTable?: ColumnTable) {
 	// edgeTable should just be source + target cols, plus optional weight
 	// derive a weight if needed, and then extract individual nodes
 	const edges: any = []
@@ -82,7 +83,11 @@ function postProcessLayout(graph: GraphContainer) {
  * @param nodes - optional, will be derived from edge list if necessary
  * @param options - addl layout worker options
  */
-export async function layoutFa2(edges: table, nodes?: table, options?: any) {
+export async function layoutFa2(
+	edges: ColumnTable,
+	nodes?: ColumnTable,
+	options?: any,
+) {
 	console.time('layout-fa2')
 
 	const graph = prepGraph(edges, nodes)

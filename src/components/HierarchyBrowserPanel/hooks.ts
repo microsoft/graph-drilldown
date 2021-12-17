@@ -12,7 +12,8 @@ import {
 	IHierarchyDataResponse,
 	IHierarchyNeighborResponse,
 } from '@essex-js-toolkit/hierarchy-browser'
-import { table } from 'arquero'
+import ColumnTable from 'arquero/dist/types/table/column-table'
+import { TableData } from 'arquero/dist/types/table/table'
 import { useMemo } from 'react'
 import {
 	findNodesCollectionForCommunity,
@@ -79,13 +80,13 @@ function nodeColumns(
 
 export function useEntityCallback(): (
 	loadParams: ILoadParams,
-	byParent: table,
-	byCommunity: table,
+	byParent: ColumnTable,
+	byCommunity: ColumnTable,
 ) => Promise<IHierarchyDataResponse> {
 	async function handleEntityCallback(
 		loadParams: ILoadParams,
-		byParent: table,
-		byCommunity: table,
+		byParent: ColumnTable,
+		byCommunity: ColumnTable,
 	): Promise<IHierarchyDataResponse> {
 		const cid = loadParams.communityId
 		const selectedNeighbor = findNodesCollectionForCommunity(
@@ -101,13 +102,13 @@ export function useEntityCallback(): (
 
 export function useNeighborCallback(): (
 	params: ILoadParams,
-	nodeTable: table,
-	edges: table,
+	nodeTable: ColumnTable,
+	edges: ColumnTable,
 ) => Promise<IHierarchyNeighborResponse> {
 	const handleNeighborCallback = async function (
 		params: ILoadParams,
-		nodeTable: table,
-		edges: table,
+		nodeTable: ColumnTable,
+		edges: ColumnTable,
 	): Promise<IHierarchyNeighborResponse> {
 		const neighborTable = getEdgesFromTableByID(
 			params.communityId,
@@ -132,7 +133,7 @@ export function useNeighborCallback(): (
 	return handleNeighborCallback
 }
 
-function getNeighborIds(counts: table, communityId: string) {
+function getNeighborIds(counts: ColumnTable, communityId: string) {
 	if (counts.numRows() > 0) {
 		// scan the edge counts table to create a few table rows
 		const max = Math.min(100, counts.numRows())
@@ -140,22 +141,29 @@ function getNeighborIds(counts: table, communityId: string) {
 		const key = counts.getter('key')
 		const count = counts.getter('count')
 		const membership = counts.getter('members')
-		counts.scan((idx: number, data: any, stop: () => void) => {
-			const k = key(idx)
-			const c = count(idx)
-			const size = membership(idx)
-			if (communityId !== k) {
-				output.push({
-					communityId: k,
-					connections: c,
-					edgeCommunityId: communityId,
-					size,
-				} as INeighborCommunityDetail)
-			}
-			if (output.length > max) {
-				stop()
-			}
-		}, true)
+		counts.scan(
+			(
+				idx?: number | undefined,
+				data?: TableData | any[] | undefined,
+				stop?: (() => void) | undefined,
+			) => {
+				const k = key(idx)
+				const c = count(idx)
+				const size = membership(idx)
+				if (communityId !== k) {
+					output.push({
+						communityId: k,
+						connections: c,
+						edgeCommunityId: communityId,
+						size,
+					} as INeighborCommunityDetail)
+				}
+				if (output.length > max) {
+					stop && stop()
+				}
+			},
+			true,
+		)
 		return output
 	}
 	return []
