@@ -199,13 +199,13 @@ export const SearchItems: React.FC<SearchItemsProps> = ({
 				totalCommunity > 1
 					? `${kFormatter(totalCommunity)} communities`
 					: `${totalCommunity} community`
-			if (totalNodes > 0) {
-				communityText += ' & '
-				nodeText =
-					totalNodes > 1
-						? `${kFormatter(totalNodes)} nodes`
-						: `${totalNodes} node`
-			}
+		}
+		if (totalNodes > 0) {
+			communityText += communityText.length > 0 ? ' & ' : ''
+			nodeText =
+				totalNodes > 1
+					? `${kFormatter(totalNodes)} nodes`
+					: `${totalNodes} node`
 		}
 
 		return `Found ${communityText} ${nodeText}`

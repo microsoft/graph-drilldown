@@ -28,7 +28,7 @@ export function useNumericEncodingScale(
 		}),
 		[encoding, overrides],
 	)
-	const fixed = useCallback(() => enc.value || 0, [enc])
+	const fixed = useCallback(() => enc.value || 1e-6, [enc])
 	const scale = useMemo(() => {
 		// TODO: check safe log domains (no zero crossings) and adjust
 		const fn = enc.scaleType === ScaleType.Log ? scaleLog : scaleLinear
