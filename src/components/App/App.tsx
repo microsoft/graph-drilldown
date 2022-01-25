@@ -10,8 +10,11 @@ import { GraphViewerPage, DataManagerPage } from './pages'
 import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
+import { useConsent } from '~/hooks/useConsent'
 
 export const App: React.FC = () => {
+	const [, manageConsent] = useConsent({})
+
 	useData()
 	return (
 		<HashRouter>
@@ -22,7 +25,7 @@ export const App: React.FC = () => {
 						<Route path="/" component={GraphViewerPage} />
 						<Route path="/files" component={DataManagerPage} />
 					</LazyCachingSwitch>
-					<Footer />
+					<Footer manageConsent={manageConsent} />
 				</Main>
 			</Container>
 		</HashRouter>

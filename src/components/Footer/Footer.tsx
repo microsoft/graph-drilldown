@@ -2,17 +2,21 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { manageConsent } from '../../consent'
 import { FC, memo } from 'react'
 import styled from 'styled-components'
 
-export const Footer: FC = memo(function Footer() {
+export const Footer: FC<{ manageConsent: () => void }> = memo(function Footer({
+	manageConsent,
+}) {
 	return (
 		<FooterEl>
 			<Container>
 				<Link href={constants.privacyUrl}>Privacy</Link>
 				{' | '}
-				<Link id={'managecookies'} onClick={manageConsent}>
+				<Link
+					id={'managecookies'}
+					onClick={manageConsent}
+				>
 					Cookies
 				</Link>
 				{' | '}
