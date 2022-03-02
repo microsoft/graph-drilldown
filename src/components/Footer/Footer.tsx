@@ -11,7 +11,7 @@ import { useTheme } from '~/state'
 export const Footer: FC = memo(function Footer() {
 	const theme = useTheme()
 	const CONSENT_CONF = {
-		theme: theme.variant,
+		theme: theme.light.toString(),
 		elementId: 'cookie-banner',
 		onChange: (c: any) => console.log('CHANGED', c),
 	}
@@ -94,6 +94,5 @@ const LinkDiv = styled.div`
 const LinkA = styled.a`
 	cursor: pointer;
 	text-decoration: none !important;
-	color: rgb(241, 241, 241);
 `
 
