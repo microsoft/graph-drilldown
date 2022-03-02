@@ -1805,6 +1805,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex-js-toolkit/hooks@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@essex-js-toolkit/hooks@npm:4.0.1"
+  dependencies:
+    "@essex-js-toolkit/toolbox": 3.0.1
+    lodash-es: ^4.17.21
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ">=16.8.0"
+  checksum: 3c120777bc3653b61b0e1ad4f96addf3248e330dcc7053009120443e91e878fe44daf232c62147070ff9a83f0dbeb0ece43a9ccb37c0f644cf5d622802f600ba
+  languageName: node
+  linkType: hard
+
 "@essex-js-toolkit/thematic-lineup@npm:^1.1.5":
   version: 1.1.5
   resolution: "@essex-js-toolkit/thematic-lineup@npm:1.1.5"
@@ -1877,6 +1892,13 @@ __metadata:
   dependencies:
     core-js: ^3.14.0
   checksum: b229029ccd0f8aeed874d6f2c1d441303fc0ab30f24b83cbf8b2f9720ad63170eb7c7e198d4d07300741762b384fdba25d6749c54ecb7486886bdd5dda7f058f
+  languageName: node
+  linkType: hard
+
+"@essex-js-toolkit/toolbox@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@essex-js-toolkit/toolbox@npm:3.0.1"
+  checksum: 24b864ce1819374b00ab6f5b8633232c3ea212993dc52467a7de4f606843cfaa19ad3239bb257fcfd0c6bf189319602005be372070bc1f4f98570288a3dfdac6
   languageName: node
   linkType: hard
 
@@ -10557,7 +10579,7 @@ fsevents@^1.2.7:
     "@babel/runtime": ^7.14.0
     "@commitlint/cli": ^12.1.2
     "@essex-js-toolkit/hierarchy-browser": 3.0.1
-    "@essex-js-toolkit/hooks": 3.0.0
+    "@essex-js-toolkit/hooks": ^4.0.1
     "@essex-js-toolkit/thematic-lineup": ^1.1.5
     "@essex-js-toolkit/themed-components": ^1.2.0
     "@essex-js-toolkit/toolbox": 2.0.1
@@ -13291,6 +13313,13 @@ fsevents@^1.2.7:
   dependencies:
     p-locate: ^5.0.0
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
   languageName: node
   linkType: hard
 
