@@ -1805,9 +1805,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex-js-toolkit/hooks@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@essex-js-toolkit/hooks@npm:4.0.1"
+"@essex-js-toolkit/hooks@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@essex-js-toolkit/hooks@npm:4.0.2"
   dependencies:
     "@essex-js-toolkit/toolbox": 3.0.1
     lodash-es: ^4.17.21
@@ -1816,7 +1816,7 @@ __metadata:
     "@types/react": "*"
     "@types/react-dom": "*"
     react: ">=16.8.0"
-  checksum: 3c120777bc3653b61b0e1ad4f96addf3248e330dcc7053009120443e91e878fe44daf232c62147070ff9a83f0dbeb0ece43a9ccb37c0f644cf5d622802f600ba
+  checksum: ba61ee6d90e776b81571e30d51f52bba1d3efa5b264cb97797c6010a3555529b3021f96d59476362204bb5e65ef83cd057e76c644a4fc376d148614cefb8bc2c
   languageName: node
   linkType: hard
 
@@ -10579,7 +10579,7 @@ fsevents@^1.2.7:
     "@babel/runtime": ^7.14.0
     "@commitlint/cli": ^12.1.2
     "@essex-js-toolkit/hierarchy-browser": 3.0.1
-    "@essex-js-toolkit/hooks": ^4.0.1
+    "@essex-js-toolkit/hooks": ^4.0.2
     "@essex-js-toolkit/thematic-lineup": ^1.1.5
     "@essex-js-toolkit/themed-components": ^1.2.0
     "@essex-js-toolkit/toolbox": 2.0.1
