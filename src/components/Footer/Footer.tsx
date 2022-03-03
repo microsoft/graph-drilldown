@@ -11,7 +11,7 @@ import { useTheme } from '~/state'
 export const Footer: FC = memo(function Footer() {
 	const theme = useTheme()
 	const CONSENT_CONF = {
-		theme: theme.light.toString(),
+		theme: theme.variant,
 		elementId: 'cookie-banner',
 		onChange: (c: any) => console.log('CHANGED', c),
 	}
