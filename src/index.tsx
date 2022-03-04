@@ -10,7 +10,6 @@ import { ApplicationStyles } from '@thematic/react'
 import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
-import './consent'
 import './index.css'
 
 const ThemedApp = () => {
