@@ -2,9 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { BAR_HEIGHT, BAR_WIDTH } from '../styles'
-import { Column, Mark } from '../types'
-import { useBarScale, useDynamicColumn, useBarFillScale } from '.'
+import { BAR_HEIGHT, BAR_WIDTH } from '../CommunityList.styles'
+import { Column, Mark } from '../CommunityList.types'
+import { useBarFillScale } from './theme'
+import { useBarScale } from './useBarScale'
+import { useDynamicColumn } from './useDynamicColumn'
 import { useMemo } from 'react'
 import { CommunityCollection } from '~/arquero'
 import { useChildCountDomain, useNodeCountDomain } from '~/hooks/communities'

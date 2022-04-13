@@ -5,7 +5,7 @@
 import {
 	useIconButtonStyles,
 	useModalStyles,
-} from '../../pages/GraphViewerPage/hooks'
+} from '../../pages/GraphViewerPage/GraphViewerPage.hooks'
 import {
 	Modal,
 	IDragOptions,

@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useIsNominal } from '../HeaderLegend/hooks'
+import { useIsNominal } from '../HeaderLegend/HeaderLegend.hooks'
 import { NominalLegend } from '../NominalLegend'
 import { NumericDomainEditor } from '../NumericDomainEditor'
-import { ColorSelectorProps } from './types'
+import { ColorSelectorProps } from './ColorSelector.types'
 import { Dropdown } from '@fluentui/react'
 import { ScaleDropdown } from '@thematic/fluent'
 import ColumnTable from 'arquero/dist/types/table/column-table'

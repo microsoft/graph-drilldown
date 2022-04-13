@@ -4,8 +4,8 @@
  */
 import { DataBinding } from '../../types'
 import { ManualPicker } from './ManualPicker'
+import { NumericSelectorProps } from './NumericSelector.types'
 import { ScaledPicker } from './ScaledPicker'
-import { NumericSelectorProps } from './types'
 import { Pivot, PivotItem } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'

@@ -2,16 +2,26 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { AOIBounds } from './MiniMap.types'
+import { useThematic } from '@thematic/react'
 import { useMemo } from 'react'
 import { Bounds } from '~/types'
 
-interface AOIBounds {
-	x: number
-	y: number
-	w: number
-	h: number
-	showAoi: boolean
+export function usePlotTheme(
+	width: number,
+	height: number,
+): React.CSSProperties {
+	const theme = useThematic()
+	return useMemo(
+		() => ({
+			width,
+			height,
+			border: `1px solid ${theme.plotArea().stroke().hex()}`,
+		}),
+		[theme, width, height],
+	)
 }
+
 export function useAOIBounds(
 	height: number,
 	width: number,

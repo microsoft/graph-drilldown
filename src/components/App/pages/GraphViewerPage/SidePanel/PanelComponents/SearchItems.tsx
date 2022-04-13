@@ -18,9 +18,9 @@ import {
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
 } from '../../../../../../state'
+import { useColumns } from '../../../../../CommunityList/CommunityList.hooks'
+import { CommunityRowStyles } from '../../../../../CommunityList/CommunityList.types'
 import { CommunityRow } from '../../../../../CommunityList/CommunityRow'
-import { useColumns } from '../../../../../CommunityList/hooks'
-import { CommunityRowStyles } from '../../../../../CommunityList/types'
 import { NodeListItem } from './NodeListItem'
 import { SearchItemHeader } from './SearchItemHeader'
 import { Pivot, PivotItem } from '@fluentui/react'

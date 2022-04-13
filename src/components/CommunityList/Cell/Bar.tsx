@@ -2,10 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useBarTextForegroundColor, useHoveredColor } from '../hooks'
-import { empty, zero, blank } from './common/defaultParams'
-import { CellComponentProps } from './common/types'
-
+import {
+	useBarTextForegroundColor,
+	useHoveredColor,
+} from '../CommunityList.hooks'
+import { CellComponentProps } from './Cell.types'
+import { empty, zero, blank } from './Cell.util'
 
 export const Bar: React.FC<CellComponentProps> = ({
 	community,

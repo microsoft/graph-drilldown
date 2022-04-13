@@ -7,7 +7,7 @@ import {
 	useCommunityList,
 	useEntityCallback,
 	useNeighborCallback,
-} from './hooks'
+} from './HierarchyBrowerPanel.hooks'
 import {
 	HierarchyBrowser,
 	ILoadParams,

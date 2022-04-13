@@ -7,7 +7,7 @@
 		"clean": "essex clean build",
 		"start": "essex serve",
 		"typecheck": "tsc -b .",
-		"bundle": "essex bundle --webpack",
+		"build": "essex bundle --webpack",
 		"assets": "ncp public build",
 		"ci": "run-s clean lint typecheck bundle assets git_is_clean",
 		"lint": "essex lint --strict",

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { NumericSelectorProps } from './types'
+import { NumericSelectorProps } from './NumericSelector.types'
 import { Slider } from '@fluentui/react'
 import { useDebounceFn } from 'ahooks'
 import { useState } from 'react'

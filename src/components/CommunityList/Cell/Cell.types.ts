@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Column } from '../../types'
+import { Column } from '../CommunityList.types'
 import { Community } from '~/types'
 
 export interface CellComponentProps {

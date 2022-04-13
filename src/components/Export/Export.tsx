@@ -2,9 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useCreateRenderer, useSaveImage } from './Export.hooks'
 import { ImageSettings, ImageSaveSettings } from './ImageSettings'
-import { useCreateRenderer } from './hooks/useCreateRenderer'
-import { useSaveImage } from './hooks/useSaveImage'
 import { Spinner, ActionButton } from '@fluentui/react'
 import { GraphRenderer } from '@graspologic/renderer'
 import { useCallback, useState } from 'react'

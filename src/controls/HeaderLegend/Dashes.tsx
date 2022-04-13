@@ -3,7 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { ColorEncoding, NumericEncoding } from '../../types'
-import { useLegendColorScale, useLegendNumericScale } from './hooks'
+import {
+	useLegendColorScale,
+	useLegendNumericScale,
+} from './HeaderLegend.hooks'
 import { useThematic } from '@thematic/react'
 import { scaleLinear } from 'd3-scale'
 import { useMemo } from 'react'

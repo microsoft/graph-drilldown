@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Footer } from '../Footer'
+import { usePresetData, useTestFiles, useUrlFiles } from './App.hooks'
 import { LazyCachingSwitch } from './LazyCachingSwitch'
 import { CommandBar } from './commands'
-import { usePresetData, useTestFiles, useUrlFiles } from './hooks'
 import { GraphViewerPage, DataManagerPage } from './pages'
 import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ColorSelectorProps } from './types'
+import { ColorSelectorProps } from './ColorSelector.types'
 import { ColorPicker, IColor } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'

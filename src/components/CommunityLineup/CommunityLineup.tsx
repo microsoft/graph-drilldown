@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ItemMap, CommunityLineupProps } from './types'
+import { ItemMap, CommunityLineupProps } from './CommunityLineup.types'
 import { ThematicLineup, ColumnConfig } from '@essex-js-toolkit/thematic-lineup'
 import { memo, useCallback, useMemo } from 'react'
 import styled from 'styled-components'

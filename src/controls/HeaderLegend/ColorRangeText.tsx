@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { ColorEncoding } from '../../types'
-import { useIsNominal } from './hooks'
+import { useIsNominal } from './HeaderLegend.hooks'
 import { format } from 'd3-format'
 import { useMemo } from 'react'
 import styled from 'styled-components'

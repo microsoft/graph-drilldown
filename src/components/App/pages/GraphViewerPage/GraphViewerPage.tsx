@@ -3,15 +3,15 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { GraphPanel } from './GraphPanel'
-import { ResizableBrowser } from './ResizableBrowser'
-import { LeftSidePanel, RightSidePanel } from './SidePanel'
-import { StyledSpinnner } from './StyledSpinner'
 import {
 	CSSFilter,
 	useGraphDimensions,
 	useLayoutStyle,
 	useResizeHandlers,
-} from './hooks'
+} from './GraphViewerPage.hooks'
+import { ResizableBrowser } from './ResizableBrowser'
+import { LeftSidePanel, RightSidePanel } from './SidePanel'
+import { StyledSpinnner } from './StyledSpinner'
 import { Suspense, useRef, useMemo, useState, memo } from 'react'
 import { RndResizeStartCallback } from 'react-rnd'
 import styled from 'styled-components'

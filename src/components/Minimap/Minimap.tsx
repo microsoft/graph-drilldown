@@ -11,8 +11,7 @@ import {
 	useNodeIds,
 } from '../../hooks/graph'
 import { Bounds } from '../../types'
-import { useAOIBounds } from './hooks'
-import { usePlotTheme } from './hooks/theme'
+import { useAOIBounds, usePlotTheme } from './MiniMap.hooks'
 import { GraphContainer, InputGraph } from '@graspologic/graph'
 import { GraphView, NodeSetHighlight, Nodes } from '@graspologic/react'
 import { useCallback } from 'react'

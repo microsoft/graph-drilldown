@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { BAR_HEIGHT } from '../styles'
-import { Mark } from '../types'
+import { BAR_HEIGHT } from '../CommunityList.styles'
+import { Mark } from '../CommunityList.types'
 import { useMemo, useCallback } from 'react'
 import { useDataBoundColorScale } from '~/hooks/graph'
 import { ColorEncoding } from '~/types'

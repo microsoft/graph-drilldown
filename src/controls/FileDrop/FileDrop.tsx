@@ -4,7 +4,7 @@
  */
 import { subHeaderLabel } from '../../styles'
 import { ItemType } from '../../types'
-import { useDrop } from './hooks'
+import { useDrop } from './FileDrop.hooks'
 import { Text } from '@fluentui/react'
 
 import { useDropzone } from 'react-dropzone'

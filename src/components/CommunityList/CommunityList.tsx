@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useColumns } from './CommunityList.hooks'
 import { CommunityRow } from './CommunityRow'
-import { useColumns } from './hooks'
 import { desc } from 'arquero'
 import { useMemo, useCallback } from 'react'
 import styled from 'styled-components'

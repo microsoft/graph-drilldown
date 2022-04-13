@@ -5,7 +5,7 @@
 import { CommunityLineup } from '../../../CommunityLineup'
 import { HierarchyBrowserPanel } from '../../../HierarchyBrowserPanel'
 import { PivotContent } from '../../PivotContent'
-import { IPosition } from './hooks'
+import { IPosition } from './GraphViewerPage.hooks'
 import { DIRECTION } from './hooks/useResizeHandlers'
 import { IconButton } from '@fluentui/react'
 import { memo, useMemo, useCallback, useState } from 'react'

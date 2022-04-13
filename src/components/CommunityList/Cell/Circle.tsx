@@ -2,10 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useHoveredColor } from '../hooks'
-import { empty, blank, zero } from './common/defaultParams'
-import { CellComponentProps } from './common/types'
-
+import { useHoveredColor } from '../CommunityList.hooks'
+import { CellComponentProps } from './Cell.types'
+import { empty, blank, zero } from './Cell.util'
 
 export const Circle: React.FC<CellComponentProps> = ({
 	community,

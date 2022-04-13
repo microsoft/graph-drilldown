@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { TableRowStyles } from '../../../../../CommunityList/types'
+import { TableRowStyles } from '../../../../../CommunityList/CommunityList.types'
 import { SelectionState } from '@thematic/core'
 import { useCallback } from 'react'
 import styled from 'styled-components'

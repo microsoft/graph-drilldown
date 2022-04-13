@@ -4,10 +4,10 @@
  */
 
 import { DataBinding } from '../../types'
+import { ColorSelectorProps } from './ColorSelector.types'
 import { ManualPicker } from './ManualPicker'
 import { ScaledPicker } from './ScaledPicker'
 import { ThematicPalettePicker } from './ThematicPalettePicker'
-import { ColorSelectorProps } from './types'
 import { Pivot, PivotItem } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'

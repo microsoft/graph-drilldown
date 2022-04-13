@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { listThematicColors } from '../../utils/theme'
-import { ColorSelectorProps } from './types'
+import { ColorSelectorProps } from './ColorSelector.types'
 import { getNamedSchemeColor } from '@thematic/color'
 import { useThematic } from '@thematic/react'
 import { useCallback, useMemo } from 'react'

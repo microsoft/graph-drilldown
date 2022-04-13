@@ -4,7 +4,7 @@
  */
 import { NumericDomainEditor } from '../NumericDomainEditor'
 import { NumericRangeEditor } from '../NumericRangeEditor'
-import { NumericSelectorProps } from './types'
+import { NumericSelectorProps } from './NumericSelector.types'
 import { Dropdown } from '@fluentui/react'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
