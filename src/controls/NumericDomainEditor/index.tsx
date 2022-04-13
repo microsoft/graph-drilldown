@@ -68,6 +68,7 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 				showTextInputs
 			/>
 			<ScaleTypeChoiceGroup
+				label={''}
 				selectedType={encoding.scaleType || ScaleType.Linear}
 				onChange={handleTypeChange}
 				suppressQuantile
