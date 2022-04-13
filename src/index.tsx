@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
 import './index.css'
+import { initializeIcons } from '@fluentui/react'
 
 const ThemedApp = () => {
 	const theme = useTheme()
@@ -35,6 +36,7 @@ function mount(): void {
 }
 
 function bootstrap(): void {
+	initializeIcons(undefined, { disableWarnings: true })
 	try {
 		mount()		
 	} catch (err) {
