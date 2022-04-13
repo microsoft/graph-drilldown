@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Minimap } from '../../../../Minimap'
+import { Minimap } from '../../../components/Minimap'
 import { BreadcrumbPanel } from './PanelComponents/BreadcrumbPanel'
 import { CommunityPanel } from './PanelComponents/CommunityPanel'
 import { useDimensions } from '@essex-js-toolkit/hooks'

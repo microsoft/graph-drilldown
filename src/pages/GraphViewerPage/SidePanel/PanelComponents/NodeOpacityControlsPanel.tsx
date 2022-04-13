@@ -2,14 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { NodeSizeControls } from '../../../../../controls/NodeSizeControls'
+import { NodeOpacityControls } from '../../../../components/controls/NodeOpacityControls'
 
 import styled from 'styled-components'
 
-export const NodeSizeControlsPanel = () => {
+export const NodeOpacityControlsPanel = () => {
 	return (
 		<Content>
-			<NodeSizeControls />
+			<NodeOpacityControls />
 		</Content>
 	)
 }

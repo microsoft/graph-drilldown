@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { CommunityLineup } from '../../../CommunityLineup'
-import { HierarchyBrowserPanel } from '../../../HierarchyBrowserPanel'
-import { PivotContent } from '../../PivotContent'
+import { CommunityLineup } from '../../components/CommunityLineup'
+import { HierarchyBrowserPanel } from '../../components/HierarchyBrowserPanel'
+import { PivotContent } from '../../components/App/PivotContent'
 import { IPosition } from './GraphViewerPage.hooks'
 import { DIRECTION } from './hooks/useResizeHandlers'
 import { IconButton } from '@fluentui/react'

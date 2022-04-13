@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { PreviewGraph } from '../../../PreviewGraph'
-import { QuickDrop } from '../../../QuickDrop'
+import { PreviewGraph } from '../../components/PreviewGraph'
+import { QuickDrop } from '../../components/QuickDrop'
 
 import styled from 'styled-components'
 import { useSettings } from '~/state'

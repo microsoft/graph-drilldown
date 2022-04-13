@@ -2,14 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { NodeOpacityControls } from '../../../../../controls/NodeOpacityControls'
+import { EdgeSizeControls } from '../../../../components/controls/EdgeSizeControls'
 
 import styled from 'styled-components'
 
-export const NodeOpacityControlsPanel = () => {
+export const EdgeSizeControlsPanel = () => {
 	return (
 		<Content>
-			<NodeOpacityControls />
+			<EdgeSizeControls />
 		</Content>
 	)
 }

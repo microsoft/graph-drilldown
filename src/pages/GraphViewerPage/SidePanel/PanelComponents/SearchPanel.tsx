@@ -7,12 +7,12 @@ import {
 	listColumnNames,
 	NodeCollection,
 	useTableColumnsByType,
-} from '../../../../../../arquero'
+} from '../../../../arquero'
 import {
 	useCommunitiesTable,
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
-} from '../../../../../../state'
+} from '../../../../state'
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
 import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'

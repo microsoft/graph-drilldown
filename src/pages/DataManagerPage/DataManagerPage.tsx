@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { FileList } from '../../../FileList'
+import { FileList } from '../../components/FileList'
 import { LeftSidePanel } from './LeftSidePanel'
 import { FC, Suspense } from 'react'
 

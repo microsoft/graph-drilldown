@@ -2,14 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { EdgeOpacityControls } from '../../../../../controls/EdgeOpacityControls'
+import { EdgeColorControls } from '../../../../components/controls/EdgeColorControls'
 
 import styled from 'styled-components'
 
-export const EdgeOpacityControlsPanel = () => {
+export const EdgeColorControlsPanel = () => {
 	return (
 		<Content>
-			<EdgeOpacityControls />
+			<EdgeColorControls />
 		</Content>
 	)
 }

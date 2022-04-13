@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ColumnEditor } from '../../../../../ColumnEditor'
+import { ColumnEditor } from '../../../../components/ColumnEditor'
 import { DefaultButton } from '@fluentui/react'
 import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
