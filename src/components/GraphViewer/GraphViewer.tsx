@@ -38,7 +38,7 @@ import {
 	useSelectedNodesState,
 } from '~/state'
 
-interface GraphViewerProps {
+export interface GraphViewerProps {
 	data: InputGraph | GraphContainer
 	width?: number
 	height?: number

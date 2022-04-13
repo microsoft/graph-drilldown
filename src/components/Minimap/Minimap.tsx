@@ -18,7 +18,7 @@ import { useCallback } from 'react'
 import styled from 'styled-components'
 import { NodeCollection } from '~/arquero'
 
-interface MinimapProps {
+export interface MinimapProps {
 	data: InputGraph | GraphContainer
 	width: number
 	height: number

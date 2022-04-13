@@ -9,23 +9,20 @@ import styled from 'styled-components'
 // control style height for pivot items, doesn't seem like option in Pivot Style Props?
 import './Pivot.css'
 
-interface PivotContentProps {
+export interface PivotContentProps {
 	setSelectedKey: (key: BrowserOptions) => void
 	selectedKey: BrowserOptions
+}
+
+const getTabId = (itemKey: string) => {
+	return `ShapeColorPivot_${itemKey}`
 }
 
 // Pivots content between Community Lineup Table and Hierarchy Browser
 export const PivotContent: React.FC<PivotContentProps> = memo(
 	function PivotContent({ setSelectedKey, selectedKey }) {
-		const getTabId = (itemKey: string) => {
-			return `ShapeColorPivot_${itemKey}`
-		}
-
 		const handleLinkClick = useCallback(
-			(
-				item?: PivotItem | undefined,
-				ev?: React.MouseEvent<HTMLElement, MouseEvent> | undefined,
-			) => {
+			(item?: PivotItem | undefined) => {
 				if (item && item.props.itemKey) {
 					setSelectedKey(item.props.itemKey as BrowserOptions)
 				}

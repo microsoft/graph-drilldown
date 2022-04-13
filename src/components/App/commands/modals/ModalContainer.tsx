@@ -24,7 +24,8 @@ const dragOptions: IDragOptions = {
 	menu: ContextualMenu,
 }
 const cancelIcon: IIconProps = { iconName: 'Cancel' }
-interface ModalContainerProps {
+
+export interface ModalContainerProps {
 	titleId: string
 	title: string
 	hideModal: () => void

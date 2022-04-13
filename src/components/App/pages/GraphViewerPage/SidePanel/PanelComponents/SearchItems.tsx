@@ -31,7 +31,8 @@ import styled from 'styled-components'
 const ItemStyles = {
 	tableElements: { text: { width: '90%' }, circle: { width: '10%' } },
 } as CommunityRowStyles
-interface SearchItemsProps {
+
+export interface SearchItemsProps {
 	searchNodeTable?: NodeCollection
 	searchTable: CommunityCollection
 	errorMsg?: string

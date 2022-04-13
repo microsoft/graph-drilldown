@@ -24,7 +24,7 @@ const DEFAULT_CRUMBS = {
 	text: 'Drilldown: Root',
 }
 
-interface BreadcrumbPanelProps {
+export interface BreadcrumbPanelProps {
 	styles?: IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>
 }
 

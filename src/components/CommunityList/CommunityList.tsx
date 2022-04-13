@@ -15,7 +15,7 @@ import {
 	useSetHoveredCommunity,
 } from '~/state'
 
-interface CommunityListProps {
+export interface CommunityListProps {
 	communities: CommunityCollection
 	style?: React.CSSProperties
 }

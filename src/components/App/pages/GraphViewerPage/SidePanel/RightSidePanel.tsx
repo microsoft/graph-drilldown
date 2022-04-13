@@ -37,9 +37,11 @@ import {
 } from '~/state'
 
 export const GUTTER = 10
+
 export interface RightSidePanelProps {
 	style?: React.CSSProperties
 }
+
 export const RightSidePanel: React.FC<RightSidePanelProps> = ({ style }) => {
 	const renderNodeHoverHeader = useCallback(() => <NodeHoverHeader />, [])
 	const renderNodeColorHeader = useCallback(() => <NodeColorHeaderLegend />, [])

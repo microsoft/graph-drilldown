@@ -28,6 +28,7 @@ export interface LeftSidePanelProps {
 	height: number
 	width: number
 }
+
 export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 	function LeftSidePanel({ style, height, width }) {
 		const ref = useRef(null)
@@ -45,34 +46,6 @@ export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 			const breadcrumbContainer = dimensions?.height || 100
 			return height - (breadcrumbContainer + miniMapSize + HEADER_HEIGHT)
 		}, [height, dimensions, miniMapSize])
-		const miniMap = useMemo(() => {
-			const padding = 0
-			if (settings.showMiniMap) {
-				return (
-					<MiniMapContainer>
-						<Minimap
-							data={data}
-							width={width - padding}
-							height={miniMapSize - padding}
-							minRadius={settings.miniMapNodeRadius}
-							maxRadius={settings.miniMapNodeRadius}
-							hoveredNodes={hoveredNodes}
-							selectedNodes={selectedNodes}
-							aoiBounds={dataBounds}
-						/>
-					</MiniMapContainer>
-				)
-			}
-			return null
-		}, [
-			width,
-			settings,
-			hoveredNodes,
-			dataBounds,
-			selectedNodes,
-			data,
-			miniMapSize,
-		])
 
 		const communityStyle = useMemo(
 			() => ({ maxHeight: communityHeight }),
@@ -102,7 +75,20 @@ export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 						<CommunityPanel />
 					</CommunityPanelContainer>
 				</CommunityContainer>
-				{miniMap}
+				{settings.showMiniMap ? (
+					<MiniMapContainer>
+						<Minimap
+							data={data}
+							width={width}
+							height={miniMapSize}
+							minRadius={settings.miniMapNodeRadius}
+							maxRadius={settings.miniMapNodeRadius}
+							hoveredNodes={hoveredNodes}
+							selectedNodes={selectedNodes}
+							aoiBounds={dataBounds}
+						/>
+					</MiniMapContainer>
+				) : null}
 			</Container>
 		)
 	},

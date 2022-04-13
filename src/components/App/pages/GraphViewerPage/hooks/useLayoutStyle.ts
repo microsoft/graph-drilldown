@@ -4,12 +4,14 @@
  */
 import { useMemo } from 'react'
 import { HEADER_HEIGHT } from '~/styles'
-interface ILayoutStyle {
+
+export interface ILayoutStyle {
 	leftSidePanelStyle: React.CSSProperties
 	rightSidePanelStyle: React.CSSProperties
 	graphContainerStyle: React.CSSProperties
 	graphStyle: React.CSSProperties
 }
+
 export function useLayoutStyle(
 	leftPanelWidth,
 	rightPanelWidth,

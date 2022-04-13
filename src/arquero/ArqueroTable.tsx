@@ -37,7 +37,7 @@ export const ArqueroTable: React.FC<ArqueroTableProps> = ({
 			}
 		}
 
-		return table.toHTML()
+		return table.toHTML(options)
 	}, [table, options, hideHeaders])
 	return <div style={style} dangerouslySetInnerHTML={{ __html: html }} />
 }

@@ -9,7 +9,7 @@ import { Text } from './Text'
 import { useMemo } from 'react'
 import { Community } from '~/types'
 
-interface CellProps {
+export interface CellProps {
 	community: Community
 	column: Column
 	hovered?: boolean

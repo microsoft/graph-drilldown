@@ -16,14 +16,14 @@ export enum DIRECTION {
 	DOWN = 'down',
 }
 
-interface IResizeHandlersProps {
+export interface IResizeHandlersProps {
 	height: number
 	position: IPosition
 	setPosition: (pos: IPosition) => void
 	setGraphFilter: (filter: CSSFilter) => void
 }
 
-interface IResizeHandlers {
+export interface IResizeHandlers {
 	handleResizeStop: (
 		e: MouseEvent,
 		direction: any,
@@ -40,6 +40,7 @@ interface IResizeHandlers {
 		pos: Position,
 	) => void
 }
+
 export function useResizeHandlers({
 	height,
 	position,
@@ -47,15 +48,7 @@ export function useResizeHandlers({
 	setGraphFilter,
 }: IResizeHandlersProps): IResizeHandlers {
 	const handleResizeStart = useCallback(
-		(
-			e: any,
-			direction: any,
-			ref: React.ElementRef<'div'>,
-			delta: ResizableDelta,
-			pos: Position,
-		): void => {
-			setGraphFilter(CSSFilter.GRAYSCALE)
-		},
+		() => setGraphFilter(CSSFilter.GRAYSCALE),
 		[setGraphFilter],
 	)
 

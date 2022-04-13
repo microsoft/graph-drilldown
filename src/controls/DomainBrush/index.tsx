@@ -10,7 +10,7 @@ import { format } from 'd3-format'
 import { useCallback, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 
-interface DomainBrushProps {
+export interface DomainBrushProps {
 	min?: number
 	max?: number
 	currentDomain?: [number, number]

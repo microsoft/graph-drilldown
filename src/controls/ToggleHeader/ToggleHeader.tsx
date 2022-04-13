@@ -6,7 +6,7 @@ import { Toggle } from '@fluentui/react'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-interface ToggleHeaderProps {
+export interface ToggleHeaderProps {
 	title: string
 	subtitle?: string
 	checked: boolean

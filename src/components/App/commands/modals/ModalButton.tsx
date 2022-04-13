@@ -4,30 +4,28 @@
  */
 import { IconButton } from '@fluentui/react'
 import { memo, useCallback } from 'react'
-export interface ModalButtonProp extends ButtonOptions {
-	onClick: (title: string) => void
-}
+
 export interface ButtonOptions {
 	iconName: string
 	text: string
 	content?: any
 }
+
+export interface ModalButtonProps extends ButtonOptions {
+	onClick: (title: string) => void
+}
+
 export const ModalButton = memo(function ModalButton({
 	iconName,
 	text,
 	onClick,
-}: ModalButtonProp) {
-	const handleIconClick = useCallback(
-		(props: any) => onClick(text),
-		[onClick, text],
-	)
+}: ModalButtonProps) {
+	const handleIconClick = useCallback(() => onClick(text), [onClick, text])
 	return (
-		<>
-			<IconButton
-				iconProps={{ iconName }}
-				title={text}
-				onClick={handleIconClick}
-			/>
-		</>
+		<IconButton
+			iconProps={{ iconName }}
+			title={text}
+			onClick={handleIconClick}
+		/>
 	)
 })

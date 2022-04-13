@@ -6,11 +6,12 @@ import { Text, MessageBar, MessageBarType } from '@fluentui/react'
 import { useState, useMemo } from 'react'
 import styled from 'styled-components'
 
-interface ItemHeaderProps {
+export interface ItemHeaderProps {
 	numberOfResults: number
 	searchText?: string
 	errorMsg?: string
 }
+
 export const SearchItemHeader: React.FC<ItemHeaderProps> = ({
 	numberOfResults,
 	searchText,

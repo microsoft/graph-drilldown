@@ -10,7 +10,7 @@ import { memo, useLayoutEffect, useRef, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { chooseScale } from '~/thematic/chooseScale'
 
-interface LegendAxisProps {
+export interface LegendAxisProps {
 	domain: [number, number]
 	brushedDomain?: [number, number]
 	/**

@@ -39,29 +39,10 @@ export const ModalButtons: React.FC = memo(function ModalButtons() {
 		setModalState(false)
 	}, [setModalState])
 
-	const modal = useMemo(() => {
-		const selectedButton = buttonMap.find(item => item.text === selected)
-		if (selectedButton && selected) {
-			return (
-				<ModalContainer
-					titleId={selectedButton.text}
-					isModalOpen={isModalOpen}
-					title={selectedButton.text}
-					hideModal={hideModal}
-					content={selectedButton.content}
-				/>
-			)
-		}
-		return (
-			<ModalContainer
-				titleId={''}
-				isModalOpen={isModalOpen}
-				title={''}
-				hideModal={hideModal}
-				content={<></>}
-			/>
-		)
-	}, [isModalOpen, hideModal, selected])
+	const selectedButton = useMemo(
+		() => buttonMap.find(item => item.text === selected),
+		[selected],
+	)
 
 	return (
 		<Container>
@@ -73,7 +54,15 @@ export const ModalButtons: React.FC = memo(function ModalButtons() {
 					onClick={handleIconClick}
 				/>
 			))}
-			{modal}
+			{selectedButton && selected ? (
+				<ModalContainer
+					titleId={selectedButton.text}
+					isModalOpen={isModalOpen}
+					title={selectedButton.text}
+					hideModal={hideModal}
+					content={selectedButton.content}
+				/>
+			) : null}
 		</Container>
 	)
 })

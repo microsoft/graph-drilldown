@@ -5,14 +5,17 @@
 import { useDimensions } from '@essex-js-toolkit/hooks'
 import { useMemo, useState } from 'react'
 import { HEADER_HEIGHT, PANEL_WIDTH } from '~/styles'
+
 const PADDING = 5
-interface IGraphDimensions {
+
+export interface IGraphDimensions {
 	width: number
 	height: number
 	rightPanelWidth: number
 	leftPanelWidth: number
 	browserWidth: number
 }
+
 export interface IPosition {
 	y: number
 	x: number

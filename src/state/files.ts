@@ -40,3 +40,12 @@ export function useSetFiles() {
 export function useClearFiles() {
 	return useResetRecoilState(filesState)
 }
+
+const selectedFileState = atom<DataFile | null>({
+	key: 'selected-file',
+	default: null,
+})
+
+export function useSelectedFile() {
+	return useRecoilState(selectedFileState)
+}

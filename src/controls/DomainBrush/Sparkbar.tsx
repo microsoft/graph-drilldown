@@ -18,7 +18,7 @@ import {
 } from 'react'
 import styled from 'styled-components'
 
-interface SparkbarProps {
+export interface SparkbarProps {
 	/**
 	 * Array of data to plot as bars
 	 */

@@ -13,7 +13,7 @@ import { SelectionState } from '@thematic/core'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-interface CommunityRowProps {
+export interface CommunityRowProps {
 	community: Community
 	hovered: boolean
 	columns: Column[]

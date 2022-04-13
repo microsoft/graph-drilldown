@@ -1,4 +1,5 @@
 // eslint-disable-next-line
+import { one } from './table'
 import { op } from 'arquero'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 
@@ -35,5 +36,5 @@ export function getNodeStats(table: ColumnTable, quantile = 1) {
 		minD: op.quantile('node.d', 1 - quantile),
 		maxD: op.quantile('node.d', quantile),
 	})
-	return rollup.objects()[0]
+	return one(rollup)
 }

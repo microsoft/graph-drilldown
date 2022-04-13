@@ -19,7 +19,7 @@ const searchButtonStyle = {
 
 const searchIcon = { iconName: 'Search' }
 
-interface SearchPanelHeaderProps {
+export interface SearchPanelHeaderProps {
 	disabled: boolean
 	onChange: (newValue: string) => any
 	onClear: () => void
@@ -38,7 +38,7 @@ export const SearchPanelHeader = ({
 	const focusCallback = useCallback(() => onFocusChange(true), [onFocusChange])
 	const blurCallback = useCallback(() => onFocusChange(false), [onFocusChange])
 
-	const useDebounce = useDebounceFn(
+	const debounce = useDebounceFn(
 		newValue => {
 			onChange(newValue)
 		},
@@ -56,7 +56,7 @@ export const SearchPanelHeader = ({
 				onChange={(
 					_?: React.ChangeEvent<HTMLInputElement>,
 					newValue?: string,
-				) => useDebounce.run(newValue)}
+				) => debounce.run(newValue)}
 				onClear={onClear}
 				onSearch={(value: string) => onSearch(value)}
 				onFocus={focusCallback}

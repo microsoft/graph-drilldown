@@ -10,11 +10,14 @@ import { memo, useMemo, useCallback } from 'react'
 import './HierarchyNav.css'
 import styled from 'styled-components'
 import { Breadcrumb } from '~/types'
+
 const caretIcon: IIconProps = { iconName: 'ChevronDownSmall' }
-interface IHierarchyNav {
+
+export interface IHierarchyNav {
 	items: Breadcrumb[]
 	handleBreadcrumbClick: (item: Breadcrumb) => void
 }
+
 export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 	function HierarchyNav({ items, handleBreadcrumbClick }) {
 		const theme = useThematic()

@@ -7,12 +7,12 @@ import { memo, useCallback } from 'react'
 import styled from 'styled-components'
 import { DataFile } from '~/types'
 
-export interface FilesLoaded {
+export interface FileTableProps {
 	files: DataFile[]
 	onClick?: (file: DataFile) => void
 }
 
-export const FileUploadMessage: React.FC<FilesLoaded> = memo(
+export const FileTable: React.FC<FileTableProps> = memo(
 	function FileUploadMessage({ files, onClick }) {
 		const handleClick = useCallback(
 			(file: DataFile) => {

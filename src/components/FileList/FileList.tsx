@@ -2,18 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { DataFile } from '../../types'
-import { FileUploadMessage } from '../App/commands/modals/panels/FileUploadMessage'
+import { FileTable } from '../FileTable/FileTable'
 import { DefaultButton } from '@fluentui/react'
-import { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import {
-	useArqueroBigTable,
-	useArqueroEdgeTable,
-	useClearAllData,
-} from '~/arquero'
+import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
 import { ArqueroTable } from '~/arquero/ArqueroTable'
-import { useClearFiles, useFilesList } from '~/state'
+import { useFileManagement } from '~/hooks/files'
 
 // TODO: this is expected to be a robust file list with selections, etc.
 // at the moment it is a copy of the file drop panel used in modals
@@ -21,27 +15,19 @@ export const FileList: React.FC = () => {
 	const bigTable = useArqueroBigTable()
 	const edgeTable = useArqueroEdgeTable()
 
-	const resetTables = useClearAllData()
-	const files = useFilesList()
-	const resetFiles = useClearFiles()
-
-	const [selectedFile, setSelectedFile] = useState<DataFile>()
-	const handleFileClick = useCallback(file => setSelectedFile(file), [])
-	const handleResetClick = useCallback(() => {
-		resetTables()
-		resetFiles()
-	}, [resetTables, resetFiles])
+	const { files, selectedFile, onFileSelected, doClearAll } =
+		useFileManagement()
 
 	return (
 		<Container>
 			<Files>
-				<FileUploadMessage files={files} onClick={handleFileClick} />
+				<FileTable files={files} onClick={onFileSelected} />
 			</Files>
 			<Reset>
 				{files.length > 0 ||
 				bigTable.numRows() > 0 ||
 				edgeTable.numRows() > 0 ? (
-					<DefaultButton text="Clear all" onClick={handleResetClick} />
+					<DefaultButton text="Clear all" onClick={doClearAll} />
 				) : null}
 			</Reset>
 			{selectedFile && selectedFile.table ? (

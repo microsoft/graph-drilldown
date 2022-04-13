@@ -4,7 +4,8 @@
  */
 import { Settings as AutoSettings } from '@essex-js-toolkit/themed-components'
 import { useCallback } from 'react'
-interface FeaturesProps {
+
+export interface FeaturesProps {
 	settings: any
 	onChange?: (settings: any) => void
 }

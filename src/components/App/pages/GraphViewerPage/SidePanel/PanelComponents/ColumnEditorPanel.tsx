@@ -4,32 +4,22 @@
  */
 import { ColumnEditor } from '../../../../../ColumnEditor'
 import { DefaultButton } from '@fluentui/react'
-import { useCallback } from 'react'
 import styled from 'styled-components'
-import {
-	useArqueroBigTable,
-	useArqueroEdgeTable,
-	useClearAllData,
-} from '~/arquero'
-import { useClearFiles } from '~/state'
+import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
+import { useFileManagement } from '~/hooks/files'
 
 export const ColumnEditorPanel = () => {
 	const bigTable = useArqueroBigTable()
 	const edgeTable = useArqueroEdgeTable()
-	const resetTables = useClearAllData()
-	const resetFiles = useClearFiles()
 
-	const handleResetClick = useCallback(() => {
-		resetTables()
-		resetFiles()
-	}, [resetTables, resetFiles])
+	const { doClearAll } = useFileManagement()
 
 	return (
 		<Content>
 			<ColumnEditor />
 			<Reset>
 				{bigTable.numRows() > 0 || edgeTable.numRows() > 0 ? (
-					<DefaultButton text="Clear all" onClick={handleResetClick} />
+					<DefaultButton text="Clear all" onClick={doClearAll} />
 				) : null}
 			</Reset>
 		</Content>

@@ -59,7 +59,7 @@ export function useSetArqueroEdgeTable() {
 	return useSetEdgeTable()
 }
 
-export function useClearAllData() {
+export function useClearAllTables() {
 	const resetBigTable = useResetBigTable()
 	const resetEdgeTable = useResetEdgeTable()
 	const resetNav = useResetNavigationState()

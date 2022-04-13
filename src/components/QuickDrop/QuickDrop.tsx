@@ -13,9 +13,8 @@ import {
 	useArqueroAddTable,
 	useArqueroBigTable,
 	useArqueroEdgeTable,
-	useClearAllData,
 } from '~/arquero'
-import { useAddFile, useClearFiles } from '~/state'
+import { useFileManagement } from '~/hooks/files'
 
 const SQUARE = 80
 
@@ -37,16 +36,14 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 }) => {
 	const bigTable = useArqueroBigTable()
 	const edgeTable = useArqueroEdgeTable()
-	const addTable = useArqueroAddTable()
-	const addFile = useAddFile()
-	const resetTables = useClearAllData()
-	const resetFiles = useClearFiles()
+	const doAddTable = useArqueroAddTable()
+	const { doAddFile, doClearAll } = useFileManagement()
 
 	const handleFileLoad = useCallback(
 		(content: string, type: ItemType, fileName: string) => {
 			const table = parseDSVTable(fileName, content)
-			addTable(table, type)
-			addFile({
+			doAddTable(table, type)
+			doAddFile({
 				origin: FileOrigin.Local,
 				url: fileName,
 				tableType: type,
@@ -54,13 +51,8 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 				rows: table.numRows(),
 			})
 		},
-		[addTable, addFile],
+		[doAddTable, doAddFile],
 	)
-
-	const handleResetClick = useCallback(() => {
-		resetTables()
-		resetFiles()
-	}, [resetTables, resetFiles])
 
 	return (
 		<Container>
@@ -104,7 +96,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 			) : null}
 			<Reset>
 				{(bigTable.numRows() > 0 || edgeTable.numRows() > 0) && compact ? (
-					<DefaultButton text="Clear all" onClick={handleResetClick} />
+					<DefaultButton text="Clear all" onClick={doClearAll} />
 				) : null}
 			</Reset>
 		</Container>

@@ -7,7 +7,7 @@ import { SelectionState } from '@thematic/core'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-interface CommunityRowProps {
+export interface CommunityRowProps {
 	nodeId: string
 	onHover: (id?: string) => void
 	onClick: (id: string) => void

@@ -6,7 +6,9 @@ import { IButtonProps, IconButton } from '@fluentui/react'
 import { useCallback } from 'react'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 
-interface RouterLinkIconButtonProps extends RouteComponentProps, IButtonProps {
+export interface RouterLinkIconButtonProps
+	extends RouteComponentProps,
+		IButtonProps {
 	to: any
 }
 
