@@ -2,18 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useColumns } from './CommunityList.hooks'
+import {
+	useColumns,
+	useRowHandling,
+	useSortHandling,
+} from './CommunityList.hooks'
 import { CommunityRow } from './CommunityRow'
-import { desc } from 'arquero'
-import { useMemo, useCallback } from 'react'
 import styled from 'styled-components'
 import { CommunityCollection } from '~/arquero'
-import {
-	useHoveredCommunity,
-	useSetSelectedCommunity,
-	useCommunitySort,
-	useSetHoveredCommunity,
-} from '~/state'
 
 export interface CommunityListProps {
 	communities: CommunityCollection
@@ -25,60 +21,11 @@ export interface CommunityListProps {
  * Should be color-coded to match the graph, and hover/select.
  */
 export const CommunityList = ({ communities, style }: CommunityListProps) => {
-	const [sort, setSort] = useCommunitySort()
-	const sorted = useMemo(() => {
-		const { descending, field } = sort
-		const order = descending ? desc(field) : field
-		return communities.sort(order)
-	}, [communities, sort])
-
-	const hovered = useHoveredCommunity()
-	const setHoveredCommunity = useSetHoveredCommunity()
-	const setSelectedCommunity = useSetSelectedCommunity()
-	const handleRowHover = useCallback(
-		community => setHoveredCommunity(community?.id),
-		[setHoveredCommunity],
-	)
-	const handleRowClick = useCallback(
-		community => {
-			setSelectedCommunity(community?.id)
-			setHoveredCommunity(undefined)
-		},
-		[setSelectedCommunity, setHoveredCommunity],
-	)
-
-	const handleHeaderClick = useCallback(
-		column => {
-			if (sort.field === column.field) {
-				setSort({
-					...sort,
-					descending: !sort.descending,
-				})
-			} else {
-				setSort({
-					...sort,
-					field: column.field,
-				})
-			}
-		},
-		[sort, setSort],
-	)
+	const { hovered, onHover, onClick } = useRowHandling()
 
 	const columns = useColumns(communities)
 
-	const rows = sorted.map(
-		comm => (
-			<CommunityRow
-				key={`community-row-${comm.id}`}
-				community={comm}
-				onHover={handleRowHover}
-				onClick={handleRowClick}
-				hovered={comm.id === hovered}
-				columns={columns}
-			/>
-		),
-		true,
-	)
+	const { sorted, onHeaderClick } = useSortHandling(communities)
 
 	return (
 		<Container style={style}>
@@ -90,14 +37,28 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 								{columns.map(c => (
 									<Th
 										key={`comm-th-${c.header}`}
-										onClick={() => handleHeaderClick(c)}
+										onClick={() => onHeaderClick(c)}
 									>
 										{c.header}
 									</Th>
 								))}
 							</tr>
 						</thead>
-						<tbody>{rows}</tbody>
+						<tbody>
+							{sorted.map(
+								comm => (
+									<CommunityRow
+										key={`community-row-${comm.id}`}
+										community={comm}
+										onHover={onHover}
+										onClick={onClick}
+										hovered={comm.id === hovered}
+										columns={columns}
+									/>
+								),
+								true,
+							)}
+						</tbody>
 					</Table>
 				</TableContainer>
 			) : (

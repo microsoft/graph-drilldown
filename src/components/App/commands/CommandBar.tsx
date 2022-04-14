@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { Navigation } from './Navigation'
 import { ModalButtons } from './modals/ModalButtons'
-import { Navigation } from './navigation'
 
 import styled from 'styled-components'
 import { COMMANDBAR_HEIGHT, COMMANDBAR_MARGIN, PANEL_WIDTH } from '~/styles'

@@ -4,8 +4,8 @@
  */
 import { GraphViewerPage, DataManagerPage } from '../../pages'
 import { Footer } from '../Footer'
+import { LazyCachingSwitch } from '../LazyCachingSwitch'
 import { usePresetData, useTestFiles, useUrlFiles } from './App.hooks'
-import { LazyCachingSwitch } from './LazyCachingSwitch'
 import { CommandBar } from './commands'
 import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'

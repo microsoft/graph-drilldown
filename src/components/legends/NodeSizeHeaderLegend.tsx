@@ -3,8 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { HeaderLegend } from '../../controls/HeaderLegend'
-
-
 import { useNodeCount } from '~/arquero'
 import { useNodeSizeEncoding } from '~/state'
 

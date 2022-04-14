@@ -5,17 +5,15 @@
 import {
 	useBackgroundColor,
 	useHoveredNodeColor,
-	useNodeColorScale,
 	useNodeIds,
-	useNodeWeighter,
-	useEdgeColorizer,
-	useEdgeWeighter,
-	useEdgeSizeRange,
-	useNodeSizeRange,
 	useNodePositions,
 } from '../../hooks/graph'
 import { Bounds } from '../../types'
-import { usePositions } from './GraphViewer.hooks'
+import {
+	useEdgeRendering,
+	useNodeRendering,
+	usePositions,
+} from './GraphViewer.hooks'
 import { GraphContainer, InputGraph } from '@graspologic/graph'
 import {
 	GraphView,
@@ -30,8 +28,6 @@ import { useCallback } from 'react'
 import styled from 'styled-components'
 import { NodeCollection } from '~/arquero'
 import {
-	useEdgesVisible,
-	useNodesVisible,
 	useSetHoveredNode,
 	useGraphViewType,
 	useSettings,
@@ -83,15 +79,11 @@ export const GraphViewer = ({
 	const backgroundColor = useBackgroundColor()
 	const hoverColor = useHoveredNodeColor()
 
-	const showNodes = useNodesVisible()
-	const nodeColorizer = useNodeColorScale()
-	const nodeWeighter = useNodeWeighter()
-	const nodeRange = useNodeSizeRange()
+	const { showNodes, nodeColorizer, nodeWeighter, nodeRange } =
+		useNodeRendering()
 
-	const showEdges = useEdgesVisible()
-	const edgeColorizer = useEdgeColorizer()
-	const edgeWeighter = useEdgeWeighter()
-	const edgeRange = useEdgeSizeRange()
+	const { showEdges, edgeColorizer, edgeWeighter, edgeRange } =
+		useEdgeRendering()
 
 	const setHoveredNode = useSetHoveredNode()
 	const handleNodeHover = useCallback(

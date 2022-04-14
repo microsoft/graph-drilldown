@@ -25,27 +25,6 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 		(_, v) => onChange && onChange(v),
 		[onChange],
 	)
-	// create a "micro toggle"
-	const toggleStyles = useMemo(
-		() => ({
-			root: {
-				margin: 0,
-			},
-			pill: {
-				height: 14,
-				width: 28,
-				padding: 1,
-				fontSize: 12,
-			},
-			thumb: {
-				fontSize: 12,
-			},
-			text: {
-				fontSize: '0.8em',
-			},
-		}),
-		[],
-	)
 	return (
 		<Container>
 			<Title>{title}</Title>
@@ -62,6 +41,25 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 			</ToggleSection>
 		</Container>
 	)
+}
+
+// create a "micro toggle"
+const toggleStyles = {
+	root: {
+		margin: 0,
+	},
+	pill: {
+		height: 14,
+		width: 28,
+		padding: 1,
+		fontSize: 12,
+	},
+	thumb: {
+		fontSize: 12,
+	},
+	text: {
+		fontSize: '0.8em',
+	},
 }
 
 const Container = styled.div`

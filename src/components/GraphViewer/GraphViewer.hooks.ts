@@ -5,6 +5,15 @@
 import { PositionMap } from '@graspologic/graph'
 import { useMemo } from 'react'
 import { useStandardNodePositions, useGriddedNodePositions } from '~/arquero'
+import {
+	useEdgeColorizer,
+	useEdgeSizeRange,
+	useEdgeWeighter,
+	useNodeColorScale,
+	useNodeSizeRange,
+	useNodeWeighter,
+} from '~/hooks/graph'
+import { useEdgesVisible, useNodesVisible } from '~/state'
 import { ViewType } from '~/types'
 
 // creates two sets of positions for the nodes
@@ -19,4 +28,30 @@ export function usePositions(view: ViewType): [PositionMap, PositionMap] {
 		() => [defaultPositionMap, griddedPositionMap],
 		[defaultPositionMap, griddedPositionMap],
 	)
+}
+
+export function useNodeRendering() {
+	const showNodes = useNodesVisible()
+	const nodeColorizer = useNodeColorScale()
+	const nodeWeighter = useNodeWeighter()
+	const nodeRange = useNodeSizeRange()
+	return {
+		showNodes,
+		nodeColorizer,
+		nodeWeighter,
+		nodeRange,
+	}
+}
+
+export function useEdgeRendering() {
+	const showEdges = useEdgesVisible()
+	const edgeColorizer = useEdgeColorizer()
+	const edgeWeighter = useEdgeWeighter()
+	const edgeRange = useEdgeSizeRange()
+	return {
+		showEdges,
+		edgeColorizer,
+		edgeWeighter,
+		edgeRange,
+	}
 }
