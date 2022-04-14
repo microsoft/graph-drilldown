@@ -23,28 +23,27 @@ export const CommunitiesTable: React.FC<CommunitiesTableProps> = memo(
 		const columns = useColumnConfig(communities, width)
 		const table = useDefaultSortedTable(communities)
 		return (
-			<Container width={width}>
-				<div style={{ height }}>
-					<ArqueroDetailsList
-						table={table}
-						columns={columns}
-						features={{
-							smartHeaders: true,
-							smartCells: true,
-						}}
-						compact
-						isSortable
-						isHeadersFixed
-						includeAllColumns={false}
-					/>
-				</div>
+			<Container width={width} height={height}>
+				<ArqueroDetailsList
+					table={table}
+					columns={columns}
+					features={{
+						smartHeaders: true,
+						smartCells: true,
+					}}
+					compact
+					isSortable
+					isHeadersFixed
+					includeAllColumns={false}
+				/>
 			</Container>
 		)
 	},
 )
 
-const Container = styled.div<{ width: number }>`
-	max-width: ${({ width }) => width};
+const Container = styled.div<{ width: number, height: number }>`
+	width: ${({ width }) => width}px;
+	height: ${({ height }) => height}px;
 `
 
 // TODO: we want to use this, but DWC table doesn't currently support labels named differently than the column key

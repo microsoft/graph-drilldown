@@ -123,28 +123,28 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 	},
 )
 
-const Header = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`
-
-const BottomContainer = styled.div<{ isDefaultOpen?: boolean }>`
-	width: 100%;
-	height: 100%;
-	background: ${({ theme }) => theme.application().background().hex()};
-	border: 1px solid ${({ theme }) => theme.application().border().hex()};
-	//text-align: center;
-	overflow-x: hidden;
-	overflow-y: ${({ isDefaultOpen }) => (isDefaultOpen ? 'auto' : 'hidden')};
-`
-
-const PanelContainer = styled.div<{ isDefaultOpen?: boolean }>`
-	visibility: ${({ isDefaultOpen }) => (isDefaultOpen ? 'visible' : 'hidden')};
-`
 
 const StyledRnd = styled(Rnd)`
 	position: absolute;
 	width: 100%;
 	height: 100%;
+`
+
+const BottomContainer = styled.div<{ isDefaultOpen?: boolean }>`
+	width: 100%;
+	height: 100%;
+	border: 1px solid ${({ theme }) => theme.application().border().hex()};
+	overflow-x: hidden;
+	overflow-y: ${({ isDefaultOpen }) => (isDefaultOpen ? 'auto' : 'hidden')};
+`
+
+const Header = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+`
+
+const PanelContainer = styled.div<{ isDefaultOpen?: boolean }>`
+	visibility: ${({ isDefaultOpen }) => (isDefaultOpen ? 'visible' : 'hidden')};
 `
