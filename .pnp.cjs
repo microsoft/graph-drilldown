@@ -92,7 +92,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:4.24.0"],
             ["@yarnpkg/pnpify", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:2.4.0"],
             ["ahooks", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:2.10.6"],
-            ["arquero", "npm:4.8.7"],
+            ["arquero", "npm:4.8.8"],
             ["concurrently", "npm:5.3.0"],
             ["core-js", "npm:3.12.1"],
             ["d3-array", "npm:2.12.1"],
@@ -2985,7 +2985,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@data-wrangling-components/core", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:6.1.0"],
             ["@types/arquero", null],
             ["@types/node", "npm:14.18.0"],
-            ["arquero", "npm:4.8.7"],
+            ["arquero", "npm:4.8.8"],
             ["d3-time-format", "npm:4.1.0"],
             ["lodash-es", "npm:4.17.21"],
             ["rxjs", "npm:7.5.5"],
@@ -3051,7 +3051,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/thematic__react", null],
             ["@types/uifabric__icons", null],
             ["@uifabric/icons", null],
-            ["arquero", "npm:4.8.7"],
+            ["arquero", "npm:4.8.8"],
             ["core-js", "npm:3.21.1"],
             ["d3-format", "npm:3.1.0"],
             ["d3-scale", "npm:4.0.2"],
@@ -3115,7 +3115,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@data-wrangling-components/utilities", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:1.8.2"],
             ["@types/arquero", null],
             ["@zip.js/zip.js", "npm:2.4.10"],
-            ["arquero", "npm:4.8.7"]
+            ["arquero", "npm:4.8.8"]
           ],
           "packagePeers": [
             "@types/arquero",
@@ -8188,10 +8188,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:8.6.0", {
-          "packageLocation": "./.yarn/cache/acorn-npm-8.6.0-9de50afc7d-9d0de73b73.zip/node_modules/acorn/",
+        ["npm:8.7.0", {
+          "packageLocation": "./.yarn/cache/acorn-npm-8.7.0-ca81d350ee-e0f79409d6.zip/node_modules/acorn/",
           "packageDependencies": [
-            ["acorn", "npm:8.6.0"]
+            ["acorn", "npm:8.7.0"]
           ],
           "linkType": "HARD",
         }]
@@ -8673,13 +8673,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["arquero", [
-        ["npm:4.8.7", {
-          "packageLocation": "./.yarn/cache/arquero-npm-4.8.7-afd14ab866-63a832e7f0.zip/node_modules/arquero/",
+        ["npm:4.8.8", {
+          "packageLocation": "./.yarn/cache/arquero-npm-4.8.8-b5f8ddcb1c-b8d47c1990.zip/node_modules/arquero/",
           "packageDependencies": [
-            ["arquero", "npm:4.8.7"],
-            ["acorn", "npm:8.6.0"],
+            ["arquero", "npm:4.8.8"],
+            ["acorn", "npm:8.7.0"],
             ["apache-arrow", "npm:3.0.0"],
-            ["node-fetch", "npm:2.6.6"]
+            ["node-fetch", "virtual:b5f8ddcb1c96c09df0003a823902b74d16868e5d555f34c5b1caa75e50faf5378aa2d70a87c75b08d0b33924055721cdfbaecf6d762c7bc8f260651cf094f9ac#npm:2.6.7"]
           ],
           "linkType": "HARD",
         }]
@@ -14830,7 +14830,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:4.24.0"],
             ["@yarnpkg/pnpify", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:2.4.0"],
             ["ahooks", "virtual:e2c17f6bddafc602f4cab9cd5ef0295cf05535d35559c37d85c801f1caf17fe4d835c0b7de830ebcb2af1fb4746041bd0b4f7331250e6f9b8aacde0a6f349060#npm:2.10.6"],
-            ["arquero", "npm:4.8.7"],
+            ["arquero", "npm:4.8.8"],
             ["concurrently", "npm:5.3.0"],
             ["core-js", "npm:3.12.1"],
             ["d3-array", "npm:2.12.1"],
@@ -18968,11 +18968,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.6.6", {
-          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.6-056db6b778-ee8290626b.zip/node_modules/node-fetch/",
+        ["npm:2.6.7", {
+          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",
           "packageDependencies": [
-            ["node-fetch", "npm:2.6.6"],
+            ["node-fetch", "npm:2.6.7"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:b5f8ddcb1c96c09df0003a823902b74d16868e5d555f34c5b1caa75e50faf5378aa2d70a87c75b08d0b33924055721cdfbaecf6d762c7bc8f260651cf094f9ac#npm:2.6.7", {
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-3f8a145c4f/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",
+          "packageDependencies": [
+            ["node-fetch", "virtual:b5f8ddcb1c96c09df0003a823902b74d16868e5d555f34c5b1caa75e50faf5378aa2d70a87c75b08d0b33924055721cdfbaecf6d762c7bc8f260651cf094f9ac#npm:2.6.7"],
+            ["@types/encoding", null],
+            ["encoding", null],
             ["whatwg-url", "npm:5.0.0"]
+          ],
+          "packagePeers": [
+            "@types/encoding",
+            "encoding"
           ],
           "linkType": "HARD",
         }]

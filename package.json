@@ -55,7 +55,7 @@
 		"@types/react-rnd": "^8.0.0",
 		"@yarnpkg/pnpify": "^2.4.0",
 		"ahooks": "^2.10.6",
-		"arquero": "^4.8.4",
+		"arquero": "^4.8.8",
 		"core-js": "^3.12.0",
 		"d3-array": "^2.8.0",
 		"d3-brush": "2",
