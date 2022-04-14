@@ -3,14 +3,15 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { FileTable } from '../FileTable/FileTable'
+import {
+	ArqueroDetailsList,
+	ArqueroTableHeader,
+} from '@data-wrangling-components/react'
 import { DefaultButton } from '@fluentui/react'
 import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
-import { ArqueroTable } from '~/arquero/ArqueroTable'
 import { useFileManagement } from '~/hooks/files'
 
-// TODO: this is expected to be a robust file list with selections, etc.
-// at the moment it is a copy of the file drop panel used in modals
 export const FileList: React.FC = () => {
 	const bigTable = useArqueroBigTable()
 	const edgeTable = useArqueroEdgeTable()
@@ -32,8 +33,17 @@ export const FileList: React.FC = () => {
 			</Reset>
 			{selectedFile && selectedFile.table ? (
 				<Viewer>
-					<h3>{selectedFile.url}</h3>
-					<ArqueroTable table={selectedFile?.table} options={{ limit: 10 }} />
+					<ArqueroTableHeader
+						name={selectedFile.name}
+						table={selectedFile.table}
+					/>
+					<ArqueroDetailsList
+						table={selectedFile.table}
+						isHeadersFixed
+						features={{
+							smartHeaders: true,
+						}}
+					/>
 				</Viewer>
 			) : null}
 		</Container>
@@ -46,6 +56,7 @@ const Files = styled.div``
 
 const Viewer = styled.div`
 	margin: 20px;
+	height: 600px;
 `
 
 const Reset = styled.div`

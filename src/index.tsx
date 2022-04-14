@@ -4,6 +4,7 @@
  */
 import { App } from './components/App'
 import { useTheme } from './state'
+import { initializeIcons } from '@fluentui/react'
 import { ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
 
@@ -11,7 +12,6 @@ import ReactDOM from 'react-dom'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
 import './index.css'
-import { initializeIcons } from '@fluentui/react'
 
 const ThemedApp = () => {
 	const theme = useTheme()
@@ -38,7 +38,7 @@ function mount(): void {
 function bootstrap(): void {
 	initializeIcons(undefined, { disableWarnings: true })
 	try {
-		mount()		
+		mount()
 	} catch (err) {
 		console.error('error initializing application', err)
 	}

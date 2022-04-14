@@ -2,13 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ToggleHeader } from '../../../controls/ToggleHeader'
 import { EdgeColorHeaderLegend } from '../../../components/legends/EdgeColorHeaderLegend'
 import { EdgeOpacityHeaderLegend } from '../../../components/legends/EdgeOpacityHeaderLegend'
 import { EdgeSizeHeaderLegend } from '../../../components/legends/EdgeSizeHeaderLegend'
 import { NodeColorHeaderLegend } from '../../../components/legends/NodeColorHeaderLegend'
 import { NodeOpacityHeaderLegend } from '../../../components/legends/NodeOpacityHeaderLegend'
 import { NodeSizeHeaderLegend } from '../../../components/legends/NodeSizeHeaderLegend'
+import { ToggleHeader } from '../../../controls/ToggleHeader'
 import { ColumnEditorPanel } from './PanelComponents/ColumnEditorPanel'
 import { EdgeColorControlsPanel } from './PanelComponents/EdgeColorControlsPanel'
 import { EdgeOpacityControlsPanel } from './PanelComponents/EdgeOpacityControlsPanel'

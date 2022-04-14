@@ -10,28 +10,16 @@ const base = configure({
 	environment: () => ({ AUTOLAYOUT_URL: process.env.AUTOLAYOUT_URL || '' }),
 })
 
-const lineupRules = [
-	{
-		test: /\.svg(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-		loader: 'url-loader',
-		options: {
-			limit: 10000, //inline <= 10kb
-			mimetype: 'image/svg+xml',
-		},
-	},
+// add mjs for arrow
+base.module.rules = [
+	...base.module.rules,
 	{
 		test: /\.m?js/,
 		resolve: {
 			fullySpecified: false,
 		},
 	},
-	{
-		test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-		loader: 'file-loader',
-	},
 ]
-
-base.module.rules = [...base.module.rules, ...lineupRules]
 
 const aliasFields = base.resolve.aliasFields || []
 base.resolve = {

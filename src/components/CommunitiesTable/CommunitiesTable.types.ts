@@ -6,7 +6,7 @@ export interface ItemMap {
 	[key: string]: string | number | boolean | undefined
 }
 
-export interface CommunityLineupProps {
+export interface CommunitiesTableProps {
 	width: number
 	height: number
 }

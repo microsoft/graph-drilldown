@@ -125,7 +125,7 @@ export interface ColumnStats {
 
 export enum BrowserOptions {
 	Browser = 'browser',
-	Lineup = 'lineup',
+	Table = 'table',
 }
 
 /**

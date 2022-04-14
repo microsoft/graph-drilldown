@@ -18,7 +18,7 @@ const getTabId = (itemKey: string) => {
 	return `ShapeColorPivot_${itemKey}`
 }
 
-// Pivots content between Community Lineup Table and Hierarchy Browser
+// Pivots content between Community Table and Hierarchy Browser
 export const PivotContent: React.FC<PivotContentProps> = memo(
 	function PivotContent({ setSelectedKey, selectedKey }) {
 		const handleLinkClick = useCallback(
@@ -32,19 +32,19 @@ export const PivotContent: React.FC<PivotContentProps> = memo(
 		return (
 			<Container>
 				<Pivot
-					aria-label="Community Lineup and Hierarchy Browser Pivot"
+					aria-label="Community table and Hierarchy browser pivot"
 					selectedKey={selectedKey}
 					onLinkClick={handleLinkClick}
 					headersOnly={true}
 					getTabId={getTabId}
 				>
 					<PivotItem
-						headerText="Hierarchy Browser"
+						headerText="Hierarchy browser"
 						itemKey={BrowserOptions.Browser}
 					/>
 					<PivotItem
-						headerText="Community Lineup"
-						itemKey={BrowserOptions.Lineup}
+						headerText="Community table"
+						itemKey={BrowserOptions.Table}
 					/>
 				</Pivot>
 			</Container>

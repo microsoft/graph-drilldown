@@ -7,6 +7,9 @@ import {
 	listColumnDefs,
 	NodeCollection,
 } from '../../../../arquero'
+import { useColumns } from '../../../../components/CommunityList/CommunityList.hooks'
+import { CommunityRowStyles } from '../../../../components/CommunityList/CommunityList.types'
+import { CommunityRow } from '../../../../components/CommunityList/CommunityRow'
 import { useNodeIds } from '../../../../hooks/graph'
 import {
 	useCommunitySort,
@@ -18,9 +21,6 @@ import {
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
 } from '../../../../state'
-import { useColumns } from '../../../../components/CommunityList/CommunityList.hooks'
-import { CommunityRowStyles } from '../../../../components/CommunityList/CommunityList.types'
-import { CommunityRow } from '../../../../components/CommunityList/CommunityRow'
 import { NodeListItem } from './NodeListItem'
 import { SearchItemHeader } from './SearchItemHeader'
 import { Pivot, PivotItem } from '@fluentui/react'

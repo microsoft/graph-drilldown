@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { CommunityLineup } from '../../components/CommunityLineup'
-import { HierarchyBrowserPanel } from '../../components/HierarchyBrowserPanel'
 import { PivotContent } from '../../components/App/PivotContent'
+import { CommunitiesTable } from '../../components/CommunitiesTable'
+import { HierarchyBrowserPanel } from '../../components/HierarchyBrowserPanel'
 import { IPosition } from './GraphViewerPage.hooks'
 import { DIRECTION } from './hooks/useResizeHandlers'
 import { IconButton } from '@fluentui/react'
@@ -64,7 +64,7 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 		)
 
 		const [panelContent, setPanelContent] = useState<BrowserOptions>(
-			BrowserOptions.Lineup,
+			BrowserOptions.Table,
 		)
 
 		const iconName = useMemo(
@@ -86,7 +86,7 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 			if (panelContent === BrowserOptions.Browser) {
 				return <HierarchyBrowserPanel />
 			}
-			return <CommunityLineup width={width} height={tableHeight} />
+			return <CommunitiesTable width={width} height={tableHeight} />
 		}, [panelContent, width, tableHeight])
 
 		return (
@@ -134,7 +134,7 @@ const BottomContainer = styled.div<{ isDefaultOpen?: boolean }>`
 	height: 100%;
 	background: ${({ theme }) => theme.application().background().hex()};
 	border: 1px solid ${({ theme }) => theme.application().border().hex()};
-	text-align: center;
+	//text-align: center;
 	overflow-x: hidden;
 	overflow-y: ${({ isDefaultOpen }) => (isDefaultOpen ? 'auto' : 'hidden')};
 `
