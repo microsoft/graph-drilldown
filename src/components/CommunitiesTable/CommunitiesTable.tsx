@@ -77,7 +77,7 @@ function useColumnConfig(
 		return []
 	}, [columnList])
 	return useMemo(() => {
-		const w = width / columns.length
+		const w = (width / columns.length) - 20 // padding
 		const mw = w < MIN_COLUMN_WIDTH ? MIN_COLUMN_WIDTH : w
 		return columns.map(name => ({
 			key: name,
