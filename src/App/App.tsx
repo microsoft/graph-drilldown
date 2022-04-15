@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { GraphViewerPage, DataManagerPage } from '../../pages'
-import { Footer } from '../Footer'
-import { LazyCachingSwitch } from '../LazyCachingSwitch'
+import { LazyCachingSwitch } from '../components/LazyCachingSwitch'
+import { GraphViewerPage, DataManagerPage } from '../pages'
 import { usePresetData, useTestFiles, useUrlFiles } from './App.hooks'
 import { CommandBar } from './commands'
+import { Footer } from './components/Footer'
 import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'

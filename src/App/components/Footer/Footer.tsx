@@ -23,9 +23,7 @@ export const Footer: FC = memo(function Footer() {
 			<Container>
 				<Link href={constants.privacyUrl}>Privacy</Link>
 				{' | '}
-				<Link
-					id={'managecookies'}
-					onClick={manageConsent}>
+				<Link id={'managecookies'} onClick={manageConsent}>
 					Cookies
 				</Link>
 				{' | '}
@@ -95,4 +93,3 @@ const LinkA = styled.a`
 	cursor: pointer;
 	text-decoration: none !important;
 `
-

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { App } from './components/App'
+import { App } from './App'
 import { useTheme } from './state'
 import { initializeIcons } from '@fluentui/react'
 import { ThematicFluentProvider } from '@thematic/fluent'

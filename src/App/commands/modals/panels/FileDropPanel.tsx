@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { FileTable } from '../../../../FileTable'
-import { QuickDrop } from '../../../../QuickDrop'
+import { FileTable } from '../../../../components/FileTable'
+import { QuickDrop } from '../../../../components/QuickDrop'
 import { DefaultButton } from '@fluentui/react'
 import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'

@@ -12,6 +12,7 @@ import {
 } from 'react'
 import { withRouter } from 'react-router-dom'
 
+// TODO: move this to essex-js-toolkit
 /**
  * Essentially replicates a react-router Switch,
  * but uses a state cache to lazily render components,

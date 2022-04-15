@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { BrowserOptions } from '../../types'
 import { Pivot, PivotItem } from '@fluentui/react'
 import { memo, useCallback } from 'react'
 import styled from 'styled-components'
+import { BrowserOptions } from '~/types'
 // control style height for pivot items, doesn't seem like option in Pivot Style Props?
 import './Pivot.css'
 

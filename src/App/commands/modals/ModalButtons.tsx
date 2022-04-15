@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Export } from '../../../Export'
-import { Help } from '../../../Help'
+import { Export } from '../../components/Export'
+import { Help } from '../../components/Help'
 import { ModalButton, ButtonOptions } from './ModalButton'
 import { ModalContainer } from './ModalContainer'
 import { FileDropPanel } from './panels/FileDropPanel'

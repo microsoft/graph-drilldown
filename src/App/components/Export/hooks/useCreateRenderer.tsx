@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { GraphViewer } from '../../GraphViewer'
+import { GraphViewer } from '../../../../components/GraphViewer'
 import { GraphRenderer } from '@graspologic/renderer'
 import { ThematicProvider, useThematic } from '@thematic/react'
 import { useEffect } from 'react'

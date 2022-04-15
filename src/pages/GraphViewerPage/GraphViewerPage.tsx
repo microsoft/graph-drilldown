@@ -9,9 +9,9 @@ import {
 	useLayoutStyle,
 	useResizeHandlers,
 } from './GraphViewerPage.hooks'
-import { ResizableBrowser } from './ResizableBrowser'
 import { LeftSidePanel, RightSidePanel } from './SidePanel'
 import { StyledSpinnner } from './StyledSpinner'
+import { ResizableBrowser } from './components/ResizableBrowser'
 import { Suspense, useRef, useMemo, useState, memo } from 'react'
 import { RndResizeStartCallback } from 'react-rnd'
 import styled from 'styled-components'

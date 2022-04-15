@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { PivotContent } from '../../components/App/PivotContent'
-import { CommunitiesTable } from '../../components/CommunitiesTable'
-import { HierarchyBrowserPanel } from '../../components/HierarchyBrowserPanel'
-import { IPosition } from './GraphViewerPage.hooks'
-import { DIRECTION } from './hooks/useResizeHandlers'
+import { CommunitiesTable } from '../../../components/CommunitiesTable'
+import { HierarchyBrowserPanel } from '../../../components/HierarchyBrowserPanel'
+import { IPosition } from '../GraphViewerPage.hooks'
+import { DIRECTION } from '../hooks/useResizeHandlers'
+import { PivotContent } from './PivotContent'
 import { IconButton } from '@fluentui/react'
 import { memo, useMemo, useCallback, useState } from 'react'
 import { Rnd, RndResizeStartCallback } from 'react-rnd'
@@ -123,7 +123,6 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 	},
 )
 
-
 const StyledRnd = styled(Rnd)`
 	position: absolute;
 	width: 100%;
@@ -142,7 +141,6 @@ const Header = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
 `
 
 const PanelContainer = styled.div<{ isDefaultOpen?: boolean }>`

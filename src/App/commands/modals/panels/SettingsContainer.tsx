@@ -4,7 +4,7 @@
  */
 import { useCallback } from 'react'
 import styled from 'styled-components'
-import { Settings } from '~/components/Settings'
+import { Settings } from '~/App/components/Settings'
 import { useSettings, useSettingsGroups } from '~/state'
 
 export const SettingsContainer: React.FC = () => {
