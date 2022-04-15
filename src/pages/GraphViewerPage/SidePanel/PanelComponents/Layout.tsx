@@ -58,10 +58,6 @@ export const Layout: React.FC = memo(function Layout() {
 		setLoading(true)
 		performLayout(LayoutType.Grid)
 	}, [performLayout])
-	// const handleFA2Click = useCallback(() => {
-	// 	setLoading(true)
-	// 	performLayout(LayoutType.FA2)
-	// }, [performLayout])
 	const handleUmapClick = useCallback(() => {
 		setLoading(true)
 		performLayout(LayoutType.UMAP)
@@ -84,7 +80,6 @@ export const Layout: React.FC = memo(function Layout() {
 				<DefaultButton text={'Grid'} onClick={handleGridClick} />
 				{edges.numRows() > 0 ? (
 					<>
-						{/* <DefaultButton text={'FA2'} onClick={handleFA2Click} /> */}
 						<UmapLayout onClick={handleUmapClick} />
 					</>
 				) : null}

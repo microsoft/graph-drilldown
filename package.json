@@ -3,15 +3,13 @@
 	"title": "Graph Drilldown",
 	"version": "0.1.0",
 	"private": true,
+	"main": "src/index.ts",
 	"scripts": {
 		"clean": "essex clean build",
 		"start": "essex serve",
-		"typecheck": "tsc -b .",
-		"build": "essex bundle --webpack",
-		"assets": "ncp public build",
+		"build": "essex bundle && shx cp -r public/* build/",
 		"ci": "run-s clean lint typecheck bundle assets git_is_clean",
-		"lint": "essex lint --strict",
-		"lint:fix": "yarn lint --fix",
+		"lint": "essex lint --fix",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
 		"git_is_clean": "essex git-is-clean"
@@ -31,7 +29,6 @@
 		"@fluentui/utilities": "^8.8.1",
 		"@graspologic/graph": "0.7.0-13",
 		"@graspologic/layout-core": "0.7.0-13",
-		"@graspologic/layout-fa2": "0.7.0-13",
 		"@graspologic/react": "0.7.0-13",
 		"@graspologic/render-controls": "0.7.0-13",
 		"@graspologic/render-controls-react": "0.7.0-13",
@@ -80,10 +77,12 @@
 	},
 	"devDependencies": {
 		"@babel/runtime": "^7.14.0",
-		"@essex/eslint-config": "^15.0.4",
-		"@essex/prettier-config": "^10.0.2",
-		"@essex/scripts": "^15.2.0",
-		"@essex/webpack-config": "^15.1.0",
+		"@essex/eslint-config": "^20.3.2",
+		"@essex/eslint-plugin": "^20.3.3",
+		"@essex/jest-config": "^21.0.8",
+		"@essex/prettier-config": "^18.0.2",
+		"@essex/scripts": "^21.0.1",
+		"@essex/webpack-config": "^21.0.0",
 		"@types/concurrently": "^5.2.1",
 		"@types/d3-array": "^2.9.0",
 		"@types/d3-selection": "^2.0.0",
@@ -100,34 +99,30 @@
 		"@typescript-eslint/parser": "^4.23.0",
 		"concurrently": "^5.3.0",
 		"dotenv": "^10.0.0",
-		"eslint": "^7.28.0",
+		"eslint": "^8.12.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"file-loader": "^6.2.0",
-		"husky": "^6.0.0",
+		"husky": "^7.0.4",
 		"lint-staged": "^11.0.0",
 		"ncp": "^2.0.0",
 		"nodemon": "^2.0.6",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.3.1",
+		"prettier": "^2.6.1",
 		"raw-loader": "^4.0.2",
+		"shx": "^0.3.4",
 		"styled-components": "^5.3.0",
-		"typescript": "^4.4.2",
+		"typescript": "^4.6.3",
 		"url-loader": "^4.1.1",
-		"webpack": "^5.36.2",
+		"webpack": "5.70.0",
+		"webpack-cli": "^4.9.2",
+		"webpack-dev-server": "^4.7.4",
 		"worker-loader": "^3.0.8"
 	},
-	"browserslist": {
-		"production": [
-			">80%"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"resolutions": {
-		"typescript": "4.1.5"
-	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie 11",
+		"not op_mini all"
+	],
 	"packageManager": "yarn@3.2.0"
 }

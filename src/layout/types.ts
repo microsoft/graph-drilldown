@@ -5,7 +5,6 @@
 export enum Layout {
 	Random = 'random',
 	Grid = 'grid',
-	FA2 = 'fa2',
 	OpenORD = 'openord',
 	UMAP = 'umap',
 }

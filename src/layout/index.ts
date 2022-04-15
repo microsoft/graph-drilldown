@@ -2,14 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { layoutFa2 } from './fa2'
 import { layoutGrid } from './grid'
 import { layoutRandom } from './random'
 import { Layout } from './types'
 import { layoutUmap } from './umap'
 import ColumnTable from 'arquero/dist/types/table/column-table'
 
-export * from './fa2'
 export * from './grid'
 export * from './random'
 export * from './types'
@@ -34,8 +32,6 @@ export async function executeLayout(
 			return nodes && layoutRandom(nodes)
 		case Layout.Grid:
 			return nodes && layoutGrid(nodes)
-		case Layout.FA2:
-			return edges && layoutFa2(edges, nodes, options)
 		case Layout.UMAP:
 			return edges && layoutUmap(edges)
 	}
