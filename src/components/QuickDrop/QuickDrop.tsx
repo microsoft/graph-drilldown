@@ -49,6 +49,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 				tableType: type,
 				table,
 				rows: table.numRows(),
+				cols: table.numCols(),
 			})
 		},
 		[doAddTable, doAddFile],
@@ -105,7 +106,6 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 
 const Container = styled.div`
 	margin: 10px;
-	margin-bottom: 10px;
 `
 const HelperText = styled.div`
 	margin-top: 8px;

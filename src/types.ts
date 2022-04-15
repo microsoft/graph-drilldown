@@ -84,6 +84,7 @@ export interface DataFile {
 	tableType?: ItemType
 	table?: ColumnTable
 	rows?: number
+	cols?: number
 }
 
 export interface ColumnDef {

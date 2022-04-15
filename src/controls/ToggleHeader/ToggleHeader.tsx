@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Toggle } from '@fluentui/react'
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 export interface ToggleHeaderProps {

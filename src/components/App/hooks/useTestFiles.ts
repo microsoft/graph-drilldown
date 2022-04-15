@@ -56,6 +56,7 @@ export function useTestFiles(bundle: FileBundle) {
 					...nodesFile,
 					table: nodesTable,
 					rows: nodesTable.numRows(),
+					cols: nodesTable.numCols(),
 				}
 				console.timeEnd('nodes')
 			}
@@ -68,6 +69,7 @@ export function useTestFiles(bundle: FileBundle) {
 					...joinFile,
 					table: joinTable,
 					rows: join.numRows(),
+					cols: join.numCols(),
 				}
 				if (nodesFile) {
 					nodes = joinNodeCommunityTables(nodes, join)
@@ -82,6 +84,7 @@ export function useTestFiles(bundle: FileBundle) {
 					...communitiesFile,
 					table: communitiesTable,
 					rows: communitiesTable.numRows(),
+					cols: communitiesTable.numCols(),
 				}
 				if (nodesFile && joinFile) {
 					nodes = joinDataTables(nodes, communitiesTable, 'community')
@@ -97,6 +100,7 @@ export function useTestFiles(bundle: FileBundle) {
 					...edgesFile,
 					table: edgesTable,
 					rows: edgesTable.numRows(),
+					cols: edgesTable.numCols(),
 				}
 
 				if (!nodesFile) {

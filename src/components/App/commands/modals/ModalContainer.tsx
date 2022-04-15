@@ -86,7 +86,7 @@ const Header = styled.div`
 	padding: 12px 12px 14px 24px;
 `
 const ContentContainer = styled.div`
-	padding: 12px 12px 14px 24px;
+	padding: 12px 20px 14px 20px;
 `
 
 const Title = styled.span`

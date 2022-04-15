@@ -20,8 +20,8 @@ export function useFileManagement(): {
 	files: DataFile[]
 	doAddFile: (file: DataFile) => void
 	doClearAll: () => void
-	selectedFile: DataFile | null
-	onFileSelected: (file: DataFile | null) => void
+	selectedFile: DataFile | undefined
+	onFileSelected: (file: DataFile | undefined) => void
 } {
 	const resetTables = useClearAllTables()
 
@@ -31,14 +31,14 @@ export function useFileManagement(): {
 	const [selectedFile, setSelectedFile] = useSelectedFile()
 
 	const onFileSelected = useCallback(
-		(file: DataFile | null) => setSelectedFile(file),
+		(file: DataFile | undefined) => setSelectedFile(file),
 		[setSelectedFile],
 	)
 
 	const doClearAll = useCallback(() => {
 		resetTables()
 		resetFiles()
-		setSelectedFile(null)
+		setSelectedFile(undefined)
 	}, [resetTables, resetFiles, setSelectedFile])
 
 	return {

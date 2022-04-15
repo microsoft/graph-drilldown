@@ -36,7 +36,8 @@ const Content = styled.div`
 
 const DropContainer = styled.div`
 	margin-top: 40px;
-	width: 600px;
+	margin-bottom: 20px;
+	width: 800px;
 `
 
 const Placeholder = styled.div``

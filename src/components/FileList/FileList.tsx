@@ -2,11 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { FileTable } from '../FileTable/FileTable'
-import {
-	ArqueroDetailsList,
-	ArqueroTableHeader,
-} from '@data-wrangling-components/react'
+import { FileTable } from '../FileTable'
+import { ArqueroDetailsList } from '@data-wrangling-components/react'
 import { DefaultButton } from '@fluentui/react'
 import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
@@ -22,21 +19,22 @@ export const FileList: React.FC = () => {
 	return (
 		<Container>
 			<Files>
-				<FileTable files={files} onClick={onFileSelected} />
+				<FileTable
+					files={files}
+					selected={selectedFile}
+					onClick={onFileSelected}
+				/>
+				<Reset>
+					{files.length > 0 ||
+					bigTable.numRows() > 0 ||
+					edgeTable.numRows() > 0 ? (
+						<DefaultButton text="Clear all" onClick={doClearAll} />
+					) : null}
+				</Reset>
 			</Files>
-			<Reset>
-				{files.length > 0 ||
-				bigTable.numRows() > 0 ||
-				edgeTable.numRows() > 0 ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
-				) : null}
-			</Reset>
+
 			{selectedFile && selectedFile.table ? (
 				<Viewer>
-					<ArqueroTableHeader
-						name={selectedFile.name}
-						table={selectedFile.table}
-					/>
 					<ArqueroDetailsList
 						table={selectedFile.table}
 						isHeadersFixed
@@ -52,16 +50,20 @@ export const FileList: React.FC = () => {
 
 const Container = styled.div``
 
-const Files = styled.div``
+const Files = styled.div`
+	display: flex;
+	flex-direction column;
+	gap: 10px;
+	margin-bottom: 10px;
+`
 
 const Viewer = styled.div`
-	margin: 20px;
 	height: 600px;
+	border: 1px solid ${({ theme }) => theme.application().border().hex()};
 `
 
 const Reset = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
-	margin: 20px;
 `
