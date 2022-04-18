@@ -1,0 +1,55 @@
+{
+	"name": "@graph-drilldown/components",
+	"version": "0.0.1",
+	"license": "MIT",
+	"type": "module",
+	"main": "src/index.ts",
+	"publishConfig": {
+		"main": "dist/lib/index.js",
+		"types": "dist/lib/index.d.ts"
+	},
+	"sideEffects": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/graph-drilldown.git",
+		"directory": "packages/components"
+	},
+	"scripts": {
+		"clean": "essex clean",
+		"build": "essex build --skipExportCheck --docs",
+		"start": "essex watch"
+	},
+	"dependencies": {
+		"@graph-drilldown/types": "workspace:packages/types",
+		"@thematic/color": "^2.0.6",
+		"@thematic/core": "^2.0.6",
+		"@thematic/d3": "^2.0.6",
+		"@thematic/fluent": "^3.0.6",
+		"@thematic/react": "^2.0.6"
+	},
+	"devDependencies": {
+		"@essex/scripts": "^21.0.2",
+		"@essex/tsconfig-base": "^1.0.2",
+		"@types/node": "^17.0.24",
+		"@types/react": "^18.0.5",
+		"react": "^17.0.2",
+		"styled-components": "^5.3.0"
+	},
+	"peerDependencies": {
+		"@types/node": "*",
+		"@types/react": ">= 17",
+		"react": ">= 17",
+		"styled-components": ">= 5"
+	},
+	"peerDependenciesMeta": {
+		"@types/node": {
+			"optional": true
+		},
+		"@types/react": {
+			"optional": true
+		},
+		"react": {
+			"optional": false
+		}
+	}
+}

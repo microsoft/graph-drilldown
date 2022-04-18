@@ -3598,13 +3598,20 @@ __metadata:
     "@essex/scripts": ^21.0.2
     "@essex/tsconfig-base": ^1.0.2
     "@graph-drilldown/types": "workspace:packages/types"
+    "@thematic/color": ^2.0.6
+    "@thematic/core": ^2.0.6
+    "@thematic/d3": ^2.0.6
+    "@thematic/fluent": ^3.0.6
+    "@thematic/react": ^2.0.6
     "@types/node": ^17.0.24
     "@types/react": ^18.0.5
-    react: ^18.0.0
+    react: ^17.0.2
+    styled-components: ^5.3.0
   peerDependencies:
     "@types/node": "*"
     "@types/react": ">= 17"
     react: ">= 17"
+    styled-components: ">= 5"
   peerDependenciesMeta:
     "@types/node":
       optional: true

@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
 
-import { FileTable } from '../FileTable'
+import { FileTable } from '@graph-drilldown/components'
 
 export const FileList: React.FC = () => {
 	const bigTable = useArqueroBigTable()

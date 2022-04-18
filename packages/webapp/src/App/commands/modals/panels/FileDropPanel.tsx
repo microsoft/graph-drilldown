@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
 
-import { FileTable } from '../../../../components/FileTable'
+import { FileTable } from '@graph-drilldown/components'
 import { QuickDrop } from '../../../../components/QuickDrop'
 
 export const FileDropPanel: React.FC = () => {
