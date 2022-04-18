@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { Sort } from '@graph-drilldown/types'
 import {
 	atom,
 	useRecoilState,
@@ -11,7 +12,6 @@ import {
 } from 'recoil'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
-import type { Sort } from '../types'
 
 const communitySort = atom<Sort>({
 	key: 'community-sort',

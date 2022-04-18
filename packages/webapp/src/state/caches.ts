@@ -5,24 +5,10 @@
 /**
  * This is a set of cached expensive computes that need to persist across component unmounts.
  */
-import {
-	EdgeCollection,
-	getColumnHistogram,
-	getColumnStats,
-	NodeCollection,
-} from '@graph-drilldown/arquero'
-import type { ColumnStats, Node } from '@graph-drilldown/types'
+import { EdgeCollection, NodeCollection } from '@graph-drilldown/arquero'
+import type { Node } from '@graph-drilldown/types'
 import { GraphContainer } from '@graspologic/graph'
-import type ColumnTable from 'arquero/dist/types/table/column-table'
-import { useEffect } from 'react'
-import {
-	atom,
-	atomFamily,
-	selector,
-	selectorFamily,
-	useRecoilState,
-	useRecoilValue,
-} from 'recoil'
+import { atom, selector, selectorFamily, useRecoilValue } from 'recoil'
 
 import { uniqueNodesState } from './nodes'
 import { settingsState } from './settings'
@@ -121,45 +107,4 @@ const visibleNodeMapState = selectorFamily<Map<string, Node>, string>({
 
 export function useVisibleNodeMap(cid: string) {
 	return useRecoilValue(visibleNodeMapState(cid))
-}
-
-// generate a unique key for storing cached values related to a table
-// warning: this isn't entirely guaranteed to be unique, but should
-// cover any expected scenarios we encounter (right?)
-function tableKey(table: ColumnTable) {
-	return `${table.columnNames().join('-')}-${table.numRows()}`
-}
-
-const cachedColumnStatsState = atomFamily<ColumnStats | undefined, string>({
-	key: 'column-stats-cache',
-	default: undefined,
-})
-
-export function useCachedColumnStats(table: ColumnTable, field?: string) {
-	const key = `${tableKey(table)}-${field}`
-	const [cached, setCached] = useRecoilState(cachedColumnStatsState(key))
-	useEffect(() => {
-		if (!cached) {
-			const stats = getColumnStats(table, field)
-			setCached(stats)
-		}
-	}, [cached, setCached, table, field])
-	return cached
-}
-
-const cachedColumnHistogramState = atomFamily<any[] | undefined, string>({
-	key: 'column-histogram-cache',
-	default: undefined,
-})
-
-export function useCachedColumnHistogram(table: ColumnTable, field?: string) {
-	const key = `${tableKey(table)}-${field}`
-	const [cached, setCached] = useRecoilState(cachedColumnHistogramState(key))
-	useEffect(() => {
-		if (!cached) {
-			const histo = getColumnHistogram(table, field)
-			setCached(histo)
-		}
-	}, [cached, setCached, table, field])
-	return cached
 }

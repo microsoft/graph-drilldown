@@ -16,8 +16,8 @@ import {
 import { useFileManagement } from '~/hooks/files'
 
 import { parseDSVTable } from '../../api'
-import { FileDrop } from '../../controls/FileDrop'
 import { variants } from '../../styles'
+import { FileDrop } from '../FileDrop'
 
 const SQUARE = 80
 

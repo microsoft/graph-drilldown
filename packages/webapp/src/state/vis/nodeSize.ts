@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { getColumnStats } from '@graph-drilldown/arquero'
-import type { ColumnStats } from '@graph-drilldown/types'
+import type { ColumnStats, NumericEncoding } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import {
 	atom,
@@ -14,7 +14,6 @@ import {
 } from 'recoil'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
-import type { NumericEncoding } from '../../types'
 import { communityNodesTableState } from '../tables'
 import { getDefaultNumericOptions } from './config'
 

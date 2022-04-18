@@ -16,9 +16,9 @@ import { findGroupIndices } from './table.js'
  * it will have no child communities and therefore filtering by 'parent'
  * will not return it (because there are no rows with this cid as parent).
  * In this case, we use the grouped-by-community variant to get the nodes.
- * @param cid
- * @param byParent
- * @param byCommunity
+ * @param cid - community id
+ * @param byParent - table grouped by parent
+ * @param byCommunity - table grouped by community
  */
 export function findNodesTableForCommunity(
 	cid: string | undefined,
@@ -59,8 +59,8 @@ export function findNodesCollectionForCommunity(
 
 /**
  * Find all of the node rows for communities that share a parent.
- * @param pid
- * @param byParent
+ * @param pid - parent id
+ * @param byParent - table grouped by parent
  */
 export function findNodesTableForParent(pid: string, byParent: ColumnTable) {
 	const pidx = findGroupIndices(byParent, 'community.pid', pid)

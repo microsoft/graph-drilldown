@@ -84,8 +84,8 @@ export function getColumnHistogram(
  * This function takes an arquero table and bins the values of a specified column
  * into a fixed set of quantiles from 0-1.0.
  * // TODO: use op.ntile??
- * @param table
- * @param column
+ * @param table - table to bin
+ * @param column - column to bin
  */
 export function binTableColumn(table: ColumnTable, column: string): any[] {
 	const quantileOps = new Array(100).fill(1).reduce((acc, cur, idx) => {

@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
+import { ColorSelector } from '@graph-drilldown/components'
+
 import { useArqueroVisibleNodesTable } from '~/arquero'
-import { ColorSelector } from '~/controls/ColorSelector'
 import { useNodeColorEncoding, useUpdateNodeColorEncoding } from '~/state'
 
 export const NodeColorControls = () => {

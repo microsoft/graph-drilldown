@@ -43,7 +43,6 @@ import {
 	useSetEdgeTable,
 	useUniqueNodes,
 } from '~/state'
-import { useCachedColumnHistogram, useCachedColumnStats } from '~/state/caches'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
 import { deriveLayoutPositions, deriveSmallMultiplePositions } from './layout'
@@ -156,14 +155,6 @@ export function useNodeCount() {
 export function useEdgeCount() {
 	const edges = useEdgeTable()
 	return edges.numRows()
-}
-
-export function useColumnStats(table: ColumnTable, field?: string) {
-	return useCachedColumnStats(table, field)
-}
-
-export function useColumnHistogram(table: ColumnTable, field?: string) {
-	return useCachedColumnHistogram(table, field)
 }
 
 // TODO: (a) do we actually need to filter edges to ensure node alignment?

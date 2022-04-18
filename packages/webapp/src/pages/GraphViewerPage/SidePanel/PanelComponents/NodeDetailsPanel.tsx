@@ -11,15 +11,11 @@ import { useVisibleNodeMap } from '~/state/caches'
 const ROW_HEIGHT = 14
 const DEFAULT_HEIGHT = ROW_HEIGHT * 9
 
-interface Details {
-	[key: string]: any
-}
-
 export const NodeDetailsPanel = () => {
 	const cid = useSelectedCommunity()
 	const nodeMap = useVisibleNodeMap(cid)
 	const nodeId = useHoveredNode()
-	const details: Details | undefined = useMemo(() => {
+	const details: Record<string, any> | undefined = useMemo(() => {
 		if (nodeId) {
 			const node = nodeMap.get(nodeId)
 			return node?.columns.reduce((acc, cur) => {

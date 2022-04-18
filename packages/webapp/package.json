@@ -23,6 +23,7 @@
 		"@fluentui/utilities": "^8.8.1",
 		"@graph-drilldown/arquero": "workspace:packages/arquero",
 		"@graph-drilldown/components": "workspace:packages/components",
+		"@graph-drilldown/hooks": "workspace:packages/hooks",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"@graspologic/graph": "0.7.0-13",
 		"@graspologic/layout-core": "0.7.0-13",

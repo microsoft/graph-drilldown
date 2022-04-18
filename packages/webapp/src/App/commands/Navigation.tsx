@@ -4,7 +4,7 @@
  */
 import { useLocation } from 'react-router-dom'
 
-import { RouterLinkIconButton } from '../../controls/RouterLinkIconButton'
+import { RouterLinkIconButton } from '../../components/RouterLinkIconButton'
 
 export const Navigation: React.FC = () => {
 	const { search, pathname } = useLocation()

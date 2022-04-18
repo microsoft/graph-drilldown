@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
+import { NumericSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
 import { useArqueroEdgeTable } from '~/arquero'
-import { NumericSelector } from '~/controls/NumericSelector'
 import { useEdgeOpacityEncoding, useUpdateEdgeOpacityEncoding } from '~/state'
 
 export const EdgeOpacityControls = () => {

@@ -23,5 +23,5 @@
 		"isolatedModules": true,
 		"noEmit": true
 	},
-	"include": ["src", "../arquero/src/util.ts", "../arquero/src/table.ts", "../arquero/src/nodes.ts", "../arquero/src/edges.ts", "../arquero/src/communities.ts", "../arquero/src/TableCollection.ts"]
+	"include": ["src"]
 }

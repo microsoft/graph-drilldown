@@ -2,7 +2,16 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { TableBackedItem } from '@graph-drilldown/types'
+import {
+	useColorEncodingScale,
+	useNumericEncodingScale,
+} from '@graph-drilldown/hooks'
+import type {
+	ColorEncoding,
+	NumericEncoding,
+	TableBackedItem,
+} from '@graph-drilldown/types'
+import { DataBinding } from '@graph-drilldown/types'
 import type {
 	EdgeColorizer,
 	EdgeWeighter,
@@ -14,10 +23,6 @@ import type { GraphColor, Id, Maybe } from '@graspologic/renderer'
 import { useCallback, useMemo } from 'react'
 
 import { useColorCache } from '~/state/caches'
-
-import type { ColorEncoding, NumericEncoding } from '../../types'
-import { DataBinding } from '../../types'
-import { useColorEncodingScale, useNumericEncodingScale } from './scales'
 
 // TODO: use the node/edge sizer instead of weighter,
 // so it can be bound directly to the encoding range

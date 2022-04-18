@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { ColorEncoding, NumericEncoding } from '../../types'
+import type { ColorEncoding, NumericEncoding } from '@graph-drilldown/types'
 
 export interface LegendProps {
 	width?: number

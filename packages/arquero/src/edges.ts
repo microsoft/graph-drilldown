@@ -91,8 +91,8 @@ function getNeighbors(
 
 /**
  * Filters an edge list to only include connections between the nodes in the provided collection
- * @param edges
- * @param nodes
+ * @param edges - edge table
+ * @param nodes - nodes to filter with (as source/target)
  */
 export function filterEdgesToNodes(
 	edges: ColumnTable,

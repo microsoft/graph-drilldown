@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { ColorEncoding } from '@graph-drilldown/types'
 import { useCallback, useMemo } from 'react'
 
 import { useDataBoundColorScale } from '~/hooks/graph'
-import type { ColorEncoding } from '~/types'
 
 import { BAR_HEIGHT } from '../CommunityList.styles'
 import { Mark } from '../CommunityList.types'

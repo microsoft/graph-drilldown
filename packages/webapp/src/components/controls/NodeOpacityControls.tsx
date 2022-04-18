@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
+import { NumericSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
 import { useArqueroVisibleNodesTable } from '~/arquero'
-import { NumericSelector } from '~/controls/NumericSelector'
 import { useNodeOpacityEncoding, useUpdateNodeOpacityEncoding } from '~/state'
 
 export const NodeOpacityControls = () => {

@@ -5,7 +5,41 @@
 ```ts
 /// <reference types="react" />
 
+import type { ColorEncoding } from '@graph-drilldown/types'
+import type ColumnTable from 'arquero/dist/types/table/column-table'
 import type { DataFile } from '@graph-drilldown/types'
+import type { Encoding } from '@graph-drilldown/types'
+import type { NumericEncoding } from '@graph-drilldown/types'
+
+// Warning: (ae-forgotten-export) The symbol "ColorSelectorProps" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "ColorSelector" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public
+export const ColorSelector: React.FC<ColorSelectorProps>
+
+// Warning: (ae-missing-release-tag) "DomainBrush" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const DomainBrush: React.FC<DomainBrushProps>
+
+// Warning: (ae-missing-release-tag) "DomainBrushProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface DomainBrushProps {
+	// (undocumented)
+	currentDomain?: [number, number]
+	// (undocumented)
+	histogram?: any[]
+	// (undocumented)
+	max?: number
+	// (undocumented)
+	min?: number
+	// (undocumented)
+	onChange?: (domain: [number, number]) => void
+	// (undocumented)
+	precision?: number
+	showTextInputs?: boolean
+}
 
 // Warning: (ae-missing-release-tag) "FileTable" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
@@ -23,6 +57,89 @@ export interface FileTableProps {
 	// (undocumented)
 	selected?: DataFile
 }
+
+// Warning: (ae-missing-release-tag) "HeaderLegend" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public
+export const HeaderLegend: React.FC<HeaderLegendProps>
+
+// Warning: (ae-missing-release-tag) "HeaderLegendProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface HeaderLegendProps {
+	// (undocumented)
+	colorEncoding?: ColorEncoding
+	// (undocumented)
+	encoding: NumericEncoding | ColorEncoding
+	// (undocumented)
+	isDashes?: boolean
+	// (undocumented)
+	isNumeric?: boolean
+	// (undocumented)
+	isUnset?: boolean
+	// (undocumented)
+	label: string
+	// (undocumented)
+	opacityEncoding?: NumericEncoding
+	// (undocumented)
+	sizeEncoding?: NumericEncoding
+}
+
+// Warning: (ae-missing-release-tag) "NominalLegend" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const NominalLegend: React.FC<NominalLegendProps>
+
+// Warning: (ae-missing-release-tag) "NominalLegendProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface NominalLegendProps {
+	// (undocumented)
+	encoding: ColorEncoding
+}
+
+// Warning: (ae-missing-release-tag) "NumericDomainEditor" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const NumericDomainEditor: React.FC<NumericDomainEditorProps>
+
+// Warning: (ae-missing-release-tag) "NumericDomainEditorProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface NumericDomainEditorProps {
+	// (undocumented)
+	encoding: Encoding
+	// (undocumented)
+	onChange: (encoding: Partial<Encoding>) => void
+	table: ColumnTable
+}
+
+// Warning: (ae-missing-release-tag) "NumericRangeEditor" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const NumericRangeEditor: React.FC<NumericRangeEditorProps>
+
+// Warning: (ae-missing-release-tag) "NumericRangeEditorProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface NumericRangeEditorProps {
+	// (undocumented)
+	encoding: Encoding
+	// (undocumented)
+	max?: number
+	// (undocumented)
+	min?: number
+	// (undocumented)
+	onChange: (encoding: Partial<Encoding>) => void
+	// (undocumented)
+	precision?: number
+}
+
+// Warning: (ae-forgotten-export) The symbol "NumericSelectorProps" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "NumericSelector" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public
+export const NumericSelector: React.FC<NumericSelectorProps>
 
 // Warning: (ae-missing-release-tag) "ToggleHeader" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //

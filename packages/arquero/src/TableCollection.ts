@@ -203,8 +203,8 @@ export class TableCollection<T> {
 	 * table.
 	 * Arquero doesn't support the notion of iterating groups directly, so this provides
 	 * that.
-	 * @param callback
-	 * @param ordered
+	 * @param callback - function to apply to each table row
+	 * @param ordered - whether to scan according to orderby index underlying table
 	 */
 	scan(
 		callback: (

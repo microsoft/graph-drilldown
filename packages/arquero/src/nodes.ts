@@ -1,7 +1,11 @@
-// eslint-disable-next-line
-import { one } from './table'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
+
+import { one } from './table.js'
 
 export interface ArqueroNode {
 	['node.id']: string
@@ -11,8 +15,8 @@ export interface ArqueroNode {
 
 /**
  * Gets default rolled up node stats within a quantile range.
- * @param table assumed pre-grouped table (e.g., by parent id)
- * @param quantile
+ * @param table - assumed pre-grouped table (e.g., by parent id)
+ * @param quantile - quanitile value (0-1)
  */
 export function getNodeStats(table: ColumnTable, quantile = 1) {
 	if (!table || table.numRows() === 0 || quantile === 1) {

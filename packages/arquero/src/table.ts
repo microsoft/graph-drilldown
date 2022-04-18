@@ -6,25 +6,29 @@ import type { ColumnDef } from '@graph-drilldown/types'
 import { all, not, op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
+const identity = (d: any) => d
+
 //TODO: this is copied across packages, work on arquero format to make it unnecessary
 const ROOT_COMMUNITY_ID = '-1'
 /**
  * Extracts the objects from a single-row table.
  * This is commonly needed when doing rollups that output
  * a single row of stats.
- * @param table
+ * @param table - table to extract row from
+ * @param transformer - optional transform to apply to the row
  */
-// TODO: this is pretty basic, but the intent would be to provide optional
-// transformers per column or as a whole
-export function one(table: ColumnTable): { [key: string]: any } {
-	return table.objects()[0]
+export function one(
+	table: ColumnTable,
+	transformer: (d: any) => any = identity,
+): Record<string, any> {
+	return transformer(table.objects()[0])
 }
 
 /**
  * Return a selection mapping that renames columns with a prefix.
- * @param table table to enumerate and rename columns
- * @param prefix prefix to add to column names
- * @param exclude exclusion list if you want to retain some original columns
+ * @param table - table to enumerate and rename columns
+ * @param prefix - prefix to add to column names
+ * @param exclude - exclusion list if you want to retain some original columns
  */
 export function rename(table: ColumnTable, prefix: string, exclude?: string[]) {
 	const ex = new Set(exclude)
@@ -66,10 +70,10 @@ export function recomputeCommunityStats(table: ColumnTable, force?: boolean) {
  * If not, cycle through valid alternates and rename as
  * the expected column. If still no success, use a fallback
  * function to define the column.
- * @param table
- * @param name
- * @param variants
- * @param fallback
+ * @param table - table to check
+ * @param name - name of the column to confirm
+ * @param variants - list of allowed variant column names to consider
+ * @param fallback - fallback function to execute if the column is not found
  */
 function ensureColumn(
 	table: ColumnTable,
@@ -97,7 +101,7 @@ function ensureColumn(
  * Check the columns to make sure we have a node.id,
  * falling back on other common options.
  * In the worst case, we select the first column.
- * @param table
+ * @param table - table to ensure has a standard node id column
  */
 function ensureNodeId(table: ColumnTable) {
 	return ensureColumn(table, 'node.id', ['id', 'ID', 'nodeId'], table => {
@@ -113,7 +117,7 @@ function ensureNodeId(table: ColumnTable) {
  * Check the colunns to make sure we have a community id ('cid').
  * This is required at a basic level for all node tables, so if one isn't
  * present we just default to '0' as an id
- * @param table
+ * @param table - table to ensure has a standard community id column
  */
 function ensureCommunityId(table: ColumnTable) {
 	return ensureColumn(
@@ -288,8 +292,8 @@ function prefixRemaining(table: ColumnTable, prefix: string) {
 /**
  * Apply a list of functions to a table in series, returning the final output.
  * Helper because Arquero does not have something akin to d3's `call`.
- * @param table
- * @param functions
+ * @param table - table to apply function list to
+ * @param functions - list of function to apply, in order, to the input table
  */
 export function chain(
 	table: ColumnTable,
@@ -300,8 +304,8 @@ export function chain(
 
 /**
  * Take a starter node table and ensure it has all the required columns (or default values)
- * @param table
- * @param type
+ * @param table - table to turn into a standard node table
+ * @param fromEdges - indicates that the table is a list of edges to derive nodes from
  */
 export function initializeNodeTable(table: ColumnTable, fromEdges = false) {
 	const starter = fromEdges
@@ -381,10 +385,10 @@ export function joinNodeCommunityTables(
  * expected columns that this causes problems.
  * It's especially frequent because the join keys are renamed,
  * so this lets us join and exclude the key
- * @param left
- * @param right
- * @param leftKey
- * @param rightKey
+ * @param left - left side of join
+ * @param right - right side of join
+ * @param leftKey - left side key column name
+ * @param rightKey - right side key column name
  */
 export function joinWithReplace(
 	left: ColumnTable,
@@ -398,15 +402,16 @@ export function joinWithReplace(
  * Join a new table to existing, using strict rules of id and prefix.
  * I.e., this is not a general-purpose join util, but rather one that
  * simplifies our joins by assuming an id column and a prefix for output columns.
- * @param left
- * @param right
- * @param type
- * @param leftKey optional explicit left key, otherwise it will use `${type}.id`
- * @param rightKey optional explicit right key, otherwise it will use 'id'
+ * @param left - left side of join
+ * @param right - right side of join
+ * @param type - type of table (node, community, edge, join)
+ * @param leftKey - optional explicit left key, otherwise it will use `${type}.id`
+ * @param rightKey - optional explicit right key, otherwise it will use 'id'
  */
 export function joinDataTables(
 	left: ColumnTable,
 	right: ColumnTable,
+	// TODO: strongly type this
 	type: string,
 	leftKey?: string,
 	rightKey = 'id',
@@ -435,8 +440,8 @@ export function joinDataTables(
 
 /**
  * This checks the main table for community.childCount column and computes if missing
- * @param main current fully-populated table with joined communities
- * @param communities flat community list to rollup childCount
+ * @param main - current fully-populated table with joined communities
+ * @param communities - flat community list to rollup childCount
  */
 export function checkAndAddChildCount(main: ColumnTable) {
 	if (hasColumn(main, 'community.childCount')) {
@@ -464,7 +469,7 @@ export function checkAndAddChildCount(main: ColumnTable) {
 
 /**
  * This checks the main table for a community.nodeCount column and computes if missing
- * @param main current fully-populated table with joined communities
+ * @param main - current fully-populated table with joined communities
  */
 export function checkAndAddNodeCount(main: ColumnTable) {
 	if (hasColumn(main, 'community.nodeCount')) {
@@ -481,8 +486,9 @@ export function checkAndAddNodeCount(main: ColumnTable) {
 /**
  * Create a set of ColumnDefs by enumerating the table.
  * Optional set of column names indicating they are read-only (i.e., not deletable in UI)
- * @param table
- * @param readOnlyNames
+ * TODO: this should reside in the webapp
+ * @param table - table to start with
+ * @param readOnlyNames - list of columns to flag as read only
  */
 export function listColumnDefs(
 	table: ColumnTable,

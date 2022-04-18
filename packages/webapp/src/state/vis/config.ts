@@ -2,11 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { ColumnStats } from '@graph-drilldown/types'
+import type {
+	ColorEncoding,
+	ColumnStats,
+	NumericEncoding,
+} from '@graph-drilldown/types'
+import { DataBinding } from '@graph-drilldown/types'
 import { ScaleType } from '@thematic/core'
-
-import type { ColorEncoding, NumericEncoding } from '../../types'
-import { DataBinding } from '../../types'
 
 export function getDefaultColorOptions(
 	field: string,
