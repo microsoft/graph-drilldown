@@ -6,6 +6,7 @@ import {
 	CollapsiblePanel,
 	CollapsiblePanelContainer,
 } from '@essex-js-toolkit/themed-components'
+import { ToggleHeader } from '@graph-drilldown/components'
 import { format } from 'd3-format'
 import { useCallback } from 'react'
 import styled from 'styled-components'
@@ -25,7 +26,6 @@ import { EdgeSizeHeaderLegend } from '../../../components/legends/EdgeSizeHeader
 import { NodeColorHeaderLegend } from '../../../components/legends/NodeColorHeaderLegend'
 import { NodeOpacityHeaderLegend } from '../../../components/legends/NodeOpacityHeaderLegend'
 import { NodeSizeHeaderLegend } from '../../../components/legends/NodeSizeHeaderLegend'
-import { ToggleHeader } from '../../../controls/ToggleHeader'
 import { ColumnEditorPanel } from './PanelComponents/ColumnEditorPanel'
 import { EdgeColorControlsPanel } from './PanelComponents/EdgeColorControlsPanel'
 import { EdgeOpacityControlsPanel } from './PanelComponents/EdgeOpacityControlsPanel'
