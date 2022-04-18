@@ -13,7 +13,8 @@ import {
 
 import { getColumnStats } from '~/arquero'
 
-import type { ColumnStats, NumericEncoding } from '../../types'
+import type { NumericEncoding } from '../../types'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { edgeTableState } from '../tables'
 import { getDefaultNumericOptions } from './config'
 

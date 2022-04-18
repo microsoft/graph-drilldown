@@ -2,11 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { FileOrigin } from '@graph-drilldown/types'
 import { useMemo } from 'react'
-
 import { useDataset, useFormat } from '~/state'
-import { FileOrigin } from '~/types'
-
 import type { FileBundle } from './useTestFiles'
 
 /**

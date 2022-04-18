@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import { useArqueroColumnList, useArqueroRemoveColumns } from '~/arquero'
 import { useBrowserColumns, useNodeColorEncoding } from '~/state'
 
-import type { ColumnDef } from '../../types'
+import type { ColumnDef } from '@graph-drilldown/types'
 
 export const ColumnEditor = () => {
 	const columns = useArqueroColumnList()

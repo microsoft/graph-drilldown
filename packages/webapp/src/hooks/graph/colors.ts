@@ -9,7 +9,8 @@ import { SelectionState } from '@thematic/core'
 import { useThematic } from '@thematic/react'
 import { useCallback, useMemo } from 'react'
 
-import type { ColorEncoding, TableBackedItem } from '../../types'
+import type { ColorEncoding } from '../../types'
+import type { TableBackedItem } from '@graph-drilldown/types'
 import { useThematicColorScale } from './scales'
 
 export function useBackgroundColor(alpha = 1.0): ColorVector {

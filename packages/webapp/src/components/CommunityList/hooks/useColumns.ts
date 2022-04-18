@@ -7,7 +7,7 @@ import { useMemo } from 'react'
 import type { CommunityCollection } from '~/arquero'
 import { useChildCountDomain, useNodeCountDomain } from '~/hooks/communities'
 import { useNodeColorEncoding } from '~/state'
-import type { Community } from '~/types'
+import type { Community } from '@graph-drilldown/types'
 
 import { BAR_HEIGHT, BAR_WIDTH } from '../CommunityList.styles'
 import type { Column } from '../CommunityList.types'

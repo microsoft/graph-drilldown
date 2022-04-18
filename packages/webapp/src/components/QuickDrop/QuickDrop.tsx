@@ -16,8 +16,8 @@ import { useFileManagement } from '~/hooks/files'
 import { parseDSVTable } from '../../api'
 import { FileDrop } from '../../controls/FileDrop'
 import { variants } from '../../styles'
-import type { ItemType } from '../../types'
-import { FileOrigin } from '../../types'
+import type { ItemType } from '@graph-drilldown/types'
+import { FileOrigin } from '@graph-drilldown/types'
 
 const SQUARE = 80
 

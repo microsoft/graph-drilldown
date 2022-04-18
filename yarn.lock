@@ -3226,6 +3226,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex/tsconfig-base@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@essex/tsconfig-base@npm:1.0.2"
+  checksum: 1ad019130560bd1f29e3702d7dce3019fa476b12b2138aebd2698ed008bf8bf856719c475e9e955a84291eda05b56db6cb360b97e683be9774279e73139abe18
+  languageName: node
+  linkType: hard
+
 "@essex/webpack-config@npm:^10.0.5":
   version: 10.0.5
   resolution: "@essex/webpack-config@npm:10.0.5"
@@ -3556,6 +3563,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graph-drilldown/arquero@workspace:packages/arquero":
+  version: 0.0.0-use.local
+  resolution: "@graph-drilldown/arquero@workspace:packages/arquero"
+  dependencies:
+    "@essex/scripts": ^21.0.2
+    "@essex/tsconfig-base": ^1.0.2
+    "@types/node": ^17.0.24
+    "@types/react": ^18.0.5
+    arquero: ^4.8.8
+    react: ^18.0.0
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": ">= 17"
+    react: ">= 17"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    "@types/react":
+      optional: true
+    react:
+      optional: false
+  languageName: unknown
+  linkType: soft
+
+"@graph-drilldown/components@workspace:packages/components":
+  version: 0.0.0-use.local
+  resolution: "@graph-drilldown/components@workspace:packages/components"
+  dependencies:
+    "@essex/scripts": ^21.0.2
+    "@essex/tsconfig-base": ^1.0.2
+    "@graph-drilldown/types": "workspace:packages/types"
+    "@types/node": ^17.0.24
+    "@types/react": ^18.0.5
+    react: ^18.0.0
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": ">= 17"
+    react: ">= 17"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    "@types/react":
+      optional: true
+    react:
+      optional: false
+  languageName: unknown
+  linkType: soft
+
 "@graph-drilldown/project@workspace:.":
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/project@workspace:."
@@ -3598,6 +3653,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@graph-drilldown/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@graph-drilldown/types@workspace:packages/types"
+  dependencies:
+    "@essex/scripts": ^21.0.2
+    "@essex/tsconfig-base": ^1.0.2
+    "@types/node": ^17.0.24
+    "@types/react": ^18.0.5
+    arquero: ^4.8.8
+    react: ^18.0.0
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": ">= 17"
+    react: ">= 17"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    "@types/react":
+      optional: true
+    react:
+      optional: false
+  languageName: unknown
+  linkType: soft
+
 "@graph-drilldown/webapp@workspace:packages/webapp":
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/webapp@workspace:packages/webapp"
@@ -3615,6 +3694,8 @@ __metadata:
     "@fluentui/react": ^8.62.4
     "@fluentui/react-hooks": ^8.5.3
     "@fluentui/utilities": ^8.8.1
+    "@graph-drilldown/components": "workspace:packages/components"
+    "@graph-drilldown/types": "workspace:packages/types"
     "@graspologic/graph": 0.7.0-13
     "@graspologic/layout-core": 0.7.0-13
     "@graspologic/react": 0.7.0-13
@@ -5157,6 +5238,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^17.0.24":
+  version: 17.0.25
+  resolution: "@types/node@npm:17.0.25"
+  checksum: 6a820bd624e69ea772f52a6cdb326484eff5829443dc981939373929ade109f58c21698b9f0a831bd6ceea799e722a75dc49c5fa7a6bc32a81e1cbdfc6507b64
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -5273,6 +5361,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 9660ea0a2c7ad364295c1e5abd6b98a05fd372a0f06f97850f60fcc254bcec766d19b101c0acc382746a4e0b71848d88097a1db7124e3fd441c0472fb6b3f849
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.5":
+  version: 18.0.5
+  resolution: "@types/react@npm:18.0.5"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 70d3336d43ef25509fa89ef3278f57fdf1945fc921e69b7890a78ab9a52a55ee38e2f13aa71eb4f6032b7311e7557860ce8836c1acf3028304989571c9736a96
   languageName: node
   linkType: hard
 

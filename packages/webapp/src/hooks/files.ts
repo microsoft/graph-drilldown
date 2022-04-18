@@ -11,7 +11,7 @@ import {
 	useFilesList,
 	useSelectedFile,
 } from '~/state'
-import type { DataFile } from '~/types'
+import type { DataFile } from '@graph-drilldown/types'
 
 /**
  * Manage the list of files and tables in the app.

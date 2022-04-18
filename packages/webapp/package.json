@@ -21,6 +21,8 @@
 		"@fluentui/react": "^8.62.4",
 		"@fluentui/react-hooks": "^8.5.3",
 		"@fluentui/utilities": "^8.8.1",
+		"@graph-drilldown/components": "workspace:packages/components",
+		"@graph-drilldown/types": "workspace:packages/types",
 		"@graspologic/graph": "0.7.0-13",
 		"@graspologic/layout-core": "0.7.0-13",
 		"@graspologic/react": "0.7.0-13",

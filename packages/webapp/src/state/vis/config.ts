@@ -4,7 +4,8 @@
  */
 import { ScaleType } from '@thematic/core'
 
-import type { ColorEncoding, ColumnStats, NumericEncoding } from '../../types'
+import type { ColorEncoding,  NumericEncoding } from '../../types'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { DataBinding } from '../../types'
 
 export function getDefaultColorOptions(

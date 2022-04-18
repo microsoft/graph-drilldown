@@ -17,8 +17,9 @@ import { useColorCache } from '~/state/caches'
 import type {
 	ColorEncoding,
 	NumericEncoding,
-	TableBackedItem,
+	
 } from '../../types'
+import type { TableBackedItem } from '@graph-drilldown/types'
 import { DataBinding } from '../../types'
 import { useColorEncodingScale, useNumericEncodingScale } from './scales'
 

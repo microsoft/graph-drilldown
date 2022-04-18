@@ -14,7 +14,8 @@ import {
 import { getColumnStats } from '~/arquero'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
-import type { ColumnStats, NumericEncoding } from '../../types'
+import type {  NumericEncoding } from '../../types'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { communityNodesTableState } from '../tables'
 import { getDefaultNumericOptions } from './config'
 

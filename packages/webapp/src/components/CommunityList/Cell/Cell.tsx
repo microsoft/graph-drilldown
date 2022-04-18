@@ -4,7 +4,7 @@
  */
 import { useMemo } from 'react'
 
-import type { Community } from '~/types'
+import type { Community } from '@graph-drilldown/types'
 
 import type { Column, ElementStyles } from '../CommunityList.types'
 import { Mark } from '../CommunityList.types'

@@ -7,7 +7,7 @@ import { useMemo } from 'react'
 
 import type { TableCollection } from '~/arquero'
 import { useColumnArray } from '~/arquero'
-import type { Community } from '~/types'
+import type { Community } from '@graph-drilldown/types'
 
 const MIN_COLUMN_WIDTH = 100
 

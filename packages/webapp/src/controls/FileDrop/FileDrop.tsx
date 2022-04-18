@@ -7,7 +7,7 @@ import { useDropzone } from 'react-dropzone'
 import styled from 'styled-components'
 
 import { subHeaderLabel } from '../../styles'
-import type { ItemType } from '../../types'
+import type { ItemType } from '@graph-drilldown/types'
 import { useDrop } from './FileDrop.hooks'
 
 export interface FileDropProps {

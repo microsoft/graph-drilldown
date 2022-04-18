@@ -24,7 +24,7 @@ import {
 	NodeCollection,
 } from '~/arquero'
 
-import type { ColumnStats, Node } from '../types'
+import type { ColumnStats, Node } from '@graph-drilldown/types'
 import { uniqueNodesState } from './nodes'
 import { settingsState } from './settings'
 import { communityNodesTableState, edgeTableState } from './tables'

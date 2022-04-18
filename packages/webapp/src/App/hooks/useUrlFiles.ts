@@ -10,7 +10,7 @@ import {
 	useJoinFile,
 	useNodesFile,
 } from '~/state'
-import { FileOrigin } from '~/types'
+import { FileOrigin } from '@graph-drilldown/types'
 
 import type { FileBundle } from './useTestFiles'
 

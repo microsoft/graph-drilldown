@@ -6,8 +6,7 @@
 import { table as aqtable } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import type { TableData } from 'arquero/dist/types/table/table'
-
-import type { Community, Edge, ItemType, Node, TableBackedItem } from '../types'
+import type { Community, Edge, ItemType, Node, TableBackedItem } from '@graph-drilldown/types'
 
 class TableItemFacade implements TableBackedItem {
 	private _table: ColumnTable

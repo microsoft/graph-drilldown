@@ -4,7 +4,7 @@
  */
 import { useCallback } from 'react'
 
-import type { ItemType } from '~/types'
+import type { ItemType } from '@graph-drilldown/types'
 
 export function useDrop(
 	onFileLoad: (content: string, type: ItemType, name: string) => void,

@@ -26,7 +26,8 @@ import {
 } from '~/state'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
-import type { NavTreeArray, Node } from '../../types'
+import type { NavTreeArray} from '../../types'
+import type {  Node } from '@graph-drilldown/types'
 
 interface NodeAccum {
 	[id: string]: string | number

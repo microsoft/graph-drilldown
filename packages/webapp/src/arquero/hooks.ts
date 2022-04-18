@@ -27,7 +27,7 @@ import {
 import { useCachedColumnHistogram, useCachedColumnStats } from '~/state/caches'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
-import type { ColumnDef, Community, Edge, ItemType } from '../types'
+import type { ColumnDef,  ItemType, Community, Edge } from '@graph-drilldown/types'
 import { findNodesCollectionForCommunity } from './communities'
 import { filterEdgesToNodes } from './edges'
 import { deriveLayoutPositions, deriveSmallMultiplePositions } from './layout'

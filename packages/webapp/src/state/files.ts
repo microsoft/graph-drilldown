@@ -11,7 +11,7 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 
-import type { DataFile } from '../types'
+import type { DataFile } from '@graph-drilldown/types'
 
 const filesState = atom<DataFile[]>({
 	key: 'data-files',

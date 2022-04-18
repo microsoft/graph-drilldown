@@ -14,7 +14,7 @@ import {
 	joinNodeCommunityTables,
 } from '~/arquero/table'
 import { useSetFiles } from '~/state'
-import type { DataFile } from '~/types'
+import type { DataFile } from '@graph-drilldown/types'
 
 export interface FileBundle {
 	nodes?: DataFile | undefined

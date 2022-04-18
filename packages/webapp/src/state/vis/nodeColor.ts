@@ -14,7 +14,8 @@ import {
 
 import { getColumnStats } from '~/arquero'
 
-import type { ColorEncoding, ColumnStats } from '../../types'
+import type { ColorEncoding } from '../../types'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { selectedCommunityState } from '../communities'
 import { themeState } from '../settings'
 import { communityNodesTableState } from '../tables'

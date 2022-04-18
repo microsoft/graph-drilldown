@@ -6,7 +6,7 @@ import { all, not, op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
-import type { ColumnDef } from '../types'
+import type { ColumnDef } from '@graph-drilldown/types'
 
 /**
  * Extracts the objects from a single-row table.

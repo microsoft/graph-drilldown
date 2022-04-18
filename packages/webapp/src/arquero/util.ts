@@ -9,7 +9,7 @@ import { op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { precisionFixed } from 'd3-format'
 
-import type { ColumnStats } from '../types'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { one } from './table'
 import { TableCollection } from './TableCollection'
 

@@ -4,7 +4,7 @@
  */
 import { useCallback, useState } from 'react'
 
-import type { DataFile } from '~/types'
+import type { DataFile } from '@graph-drilldown/types'
 
 export function useRowHandling(onClick) {
 	const onRowClick = useCallback(
