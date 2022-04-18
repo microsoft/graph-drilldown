@@ -7,7 +7,7 @@
 		"bundle": "yarn workspaces foreach -pv run bundle",
 		"build": "yarn workspaces foreach -pivt run build",
 		"start": "yarn workspaces foreach -piv run start",
-		"ci": "run-s clean lint typecheck bundle assets git_is_clean",
+		"ci": "run-s clean lint build git_is_clean",
 		"lint": "essex lint --fix",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
