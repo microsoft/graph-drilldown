@@ -8,11 +8,7 @@ import { FileOrigin } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-import {
-	useArqueroAddTable,
-	useArqueroBigTable,
-	useArqueroEdgeTable,
-} from '~/arquero'
+import { useArqueroAddTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
 
 import { parseDSVTable } from '../../api'
@@ -37,10 +33,8 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 	dropHeightSize = SQUARE,
 	compact = false,
 }) => {
-	const bigTable = useArqueroBigTable()
-	const edgeTable = useArqueroEdgeTable()
 	const doAddTable = useArqueroAddTable()
-	const { doAddFile, doClearAll } = useFileManagement()
+	const { doAddFile, doClearAll, hasData } = useFileManagement()
 
 	const handleFileLoad = useCallback(
 		(content: string, type: ItemType, fileName: string) => {
@@ -99,7 +93,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 				</HelperText>
 			) : null}
 			<Reset>
-				{(bigTable.numRows() > 0 || edgeTable.numRows() > 0) && compact ? (
+				{hasData && compact ? (
 					<DefaultButton text="Clear all" onClick={doClearAll} />
 				) : null}
 			</Reset>

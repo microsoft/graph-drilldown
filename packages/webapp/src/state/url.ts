@@ -12,7 +12,7 @@ import {
 	getFormat,
 	getJoinFile,
 	getNodesFile,
-} from '../utils/query'
+} from '../query'
 
 // TODO: we may want this to be an env variable for dedicated deployments
 const datasetState = atom<string | undefined>({

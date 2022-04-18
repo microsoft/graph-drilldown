@@ -11,10 +11,10 @@ import styled from 'styled-components'
 import { HEADER_HEIGHT } from '~/styles'
 import { BrowserOptions } from '~/types'
 
-import { CommunitiesTable } from '../../../components/CommunitiesTable'
-import { HierarchyBrowserPanel } from '../../../components/HierarchyBrowserPanel'
 import type { IPosition } from '../GraphViewerPage.hooks'
 import { DIRECTION } from '../hooks/useResizeHandlers'
+import { CommunitiesTable } from './CommunitiesTable'
+import { HierarchyBrowserPanel } from './HierarchyBrowserPanel'
 import { PivotContent } from './PivotContent'
 
 export type Enable = {
@@ -108,8 +108,8 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 							iconProps={{
 								iconName,
 							}}
-							text="Resize Viewer"
-							title="Resize Viewer"
+							text="Resize viewer"
+							title="Resize viewer"
 							onClick={handleClick}
 						/>
 						<PivotContent

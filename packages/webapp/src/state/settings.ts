@@ -6,7 +6,7 @@ import type { Theme } from '@thematic/core'
 import { load, ThemeVariant } from '@thematic/core'
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
 
-import { parseParams } from '../utils/query'
+import { parseParams } from '../query'
 
 export interface Settings {
 	showPreviewMap: boolean

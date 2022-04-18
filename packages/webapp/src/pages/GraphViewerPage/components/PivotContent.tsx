@@ -2,8 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-// control style height for pivot items, doesn't seem like option in Pivot Style Props?
-import './Pivot.css'
 
 import { Pivot, PivotItem } from '@fluentui/react'
 import { memo, useCallback } from 'react'
@@ -16,8 +14,11 @@ export interface PivotContentProps {
 	selectedKey: BrowserOptions
 }
 
-const getTabId = (itemKey: string) => {
-	return `ShapeColorPivot_${itemKey}`
+const styles = {
+	link: {
+		height: 24,
+		lineHeight: 24,
+	},
 }
 
 // Pivots content between Community Table and Hierarchy Browser
@@ -38,7 +39,7 @@ export const PivotContent: React.FC<PivotContentProps> = memo(
 					selectedKey={selectedKey}
 					onLinkClick={handleLinkClick}
 					headersOnly={true}
-					getTabId={getTabId}
+					styles={styles}
 				>
 					<PivotItem
 						headerText="Hierarchy browser"

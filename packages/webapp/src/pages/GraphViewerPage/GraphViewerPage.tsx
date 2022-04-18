@@ -6,16 +6,17 @@ import { memo, Suspense, useMemo, useRef, useState } from 'react'
 import type { RndResizeStartCallback } from 'react-rnd'
 import styled from 'styled-components'
 
+import { GraphPanel } from './components/GraphPanel'
+import { LeftSidePanel } from './components/LeftSidePanel'
 import { ResizableBrowser } from './components/ResizableBrowser'
-import { GraphPanel } from './GraphPanel'
+import { RightSidePanel } from './components/RightSidePanel'
+import { StyledSpinnner } from './components/StyledSpinner'
 import {
 	CSSFilter,
 	useGraphDimensions,
 	useLayoutStyle,
 	useResizeHandlers,
 } from './GraphViewerPage.hooks'
-import { LeftSidePanel, RightSidePanel } from './SidePanel'
-import { StyledSpinnner } from './StyledSpinner'
 
 export const GraphViewerPage: React.FC = memo(function GraphViewerPage() {
 	const ref = useRef(null)

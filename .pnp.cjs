@@ -7309,6 +7309,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-animate-height", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.0.23"],\
             ["react-dom", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:17.0.2"],\
             ["react-dropzone", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:11.3.2"],\
+            ["react-if", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.1.3"],\
             ["react-infinite-scroller", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:1.2.4"],\
             ["react-rnd", "npm:10.3.0"],\
             ["react-router-dom", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:5.2.0"],\
@@ -22271,6 +22272,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-if", "npm:4.1.1"]\
           ],\
           "linkType": "SOFT"\
+        }],\
+        ["npm:4.1.3", {\
+          "packageLocation": "./.yarn/cache/react-if-npm-4.1.3-4ca3dee716-296aef4c67.zip/node_modules/react-if/",\
+          "packageDependencies": [\
+            ["react-if", "npm:4.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/react-if-virtual-8a7dae2c6b/0/cache/react-if-npm-4.1.3-4ca3dee716-296aef4c67.zip/node_modules/react-if/",\
+          "packageDependencies": [\
+            ["react-if", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.1.3"],\
+            ["@types/react", "npm:16.14.21"],\
+            ["react", "npm:17.0.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
         }],\
         ["virtual:cc4845f3c0f2001cf6790528905b10330a170f920d2a290c32dc0df2d25322c495067aa52c61abbecc9a22ebe934b3fd4ea1324ae3369de9195da7c231f048c9#npm:4.1.1", {\
           "packageLocation": "./.yarn/__virtual__/react-if-virtual-f56ae95099/0/cache/react-if-npm-4.1.1-b36afcee94-ea7c343eca.zip/node_modules/react-if/",\

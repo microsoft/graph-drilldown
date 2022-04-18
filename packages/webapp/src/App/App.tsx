@@ -6,10 +6,11 @@ import { useMemo } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { LazyCachingSwitch } from '../components/LazyCachingSwitch'
-import { DataManagerPage, GraphViewerPage } from '../pages'
+import { LazyCachingSwitch } from '~/components/LazyCachingSwitch'
+import { DataManagerPage, GraphViewerPage } from '~/pages'
+
 import { usePresetData, useTestFiles, useUrlFiles } from './App.hooks'
-import { CommandBar } from './commands'
+import { CommandBar } from './components/CommandBar'
 import { Footer } from './components/Footer'
 
 export const App: React.FC = () => {

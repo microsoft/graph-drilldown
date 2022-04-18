@@ -5,7 +5,11 @@
 import type { DataFile } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 
-import { useClearAllTables } from '~/arquero'
+import {
+	useArqueroBigTable,
+	useArqueroEdgeTable,
+	useClearAllTables,
+} from '~/arquero'
 import {
 	useAddFile,
 	useClearFiles,
@@ -23,7 +27,10 @@ export function useFileManagement(): {
 	doClearAll: () => void
 	selectedFile: DataFile | undefined
 	onFileSelected: (file: DataFile | undefined) => void
+	hasData: boolean
 } {
+	const bigTable = useArqueroBigTable()
+	const edgeTable = useArqueroEdgeTable()
 	const resetTables = useClearAllTables()
 
 	const files = useFilesList()
@@ -48,5 +55,7 @@ export function useFileManagement(): {
 		doClearAll,
 		selectedFile,
 		onFileSelected,
+		hasData:
+			bigTable.numRows() > 0 || edgeTable.numRows() > 0 || files.length > 0,
 	}
 }

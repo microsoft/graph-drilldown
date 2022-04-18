@@ -6,8 +6,8 @@ import type { FC } from 'react'
 import { Suspense } from 'react'
 import styled from 'styled-components'
 
-import { FileList } from '../../components/FileList'
-import { LeftSidePanel } from './LeftSidePanel'
+import { LeftSidePanel } from './components/LeftSidePanel'
+import { MainPanel } from './components/MainPanel'
 
 export const DataManagerPage: FC = () => {
 	return (
@@ -16,9 +16,9 @@ export const DataManagerPage: FC = () => {
 				<LeftSidePanel />
 			</Suspense>
 			<Content>
-				<DropContainer>
-					<FileList />
-				</DropContainer>
+				<MainContainer>
+					<MainPanel />
+				</MainContainer>
 			</Content>
 		</Container>
 	)
@@ -35,7 +35,7 @@ const Content = styled.div`
 	width: 100%;
 `
 
-const DropContainer = styled.div`
+const MainContainer = styled.div`
 	margin-top: 40px;
 	margin-bottom: 20px;
 	width: 800px;
