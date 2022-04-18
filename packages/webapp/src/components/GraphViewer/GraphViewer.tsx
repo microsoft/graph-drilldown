@@ -15,7 +15,7 @@ import type { GraphRenderer } from '@graspologic/renderer'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-import type { NodeCollection } from '~/arquero'
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	useGraphViewType,
 	useSelectedNodesState,

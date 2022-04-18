@@ -12,7 +12,7 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 
-import { getColumnStats } from '~/arquero'
+import { getColumnStats } from '@graph-drilldown/arquero'
 
 import type { ColorEncoding } from '../../types'
 import type { ColumnStats } from '@graph-drilldown/types'

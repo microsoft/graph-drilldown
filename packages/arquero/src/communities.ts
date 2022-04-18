@@ -6,7 +6,7 @@ import { table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
 import { findGroupIndices } from './table'
-import { NodeCollection } from './TableCollection'
+import { NodeCollection } from '@graph-drilldown/arquero'
 
 /**
  * Gets a table of just the nodes for a matching community.

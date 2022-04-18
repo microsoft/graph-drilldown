@@ -4,7 +4,7 @@
  */
 import styled from 'styled-components'
 
-import type { CommunityCollection } from '~/arquero'
+import type { CommunityCollection } from '@graph-drilldown/arquero'
 
 import {
 	useColumns,

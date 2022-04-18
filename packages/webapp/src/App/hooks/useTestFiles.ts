@@ -12,7 +12,7 @@ import {
 	initializeNodeTable,
 	joinDataTables,
 	joinNodeCommunityTables,
-} from '~/arquero/table'
+} from '@graph-drilldown/arquero'
 import { useSetFiles } from '~/state'
 import type { DataFile } from '@graph-drilldown/types'
 

@@ -5,7 +5,7 @@
 import { desc, op, table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
-import type { NodeCollection } from './TableCollection'
+import type { NodeCollection } from '@graph-drilldown/arquero'
 
 export function getEdgesFromTableByID(
 	selectedId: string,

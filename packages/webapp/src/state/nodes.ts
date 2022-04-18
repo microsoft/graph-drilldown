@@ -4,7 +4,7 @@
  */
 import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 
-import { findGroupIndices, NodeCollection } from '~/arquero'
+import { findGroupIndices, NodeCollection } from '@graph-drilldown/arquero'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
 import { groupedParentsTableState } from './tables'

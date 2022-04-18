@@ -14,11 +14,11 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import type { TableData } from 'arquero/dist/types/table/table'
 import { useMemo } from 'react'
 
-import type { NodeCollection } from '~/arquero'
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	findNodesCollectionForCommunity,
 	getEdgesFromTableByID,
-} from '~/arquero'
+} from '@graph-drilldown/arquero'
 import {
 	useGroupedByCommunityTable,
 	useGroupedByParentTable,

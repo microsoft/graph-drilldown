@@ -7,7 +7,7 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { columnTypes } from '~/arquero'
+import { columnTypes } from '@graph-drilldown/arquero'
 
 import { NumericDomainEditor } from '../NumericDomainEditor'
 import { NumericRangeEditor } from '../NumericRangeEditor'

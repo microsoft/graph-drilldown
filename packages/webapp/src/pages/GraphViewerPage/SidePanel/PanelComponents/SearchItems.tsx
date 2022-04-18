@@ -11,7 +11,7 @@ import {
 	CommunityCollection,
 	listColumnDefs,
 	NodeCollection,
-} from '../../../../arquero'
+} from '@graph-drilldown/arquero'
 import { useColumns } from '../../../../components/CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../../../../components/CommunityList/CommunityList.types'
 import { CommunityRow } from '../../../../components/CommunityList/CommunityRow'

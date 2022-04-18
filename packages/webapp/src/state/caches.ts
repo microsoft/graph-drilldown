@@ -22,7 +22,7 @@ import {
 	getColumnHistogram,
 	getColumnStats,
 	NodeCollection,
-} from '~/arquero'
+} from '@graph-drilldown/arquero'
 
 import type { ColumnStats, Node } from '@graph-drilldown/types'
 import { uniqueNodesState } from './nodes'

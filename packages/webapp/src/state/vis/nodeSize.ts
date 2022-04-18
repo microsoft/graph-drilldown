@@ -11,7 +11,7 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 
-import { getColumnStats } from '~/arquero'
+import { getColumnStats } from '@graph-drilldown/arquero'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
 import type {  NumericEncoding } from '../../types'

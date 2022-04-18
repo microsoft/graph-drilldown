@@ -4,7 +4,7 @@
  */
 import { useMemo } from 'react'
 
-import type { CommunityCollection } from '~/arquero'
+import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { useChildCountDomain, useNodeCountDomain } from '~/hooks/communities'
 import { useNodeColorEncoding } from '~/state'
 import type { Community } from '@graph-drilldown/types'

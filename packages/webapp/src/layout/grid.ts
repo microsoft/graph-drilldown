@@ -5,7 +5,7 @@
 import { op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
-import { normalizeXY } from '~/arquero'
+import { normalizeXY } from '@graph-drilldown/arquero'
 
 /**
  * Assigns node positions by unrolling into a square grid.

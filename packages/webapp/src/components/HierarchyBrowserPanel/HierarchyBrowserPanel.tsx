@@ -14,7 +14,7 @@ import { HierarchyBrowser } from '@essex-js-toolkit/hierarchy-browser'
 import { memo, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { findNodesTableForParent } from '~/arquero'
+import { findNodesTableForParent } from '@graph-drilldown/arquero'
 import {
 	useBrowserColumns,
 	useEdgeTable,

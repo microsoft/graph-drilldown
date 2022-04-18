@@ -10,8 +10,7 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { precisionFixed } from 'd3-format'
 
 import type { ColumnStats } from '@graph-drilldown/types'
-import { one } from './table'
-import { TableCollection } from './TableCollection'
+import { one, TableCollection } from '@graph-drilldown/arquero'
 
 export function getColumnStats(table: ColumnTable, name?: string): ColumnStats {
 	if (!table || table.numRows() === 0 || table.numCols() === 0 || !name) {

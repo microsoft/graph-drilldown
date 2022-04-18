@@ -13,7 +13,7 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 
-import { findNodesTableForCommunity, getNodeStats } from '~/arquero'
+import { findNodesTableForCommunity, getNodeStats } from '@graph-drilldown/arquero'
 
 export const bigTableState = atom<ColumnTable>({
 	key: 'big-table',

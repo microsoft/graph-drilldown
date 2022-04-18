@@ -6,7 +6,7 @@ import { format } from 'd3-format'
 import { useMemo } from 'react'
 import styled from 'styled-components'
 
-import { getPrecision } from '~/arquero'
+import { getPrecision } from '@graph-drilldown/arquero'
 
 import type { ColorEncoding } from '../../types'
 import { useIsNominal } from './HeaderLegend.hooks'

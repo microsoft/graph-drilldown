@@ -10,7 +10,7 @@ import type {
 } from '@graspologic/graph'
 import { useMemo } from 'react'
 
-import type { NodeCollection } from '~/arquero'
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	useNodeColorEncoding,
 	useNodeSizeEncoding,

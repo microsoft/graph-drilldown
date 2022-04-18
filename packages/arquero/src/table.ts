@@ -5,9 +5,10 @@
 import { all, not, op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
-import { ROOT_COMMUNITY_ID } from '../constants'
 import type { ColumnDef } from '@graph-drilldown/types'
 
+//TODO: this is copied across packages, work on arquero format to make it unnecessary
+const ROOT_COMMUNITY_ID = '-1'
 /**
  * Extracts the objects from a single-row table.
  * This is commonly needed when doing rollups that output

@@ -5,7 +5,7 @@
 import { desc } from 'arquero'
 import { useMemo } from 'react'
 
-import type { TableCollection } from '~/arquero'
+import type { TableCollection } from '@graph-drilldown/arquero'
 import { useColumnArray } from '~/arquero'
 import type { Community } from '@graph-drilldown/types'
 

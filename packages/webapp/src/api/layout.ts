@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { EdgeCollection } from '~/arquero'
+import type { EdgeCollection } from '@graph-drilldown/arquero'
 import { AUTOLAYOUT_URL } from '~/constants'
 
 /**

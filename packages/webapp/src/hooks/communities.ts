@@ -4,8 +4,8 @@
  */
 import { useMemo } from 'react'
 
-import type { CommunityCollection } from '~/arquero'
-import { getColumnStats } from '~/arquero'
+import type { CommunityCollection } from '@graph-drilldown/arquero'
+import { getColumnStats } from '@graph-drilldown/arquero'
 
 export function useNodeCountDomain(
 	communities: CommunityCollection,

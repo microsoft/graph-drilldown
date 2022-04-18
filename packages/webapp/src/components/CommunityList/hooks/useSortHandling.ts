@@ -5,7 +5,7 @@
 import { desc } from 'arquero'
 import { useCallback, useMemo } from 'react'
 
-import type { CommunityCollection } from '~/arquero'
+import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { useCommunitySort } from '~/state'
 
 export function useSortHandling(communities: CommunityCollection) {

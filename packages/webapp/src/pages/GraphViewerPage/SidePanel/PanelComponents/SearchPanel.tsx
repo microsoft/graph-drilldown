@@ -12,8 +12,7 @@ import {
 	CommunityCollection,
 	listColumnNames,
 	NodeCollection,
-	useTableColumnsByType,
-} from '../../../../arquero'
+} from '@graph-drilldown/arquero'
 import {
 	useCommunitiesTable,
 	useSetSelectedCommunity,
@@ -21,6 +20,7 @@ import {
 } from '../../../../state'
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
+import { useTableColumnsByType } from '~/arquero'
 
 export interface SearchByIndex {
 	index: number
