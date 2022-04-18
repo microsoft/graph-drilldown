@@ -4,12 +4,11 @@
  */
 import { ArqueroDetailsList } from '@data-wrangling-components/react'
 import { DefaultButton } from '@fluentui/react'
+import { FileTable } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
 import { useArqueroBigTable, useArqueroEdgeTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
-
-import { FileTable } from '@graph-drilldown/components'
 
 export const FileList: React.FC = () => {
 	const bigTable = useArqueroBigTable()

@@ -1,5 +1,8 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import type ColumnTable from 'arquero/dist/types/table/column-table'
-
 
 export interface TableBackedItem {
 	id: string
@@ -31,7 +34,6 @@ export interface Edge extends TableBackedItem {
 	weight?: number
 }
 
-
 export type ItemType = 'node' | 'community' | 'edge' | 'join'
 
 export interface TableDef {
@@ -48,7 +50,6 @@ export interface ColumnDef {
 	readOnly?: boolean
 }
 
-
 export interface ColumnStats {
 	dataType?: string
 	precision: number
@@ -57,7 +58,6 @@ export interface ColumnStats {
 	domain95: [number, number]
 	domain99: [number, number]
 }
-
 
 export enum FileOrigin {
 	/**
@@ -74,7 +74,6 @@ export enum FileOrigin {
 	Remote = 'remote',
 }
 
-
 /**
  * Represents a physical file or remote dataset that has been loaded.
  * This allows us to keep track of and represent to the user any data
@@ -82,7 +81,7 @@ export enum FileOrigin {
  * For example, if they drag/drop a file, this will hold a copy of the raw
  * original table, even if the app uses derived copies.
  */
- export interface DataFile {
+export interface DataFile {
 	/**
 	 * Optional name that the user or system can provide
 	 */

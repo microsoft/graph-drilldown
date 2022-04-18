@@ -2,12 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import type { GraphContainer, InputGraph } from '@graspologic/graph'
 import { GraphView, Nodes, NodeSetHighlight } from '@graspologic/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'
-
-import type { NodeCollection } from '@graph-drilldown/arquero'
 
 import {
 	useAOIBoundsColor,

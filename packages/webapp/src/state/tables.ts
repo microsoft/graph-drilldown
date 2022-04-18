@@ -2,6 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import {
+	findNodesTableForCommunity,
+	getNodeStats,
+} from '@graph-drilldown/arquero'
 import { table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import {
@@ -12,8 +16,6 @@ import {
 	useResetRecoilState,
 	useSetRecoilState,
 } from 'recoil'
-
-import { findNodesTableForCommunity, getNodeStats } from '@graph-drilldown/arquero'
 
 export const bigTableState = atom<ColumnTable>({
 	key: 'big-table',

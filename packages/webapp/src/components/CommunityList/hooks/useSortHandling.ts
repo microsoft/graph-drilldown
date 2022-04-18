@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { desc } from 'arquero'
 import { useCallback, useMemo } from 'react'
 
-import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { useCommunitySort } from '~/state'
 
 export function useSortHandling(communities: CommunityCollection) {

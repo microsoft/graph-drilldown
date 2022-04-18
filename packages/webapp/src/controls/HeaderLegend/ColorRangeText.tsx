@@ -2,11 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { getPrecision } from '@graph-drilldown/arquero'
 import { format } from 'd3-format'
 import { useMemo } from 'react'
 import styled from 'styled-components'
-
-import { getPrecision } from '@graph-drilldown/arquero'
 
 import type { ColorEncoding } from '../../types'
 import { useIsNominal } from './HeaderLegend.hooks'

@@ -4,13 +4,12 @@
  */
 import type { Histogram } from '@essex-js-toolkit/toolbox'
 import { histogram } from '@essex-js-toolkit/toolbox'
+import { one, TableCollection } from '@graph-drilldown/arquero'
+import type { ColumnStats } from '@graph-drilldown/types'
 // eslint-disable-next-line
 import { op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { precisionFixed } from 'd3-format'
-
-import type { ColumnStats } from '@graph-drilldown/types'
-import { one, TableCollection } from '@graph-drilldown/arquero'
 
 export function getColumnStats(table: ColumnTable, name?: string): ColumnStats {
 	if (!table || table.numRows() === 0 || table.numCols() === 0 || !name) {

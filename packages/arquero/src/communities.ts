@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { NodeCollection } from '@graph-drilldown/arquero'
 import { table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
-import { findGroupIndices } from './table'
-import { NodeCollection } from '@graph-drilldown/arquero'
+import { findGroupIndices } from './table.js'
 
 /**
  * Gets a table of just the nodes for a matching community.

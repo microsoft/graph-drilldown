@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { EdgeCollection, normalizeXY } from '@graph-drilldown/arquero'
 import { from } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
 import { umapLayout } from '../api'
-import { EdgeCollection, normalizeXY } from '@graph-drilldown/arquero'
 
 /**
  * Runs our autolayout umap - note that this mostly just thunks over to the web service.

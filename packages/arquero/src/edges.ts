@@ -2,10 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import { desc, op, table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
-
-import type { NodeCollection } from '@graph-drilldown/arquero'
 
 export function getEdgesFromTableByID(
 	selectedId: string,

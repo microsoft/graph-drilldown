@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { DataFile } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 
 import { useClearAllTables } from '~/arquero'
@@ -11,7 +12,6 @@ import {
 	useFilesList,
 	useSelectedFile,
 } from '~/state'
-import type { DataFile } from '@graph-drilldown/types'
 
 /**
  * Manage the list of files and tables in the app.

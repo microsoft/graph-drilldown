@@ -10,15 +10,16 @@ import type {
 	ILoadParams,
 	INeighborCommunityDetail,
 } from '@essex-js-toolkit/hierarchy-browser'
-import type ColumnTable from 'arquero/dist/types/table/column-table'
-import type { TableData } from 'arquero/dist/types/table/table'
-import { useMemo } from 'react'
-
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	findNodesCollectionForCommunity,
 	getEdgesFromTableByID,
 } from '@graph-drilldown/arquero'
+import type { Node } from '@graph-drilldown/types'
+import type ColumnTable from 'arquero/dist/types/table/column-table'
+import type { TableData } from 'arquero/dist/types/table/table'
+import { useMemo } from 'react'
+
 import {
 	useGroupedByCommunityTable,
 	useGroupedByParentTable,
@@ -26,8 +27,7 @@ import {
 } from '~/state'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
-import type { NavTreeArray} from '../../types'
-import type {  Node } from '@graph-drilldown/types'
+import type { NavTreeArray } from '../../types'
 
 interface NodeAccum {
 	[id: string]: string | number

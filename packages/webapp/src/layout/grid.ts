@@ -2,10 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { normalizeXY } from '@graph-drilldown/arquero'
 import { op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
-
-import { normalizeXY } from '@graph-drilldown/arquero'
 
 /**
  * Assigns node positions by unrolling into a square grid.

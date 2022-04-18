@@ -2,12 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { CommunityCollection } from '@graph-drilldown/arquero'
+import type { Community } from '@graph-drilldown/types'
 import { useMemo } from 'react'
 
-import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { useChildCountDomain, useNodeCountDomain } from '~/hooks/communities'
 import { useNodeColorEncoding } from '~/state'
-import type { Community } from '@graph-drilldown/types'
 
 import { BAR_HEIGHT, BAR_WIDTH } from '../CommunityList.styles'
 import type { Column } from '../CommunityList.types'

@@ -2,10 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { ColumnDef } from '@graph-drilldown/types'
 import { all, not, op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
-
-import type { ColumnDef } from '@graph-drilldown/types'
 
 //TODO: this is copied across packages, work on arquero format to make it unnecessary
 const ROOT_COMMUNITY_ID = '-1'

@@ -3,13 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { IconButton } from '@fluentui/react'
+import type { ColumnDef } from '@graph-drilldown/types'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { useArqueroColumnList, useArqueroRemoveColumns } from '~/arquero'
 import { useBrowserColumns, useNodeColorEncoding } from '~/state'
-
-import type { ColumnDef } from '@graph-drilldown/types'
 
 export const ColumnEditor = () => {
 	const columns = useArqueroColumnList()

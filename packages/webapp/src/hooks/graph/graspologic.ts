@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { TableBackedItem } from '@graph-drilldown/types'
 import type {
 	EdgeColorizer,
 	EdgeWeighter,
@@ -14,12 +15,7 @@ import { useCallback, useMemo } from 'react'
 
 import { useColorCache } from '~/state/caches'
 
-import type {
-	ColorEncoding,
-	NumericEncoding,
-	
-} from '../../types'
-import type { TableBackedItem } from '@graph-drilldown/types'
+import type { ColorEncoding, NumericEncoding } from '../../types'
 import { DataBinding } from '../../types'
 import { useColorEncodingScale, useNumericEncodingScale } from './scales'
 

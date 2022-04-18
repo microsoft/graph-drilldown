@@ -2,6 +2,25 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { TableCollection } from '@graph-drilldown/arquero'
+import {
+	CommunityCollection,
+	EdgeCollection,
+	filterEdgesToNodes,
+	findNodesCollectionForCommunity,
+	initializeEdgeTable,
+	initializeNodeTable,
+	joinDataTables,
+	joinNodeCommunityTables,
+	listColumnDefs,
+	NodeCollection,
+} from '@graph-drilldown/arquero'
+import type {
+	ColumnDef,
+	Community,
+	Edge,
+	ItemType,
+} from '@graph-drilldown/types'
 import type { PositionMap } from '@graspologic/graph'
 import { not, table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
@@ -27,20 +46,7 @@ import {
 import { useCachedColumnHistogram, useCachedColumnStats } from '~/state/caches'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
-import type { ColumnDef,  ItemType, Community, Edge } from '@graph-drilldown/types'
-import { findNodesCollectionForCommunity, filterEdgesToNodes } from '@graph-drilldown/arquero'
 import { deriveLayoutPositions, deriveSmallMultiplePositions } from './layout'
-import {
-	CommunityCollection,
-	EdgeCollection,
-	NodeCollection,
-	initializeEdgeTable,
-	initializeNodeTable,
-	joinDataTables,
-	joinNodeCommunityTables,
-	listColumnDefs,
-} from '@graph-drilldown/arquero'
-import type { TableCollection } from '@graph-drilldown/arquero'
 
 export function useArqueroBigTable() {
 	return useBigTable()

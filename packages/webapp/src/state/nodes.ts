@@ -2,9 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
-
 import { findGroupIndices, NodeCollection } from '@graph-drilldown/arquero'
+import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
 import { groupedParentsTableState } from './tables'

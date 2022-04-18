@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { Community } from '@graph-drilldown/types'
 import { SelectionState } from '@thematic/core'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-import type { Community } from '@graph-drilldown/types'
 import { Cell } from './Cell'
 import type {
 	Column,

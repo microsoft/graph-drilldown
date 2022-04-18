@@ -3,6 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { DefaultButton, Text } from '@fluentui/react'
+import type { ItemType } from '@graph-drilldown/types'
+import { FileOrigin } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -16,8 +18,6 @@ import { useFileManagement } from '~/hooks/files'
 import { parseDSVTable } from '../../api'
 import { FileDrop } from '../../controls/FileDrop'
 import { variants } from '../../styles'
-import type { ItemType } from '@graph-drilldown/types'
-import { FileOrigin } from '@graph-drilldown/types'
 
 const SQUARE = 80
 

@@ -2,10 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useMemo } from 'react'
-
 import type { CommunityCollection } from '@graph-drilldown/arquero'
 import { getColumnStats } from '@graph-drilldown/arquero'
+import { useMemo } from 'react'
 
 export function useNodeCountDomain(
 	communities: CommunityCollection,

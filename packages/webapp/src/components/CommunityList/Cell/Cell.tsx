@@ -2,9 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useMemo } from 'react'
-
 import type { Community } from '@graph-drilldown/types'
+import { useMemo } from 'react'
 
 import type { Column, ElementStyles } from '../CommunityList.types'
 import { Mark } from '../CommunityList.types'

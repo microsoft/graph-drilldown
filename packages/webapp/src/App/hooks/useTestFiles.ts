@@ -2,10 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useEffect } from 'react'
-
-import { fetchUrl } from '~/api'
-import { useSetArqueroBigTable, useSetArqueroEdgeTable } from '~/arquero'
 import {
 	initializeEdgeTable,
 	initializeJoinTable,
@@ -13,8 +9,12 @@ import {
 	joinDataTables,
 	joinNodeCommunityTables,
 } from '@graph-drilldown/arquero'
-import { useSetFiles } from '~/state'
 import type { DataFile } from '@graph-drilldown/types'
+import { useEffect } from 'react'
+
+import { fetchUrl } from '~/api'
+import { useSetArqueroBigTable, useSetArqueroEdgeTable } from '~/arquero'
+import { useSetFiles } from '~/state'
 
 export interface FileBundle {
 	nodes?: DataFile | undefined

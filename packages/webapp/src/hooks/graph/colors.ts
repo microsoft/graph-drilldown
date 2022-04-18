@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { TableBackedItem } from '@graph-drilldown/types'
 import { toGraphColor } from '@graspologic/graph'
 import type { ColorVector, GraphColor } from '@graspologic/renderer'
 import { Color } from '@thematic/color'
@@ -10,7 +11,6 @@ import { useThematic } from '@thematic/react'
 import { useCallback, useMemo } from 'react'
 
 import type { ColorEncoding } from '../../types'
-import type { TableBackedItem } from '@graph-drilldown/types'
 import { useThematicColorScale } from './scales'
 
 export function useBackgroundColor(alpha = 1.0): ColorVector {

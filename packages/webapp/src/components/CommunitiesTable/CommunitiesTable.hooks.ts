@@ -2,12 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { TableCollection } from '@graph-drilldown/arquero'
+import type { Community } from '@graph-drilldown/types'
 import { desc } from 'arquero'
 import { useMemo } from 'react'
 
-import type { TableCollection } from '@graph-drilldown/arquero'
 import { useColumnArray } from '~/arquero'
-import type { Community } from '@graph-drilldown/types'
 
 const MIN_COLUMN_WIDTH = 100
 

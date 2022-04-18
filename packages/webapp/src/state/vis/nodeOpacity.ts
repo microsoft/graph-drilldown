@@ -2,6 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { getColumnStats } from '@graph-drilldown/arquero'
+import type { ColumnStats } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import {
 	atom,
@@ -11,10 +13,7 @@ import {
 	useSetRecoilState,
 } from 'recoil'
 
-import { getColumnStats } from '@graph-drilldown/arquero'
-
 import type { NumericEncoding } from '../../types'
-import type { ColumnStats } from '@graph-drilldown/types'
 import { selectedCommunityState } from '../communities'
 import { communityNodesTableState } from '../tables'
 import { getDefaultNumericOptions } from './config'

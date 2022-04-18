@@ -2,9 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import styled from 'styled-components'
-
 import type { CommunityCollection } from '@graph-drilldown/arquero'
+import styled from 'styled-components'
 
 import {
 	useColumns,

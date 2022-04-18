@@ -5,6 +5,13 @@
 /**
  * This is a set of cached expensive computes that need to persist across component unmounts.
  */
+import {
+	EdgeCollection,
+	getColumnHistogram,
+	getColumnStats,
+	NodeCollection,
+} from '@graph-drilldown/arquero'
+import type { ColumnStats, Node } from '@graph-drilldown/types'
 import { GraphContainer } from '@graspologic/graph'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useEffect } from 'react'
@@ -17,14 +24,6 @@ import {
 	useRecoilValue,
 } from 'recoil'
 
-import {
-	EdgeCollection,
-	getColumnHistogram,
-	getColumnStats,
-	NodeCollection,
-} from '@graph-drilldown/arquero'
-
-import type { ColumnStats, Node } from '@graph-drilldown/types'
 import { uniqueNodesState } from './nodes'
 import { settingsState } from './settings'
 import { communityNodesTableState, edgeTableState } from './tables'

@@ -3,11 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Dropdown } from '@fluentui/react'
+import { columnTypes } from '@graph-drilldown/arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-
-import { columnTypes } from '@graph-drilldown/arquero'
 
 import { NumericDomainEditor } from '../NumericDomainEditor'
 import { NumericRangeEditor } from '../NumericRangeEditor'

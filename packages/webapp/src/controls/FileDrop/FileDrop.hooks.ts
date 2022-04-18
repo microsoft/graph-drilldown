@@ -2,9 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useCallback } from 'react'
-
 import type { ItemType } from '@graph-drilldown/types'
+import { useCallback } from 'react'
 
 export function useDrop(
 	onFileLoad: (content: string, type: ItemType, name: string) => void,

@@ -3,10 +3,16 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 //importing as aqtable because there's already a param named table in this file
+import type {
+	Community,
+	Edge,
+	ItemType,
+	Node,
+	TableBackedItem,
+} from '@graph-drilldown/types'
 import { table as aqtable } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import type { TableData } from 'arquero/dist/types/table/table'
-import type { Community, Edge, ItemType, Node, TableBackedItem } from '@graph-drilldown/types'
 
 class TableItemFacade implements TableBackedItem {
 	private _table: ColumnTable

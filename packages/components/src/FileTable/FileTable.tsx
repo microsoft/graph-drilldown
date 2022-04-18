@@ -2,13 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { DataFile } from '@graph-drilldown/types'
 import { useThematic } from '@thematic/react'
 import { memo } from 'react'
 import styled from 'styled-components'
 
-import type { DataFile } from '@graph-drilldown/types'
-
-import { useRowHandling } from './FileTable.hooks'
+import { useRowHandling } from './FileTable.hooks.js'
 
 export interface FileTableProps {
 	files: DataFile[]

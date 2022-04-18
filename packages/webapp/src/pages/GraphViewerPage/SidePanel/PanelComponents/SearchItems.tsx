@@ -3,15 +3,15 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Pivot, PivotItem } from '@fluentui/react'
-import { desc, from } from 'arquero'
-import { useCallback, useMemo } from 'react'
-import styled from 'styled-components'
-
 import {
 	CommunityCollection,
 	listColumnDefs,
 	NodeCollection,
 } from '@graph-drilldown/arquero'
+import { desc, from } from 'arquero'
+import { useCallback, useMemo } from 'react'
+import styled from 'styled-components'
+
 import { useColumns } from '../../../../components/CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../../../../components/CommunityList/CommunityList.types'
 import { CommunityRow } from '../../../../components/CommunityList/CommunityRow'

@@ -3,16 +3,18 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
-import { useDebounceFn } from 'ahooks'
-import { op } from 'arquero'
-import { useCallback, useMemo, useState } from 'react'
-import styled from 'styled-components'
-
 import {
 	CommunityCollection,
 	listColumnNames,
 	NodeCollection,
 } from '@graph-drilldown/arquero'
+import { useDebounceFn } from 'ahooks'
+import { op } from 'arquero'
+import { useCallback, useMemo, useState } from 'react'
+import styled from 'styled-components'
+
+import { useTableColumnsByType } from '~/arquero'
+
 import {
 	useCommunitiesTable,
 	useSetSelectedCommunity,
@@ -20,7 +22,6 @@ import {
 } from '../../../../state'
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
-import { useTableColumnsByType } from '~/arquero'
 
 export interface SearchByIndex {
 	index: number

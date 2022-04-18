@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { FileOrigin } from '@graph-drilldown/types'
 import { useMemo } from 'react'
 
 import {
@@ -10,7 +11,6 @@ import {
 	useJoinFile,
 	useNodesFile,
 } from '~/state'
-import { FileOrigin } from '@graph-drilldown/types'
 
 import type { FileBundle } from './useTestFiles'
 

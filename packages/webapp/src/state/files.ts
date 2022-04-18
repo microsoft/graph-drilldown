@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { DataFile } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import {
 	atom,
@@ -10,8 +11,6 @@ import {
 	useResetRecoilState,
 	useSetRecoilState,
 } from 'recoil'
-
-import type { DataFile } from '@graph-drilldown/types'
 
 const filesState = atom<DataFile[]>({
 	key: 'data-files',

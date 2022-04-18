@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { NodeCollection } from '@graph-drilldown/arquero'
 import type {
 	NodeColorizer,
 	NodePositioner,
@@ -10,7 +11,6 @@ import type {
 } from '@graspologic/graph'
 import { useMemo } from 'react'
 
-import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	useNodeColorEncoding,
 	useNodeSizeEncoding,
