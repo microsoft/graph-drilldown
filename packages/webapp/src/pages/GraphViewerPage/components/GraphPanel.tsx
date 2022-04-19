@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import { useArqueroHoveredNodes } from '~/arquero'
 import { useDynamicCameraBounds, useInputGraph } from '~/hooks/graph'
 
-import { GraphViewer } from '../../../components/GraphViewer'
+import { GraphViewer } from '~/components/GraphViewer'
 
 const TRANSITION = 1000
 

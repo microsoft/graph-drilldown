@@ -11,7 +11,7 @@ import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from 'recoil'
 import { useDynamicCameraBounds } from '~/hooks/graph'
 import { useInternedGraph } from '~/state/caches'
 
-import { GraphViewer } from '../../../../components/GraphViewer'
+import { GraphViewer } from '~/components/GraphViewer'
 
 /**
  * Creates a detached renderer when instructed, which we can use to generate images.
