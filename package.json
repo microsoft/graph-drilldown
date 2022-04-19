@@ -16,7 +16,6 @@
 		"packages/*"
 	],
 	"devDependencies": {
-		"@babel/runtime": "^7.14.0",
 		"@essex/eslint-config": "^20.3.3",
 		"@essex/eslint-plugin": "^20.3.3",
 		"@essex/jest-config": "^21.0.8",
@@ -32,7 +31,6 @@
 		"@types/react-dom": "^16.9.12",
 		"@types/react-rnd": "^8.0.0",
 		"@types/react-router-dom": "^5.1.7",
-		"@types/styled-components": "^5.1.9",
 		"core-js": "^3.12.0",
 		"eslint": "^8.12.0",
 		"eslint-import-resolver-node": "^0.3.4",
@@ -47,8 +45,6 @@
 		"react-rnd": "^10.2.3",
 		"react-router-dom": "^5.2.0",
 		"regenerator-runtime": "^0.13.8",
-		"shx": "^0.3.4",
-		"styled-components": "^5.3.0",
 		"tslib": "^2.3.1",
 		"typescript": "^4.6.3"
 	},
