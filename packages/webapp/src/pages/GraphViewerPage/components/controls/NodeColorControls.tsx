@@ -5,13 +5,13 @@
 
 import { ColorSelector } from '@graph-drilldown/components'
 
-import { useArqueroVisibleNodesTable } from '~/arquero'
+import { useVisibleNodesTable } from '~/arquero'
 import { useNodeColorEncoding, useUpdateNodeColorEncoding } from '~/state'
 
 export const NodeColorControls = () => {
 	const encoding = useNodeColorEncoding()
 	const updateEncoding = useUpdateNodeColorEncoding()
-	const table = useArqueroVisibleNodesTable()
+	const table = useVisibleNodesTable()
 	return (
 		<ColorSelector
 			table={table}

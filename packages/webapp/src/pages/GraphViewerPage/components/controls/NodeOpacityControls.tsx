@@ -6,13 +6,13 @@
 import { NumericSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
-import { useArqueroVisibleNodesTable } from '~/arquero'
+import { useVisibleNodesTable } from '~/arquero'
 import { useNodeOpacityEncoding, useUpdateNodeOpacityEncoding } from '~/state'
 
 export const NodeOpacityControls = () => {
 	const encoding = useNodeOpacityEncoding()
 	const updateEncoding = useUpdateNodeOpacityEncoding()
-	const table = useArqueroVisibleNodesTable()
+	const table = useVisibleNodesTable()
 	return (
 		<Container>
 			<NumericSelector

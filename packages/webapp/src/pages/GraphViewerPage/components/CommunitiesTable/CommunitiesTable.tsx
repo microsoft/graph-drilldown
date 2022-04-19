@@ -6,7 +6,7 @@ import { ArqueroDetailsList } from '@data-wrangling-components/react'
 import { memo } from 'react'
 import styled from 'styled-components'
 
-import { useArqueroVisibleCommunities } from '~/arquero'
+import { useVisibleCommunities } from '~/arquero'
 
 import {
 	useColumnConfig,
@@ -18,7 +18,7 @@ import type { CommunitiesTableProps } from './CommunitiesTable.types'
  */
 export const CommunitiesTable: React.FC<CommunitiesTableProps> = memo(
 	function CommunitiesTable({ width, height }: CommunitiesTableProps) {
-		const communities = useArqueroVisibleCommunities()
+		const communities = useVisibleCommunities()
 		const columns = useColumnConfig(communities, width)
 		const table = useDefaultSortedTable(communities)
 		return (

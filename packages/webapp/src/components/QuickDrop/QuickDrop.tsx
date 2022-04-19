@@ -9,7 +9,6 @@ import { useCallback } from 'react'
 import styled from 'styled-components'
 
 import { parseDSVTable } from '~/api'
-import { useArqueroAddTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
 import { variants } from '~/styles'
 
@@ -33,13 +32,11 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 	dropHeightSize = SQUARE,
 	compact = false,
 }) => {
-	const doAddTable = useArqueroAddTable()
 	const { doAddFile, doClearAll, hasData } = useFileManagement()
 
 	const handleFileLoad = useCallback(
 		(content: string, type: ItemType, fileName: string) => {
 			const table = parseDSVTable(fileName, content)
-			doAddTable(table, type)
 			doAddFile({
 				origin: FileOrigin.Local,
 				url: fileName,
@@ -49,7 +46,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 				cols: table.numCols(),
 			})
 		},
-		[doAddTable, doAddFile],
+		[doAddFile],
 	)
 
 	return (

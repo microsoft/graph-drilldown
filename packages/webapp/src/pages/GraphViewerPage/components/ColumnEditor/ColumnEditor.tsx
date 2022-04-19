@@ -7,12 +7,12 @@ import type { ColumnDef } from '@graph-drilldown/types'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { useArqueroColumnList, useArqueroRemoveColumns } from '~/arquero'
+import { useColumnList, useRemoveColumns } from '~/arquero'
 import { useBrowserColumns, useNodeColorEncoding } from '~/state'
 
 export const ColumnEditor = () => {
-	const columns = useArqueroColumnList()
-	const removeColumns = useArqueroRemoveColumns()
+	const columns = useColumnList()
+	const removeColumns = useRemoveColumns()
 	const [browserColumns, setBrowserColumns] = useBrowserColumns()
 	const onVisibilityChange = useCallback(
 		(updated: ColumnDef, prevState: boolean) => {

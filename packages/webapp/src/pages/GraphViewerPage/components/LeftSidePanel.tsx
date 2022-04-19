@@ -7,7 +7,7 @@ import { Text } from '@fluentui/react'
 import { memo, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 
-import { useArqueroHoveredNodes, useArqueroSelectedNodes } from '~/arquero'
+import { useHoveredNodes, useSelectedNodes } from '~/arquero'
 import { useDataBounds, useStaticInputGraph } from '~/hooks/graph'
 import { useSettings } from '~/state'
 import { BREAD_CRUMB_STYLES, HEADER_HEIGHT, variants } from '~/styles'
@@ -40,8 +40,8 @@ export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 		const miniMapSize = settings.showMiniMap ? width : 0
 
 		const data = useStaticInputGraph()
-		const hoveredNodes = useArqueroHoveredNodes()
-		const selectedNodes = useArqueroSelectedNodes()
+		const hoveredNodes = useHoveredNodes()
+		const selectedNodes = useSelectedNodes()
 		const dataBounds = useDataBounds()
 
 		const communityHeight = useMemo(() => {
