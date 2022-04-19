@@ -3,25 +3,25 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { GraphRenderer } from '@graspologic/renderer'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import type { ImageSaveSettings } from '../ImageSettings'
 
 /**
  * Saves image from renderer when requested.
- * @param save Indicates if the renderer should be used to save an image.
  * @param settings Image settings to apply to download.
  * @param renderer Instantiated renderer.
- * @param onComplete Callback that fires when save is complete.
+
  */
 export function useSaveImage(
-	save: boolean,
 	settings: ImageSaveSettings,
 	renderer?: GraphRenderer,
-	onComplete?: () => void,
 ) {
+	const [saving, setSaving] = useState<boolean>(false)
+	const doSave = useCallback(() => setSaving(true), [setSaving])
+
 	useEffect(() => {
-		if (renderer && save) {
+		if (renderer && saving) {
 			// need to force resize on the renderer directly
 			renderer.resize(settings.size, settings.size)
 			renderer.makeDirty()
@@ -32,7 +32,12 @@ export function useSaveImage(
 			link.download = settings.filename
 			link.href = data
 			link.click()
-			onComplete && onComplete()
+			setSaving(false)
 		}
-	}, [renderer, save, settings, onComplete])
+	}, [renderer, saving, settings, setSaving])
+
+	return {
+		saving,
+		doSave,
+	}
 }

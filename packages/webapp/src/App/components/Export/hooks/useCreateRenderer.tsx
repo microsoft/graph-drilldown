@@ -4,7 +4,7 @@
  */
 import type { GraphRenderer } from '@graspologic/renderer'
 import { ThematicProvider, useThematic } from '@thematic/react'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from 'recoil'
 
@@ -19,13 +19,14 @@ import { GraphViewer } from '../../../../components/GraphViewer'
  * This is a UI-blocking process, so best to wait until user has requested export.
  * @param onRenderer Callback that fires with the renderer instance when ready.
  */
-export function useCreateRenderer(
-	create: boolean,
-	onRendererReady: (renderer: GraphRenderer) => void,
-) {
+export function useCreateRenderer() {
+	const [renderer, setRenderer] = useState<GraphRenderer>()
+	const [create, setCreate] = useState<boolean>(false)
 	const theme = useThematic()
 	const data = useInternedGraph()
 	const cameraBounds = useDynamicCameraBounds()
+
+	const doCreate = useCallback(() => setCreate(true), [setCreate])
 
 	const RecoilBridge = useRecoilBridgeAcrossReactRoots_UNSTABLE()
 
@@ -38,7 +39,7 @@ export function useCreateRenderer(
 						<GraphViewer
 							data={data}
 							cameraBounds={cameraBounds}
-							onRendererInitialized={onRendererReady}
+							onRendererInitialized={setRenderer}
 						/>
 					</ThematicProvider>
 				</RecoilBridge>,
@@ -50,5 +51,10 @@ export function useCreateRenderer(
 			ReactDOM.unmountComponentAtNode(domNode)
 			domNode.parentNode?.removeChild(domNode)
 		}
-	}, [create, theme, data, cameraBounds, onRendererReady, RecoilBridge])
+	}, [create, theme, data, cameraBounds, setRenderer, RecoilBridge])
+
+	return {
+		renderer,
+		doCreate,
+	}
 }

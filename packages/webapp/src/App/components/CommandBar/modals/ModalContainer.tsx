@@ -33,7 +33,7 @@ const cancelIcon: IIconProps = { iconName: 'Cancel' }
 
 export interface ModalContainerProps {
 	title: string
-	hideModal: () => void
+	onDismiss: () => void
 	isModalOpen: boolean
 	modalType: ModalPageType
 }
@@ -41,7 +41,7 @@ export interface ModalContainerProps {
 export const ModalContainer: React.FC<ModalContainerProps> = memo(
 	function ModalContainer({
 		title,
-		hideModal,
+		onDismiss,
 		isModalOpen,
 		modalType,
 	}: ModalContainerProps) {
@@ -52,7 +52,7 @@ export const ModalContainer: React.FC<ModalContainerProps> = memo(
 				<Modal
 					titleAriaId={title}
 					isOpen={isModalOpen}
-					onDismiss={hideModal}
+					onDismiss={onDismiss}
 					isModeless={false}
 					isBlocking={false}
 					dragOptions={dragOptions}
@@ -69,7 +69,7 @@ export const ModalContainer: React.FC<ModalContainerProps> = memo(
 							styles={iconButtonStyles}
 							iconProps={cancelIcon}
 							ariaLabel="Close popup modal"
-							onClick={hideModal}
+							onClick={onDismiss}
 						/>
 					</Header>
 					<ContentContainer>

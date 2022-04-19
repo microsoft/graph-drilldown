@@ -3,78 +3,38 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { IconButton } from '@fluentui/react'
-import { memo, useCallback, useMemo, useState } from 'react'
+import { memo } from 'react'
 import styled from 'styled-components'
 
+import { useButtonConfig, useModal } from './ModalButtons.hooks'
 import { ModalContainer } from './modals/ModalContainer'
-import type { ButtonOptions } from './modals/ModalContainer.types'
-import { ModalPageType } from './modals/ModalContainer.types'
-
-const buttonMap: ButtonOptions[] = [
-	{
-		key: 'upload',
-		iconName: 'BulkUpload',
-		title: 'Quick import data',
-		type: ModalPageType.Upload,
-	},
-	{
-		key: 'export',
-		iconName: 'PictureLibrary',
-		title: 'Save image',
-		type: ModalPageType.Export,
-	},
-	{
-		key: 'settings',
-		iconName: 'Settings',
-		title: 'Settings',
-		type: ModalPageType.Settings,
-	},
-	{ key: 'help', iconName: 'Help', title: 'Help', type: ModalPageType.Help },
-]
 
 /**
  * This is a list of buttons for the CommandBar that each open a modal pane.
  */
 export const ModalButtons: React.FC = memo(function ModalButtons() {
-	const [isModalOpen, setModalState] = useState<boolean>(false)
-	const [selected, setSelected] = useState<string | undefined>(undefined)
+	const buttons = useButtonConfig()
 
-	const handleIconClick = useCallback(
-		(key: string) => {
-			setSelected(key)
-			setModalState(!isModalOpen)
-		},
-		[setModalState, isModalOpen],
-	)
-
-	const hideModal = useCallback(() => {
-		setSelected(undefined)
-		setModalState(false)
-	}, [setModalState])
-
-	const selectedButton = useMemo(
-		() => buttonMap.find(item => item.key === selected),
-		[selected],
-	)
+	const { onButtonClick, onDismiss, selected } = useModal()
 
 	return (
 		<Container>
-			{buttonMap.map((item, i) => (
+			{buttons.map((button, i) => (
 				<IconButton
-					key={`modal-button_${item.key}`}
+					key={`modal-button_${button.key}`}
 					iconProps={{
-						iconName: item.iconName,
+						iconName: button.iconName,
 					}}
-					title={item.title}
-					onClick={() => handleIconClick(item.key)}
+					title={button.title}
+					onClick={() => onButtonClick(button)}
 				/>
 			))}
-			{selectedButton && selected ? (
+			{selected ? (
 				<ModalContainer
-					isModalOpen={isModalOpen}
-					title={selectedButton.title}
-					hideModal={hideModal}
-					modalType={selectedButton.type}
+					isModalOpen={!!selected}
+					title={selected.title}
+					onDismiss={onDismiss}
+					modalType={selected.type}
 				/>
 			) : null}
 		</Container>
