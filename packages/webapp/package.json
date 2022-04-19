@@ -11,13 +11,11 @@
 		"build": "essex bundle && shx cp -r public/* build/"
 	},
 	"dependencies": {
-		"@data-wrangling-components/core": "^6.1.0",
-		"@data-wrangling-components/react": "^5.1.3",
-		"@data-wrangling-components/utilities": "^1.8.2",
 		"@essex-js-toolkit/hierarchy-browser": "3.0.1",
 		"@essex-js-toolkit/hooks": "^4.0.3",
 		"@essex-js-toolkit/themed-components": "^1.2.0",
 		"@essex-js-toolkit/toolbox": "2.0.1",
+		"@essex/arquero-react": "^1.0.1",
 		"@fluentui/font-icons-mdl2": "^8.2.5",
 		"@fluentui/react": "^8.62.4",
 		"@fluentui/react-hooks": "^8.5.3",
