@@ -7,9 +7,8 @@ import { memo, useCallback } from 'react'
 import styled from 'styled-components'
 
 import { useArqueroHoveredNodes } from '~/arquero'
-import { useDynamicCameraBounds, useInputGraph } from '~/hooks/graph'
-
 import { GraphViewer } from '~/components/GraphViewer'
+import { useDynamicCameraBounds, useInputGraph } from '~/hooks/graph'
 
 const TRANSITION = 1000
 

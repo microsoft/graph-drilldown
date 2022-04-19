@@ -8,11 +8,11 @@ import { FileOrigin } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
+import { parseDSVTable } from '~/api'
 import { useArqueroAddTable } from '~/arquero'
 import { useFileManagement } from '~/hooks/files'
+import { variants } from '~/styles'
 
-import { parseDSVTable } from '../../api'
-import { variants } from '../../styles'
 import { FileDrop } from '../FileDrop'
 
 const SQUARE = 80

@@ -12,7 +12,7 @@ import { desc, from } from 'arquero'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { useNodeIds } from '../../../../hooks/graph'
+import { useNodeIds } from '~/hooks/graph'
 import {
 	useCommunitySort,
 	useHoveredCommunity,
@@ -22,7 +22,8 @@ import {
 	useSetHoveredNode,
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
-} from '../../../../state'
+} from '~/state'
+
 import { useColumns } from '../CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../CommunityList/CommunityList.types'
 import { CommunityRow } from '../CommunityList/CommunityRow'

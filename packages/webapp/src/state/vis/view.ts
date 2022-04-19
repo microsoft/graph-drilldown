@@ -4,7 +4,8 @@
  */
 import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 
-import { ViewType } from '../../types'
+import { ViewType } from '~/types'
+
 import { featuresState } from '../features'
 
 export const graphViewState = atom<ViewType>({

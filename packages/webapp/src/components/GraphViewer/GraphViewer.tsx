@@ -17,19 +17,19 @@ import { useCallback } from 'react'
 import styled from 'styled-components'
 
 import {
+	useBackgroundColor,
+	useHoveredNodeColor,
+	useNodeIds,
+	useNodePositions,
+} from '~/hooks/graph'
+import {
 	useGraphViewType,
 	useSelectedNodesState,
 	useSetHoveredNode,
 	useSettings,
 } from '~/state'
+import type { Bounds } from '~/types'
 
-import {
-	useBackgroundColor,
-	useHoveredNodeColor,
-	useNodeIds,
-	useNodePositions,
-} from '../../hooks/graph'
-import type { Bounds } from '../../types'
 import {
 	useEdgeRendering,
 	useNodeRendering,

@@ -15,8 +15,9 @@ import {
 	useMiniMapNodeColor,
 	useNodeIds,
 	useSelectedNodeColor,
-} from '../../../../hooks/graph'
-import type { Bounds } from '../../../../types'
+} from '~/hooks/graph'
+import type { Bounds } from '~/types'
+
 import { useAOIBounds, usePlotTheme } from './MiniMap.hooks'
 
 export interface MinimapProps {

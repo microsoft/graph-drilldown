@@ -18,8 +18,8 @@ import {
 } from '~/state'
 import { useVisibleNodeMap } from '~/state/caches'
 import { useNodeOpacityEncoding } from '~/state/vis/nodeOpacity'
+import { ViewType } from '~/types'
 
-import { ViewType } from '../../types'
 import { useColorizer, useRange, useWeighter } from './graspologic'
 
 export function useNodeIds(nodes?: NodeCollection) {

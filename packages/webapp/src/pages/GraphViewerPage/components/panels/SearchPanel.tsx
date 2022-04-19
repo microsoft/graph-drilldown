@@ -14,12 +14,12 @@ import { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import { useTableColumnsByType } from '~/arquero'
-
 import {
 	useCommunitiesTable,
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
-} from '../../../../state'
+} from '~/state'
+
 import { SearchItems } from './SearchItems'
 import { SearchPanelHeader } from './SearchPanelHeader'
 

@@ -11,9 +11,9 @@ import {
 	useNodeStatsByCommunity,
 	useSelectedCommunity,
 } from '~/state'
+import { ViewType } from '~/types'
 
 import { ROOT_COMMUNITY_ID } from '../../constants'
-import { ViewType } from '../../types'
 
 export function useDataBounds() {
 	const pid = useSelectedCommunity()

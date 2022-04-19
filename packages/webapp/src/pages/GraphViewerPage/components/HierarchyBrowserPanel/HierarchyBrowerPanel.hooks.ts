@@ -25,9 +25,9 @@ import {
 	useGroupedByParentTable,
 	useNavigationState,
 } from '~/state'
+import type { NavTreeArray } from '~/types'
 
 import { ROOT_COMMUNITY_ID } from '../../../../constants'
-import type { NavTreeArray } from '../../../../types'
 
 interface NodeAccum {
 	[id: string]: string | number

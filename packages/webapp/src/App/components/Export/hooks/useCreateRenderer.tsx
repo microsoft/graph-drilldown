@@ -8,10 +8,9 @@ import { useCallback, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from 'recoil'
 
+import { GraphViewer } from '~/components/GraphViewer'
 import { useDynamicCameraBounds } from '~/hooks/graph'
 import { useInternedGraph } from '~/state/caches'
-
-import { GraphViewer } from '~/components/GraphViewer'
 
 /**
  * Creates a detached renderer when instructed, which we can use to generate images.

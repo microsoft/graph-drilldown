@@ -7,7 +7,7 @@ import { ApplicationStyles } from '@thematic/react'
 import { memo } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { useTheme } from '../state'
+import { useTheme } from '~/state'
 
 export const StyleContext: React.FC<{
 	children: JSX.Element | JSX.Element[]
