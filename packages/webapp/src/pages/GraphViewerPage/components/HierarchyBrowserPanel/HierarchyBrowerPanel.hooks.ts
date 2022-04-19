@@ -9,7 +9,7 @@ import type {
 	IHierarchyNeighborResponse,
 	ILoadParams,
 	INeighborCommunityDetail,
-} from '@essex-js-toolkit/hierarchy-browser'
+} from '@essex/hierarchy-browser'
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import {
 	findNodesCollectionForCommunity,

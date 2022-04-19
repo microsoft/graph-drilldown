@@ -9,8 +9,8 @@ import type {
 	ILoadParams,
 	ISettings,
 	ITableSettings,
-} from '@essex-js-toolkit/hierarchy-browser'
-import { HierarchyBrowser } from '@essex-js-toolkit/hierarchy-browser'
+} from '@essex/hierarchy-browser'
+import { HierarchyBrowser } from '@essex/hierarchy-browser'
 import { findNodesTableForParent } from '@graph-drilldown/arquero'
 import { memo, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
