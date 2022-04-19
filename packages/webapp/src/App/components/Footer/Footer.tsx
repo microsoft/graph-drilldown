@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { useMicrosoftConsentBanner } from '@essex-js-toolkit/hooks'
+import { useMicrosoftConsentBanner } from '@essex/hooks'
 import type { FC } from 'react'
 import { memo } from 'react'
 import styled from 'styled-components'

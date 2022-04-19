@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { useDimensions } from '@essex-js-toolkit/hooks'
+import { useDimensions } from '@essex/hooks'
 import { useMemo, useState } from 'react'
 
 import { HEADER_HEIGHT, PANEL_WIDTH } from '~/styles'

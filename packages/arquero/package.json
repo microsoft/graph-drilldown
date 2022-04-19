@@ -20,7 +20,7 @@
 		"start": "essex watch"
 	},
 	"dependencies": {
-		"@essex-js-toolkit/toolbox": "2.0.1",
+		"@essex/toolbox": "3.0.6",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"arquero": "^4.8.8",
 		"d3-format": "^2.0.0"

@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { Histogram } from '@essex-js-toolkit/toolbox'
-import { histogram } from '@essex-js-toolkit/toolbox'
+import type { Histogram } from '@essex/toolbox'
+import { histogram } from '@essex/toolbox'
 import { one, TableCollection } from '@graph-drilldown/arquero'
 import type { ColumnStats } from '@graph-drilldown/types'
 // eslint-disable-next-line
