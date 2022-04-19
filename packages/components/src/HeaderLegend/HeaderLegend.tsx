@@ -32,7 +32,6 @@ export interface HeaderLegendProps {
 
 /**
  * A compact horizontal legend designed to fit in panel headers.
- * @param param0
  */
 export const HeaderLegend: React.FC<HeaderLegendProps> = ({
 	label,

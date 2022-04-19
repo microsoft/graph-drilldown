@@ -4,7 +4,6 @@
 	"private": true,
 	"scripts": {
 		"clean": "yarn workspaces foreach -pv run clean",
-		"bundle": "yarn workspaces foreach -pv run bundle",
 		"build": "yarn workspaces foreach -pivt run build",
 		"start": "yarn workspaces foreach -piv run start",
 		"ci": "run-s clean lint build git_is_clean",
