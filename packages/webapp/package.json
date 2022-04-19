@@ -11,7 +11,7 @@
 		"build": "essex bundle && shx cp -r public/* build/"
 	},
 	"dependencies": {
-		"@essex-js-toolkit/themed-components": "^1.3.2",
+		"@essex-js-toolkit/themed-components": "^1.4.0",
 		"@essex/arquero-react": "^1.0.1",
 		"@essex/hierarchy-browser": "4.0.7",
 		"@essex/hooks": "^4.0.8",
