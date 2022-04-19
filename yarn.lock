@@ -3623,6 +3623,11 @@ __metadata:
     styled-components: ^5.3.0
   peerDependencies:
     "@fluentui/react": ">= 8"
+    "@thematic/color": ">= 2"
+    "@thematic/core": "*"
+    "@thematic/d3": ">= 2"
+    "@thematic/fluent": ">= 3"
+    "@thematic/react": ">= 2"
     "@types/node": "*"
     "@types/react": ">= 17"
     arquero: ">= 4"
@@ -3649,7 +3654,6 @@ __metadata:
     "@graph-drilldown/types": "workspace:packages/types"
     "@thematic/color": ^2.0.6
     "@thematic/core": ^2.0.6
-    "@thematic/d3": ^2.0.6
     "@thematic/fluent": ^3.0.6
     "@thematic/react": ^2.0.6
     "@types/d3-brush": ^2.1.0
@@ -3666,6 +3670,10 @@ __metadata:
     styled-components: ^5.3.0
   peerDependencies:
     "@fluentui/react": ">= 8"
+    "@thematic/color": ">= 2"
+    "@thematic/core": "*"
+    "@thematic/fluent": ">= 3"
+    "@thematic/react": ">= 2"
     "@types/node": "*"
     "@types/react": ">= 17"
     react: ">= 17"
