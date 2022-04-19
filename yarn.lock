@@ -2797,6 +2797,69 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex-js-toolkit/hooks@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@essex-js-toolkit/hooks@npm:3.1.0"
+  dependencies:
+    "@essex-js-toolkit/toolbox": 2.0.3
+    core-js: ^3.21.0
+    lodash: ^4.17.21
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ">=16.8.0"
+  checksum: 9000b1b327ddffba8d345df33dfcf3ed31859ba839f18d09f998646e717397a1615ade3e0c72c25b5a046d3290a8973589f7550dd502313c46105b421138d52c
+  languageName: node
+  linkType: hard
+
+"@essex-js-toolkit/themed-components@npm:^1.3.2":
+  version: 1.4.0
+  resolution: "@essex-js-toolkit/themed-components@npm:1.4.0"
+  dependencies:
+    "@essex-js-toolkit/hooks": 3.1.0
+    "@essex-js-toolkit/toolbox": 2.0.3
+    "@types/d3-array": ^3.0.2
+    "@types/d3-axis": ^3.0.1
+    "@types/d3-brush": ^3.0.1
+    "@types/d3-scale": ^4.0.2
+    "@types/d3-selection": ^3.0.2
+    core-js: ^3.21.0
+    d3-array: ^3.1.1
+    d3-axis: ^3.0.0
+    d3-brush: ^3.0.0
+    d3-scale: ^4.0.2
+    d3-selection: ^3.0.0
+    react-animate-height: ^2.0.23
+  peerDependencies:
+    "@fluentui/react": ">= 7.114.2"
+    "@thematic/color": ">= 0.8.0"
+    "@thematic/core": ">= 0.8.0"
+    "@thematic/d3": ">= 0.8.0"
+    "@thematic/fluent": ">= 0.8.0"
+    "@thematic/react": ">= 0.8.0"
+    "@types/d3": "*"
+    "@types/d3-axis": ^2.0.0
+    "@types/node": "*"
+    "@types/react": ">= 16.9"
+    "@uifabric/icons": ">= 7.3.38"
+    office-ui-fabric-react: "*"
+    react: ">= 16.8.6"
+    react-dom: ">= 16.8.6"
+    styled-components: ^5.3.0
+  checksum: f77c1b52bcfc3a022264e2eb63fdc8a348afcc405bc0f5fc05032b861f02c0682013ec201546e0ea4d06ab759f6a5535fad1d1d9e8e29629cf0b48729bf96dfa
+  languageName: node
+  linkType: hard
+
+"@essex-js-toolkit/toolbox@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@essex-js-toolkit/toolbox@npm:2.0.3"
+  dependencies:
+    core-js: ^3.21.0
+  checksum: 515d7f7ce2719da085f446db89068e3067c27c3572fb750b5f5bce632c5b22cc199f783b49b240a722c784a94dd1e3ad46d14d269d7651c28ab4a48f63fd3355
+  languageName: node
+  linkType: hard
+
 "@essex-js-toolkit/toolbox@npm:^1.1.3, @essex-js-toolkit/toolbox@npm:^1.1.4":
   version: 1.1.4
   resolution: "@essex-js-toolkit/toolbox@npm:1.1.4"
@@ -3078,42 +3141,6 @@ __metadata:
     lodash: ^4.17.21
     tslib: ^2.3.1
   checksum: 660060e55a71dafd46ea6815bc3b8bd516f8139f05f14f67090d3fa6abd26a89d20e6454a568b49d7f347237cdff9fe4046bc999fc415de76acb85be91e5e545
-  languageName: node
-  linkType: hard
-
-"@essex/themed-components@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "@essex/themed-components@npm:2.2.2"
-  dependencies:
-    "@essex/hooks": ^4.0.8
-    "@essex/toolbox": ^3.0.6
-    "@types/d3-array": ^3.0.2
-    "@types/d3-axis": ^3.0.1
-    "@types/d3-brush": ^3.0.1
-    "@types/d3-scale": ^4.0.2
-    "@types/d3-selection": ^3.0.2
-    d3-array: ^3.1.6
-    d3-axis: ^3.0.0
-    d3-brush: ^3.0.0
-    d3-scale: ^4.0.2
-    d3-selection: ^3.0.0
-    lodash-es: ^4.17.21
-    react-animate-height: ^2.1.0
-  peerDependencies:
-    "@fluentui/react": ">= 7.114.2"
-    "@thematic/color": ">= 0.8.0"
-    "@thematic/core": ">= 0.8.0"
-    "@thematic/d3": ">= 0.8.0"
-    "@thematic/fluent": ">= 0.8.0"
-    "@thematic/react": ">= 0.8.0"
-    "@types/d3": "*"
-    "@types/d3-axis": ^2.0.0
-    "@types/node": "*"
-    "@types/react": ">= 16.9"
-    "@uifabric/icons": ">= 7.3.38"
-    react: ">= 16.8.6"
-    react-dom: ">= 16.8.6"
-  checksum: 07c368ffda0afffbf519c9c7ea6c2ba3ee70e76a167a5368261f364b453322f75b7302f534775d3d6555e72b0c596b918e7d09b4c2f4fb411684916ef436491e
   languageName: node
   linkType: hard
 
@@ -3663,10 +3690,10 @@ __metadata:
   resolution: "@graph-drilldown/webapp@workspace:packages/webapp"
   dependencies:
     "@essex-js-toolkit/hierarchy-browser": 3.0.1
+    "@essex-js-toolkit/themed-components": ^1.3.2
     "@essex/arquero-react": ^1.0.1
     "@essex/hooks": ^4.0.8
     "@essex/scripts": ^21.0.1
-    "@essex/themed-components": ^2.2.2
     "@essex/toolbox": 3.0.6
     "@essex/webpack-config": ^21.0.0
     "@fluentui/font-icons-mdl2": ^8.2.5
@@ -8309,6 +8336,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.21.0":
+  version: 3.22.0
+  resolution: "core-js@npm:3.22.0"
+  checksum: 88ac28dfb8e7fdcd80d32a69dc634900e3daf3bc873ebefb6f189b598ce96e9b68fe553428627e5c43f27749779389faceb865a2a120cf2d44f05795830b5cd7
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:~1.0.0":
   version: 1.0.2
   resolution: "core-util-is@npm:1.0.2"
@@ -8575,7 +8609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3, d3-array@npm:^3.1.6":
+"d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3, d3-array@npm:^3.1.1":
   version: 3.1.6
   resolution: "d3-array@npm:3.1.6"
   dependencies:
@@ -15277,19 +15311,6 @@ fsevents@^1.2.7:
     react: ">=15.6.2"
     react-dom: ">=15.6.2"
   checksum: 280f504b38a98e06323981eaa7752f568d5f761b6d511e21625adc04b0b96222b3a20224c5af9146dff23fb834064437065f834b781ba9377243427a66f1553c
-  languageName: node
-  linkType: hard
-
-"react-animate-height@npm:^2.1.0":
-  version: 2.1.1
-  resolution: "react-animate-height@npm:2.1.1"
-  dependencies:
-    classnames: ^2.2.5
-    prop-types: ^15.6.1
-  peerDependencies:
-    react: ">=15.6.2"
-    react-dom: ">=15.6.2"
-  checksum: e15c845ef78b19cdcc68b0528c4b666f1c4d1d11b08607671d1b1eb901d3a1b8756836c41aba9448f75b82da8133ca43e6c91fd36c445c7d6e2f6d466ed8eab7
   languageName: node
   linkType: hard
 

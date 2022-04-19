@@ -5,7 +5,7 @@
 import {
 	CollapsiblePanel,
 	CollapsiblePanelContainer,
-} from '@essex/themed-components'
+} from '@essex-js-toolkit/themed-components'
 import { ToggleHeader } from '@graph-drilldown/components'
 import { format } from 'd3-format'
 import { useCallback } from 'react'

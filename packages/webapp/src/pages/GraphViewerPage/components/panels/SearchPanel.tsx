@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { CollapsiblePanel } from '@essex/themed-components'
+import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
 import {
 	CommunityCollection,
 	listColumnNames,
