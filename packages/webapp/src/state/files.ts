@@ -37,7 +37,7 @@ export function useSetFiles() {
 	return useSetRecoilState(filesState)
 }
 
-export function useClearFiles() {
+export function useResetFiles() {
 	return useResetRecoilState(filesState)
 }
 

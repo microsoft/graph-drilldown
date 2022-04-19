@@ -13,8 +13,7 @@ import type { DataFile } from '@graph-drilldown/types'
 import { useEffect } from 'react'
 
 import { fetchUrl } from '~/api'
-import { useSetArqueroBigTable, useSetArqueroEdgeTable } from '~/arquero'
-import { useSetFiles } from '~/state'
+import { useSetBigTable, useSetEdgeTable, useSetFiles } from '~/state'
 
 export interface FileBundle {
 	nodes?: DataFile | undefined
@@ -28,8 +27,8 @@ export interface FileBundle {
  * or as a preset bundle.
  */
 export function useTestFiles(bundle: FileBundle) {
-	const setNodes = useSetArqueroBigTable()
-	const setEdges = useSetArqueroEdgeTable()
+	const setNodes = useSetBigTable()
+	const setEdges = useSetEdgeTable()
 	const setFiles = useSetFiles()
 
 	useEffect(() => {

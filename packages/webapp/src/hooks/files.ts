@@ -6,14 +6,15 @@ import type { DataFile } from '@graph-drilldown/types'
 import { useCallback } from 'react'
 
 import {
-	useArqueroBigTable,
-	useArqueroEdgeTable,
-	useClearAllTables,
-} from '~/arquero'
-import {
 	useAddFile,
-	useClearFiles,
+	useBigTable,
+	useEdgeTable,
 	useFilesList,
+	useResetBigTable,
+	useResetEdgeTable,
+	useResetFiles,
+	useResetNavigationState,
+	useResetSelectedCommunity,
 	useSelectedFile,
 } from '~/state'
 
@@ -29,13 +30,13 @@ export function useFileManagement(): {
 	onFileSelected: (file: DataFile | undefined) => void
 	hasData: boolean
 } {
-	const bigTable = useArqueroBigTable()
-	const edgeTable = useArqueroEdgeTable()
+	const bigTable = useBigTable()
+	const edgeTable = useEdgeTable()
 	const resetTables = useClearAllTables()
 
 	const files = useFilesList()
 	const doAddFile = useAddFile()
-	const resetFiles = useClearFiles()
+	const resetFiles = useResetFiles()
 	const [selectedFile, setSelectedFile] = useSelectedFile()
 
 	const onFileSelected = useCallback(
@@ -58,4 +59,17 @@ export function useFileManagement(): {
 		hasData:
 			bigTable.numRows() > 0 || edgeTable.numRows() > 0 || files.length > 0,
 	}
+}
+
+function useClearAllTables() {
+	const resetBigTable = useResetBigTable()
+	const resetEdgeTable = useResetEdgeTable()
+	const resetNav = useResetNavigationState()
+	const resetSelectedCommunity = useResetSelectedCommunity()
+	return useCallback(() => {
+		resetBigTable()
+		resetEdgeTable()
+		resetNav()
+		resetSelectedCommunity()
+	}, [resetBigTable, resetEdgeTable, resetNav, resetSelectedCommunity])
 }

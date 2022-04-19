@@ -6,13 +6,16 @@
 import { ColorSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
-import { useArqueroEdgeTable } from '~/arquero'
-import { useEdgeColorEncoding, useUpdateEdgeColorEncoding } from '~/state'
+import {
+	useEdgeColorEncoding,
+	useEdgeTable,
+	useUpdateEdgeColorEncoding,
+} from '~/state'
 
 export const EdgeColorControls = () => {
 	const encoding = useEdgeColorEncoding()
 	const updateEncoding = useUpdateEdgeColorEncoding()
-	const table = useArqueroEdgeTable()
+	const table = useEdgeTable()
 	return (
 		<Container>
 			<ColorSelector

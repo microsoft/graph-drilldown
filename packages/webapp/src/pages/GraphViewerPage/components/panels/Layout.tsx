@@ -8,21 +8,23 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { memo, useCallback, useState } from 'react'
 import styled from 'styled-components'
 
-import {
-	useArqueroBigTable,
-	useArqueroEdgeTable,
-	useSetArqueroBigTable,
-} from '~/arquero'
 import { executeLayout, Layout as LayoutType } from '~/layout'
-import { useFeatures, useGraphViewType, useSetGraphViewType } from '~/state'
+import {
+	useBigTable,
+	useEdgeTable,
+	useFeatures,
+	useGraphViewType,
+	useSetBigTable,
+	useSetGraphViewType,
+} from '~/state'
 import { ViewType } from '~/types'
 
 import { UmapLayout } from './UmapLayout'
 
 export const Layout: React.FC = memo(function Layout() {
-	const nodes = useArqueroBigTable()
-	const edges = useArqueroEdgeTable()
-	const setBigTable = useSetArqueroBigTable()
+	const nodes = useBigTable()
+	const edges = useEdgeTable()
+	const setBigTable = useSetBigTable()
 	const [features] = useFeatures()
 	const graphView = useGraphViewType()
 	const setGraphView = useSetGraphViewType()

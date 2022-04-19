@@ -6,13 +6,16 @@
 import { NumericSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
-import { useArqueroEdgeTable } from '~/arquero'
-import { useEdgeSizeEncoding, useUpdateEdgeSizeEncoding } from '~/state'
+import {
+	useEdgeSizeEncoding,
+	useEdgeTable,
+	useUpdateEdgeSizeEncoding,
+} from '~/state'
 
 export const EdgeSizeControls = () => {
 	const encoding = useEdgeSizeEncoding()
 	const updateEncoding = useUpdateEdgeSizeEncoding()
-	const table = useArqueroEdgeTable()
+	const table = useEdgeTable()
 	return (
 		<Container>
 			<NumericSelector

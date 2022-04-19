@@ -34,10 +34,6 @@ import {
 	useGroupedByCommunityTable,
 	useGroupedByParentTable,
 	useHoveredCommunity,
-	useResetBigTable,
-	useResetEdgeTable,
-	useResetNavigationState,
-	useResetSelectedCommunity,
 	useSelectedCommunity,
 	useSetBigTable,
 	useSetEdgeTable,
@@ -47,38 +43,10 @@ import {
 import { ROOT_COMMUNITY_ID } from '../constants'
 import { deriveLayoutPositions, deriveSmallMultiplePositions } from './layout'
 
-export function useArqueroBigTable() {
-	return useBigTable()
-}
-export function useSetArqueroBigTable() {
-	return useSetBigTable()
-}
-
-export function useArqueroEdgeTable() {
-	return useEdgeTable()
-}
-
-export function useSetArqueroEdgeTable() {
-	return useSetEdgeTable()
-}
-
-export function useClearAllTables() {
-	const resetBigTable = useResetBigTable()
-	const resetEdgeTable = useResetEdgeTable()
-	const resetNav = useResetNavigationState()
-	const resetSelectedCommunity = useResetSelectedCommunity()
-	return useCallback(() => {
-		resetBigTable()
-		resetEdgeTable()
-		resetNav()
-		resetSelectedCommunity()
-	}, [resetBigTable, resetEdgeTable, resetNav, resetSelectedCommunity])
-}
-
 export function useArqueroAddTable() {
-	const bigTable = useArqueroBigTable()
-	const setBigTable = useSetArqueroBigTable()
-	const setEdgeTable = useSetArqueroEdgeTable()
+	const bigTable = useBigTable()
+	const setBigTable = useSetBigTable()
+	const setEdgeTable = useSetEdgeTable()
 	return useCallback(
 		(newTable: ColumnTable, type: string) => {
 			console.log('adding table/columns', type)
@@ -110,8 +78,8 @@ export function useArqueroAddTable() {
 }
 
 export function useArqueroRemoveColumns() {
-	const bigTable = useArqueroBigTable()
-	const setBigTable = useSetArqueroBigTable()
+	const bigTable = useBigTable()
+	const setBigTable = useSetBigTable()
 	return useCallback(
 		(columnNames: string[]) => {
 			// TODO: we could inadvertently use this to remove required columns, such as node.id which should be blocked
@@ -137,7 +105,7 @@ const fixed = new Set([
 ])
 
 export function useArqueroColumnList(): ColumnDef[] {
-	const bigTable = useArqueroBigTable()
+	const bigTable = useBigTable()
 	return useMemo(() => listColumnDefs(bigTable, fixed), [bigTable])
 }
 
@@ -199,7 +167,7 @@ const exclude = new Set([
 ])
 
 export function useArqueroDataFields(): string[] {
-	const bigTable = useArqueroBigTable()
+	const bigTable = useBigTable()
 	return useMemo(
 		() => bigTable.columnNames((d: string) => !exclude.has(d)),
 		[bigTable],
@@ -222,7 +190,7 @@ export function useArqueroVisibleNodesTable() {
 
 // TODO: actually filter this
 export function useArqueroVisibleEdges(id?: string) {
-	const edges = useArqueroEdgeTable()
+	const edges = useEdgeTable()
 	return useMemo(() => new EdgeCollection(edges), [edges])
 }
 
@@ -247,7 +215,7 @@ export function useArqueroSelectedNodes() {
 
 export function useTableColumnsByType(dataType: string) {
 	// const byCommunity = useGroupedByCommunityTable()
-	const bigTable = useArqueroBigTable()
+	const bigTable = useBigTable()
 
 	if (bigTable.numRows() > 0) {
 		const def = listColumnDefs(bigTable)
