@@ -2863,12 +2863,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/arquero-react@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@essex/arquero-react@npm:1.0.1"
+"@essex/arquero-react@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@essex/arquero-react@npm:1.0.2"
   dependencies:
     "@essex/arquero": ^1.0.0
-    "@essex/charts-react": ^1.0.0
+    "@essex/charts-react": ^1.0.1
     d3-format: ^3.1.0
     lodash-es: ^4.17.21
     react-if: ^4.1.1
@@ -2879,9 +2879,9 @@ __metadata:
     "@thematic/d3": ^1.3.0
     "@thematic/react": ^1.3.0
     arquero: ^4.8.7
-    react: ^17.0.2
+    react: ">= 18"
     styled-components: ^5.3.0
-  checksum: efb06309466c456d1f256172cf45f065e708313b215a21efecd7725ed31e7bc05925f94f09a1224d64ac87655d7675e017709517c0676f27e46bb4ac0a316e88
+  checksum: fb1427ba7e588589308eabfa3a34c62d29cf04b71d3e9cdf521b32620bcdf52de839d18a50d88818a9c3284af6e2b54120448575bd1fba41a72943ef99781655
   languageName: node
   linkType: hard
 
@@ -2919,9 +2919,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/charts-react@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@essex/charts-react@npm:1.0.0"
+"@essex/charts-react@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@essex/charts-react@npm:1.0.1"
   dependencies:
     d3-format: ^3.1.0
     d3-scale: ^4.0.2
@@ -2932,8 +2932,8 @@ __metadata:
     "@thematic/core": ^1.3.0
     "@thematic/d3": ^1.3.0
     "@thematic/react": ^1.3.0
-    react: ^17.0.2
-  checksum: 8d60324e895282c8fbf74020c202ab43ab6a2851922c46657d3ecf2339afefced02ce700ce8043571e653669e9f60bcba4a8599df2d634c9bf4f128ac1e2e101
+    react: ">= 18"
+  checksum: 9eeeb5a8f5573dc000ba3d2bf09d035b8d6d2648bc53e72c1e84eefb140824777b28d4a5d8151cb42046c6fd1352ee57be790d24613d5d824f4cbee4330499a0
   languageName: node
   linkType: hard
 
@@ -3039,7 +3039,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/jest-config@npm:^21.0.8":
+"@essex/hooks@npm:^4.0.9":
+  version: 4.0.9
+  resolution: "@essex/hooks@npm:4.0.9"
+  dependencies:
+    "@essex/toolbox": ^3.0.6
+    lodash-es: ^4.17.21
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ">= 18"
+  checksum: b2c0846f1bd6cdde52824f0f81bdd2986f81ae3e58314b85e9ca6dd661f95a4cecbb6fb83b901bdd6b41c6468b78d25b89c1c856c92bb1d82e9eb6043ec25c5b
+  languageName: node
+  linkType: hard
+
+"@essex/jest-config@npm:^21.0.9":
   version: 21.0.9
   resolution: "@essex/jest-config@npm:21.0.9"
   dependencies:
@@ -3065,7 +3080,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/scripts@npm:^21.0.1, @essex/scripts@npm:^21.0.2":
+"@essex/scripts@npm:^21.0.2":
   version: 21.0.2
   resolution: "@essex/scripts@npm:21.0.2"
   dependencies:
@@ -3209,7 +3224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/webpack-config@npm:^21.0.0, @essex/webpack-config@npm:^21.0.1":
+"@essex/webpack-config@npm:^21.0.1":
   version: 21.0.1
   resolution: "@essex/webpack-config@npm:21.0.1"
   dependencies:
@@ -3542,7 +3557,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/components@workspace:packages/components"
   dependencies:
-    "@essex/hooks": ^4.0.8
+    "@essex/hooks": ^4.0.9
     "@essex/scripts": ^21.0.2
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.62.4
@@ -3594,7 +3609,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/hooks@workspace:packages/hooks"
   dependencies:
-    "@essex/hooks": ^4.0.8
+    "@essex/hooks": ^4.0.9
     "@essex/scripts": ^21.0.2
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.62.4
@@ -3641,7 +3656,7 @@ __metadata:
   dependencies:
     "@essex/eslint-config": ^20.3.3
     "@essex/eslint-plugin": ^20.3.3
-    "@essex/jest-config": ^21.0.8
+    "@essex/jest-config": ^21.0.9
     "@essex/prettier-config": ^18.0.2
     "@essex/scripts": ^21.0.2
     "@fluentui/font-icons-mdl2": ^8.2.5
@@ -3705,12 +3720,12 @@ __metadata:
   resolution: "@graph-drilldown/webapp@workspace:packages/webapp"
   dependencies:
     "@essex-js-toolkit/themed-components": ^1.4.0
-    "@essex/arquero-react": ^1.0.1
+    "@essex/arquero-react": ^1.0.2
     "@essex/hierarchy-browser": 4.0.7
-    "@essex/hooks": ^4.0.8
-    "@essex/scripts": ^21.0.1
+    "@essex/hooks": ^4.0.9
+    "@essex/scripts": ^21.0.2
     "@essex/toolbox": 3.0.6
-    "@essex/webpack-config": ^21.0.0
+    "@essex/webpack-config": ^21.0.1
     "@fluentui/font-icons-mdl2": ^8.2.5
     "@fluentui/react": ^8.62.4
     "@fluentui/react-hooks": ^8.5.3

@@ -12,9 +12,9 @@
 	},
 	"dependencies": {
 		"@essex-js-toolkit/themed-components": "^1.4.0",
-		"@essex/arquero-react": "^1.0.1",
+		"@essex/arquero-react": "^1.0.2",
 		"@essex/hierarchy-browser": "4.0.7",
-		"@essex/hooks": "^4.0.8",
+		"@essex/hooks": "^4.0.9",
 		"@essex/toolbox": "3.0.6",
 		"@fluentui/font-icons-mdl2": "^8.2.5",
 		"@fluentui/react": "^8.62.4",
@@ -61,8 +61,8 @@
 		"tslib": "^2.3.1"
 	},
 	"devDependencies": {
-		"@essex/scripts": "^21.0.1",
-		"@essex/webpack-config": "^21.0.0",
+		"@essex/scripts": "^21.0.2",
+		"@essex/webpack-config": "^21.0.1",
 		"@types/d3-array": "^2.9.0",
 		"@types/d3-brush": "^2.1.0",
 		"@types/d3-dsv": "^1.0.36",

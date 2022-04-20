@@ -20,7 +20,7 @@
 		"start": "essex watch"
 	},
 	"dependencies": {
-		"@essex/hooks": "^4.0.8",
+		"@essex/hooks": "^4.0.9",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"d3-brush": "2",
 		"d3-format": "^2.0.0",
