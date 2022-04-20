@@ -22,7 +22,7 @@
 	"dependencies": {
 		"@essex/hooks": "^4.0.9",
 		"@graph-drilldown/types": "workspace:packages/types",
-		"d3-scale": "^3.2.1"
+		"d3-scale": "^4.0.2"
 	},
 	"devDependencies": {
 		"@essex/scripts": "^21.0.2",
@@ -32,7 +32,7 @@
 		"@thematic/core": "^2.0.7",
 		"@thematic/fluent": "^3.0.7",
 		"@thematic/react": "^2.0.7",
-		"@types/d3-scale": "^2.1.1",
+		"@types/d3-scale": "^4.0.2",
 		"@types/node": "^17.0.25",
 		"@types/react": "^18.0.5",
 		"react": "^17.0.2",
