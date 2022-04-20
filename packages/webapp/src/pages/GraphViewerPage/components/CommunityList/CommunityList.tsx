@@ -5,11 +5,9 @@
 import type { CommunityCollection } from '@graph-drilldown/arquero'
 import styled from 'styled-components'
 
-import {
-	useColumns,
-	useRowHandling,
-	useSortHandling,
-} from './CommunityList.hooks'
+import { useSortHandling } from '~/hooks/communities'
+
+import { useColumns, useRowHandling } from './CommunityList.hooks'
 import { CommunityRow } from './CommunityRow'
 
 export interface CommunityListProps {
@@ -26,7 +24,7 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 
 	const columns = useColumns(communities)
 
-	const { sorted, onHeaderClick } = useSortHandling(communities)
+	const { sorted, onSortClick } = useSortHandling(communities)
 
 	return (
 		<Container style={style}>
@@ -38,7 +36,7 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 								{columns.map(c => (
 									<Th
 										key={`comm-th-${c.header}`}
-										onClick={() => onHeaderClick(c)}
+										onClick={() => onSortClick(c)}
 									>
 										{c.header}
 									</Th>

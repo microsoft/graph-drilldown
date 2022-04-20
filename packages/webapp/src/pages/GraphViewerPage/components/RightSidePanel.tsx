@@ -26,6 +26,7 @@ import { EdgeSizeHeaderLegend } from './legends/EdgeSizeHeaderLegend'
 import { NodeColorHeaderLegend } from './legends/NodeColorHeaderLegend'
 import { NodeOpacityHeaderLegend } from './legends/NodeOpacityHeaderLegend'
 import { NodeSizeHeaderLegend } from './legends/NodeSizeHeaderLegend'
+import { CollapsibleSearchPanel } from './panels/CollapsibleSearchPanel/CollapsibleSearchPanel'
 import { ColumnEditorPanel } from './panels/ColumnEditorPanel'
 import { EdgeColorControlsPanel } from './panels/EdgeColorControlsPanel'
 import { EdgeOpacityControlsPanel } from './panels/EdgeOpacityControlsPanel'
@@ -36,7 +37,6 @@ import { NodeDetailsPanel } from './panels/NodeDetailsPanel'
 import { NodeHoverHeader } from './panels/NodeHoverHeader'
 import { NodeOpacityControlsPanel } from './panels/NodeOpacityControlsPanel'
 import { NodeSizeControlsPanel } from './panels/NodeSizeControlsPanel'
-import { SearchPanel } from './panels/SearchPanel'
 
 export const GUTTER = 10
 
@@ -63,7 +63,7 @@ export const RightSidePanel: React.FC<RightSidePanelProps> = ({ style }) => {
 		<Container style={style}>
 			<DisplayRelative>
 				<CollapsiblePanelContainer>
-					<SearchPanel />
+					<CollapsibleSearchPanel />
 					<NodesHeader />
 					<CollapsiblePanel
 						title={'Hovered node'}

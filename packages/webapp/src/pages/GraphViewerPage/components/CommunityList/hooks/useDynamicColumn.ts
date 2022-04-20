@@ -8,9 +8,13 @@ import { useCallback, useMemo } from 'react'
 import { useDataBoundColorScale } from '~/hooks/graph'
 
 import { BAR_HEIGHT } from '../CommunityList.styles'
+import type { Column} from '../CommunityList.types';
 import { Mark } from '../CommunityList.types'
 
-export function useDynamicColumn(encoding: ColorEncoding, width: number) {
+export function useDynamicColumn(
+	encoding: ColorEncoding,
+	width: number,
+): Column {
 	const colorScale = useDataBoundColorScale(encoding)
 	const circleSizeScale = useCallback(() => BAR_HEIGHT / 2, [])
 	return useMemo(() => {

@@ -9,21 +9,21 @@ import styled from 'styled-components'
 export interface ItemHeaderProps {
 	numberOfResults: number
 	searchText?: string
-	errorMsg?: string
+	errorMessage?: string
 }
 
-export const SearchItemHeader: React.FC<ItemHeaderProps> = ({
+export const SearchResultsHeader: React.FC<ItemHeaderProps> = ({
 	numberOfResults,
 	searchText,
-	errorMsg,
+	errorMessage,
 }: ItemHeaderProps) => {
 	const [infoMsgVisible, setInfoMsgVisible] = useState<boolean>(true)
 	const msg = useMemo(() => {
 		setInfoMsgVisible(true)
-		if (errorMsg) {
+		if (errorMessage) {
 			return (
 				<MessageBar messageBarType={MessageBarType.error} className={'error'}>
-					<Text variant={'tiny'}>{errorMsg}</Text>
+					<Text variant={'tiny'}>{errorMessage}</Text>
 				</MessageBar>
 			)
 		} else if (searchText && numberOfResults > 0) {
@@ -40,7 +40,7 @@ export const SearchItemHeader: React.FC<ItemHeaderProps> = ({
 			)
 		}
 		return null
-	}, [errorMsg, searchText, numberOfResults])
+	}, [errorMessage, searchText, numberOfResults])
 
 	return (
 		<div>

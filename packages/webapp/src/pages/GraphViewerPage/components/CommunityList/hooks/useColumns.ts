@@ -18,10 +18,21 @@ import { useDynamicColumn } from './useDynamicColumn'
 
 const SLIM_BAR = 40
 
+type FilterFunction = (
+	column: Column,
+	index: number,
+	array: Column[],
+) => boolean
+const noop = () => true
+
 export function useColumns(
 	communities: CommunityCollection,
 	width?: number,
 	height?: number,
+	/**
+	 * Optional filter function to alter the returned list
+	 */
+	filter: FilterFunction = noop,
 ): Column[] {
 	const childCountDomain = useChildCountDomain(communities)
 	const childBarScale = useBarScale(childCountDomain, [0, BAR_WIDTH])
@@ -45,7 +56,7 @@ export function useColumns(
 	const dynamicColumn = useDynamicColumn(encoding, slimBarWidth)
 	const barFillScale = useBarFillScale()
 
-	const columns = useMemo(() => {
+	const columns: Column[] = useMemo(() => {
 		return [
 			dynamicColumn,
 			{
@@ -54,7 +65,7 @@ export function useColumns(
 				accessor: (d: Community) => d.id,
 				width: slimBarWidth,
 				height: barHeight,
-			},
+			} as Column,
 			{
 				header: 'Node count',
 				field: 'community.nodeCount',
@@ -64,7 +75,7 @@ export function useColumns(
 				fillScale: barFillScale,
 				width: barWidth,
 				height: barHeight,
-			},
+			} as Column,
 			{
 				header: 'Child count',
 				field: 'community.childCount',
@@ -74,8 +85,8 @@ export function useColumns(
 				fillScale: barFillScale,
 				width: barWidth,
 				height: barHeight,
-			},
-		]
+			} as Column,
+		].filter(filter)
 	}, [
 		dynamicColumn,
 		nodeBarScale,
@@ -84,6 +95,7 @@ export function useColumns(
 		barWidth,
 		slimBarWidth,
 		barHeight,
+		filter,
 	])
 	return columns
 }

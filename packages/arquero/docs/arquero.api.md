@@ -201,6 +201,7 @@ export function rename(table: ColumnTable, prefix: string, exclude?: string[]): 
 // @public (undocumented)
 export class TableCollection<T> {
     constructor(table: ColumnTable | undefined, prefix: string, indices?: number[]);
+    findById(id: any): T | undefined;
     // (undocumented)
     forEach(callback: Callback<T>, ordered?: boolean): void;
     // (undocumented)

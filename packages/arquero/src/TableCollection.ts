@@ -136,7 +136,7 @@ export class TableCollection<T> {
 	map(callback: Callback<T>, ordered = false): any[] {
 		const output: T[] = []
 		this.scan(idx => {
-			const n = new this._Ctor(this._table, idx, this._prefix)
+			const n = new this._Ctor(this._table, idx)
 			if (idx === undefined) return
 			output.push(callback(n, idx))
 		}, ordered)
@@ -226,6 +226,34 @@ export class TableCollection<T> {
 		} else {
 			return this._table.scan(callback, ordered)
 		}
+	}
+	/**
+	 * Scans the table to find a specific item using it's default id
+	 * @param id - id of the item to find
+	 * @returns
+	 */
+	findById(id: any): T | undefined {
+		let found
+		const cols = this._table.columnNames()
+		// TODO: we should be able to use a column getter and table.object,
+		// but our preserved filter causes index mismatches
+		const prop = `${this._prefix}.id`
+		this.scan(
+			(idx: number | undefined, data: any, stop: (() => void) | undefined) => {
+				const itemId = data[prop].get(idx)
+				if (id === itemId) {
+					// TODO: use this._Ctor, but this function is used in places where recoil freezes
+					found = cols.reduce((acc, col) => {
+						const val = data[col].get(idx)
+						acc[col] = val
+						return acc
+					}, {})
+					stop && stop()
+				}
+			},
+			true,
+		)
+		return found
 	}
 }
 

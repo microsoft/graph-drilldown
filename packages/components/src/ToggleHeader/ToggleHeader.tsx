@@ -63,7 +63,8 @@ const toggleStyles = {
 }
 
 const Container = styled.div`
-	border: 1px solid ${({ theme }) => theme.application().lowContrast().hex()};
+	border-top: 1px solid
+		${({ theme }) => theme.application().lowContrast().hex()};
 	border-bottom: none;
 	background: ${({ theme }) => theme.application().faint().hex(0.8)};
 	padding: 4px;

@@ -137,19 +137,6 @@ export function useSelectedNodes() {
 	)
 }
 
-export function useTableColumnsByType(dataType: string) {
-	// const byCommunity = useGroupedByCommunityTable()
-	const bigTable = useBigTable()
-
-	if (bigTable.numRows() > 0) {
-		const def = listColumnDefs(bigTable)
-		const columns = def.filter(d => d.dataType === dataType).map(d => d.name)
-		const valueTable = bigTable.select(columns)
-		return valueTable
-	}
-	return table({})
-}
-
 // for a list of communities, get a map of [cid]: nodepositions[]
 export function useStandardNodePositions() {
 	const table = useVisibleNodesTable()
