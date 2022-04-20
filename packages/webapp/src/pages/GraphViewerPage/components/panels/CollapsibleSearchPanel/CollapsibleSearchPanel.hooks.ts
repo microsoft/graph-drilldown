@@ -3,20 +3,18 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import {
+import type {
 	CommunityCollection,
-	listColumnDefs,
-	listColumnNames,
 	NodeCollection,
 } from '@graph-drilldown/arquero'
-import { useDebounceFn } from 'ahooks'
-import { op, table } from 'arquero'
+import { listColumnDefs } from '@graph-drilldown/arquero'
+import { table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo, useState } from 'react'
 
 import { ROOT_COMMUNITY_ID } from '~/constants'
+import { SearchController } from '~/controllers/SearchController'
 import {
-	useCommunitiesTable,
 	useHoveredCommunity,
 	useHoveredNode,
 	useSelectedCommunity,
@@ -26,14 +24,6 @@ import {
 	useSetSelectedCommunity,
 	useSetSelectedNodes,
 } from '~/state'
-
-export interface SearchByIndex {
-	index: number
-	matchColumns: string[]
-	'community.id': string
-	'node.id'?: string
-	[col: string]: unknown
-}
 
 export function useSelection() {
 	const selectedNodes = useSelectedNodesState()
@@ -70,108 +60,59 @@ export function useSelection() {
 }
 
 export function useSearch(
-	source: ColumnTable,
+	nodes: ColumnTable,
+	communities: ColumnTable,
 	onStartSearch,
-	onError,
-	onResetSearch,
 ) {
+	const [canSearch, setCanSearch] = useState<boolean>(false)
 	const [isSearching, setIsSearching] = useState<boolean>(false)
-
 	const [nodeResults, setNodeResults] = useState<NodeCollection | undefined>()
 	const [communityResults, setCommunityResults] = useState<
 		CommunityCollection | undefined
 	>()
+	const [errorMessage, setErrorMessage] = useState<string | undefined>()
 
-	const canSearch = useMemo(() => source.numRows() > 0, [source])
-
-	const handleResetSearch = useCallback(() => {
-		onResetSearch()
-		onError(undefined)
-		setNodeResults(undefined)
-		setCommunityResults(undefined)
-	}, [onResetSearch, onError, setNodeResults, setCommunityResults])
-
-	const handleStartSearch = useCallback(() => {
-		handleResetSearch()
-		setIsSearching(true)
-		onStartSearch()
-	}, [handleResetSearch, setIsSearching, onStartSearch])
-
-	const handleFinishSearch = useCallback(
-		(communityResults, nodeResults, error) => {
-			onError(error)
-			setCommunityResults(communityResults)
-			setNodeResults(nodeResults)
-			setIsSearching(false)
+	const syncState = useCallback(
+		controller => {
+			setErrorMessage(controller.error)
+			setCommunityResults(controller.communityResults)
+			setNodeResults(controller.nodeResults)
+			setCanSearch(controller.canSearch)
+			setIsSearching(controller.searching)
 		},
-		[onError, setCommunityResults, setNodeResults, setIsSearching],
+		[setErrorMessage, setCommunityResults, setNodeResults, setIsSearching],
 	)
 
-	const doSearch = useCreateSearchHandler(
-		source,
-		handleStartSearch,
-		handleFinishSearch,
-		handleResetSearch,
-	)
+	const controller = useMemo(() => {
+		const start = ctl => {
+			syncState(ctl)
+			onStartSearch()
+		}
+		const newController = new SearchController({
+			nodes,
+			communities,
+			onStart: start,
+			onFinish: syncState,
+		})
+		syncState(newController)
+		return newController
+	}, [nodes, communities, syncState, onStartSearch])
+
+	const doSearch = useCallback(text => controller.search(text), [controller])
 
 	return {
 		canSearch,
 		isSearching,
 		nodeResults,
 		communityResults,
+		errorMessage,
 		doSearch,
 	}
 }
 
-// centralize the debounced search mechanics to return a single searching callback
-function useCreateSearchHandler(
-	source: ColumnTable,
-	onStartSearch,
-	onFinishSearch,
-	onResetSearch,
-) {
-	const communities = useCommunitiesTable()
-	const columns = useMemo(() => listColumnNames(source), [source])
-
-	const runSearch = useCallback(
-		(searchValue: string) => {
-			const [communityResults, nodeResults, error] = getMatchingValuesByRow(
-				source,
-				communities,
-				columns,
-				searchValue,
-			)
-			onFinishSearch(communityResults, nodeResults, error)
-		},
-		[source, communities, columns, onFinishSearch],
-	)
-
-	// setup a debounce so we get a render loop to update with
-	const debounce = useDebounceFn(
-		(searchValue: string) => {
-			runSearch(searchValue)
-		},
-		{
-			wait: 10,
-		},
-	)
-
-	return useCallback(
-		(searchValue?: string) => {
-			if (!searchValue) {
-				onResetSearch()
-			} else {
-				onStartSearch()
-				debounce.run(searchValue)
-			}
-		},
-		[onResetSearch, onStartSearch, debounce],
-	)
-}
-
 export function useInteraction() {
 	const [isExpanded, setIsExpanded] = useState<boolean>(false)
-	const [errorMessage, onError] = useState<string | undefined>()
+
 	const [isInFocus, setIsInFocus] = useState<boolean>(false)
 
 	const onFocusChange = useCallback(
@@ -190,20 +131,19 @@ export function useInteraction() {
 	)
 
 	const onReset = useCallback(() => {
-		onError(undefined)
 		setIsExpanded(false)
-	}, [onError, setIsExpanded])
+	}, [setIsExpanded])
 
-	const doSearchExpand = useCallback(() => setIsExpanded(true), [setIsExpanded])
+	const doResultsExpand = useCallback(
+		() => setIsExpanded(true),
+		[setIsExpanded],
+	)
 	return {
 		isExpanded,
-		errorMessage,
-
 		onFocusChange,
 		onPanelClick,
 		onReset,
-		onError,
-		doSearchExpand,
+		doResultsExpand,
 	}
 }
 
@@ -255,83 +195,4 @@ export function useSearchResultsText(communities, nodes) {
 
 		return `Found ${communityText} ${nodeText}`
 	}, [communities, nodes])
-}
-
-const getColumnByRow = (table, col, row, searchValue): [string, boolean] => {
-	const stringValue = table.get(col, row)
-	let isInSearch = false
-	if (stringValue.indexOf(searchValue) > -1) {
-		isInSearch = true
-	}
-	return [stringValue, isInSearch]
-}
-
-const getMatchingValuesByRow = (
-	nodes: ColumnTable,
-	communities: ColumnTable,
-	columns: string[],
-	searchValue: string,
-): [CommunityCollection, NodeCollection, string | undefined] => {
-	console.time('match')
-	const matches: SearchByIndex[] = []
-	nodes.scan(row => {
-		const o = columns.reduce(
-			(acc, col) => {
-				const [value, isInSearch] = getColumnByRow(nodes, col, row, searchValue)
-				if (isInSearch) {
-					acc.isInSearch = true
-					acc.matchColumns.push(col)
-				}
-				acc[col] = value
-				acc.index = row
-				return acc
-			},
-			{ isInSearch: false, matchColumns: [] } as any,
-		)
-
-		if (o.isInSearch) {
-			matches.push(o)
-		}
-	})
-	// currently only handling match on node.id or community.id
-	const seen = new Set<string>([])
-	const [nodeids, nodeCommIds, communityIds] = matches.reduce(
-		(acc, d) => {
-			if (d.matchColumns.includes('node.id')) {
-				const nodeid = d['node.id']!
-				if (!seen.has(nodeid)) {
-					acc[1].push(d['community.id'])
-					seen.add(nodeid)
-				}
-			}
-			if (d.matchColumns.includes('community.id')) {
-				acc[2].push(d['community.id'])
-			}
-
-			return acc
-		},
-		[seen, [], []] as [Set<string>, string[], string[]],
-	)
-	const communityResults = communities
-		.params({ match: communityIds })
-		.filter((d: any, $: any) => op.includes($.match, d['community.id'], 0))
-		.ungroup()
-
-	const nodeResults = nodes
-		.params({ match: Array.from(nodeids), commIds: nodeCommIds })
-		.filter(
-			(d: any, $: any) =>
-				op.includes($.match, d['node.id'], 0) &&
-				op.includes($.commIds, d['community.id'], 0),
-		)
-		.ungroup()
-	const ccTable = new CommunityCollection(communityResults)
-	const nodeTable = new NodeCollection(nodeResults)
-	const message =
-		ccTable.size === 0 && nodeTable.size === 0
-			? `No results found for "${searchValue}"`
-			: undefined
-	console.timeEnd('match')
-
-	return [ccTable, nodeTable, message]
 }

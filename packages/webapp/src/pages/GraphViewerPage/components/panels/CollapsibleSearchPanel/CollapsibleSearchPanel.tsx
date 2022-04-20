@@ -6,7 +6,7 @@ import { CollapsiblePanel } from '@essex-js-toolkit/themed-components'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-import { useBigTable } from '~/state'
+import { useBigTable, useCommunitiesTable } from '~/state'
 
 import {
 	useInteraction,
@@ -20,15 +20,14 @@ import { SearchResults } from './SearchResults'
 export const CollapsibleSearchPanel: React.FC = () => {
 	const bigTable = useBigTable()
 	const searchTable = useSearchableTable(bigTable)
+	const communities = useCommunitiesTable()
 
 	const {
 		isExpanded,
-		errorMessage,
 		onFocusChange,
 		onPanelClick,
 		onReset,
-		onError,
-		doSearchExpand,
+		doResultsExpand,
 	} = useInteraction()
 
 	const { onResetSelection } = useSelection()
@@ -38,8 +37,19 @@ export const CollapsibleSearchPanel: React.FC = () => {
 		onReset()
 	}, [onResetSelection, onReset])
 
-	const { canSearch, isSearching, nodeResults, communityResults, doSearch } =
-		useSearch(searchTable, doSearchExpand, onError, onClear)
+	const onStart = useCallback(() => {
+		onClear()
+		doResultsExpand()
+	}, [onClear, doResultsExpand])
+	
+	const {
+		canSearch,
+		isSearching,
+		nodeResults,
+		communityResults,
+		errorMessage,
+		doSearch,
+	} = useSearch(searchTable, communities, onStart)
 
 	const onRenderSearchHeader = useCallback(
 		() => (
