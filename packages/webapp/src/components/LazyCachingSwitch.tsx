@@ -18,7 +18,7 @@ import { withRouter } from 'react-router-dom'
  *  2. It only supports Route, not Redirect, and must use Route.component prop
  *  3. It only supports exact matches
  */
-export const LazyCachingSwitch = withRouter(({ location, children }) => {
+export const LazyCachingSwitch: any = withRouter(({ location, children }) => {
 	const [cache, setCache] = useState<any>({})
 
 	// first iteration ensures we've rendered the matched component, and updates the cache as necessary
@@ -29,13 +29,14 @@ export const LazyCachingSwitch = withRouter(({ location, children }) => {
 		let foundFirst = false
 		Children.forEach(children, child => {
 			if (!foundFirst && isValidElement(child)) {
-				const { path } = child.props
+				const props = child.props as any
+				const { path } = props
 				const matched = location.pathname.match(`^${path}$`)
 				if (matched) {
 					foundFirst = true
 					let instance = updated[path]
 					if (!instance) {
-						instance = <child.props.component />
+						instance = <props.component />
 						updated[path] = instance
 						isDirty = true
 					}
@@ -51,7 +52,8 @@ export const LazyCachingSwitch = withRouter(({ location, children }) => {
 	const rendered = useMemo(() => {
 		return Children.map(children, child => {
 			if (isValidElement(child)) {
-				const { path } = child.props
+				const props = child.props as any
+				const { path } = props
 				const matched = location.pathname.match(`^${path}$`)
 				const style: CSSProperties = {}
 				if (!matched) {

@@ -126,7 +126,7 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 	},
 )
 
-const StyledRnd = styled(Rnd)`
+const StyledRnd = styled(Rnd as any)`
 	position: absolute;
 	width: 100%;
 	height: 100%;

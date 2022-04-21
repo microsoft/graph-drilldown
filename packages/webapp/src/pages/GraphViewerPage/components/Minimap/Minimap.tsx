@@ -4,7 +4,8 @@
  */
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import type { GraphContainer, InputGraph } from '@graspologic/graph'
-import { GraphView, Nodes, NodeSetHighlight } from '@graspologic/react'
+import {  Nodes, NodeSetHighlight } from '@graspologic/react'
+import {GraphView } from '~/react-patch/graspologic'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 

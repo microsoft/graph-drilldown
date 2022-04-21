@@ -5,12 +5,14 @@
 
 import { useMicrosoftConsentBanner } from '@essex/hooks'
 import type { FC } from 'react'
-import { memo } from 'react'
+import { memo, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { useTheme } from '~/state'
 
-export const Footer: FC = memo(function Footer() {
+export const Footer: FC<{
+	children?: ReactNode
+}> = memo(function Footer() {
 	const theme = useTheme()
 	const CONSENT_CONF = {
 		theme: theme.variant,
@@ -45,6 +47,7 @@ const Link: FC<{
 	className?: string
 	style?: React.CSSProperties
 	onClick?: () => void
+	children?: ReactNode
 }> = memo(function Link({ id, className, children, href, style, onClick }) {
 	return href == null ? (
 		<LinkDiv style={style} className={className} id={id} onClick={onClick}>

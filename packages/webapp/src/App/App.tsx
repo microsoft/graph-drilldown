@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from '~/react-patch/react-router-dom'
 import styled from 'styled-components'
 
 import { LazyCachingSwitch } from '~/components/LazyCachingSwitch'

@@ -7,11 +7,12 @@ import type { GraphContainer, InputGraph } from '@graspologic/graph'
 import {
 	Camera,
 	Edges,
-	GraphView,
+	
 	HighlightHoveredNode,
 	Nodes,
 	NodeSetHighlight,
 } from '@graspologic/react'
+import {GraphView } from '~/react-patch/graspologic'
 import type { GraphRenderer } from '@graspologic/renderer'
 import { useCallback } from 'react'
 import styled from 'styled-components'

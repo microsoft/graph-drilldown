@@ -4,13 +4,13 @@
  */
 import { ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
-import { memo } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { memo, ReactNode } from 'react'
+import { ThemeProvider } from '~/react-patch/styled-components'
 
 import { useTheme } from '~/state'
 
 export const StyleContext: React.FC<{
-	children: JSX.Element | JSX.Element[]
+	children?: ReactNode
 }> = memo(function StyleContext({ children }) {
 	const theme = useTheme()
 	return (

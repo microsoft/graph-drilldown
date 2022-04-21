@@ -22,4 +22,4 @@ const LinkButton: React.FC<RouterLinkIconButtonProps> = props => {
 	return <IconButton onClick={handleClick} {...buttonProps} />
 }
 
-export const RouterLinkIconButton = withRouter(LinkButton)
+export const RouterLinkIconButton: any = withRouter(LinkButton)
