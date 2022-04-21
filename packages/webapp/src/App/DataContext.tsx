@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { memo, useMemo, ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { memo, useMemo } from 'react'
 
 import { usePresetData, useTestFiles, useUrlFiles } from './App.hooks'
 export const DataContext: React.FC<{

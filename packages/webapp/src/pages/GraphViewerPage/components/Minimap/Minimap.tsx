@@ -4,8 +4,7 @@
  */
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import type { GraphContainer, InputGraph } from '@graspologic/graph'
-import {  Nodes, NodeSetHighlight } from '@graspologic/react'
-import {GraphView } from '~/react-patch/graspologic'
+import { Nodes, NodeSetHighlight } from '@graspologic/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -17,6 +16,7 @@ import {
 	useNodeIds,
 	useSelectedNodeColor,
 } from '~/hooks/graph'
+import { GraphView } from '~/react-patch/graspologic'
 import type { Bounds } from '~/types'
 
 import { useAOIBounds, usePlotTheme } from './MiniMap.hooks'

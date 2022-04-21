@@ -16,7 +16,6 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { ROOT_COMMUNITY_ID } from '~/constants'
 import {
-	useCommunitiesTable,
 	useHoveredCommunity,
 	useHoveredNode,
 	useSelectedCommunity,
@@ -70,7 +69,8 @@ export function useSelection() {
 }
 
 export function useSearch(
-	source: ColumnTable,
+	nodes: ColumnTable,
+	communities: ColumnTable,
 	onStartSearch,
 	onError,
 	onResetSearch,
@@ -82,7 +82,7 @@ export function useSearch(
 		CommunityCollection | undefined
 	>()
 
-	const canSearch = useMemo(() => source.numRows() > 0, [source])
+	const canSearch = useMemo(() => nodes.numRows() > 0, [nodes])
 
 	const handleResetSearch = useCallback(() => {
 		onResetSearch()
@@ -108,7 +108,8 @@ export function useSearch(
 	)
 
 	const doSearch = useCreateSearchHandler(
-		source,
+		nodes,
+		communities,
 		handleStartSearch,
 		handleFinishSearch,
 		handleResetSearch,
@@ -125,25 +126,25 @@ export function useSearch(
 
 // centralize the debounced search mechanics to return a single searching callback
 function useCreateSearchHandler(
-	source: ColumnTable,
+	nodes: ColumnTable,
+	communities: ColumnTable,
 	onStartSearch,
 	onFinishSearch,
 	onResetSearch,
 ) {
-	const communities = useCommunitiesTable()
-	const columns = useMemo(() => listColumnNames(source), [source])
+	const columns = useMemo(() => listColumnNames(nodes), [nodes])
 
 	const runSearch = useCallback(
 		(searchValue: string) => {
 			const [communityResults, nodeResults, error] = getMatchingValuesByRow(
-				source,
+				nodes,
 				communities,
 				columns,
 				searchValue,
 			)
 			onFinishSearch(communityResults, nodeResults, error)
 		},
-		[source, communities, columns, onFinishSearch],
+		[nodes, communities, columns, onFinishSearch],
 	)
 
 	// setup a debounce so we get a render loop to update with
@@ -208,23 +209,23 @@ export function useInteraction() {
 }
 
 /**
- * Subselect the source table to only columns we want
+ * Subselect the nodes table to only columns we want
  * to search on. This means they must be a string data type,
  * and we skip the community.pid since that will be redundant with community.id
  */
-export function useSearchableTable(source: ColumnTable) {
+export function useSearchableTable(nodes: ColumnTable) {
 	return useMemo(() => {
-		if (source.numRows() > 0) {
-			const def = listColumnDefs(source)
+		if (nodes.numRows() > 0) {
+			const def = listColumnDefs(nodes)
 			const columns = def
 				.filter(d => d.dataType === 'string')
 				.filter(d => d.name !== 'community.pid')
 				.map(d => d.name)
 
-			return source.select(columns)
+			return nodes.select(columns)
 		}
 		return table({})
-	}, [source])
+	}, [nodes])
 }
 
 function kFormatter(num: number): string {

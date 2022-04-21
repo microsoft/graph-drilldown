@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { HashRouter, Route } from '~/react-patch/react-router-dom'
 import styled from 'styled-components'
 
 import { LazyCachingSwitch } from '~/components/LazyCachingSwitch'
 import { DataManagerPage, GraphViewerPage } from '~/pages'
+import { HashRouter, Route } from '~/react-patch/react-router-dom'
 
 import { CommandBar } from './components/CommandBar'
 import { Footer } from './components/Footer'

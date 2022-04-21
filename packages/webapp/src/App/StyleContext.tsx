@@ -4,9 +4,10 @@
  */
 import { ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
-import { memo, ReactNode } from 'react'
-import { ThemeProvider } from '~/react-patch/styled-components'
+import type { ReactNode } from 'react'
+import { memo } from 'react'
 
+import { ThemeProvider } from '~/react-patch/styled-components'
 import { useTheme } from '~/state'
 
 export const StyleContext: React.FC<{
