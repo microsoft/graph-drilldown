@@ -32,10 +32,10 @@ export const FileDrop: React.FC<FileDropProps> = ({
 	})
 	return (
 		<Container
+			{...getRootProps()}
+			isDragging={isDragActive}
 			width={width}
 			height={height}
-			isDragging={isDragActive}
-			{...getRootProps()}
 		>
 			<input {...getInputProps()} />
 			<TextContainer>

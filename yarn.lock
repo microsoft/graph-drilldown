@@ -3297,22 +3297,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-focus@npm:^7.17.6":
-  version: 7.17.6
-  resolution: "@fluentui/react-focus@npm:7.17.6"
+"@fluentui/react-focus@npm:^7.18.3":
+  version: 7.18.3
+  resolution: "@fluentui/react-focus@npm:7.18.3"
   dependencies:
     "@fluentui/keyboard-key": ^0.2.12
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.19.0
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/styling": ^7.20.1
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <17.0.0"
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: e1017f5bb93fc8a86fdbc1d1b6e518a1e1f30ecc2e7071d4c45288d1275f4c63bf07dcc2f234ed19b7933e9d908f3072c349bd34a001dc65dfcaf5b9f8c12588
+  checksum: 774751b8bf2756f7042f28e67b4fa18622eae94febc9b6c39c103956f8cd10727596b57d15337bd95646da89e109bc20e3a1fd0eb7a9f4e240aaf9e05ce31d87
   languageName: node
   linkType: hard
 
@@ -3425,20 +3425,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/theme@npm:^1.7.4":
-  version: 1.7.4
-  resolution: "@fluentui/theme@npm:1.7.4"
+"@fluentui/theme@npm:^1.7.5":
+  version: 1.7.5
+  resolution: "@fluentui/theme@npm:1.7.5"
   dependencies:
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <17.0.0"
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: a9c9f92812dc9f0ee7a3d4065942e6d70a085df0e8ad42ec57b1cc36cb13ac86ba6a27c066d23ad9ccc05fede9af76bc057982939f02262c7269525e5868960b
+  checksum: 7505ff9eebefa1a41484a5d32a4e06894fd95114454df8b11e1ecfd4432d99b5a0790745ce77764c66c7a585389a09b458a71374012866249e57ff821a4c869b
   languageName: node
   linkType: hard
 
@@ -3606,10 +3606,10 @@ __metadata:
     "@fluentui/utilities": ^8.8.2
     "@types/jest": ^27.4.1
     "@types/node": ^17.0.25
-    "@types/react": ^16.14.6
-    "@types/react-dom": ^16.9.12
+    "@types/react": ^16.14.25
+    "@types/react-dom": ^16.9.14
     "@types/react-rnd": ^8.0.0
-    "@types/react-router-dom": ^5.1.7
+    "@types/react-router-dom": ^5.3.3
     core-js: ^3.22.1
     eslint: ^8.13.0
     eslint-import-resolver-node: ^0.3.6
@@ -3617,12 +3617,12 @@ __metadata:
     lint-staged: ^11.2.6
     ncp: ^2.0.0
     npm-run-all: ^4.1.5
-    office-ui-fabric-react: ^7.170.0
+    office-ui-fabric-react: ^7.185.3
     prettier: ^2.6.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-rnd: ^10.2.3
-    react-router-dom: ^5.2.0
+    react-rnd: ^10.3.7
+    react-router-dom: ^5.3.1
     regenerator-runtime: ^0.13.9
     tslib: ^2.3.1
     typescript: ^4.6.3
@@ -3692,13 +3692,13 @@ __metadata:
     "@types/dotenv-webpack": ^7.0.3
     "@types/node": ^17.0.25
     "@types/prettier": ^2.6.0
-    "@types/prop-types": ^15
+    "@types/prop-types": ^15.7.5
     "@types/query-string": ^6.3.0
-    "@types/react": ^16.14.6
-    "@types/react-dom": ^16.9.12
-    "@types/react-infinite-scroller": ^1.2.1
+    "@types/react": ^16.14.25
+    "@types/react-dom": ^16.9.14
+    "@types/react-infinite-scroller": ^1.2.3
     "@types/react-rnd": ^8.0.0
-    "@types/react-router-dom": ^5.1.7
+    "@types/react-router-dom": ^5.3.3
     "@types/styled-components": ^5.1.25
     "@typescript-eslint/eslint-plugin": ^4.33.0
     "@typescript-eslint/parser": ^4.33.0
@@ -3711,18 +3711,18 @@ __metadata:
     dotenv: ^10.0.0
     file-loader: ^6.2.0
     ncp: ^2.0.0
-    office-ui-fabric-react: ^7.170.0
-    prop-types: ^15.7.2
+    office-ui-fabric-react: ^7.185.3
+    prop-types: ^15.8.1
     query-string: ^6.14.1
     raw-loader: ^4.0.2
     react: ^17.0.2
-    react-animate-height: ^2.0.23
+    react-animate-height: ^2.1.2
     react-dom: ^17.0.2
-    react-dropzone: ^11.2.0
+    react-dropzone: ^11.7.1
     react-if: ^4.1.3
-    react-infinite-scroller: ^1.2.4
-    react-rnd: ^10.2.3
-    react-router-dom: ^5.2.0
+    react-infinite-scroller: ^1.2.6
+    react-rnd: ^10.3.7
+    react-router-dom: ^5.3.1
     recoil: ^0.7.2
     regenerator-runtime: ^0.13.9
     shx: ^0.3.4
@@ -4932,6 +4932,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/history@npm:^4.7.11":
+  version: 4.7.11
+  resolution: "@types/history@npm:4.7.11"
+  checksum: c92e2ba407dcab0581a9afdf98f533aa41b61a71133420a6d92b1ca9839f741ab1f9395b17454ba5b88cb86020b70b22d74a1950ccfbdfd9beeaa5459fdc3464
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.1
   resolution: "@types/hoist-non-react-statics@npm:3.3.1"
@@ -5110,7 +5117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:^15":
+"@types/prop-types@npm:^15.7.5":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
   checksum: 5b43b8b15415e1f298243165f1d44390403bb2bd42e662bca3b5b5633fdd39c938e91b7fce3a9483699db0f7a715d08cef220c121f723a634972fdf596aec980
@@ -5140,7 +5147,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^16.9.12":
+"@types/react-dom@npm:^16.9.14":
   version: 16.9.14
   resolution: "@types/react-dom@npm:16.9.14"
   dependencies:
@@ -5149,12 +5156,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-infinite-scroller@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@types/react-infinite-scroller@npm:1.2.1"
+"@types/react-infinite-scroller@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@types/react-infinite-scroller@npm:1.2.3"
   dependencies:
     "@types/react": "*"
-  checksum: 50a2d659a783aafdaa3db5cc34f4b0ff78cd434620c0f7685d06b6e34035b27db692ae46efa48549f6f7f81c59bfb4204cbcba3995334cb83921454999b8c727
+  checksum: ae11063b5e114bff1f06e9d3d2ca0948a3a224f13b4a30fbfe56f84e535ee6232de9667456695bbbb409de51887d701f8558fd28c36a2ea172e8593346de85d1
   languageName: node
   linkType: hard
 
@@ -5167,14 +5174,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:^5.1.7":
-  version: 5.1.7
-  resolution: "@types/react-router-dom@npm:5.1.7"
+"@types/react-router-dom@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "@types/react-router-dom@npm:5.3.3"
   dependencies:
-    "@types/history": "*"
+    "@types/history": ^4.7.11
     "@types/react": "*"
     "@types/react-router": "*"
-  checksum: ad40f55557bb7cd8d19d783c1d7dbca85e8874e03cced37e464f74f9f0a588a9a7e411de74da362d1a5c5bf80f7aaca78fe9a66d26741e47c5c06e49a62d1229
+  checksum: 28c4ea48909803c414bf5a08502acbb8ba414669b4b43bb51297c05fe5addc4df0b8fd00e0a9d1e3535ec4073ef38aaafac2c4a2b95b787167d113bc059beff3
   languageName: node
   linkType: hard
 
@@ -5199,7 +5206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16, @types/react@npm:^16.14.6":
+"@types/react@npm:^16":
   version: 16.14.21
   resolution: "@types/react@npm:16.14.21"
   dependencies:
@@ -5207,6 +5214,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 9660ea0a2c7ad364295c1e5abd6b98a05fd372a0f06f97850f60fcc254bcec766d19b101c0acc382746a4e0b71848d88097a1db7124e3fd441c0472fb6b3f849
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.14.25":
+  version: 16.14.25
+  resolution: "@types/react@npm:16.14.25"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 3a06cf26f2cad40b14bea707a0ca5343d6bcce133a27ecc291c269d65d9998fd56807371c8e912b95c6fe5c426751ac2e419ae6df0e69bba59e4d84e1165f48f
   languageName: node
   linkType: hard
 
@@ -5627,32 +5645,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/foundation@npm:^7.9.26":
-  version: 7.9.26
-  resolution: "@uifabric/foundation@npm:7.9.26"
+"@uifabric/foundation@npm:^7.10.2":
+  version: 7.10.2
+  resolution: "@uifabric/foundation@npm:7.10.2"
   dependencies:
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.19.0
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/styling": ^7.20.1
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <17.0.0"
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: db1cb9d70fc30af8a6fb6a2606629e7d3b9024f69c9c0748544f16edcf1914e3f103d7dd541778dd56bc12d6e6a1e9bc41a17649602716dcdf611547ee6d477f
+  checksum: 90a6baf22a86cde4c6f9b34d87ca76ba6bd722d28f860c7e9d627b8afd18a47dc151a44ee988ac5086c1c1b0dcb2488b1d6271e6dfbe7031f1d1120b9939ce9a
   languageName: node
   linkType: hard
 
-"@uifabric/icons@npm:^7.5.23":
-  version: 7.5.23
-  resolution: "@uifabric/icons@npm:7.5.23"
+"@uifabric/icons@npm:^7.7.0":
+  version: 7.7.0
+  resolution: "@uifabric/icons@npm:7.7.0"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.19.0
+    "@uifabric/styling": ^7.20.1
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
-  checksum: 30b9e6b094c716e59e0f7100755e9799ed4db004a37a6e36e6be8325d2e33bb83603186c5ab564dbfbd570f1046b1f1b7fb908961e1137313bc24ec092b091dd
+  checksum: f1d255a1edf10cb3dc4e4d7724d88269c78f36282a980de22f8bc07f749d226d20689e804e2fecb2a48de06fd888c79567e5d17394e8aea3edeb214eeca112d0
   languageName: node
   linkType: hard
 
@@ -5666,20 +5685,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/react-hooks@npm:^7.14.0":
-  version: 7.14.0
-  resolution: "@uifabric/react-hooks@npm:7.14.0"
+"@uifabric/react-hooks@npm:^7.14.1":
+  version: 7.14.1
+  resolution: "@uifabric/react-hooks@npm:7.14.1"
   dependencies:
     "@fluentui/react-window-provider": ^1.0.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <17.0.0"
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: b4144957e30dbdc27dba6e3de2b89f24d5879f263a83c33305a745e363194c3451629f152375bdd3bef57d8fa9875f1cddc0bce572f5cb916fc8ec15d31d6f62
+  checksum: c15b53713493f643af332223d5b0397937a9c9acf4a1bc3560eec143172713e54308c2e2756c5591ffacb36d07959bb891d8867d7844259a33c233c5d543a3c3
   languageName: node
   linkType: hard
 
@@ -5692,23 +5711,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/styling@npm:^7.19.0":
-  version: 7.19.0
-  resolution: "@uifabric/styling@npm:7.19.0"
+"@uifabric/styling@npm:^7.20.1":
+  version: 7.20.1
+  resolution: "@uifabric/styling@npm:7.20.1"
   dependencies:
-    "@fluentui/theme": ^1.7.4
+    "@fluentui/theme": ^1.7.5
     "@microsoft/load-themed-styles": ^1.10.26
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/utilities": ^7.34.0
     tslib: ^1.10.0
-  checksum: f9081da51d62e0e6b2cda1feffdaf4824c2efe14c8ad17f68a790bfc0f5143dbb2e6c8d176b19d90e8e89b53b76d145e8143495324eaa2659f6162a0b1003893
+  checksum: 12002535107be26d3ca53feefed290e68d8316d8dd61fa4d65871e3af18b404879a89291f796931d36cf2e945877b1053cff025b7b2241f99f615bb5bd95c925
   languageName: node
   linkType: hard
 
-"@uifabric/utilities@npm:^7.33.5":
-  version: 7.33.5
-  resolution: "@uifabric/utilities@npm:7.33.5"
+"@uifabric/utilities@npm:^7.34.0":
+  version: 7.34.0
+  resolution: "@uifabric/utilities@npm:7.34.0"
   dependencies:
     "@fluentui/dom-utilities": ^1.1.2
     "@uifabric/merge-styles": ^7.19.2
@@ -5720,7 +5739,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: 794774c549b25d1cc9f5ab9d380f6801606da8c0472a8362c19497032314d85fef3bc0cd7f0ac192d92a7cfb0ead7d3f1dca361e768e77a6834623401173ee43
+  checksum: fd472bc052c2dfeec751126e980b5248ba158dcf4edaa0085e12d82d9b7dedf51ff512ea70e4f511d2810345cafbf23fb2c7789229ede869918d78026c5b4795
   languageName: node
   linkType: hard
 
@@ -6907,7 +6926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"attr-accept@npm:^2.2.1":
+"attr-accept@npm:^2.2.2":
   version: 2.2.2
   resolution: "attr-accept@npm:2.2.2"
   checksum: 496f7249354ab53e522510c1dc8f67a1887382187adde4dc205507d2f014836a247073b05e9d9ea51e2e9c7f71b0d2aa21730af80efa9af2d68303e5f0565c4d
@@ -7845,6 +7864,13 @@ __metadata:
     strip-ansi: ^5.2.0
     wrap-ansi: ^5.1.0
   checksum: 0bb8779efe299b8f3002a73619eaa8add4081eb8d1c17bc4fedc6240557fb4eacdc08fe87c39b002eacb6cfc117ce736b362dbfd8bf28d90da800e010ee97df4
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "clsx@npm:1.1.1"
+  checksum: ff052650329773b9b245177305fc4c4dc3129f7b2be84af4f58dc5defa99538c61d4207be7419405a5f8f3d92007c954f4daba5a7b74e563d5de71c28c830063
   languageName: node
   linkType: hard
 
@@ -10326,12 +10352,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-selector@npm:^0.2.2":
-  version: 0.2.4
-  resolution: "file-selector@npm:0.2.4"
+"file-selector@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "file-selector@npm:0.4.0"
   dependencies:
     tslib: ^2.0.3
-  checksum: 83341e7416352c7de0caf433b33c8d007d3c298c17d6ba0e70168af82bb045d905ddd6f4bc3ca764a2035c6f18eae7f52223dc6a784056f61b8391c351f88323
+  checksum: 1c9986e94bd033442cb4299d10d73d98fbc0b5f1af5b47d7a27b39f1e6bbd8d677f66c2628167da387166c652ad3c2429875042b453ba62f14945d903adf88d5
   languageName: node
   linkType: hard
 
@@ -13956,21 +13982,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.170.0":
-  version: 7.170.1
-  resolution: "office-ui-fabric-react@npm:7.170.1"
+"office-ui-fabric-react@npm:^7.185.3":
+  version: 7.185.3
+  resolution: "office-ui-fabric-react@npm:7.185.3"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
-    "@fluentui/react-focus": ^7.17.6
+    "@fluentui/react-focus": ^7.18.3
     "@fluentui/react-window-provider": ^1.0.2
     "@microsoft/load-themed-styles": ^1.10.26
-    "@uifabric/foundation": ^7.9.26
-    "@uifabric/icons": ^7.5.23
+    "@uifabric/foundation": ^7.10.2
+    "@uifabric/icons": ^7.7.0
     "@uifabric/merge-styles": ^7.19.2
-    "@uifabric/react-hooks": ^7.14.0
+    "@uifabric/react-hooks": ^7.14.1
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.19.0
-    "@uifabric/utilities": ^7.33.5
+    "@uifabric/styling": ^7.20.1
+    "@uifabric/utilities": ^7.34.0
     prop-types: ^15.7.2
     tslib: ^1.10.0
   peerDependencies:
@@ -13978,7 +14004,7 @@ fsevents@^1.2.7:
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: 94041dd5d3cdfdb9b1ef39eabac86017ff32ef103dedfc9b518f26d2441b3e65599ecf2aace8ccb4f9bb008c662d4ef91b12f16d4b731f53f457503ad2396f3f
+  checksum: b105713df9df4eb27709ffecb671706c9daec8139785a4cc5d4ad4ffb64c98473f9daf34eef45b5d1fa27417b58fa93de9ae70c6d2b6acb1bcaf56be2b4b4066
   languageName: node
   linkType: hard
 
@@ -14995,18 +15021,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"re-resizable@npm:6.9.0":
-  version: 6.9.0
-  resolution: "re-resizable@npm:6.9.0"
-  dependencies:
-    fast-memoize: ^2.5.1
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0
-    react-dom: ^16.13.1 || ^17.0.0
-  checksum: 994f999ae6e9bd65e45a28c42e132b00b5d319effc4044c8fe89bddff8a631f2c0ce234194981a5117186e787cc80e6d41d1bd7328787672d07f482e2a260d51
-  languageName: node
-  linkType: hard
-
 "re-resizable@npm:6.9.1":
   version: 6.9.1
   resolution: "re-resizable@npm:6.9.1"
@@ -15016,6 +15030,18 @@ fsevents@^1.2.7:
     react: ^16.13.1 || ^17.0.0
     react-dom: ^16.13.1 || ^17.0.0
   checksum: b164f6b956dc1f45b6c2603f0f402b04df8306017c59d68a9a71a2c857049a314a01c3fb7aedba66d8c60c4ccf9aa182c345276825eed745e5b847b6f104d78e
+  languageName: node
+  linkType: hard
+
+"re-resizable@npm:6.9.6":
+  version: 6.9.6
+  resolution: "re-resizable@npm:6.9.6"
+  dependencies:
+    fast-memoize: ^2.5.1
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: ac87fd1058a1086be6330cd56a25de6b89b872eafad3cc2e6b821e39adcb50e79241c78fc369a4eed84931f64affc07cefb4fc3c118ccbe77f93add25ad82a1a
   languageName: node
   linkType: hard
 
@@ -15029,6 +15055,19 @@ fsevents@^1.2.7:
     react: ">=15.6.2"
     react-dom: ">=15.6.2"
   checksum: 280f504b38a98e06323981eaa7752f568d5f761b6d511e21625adc04b0b96222b3a20224c5af9146dff23fb834064437065f834b781ba9377243427a66f1553c
+  languageName: node
+  linkType: hard
+
+"react-animate-height@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "react-animate-height@npm:2.1.2"
+  dependencies:
+    classnames: ^2.2.5
+    prop-types: ^15.6.1
+  peerDependencies:
+    react: ">=15.6.2"
+    react-dom: ">=15.6.2"
+  checksum: 56f0db8a8a53a8e115cc9d38ce290aad4bb989e83b573a1b5a01d4b33bddf28810ae6b60cb95cd870fb11bf83eae3ef33ffd4bfd58c578e8c2a28b410e3e9885
   languageName: node
   linkType: hard
 
@@ -15078,16 +15117,29 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dropzone@npm:^11.2.0":
-  version: 11.3.2
-  resolution: "react-dropzone@npm:11.3.2"
+"react-draggable@npm:4.4.4":
+  version: 4.4.4
+  resolution: "react-draggable@npm:4.4.4"
   dependencies:
-    attr-accept: ^2.2.1
-    file-selector: ^0.2.2
-    prop-types: ^15.7.2
+    clsx: ^1.1.1
+    prop-types: ^15.6.0
+  peerDependencies:
+    react: ">= 16.3.0"
+    react-dom: ">= 16.3.0"
+  checksum: b8258a58938c261a79f1b9ffd67774283c1ac732423c1c9c9f5fe4d17a06886edd659891e445ba089828ca59f1885e5b909262e24cf60640b8ed05c8499c88bb
+  languageName: node
+  linkType: hard
+
+"react-dropzone@npm:^11.7.1":
+  version: 11.7.1
+  resolution: "react-dropzone@npm:11.7.1"
+  dependencies:
+    attr-accept: ^2.2.2
+    file-selector: ^0.4.0
+    prop-types: ^15.8.1
   peerDependencies:
     react: ">= 16.8"
-  checksum: 0e566d68f6e2aba064cb082d6c37c55d82823ad5b300880d541a538ff2f8905aa4a4a8e697f5ca0f2b819c1ee98e673cb46261735d9bea1eab16cee07d5e71c8
+  checksum: 7549bb67da5222dfbb7b79d9df84a4f2bd417e53396df8b0772a95fd7621ec967b87a17ff7f1e54eb5597d73c51c2a0d16328c792b11e751c73e18e2f7160207
   languageName: node
   linkType: hard
 
@@ -15122,17 +15174,6 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ^16.x || ^17.x || ^18.x
   checksum: 296aef4c679354019362f69ee6e5ae2dd55804664fb7e9a8196833cd90d41c32c0af9c5216b0be46edddd21828cc515312b946cb4d6fbeacabf44380100e19fa
-  languageName: node
-  linkType: hard
-
-"react-infinite-scroller@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "react-infinite-scroller@npm:1.2.4"
-  dependencies:
-    prop-types: ^15.5.8
-  peerDependencies:
-    react: ^0.14.9 || ^15.3.0 || ^16.0.0
-  checksum: 6021df5b0318c6f54c3e9adc830f923232b0ed35082d3abf3761b1f298041b42cfecc9a874489dbcbbe6fe8b5256c120b86123bf602061e3f8a1784bccadcf70
   languageName: node
   linkType: hard
 
@@ -15214,39 +15255,42 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-rnd@npm:^10.2.3":
-  version: 10.3.0
-  resolution: "react-rnd@npm:10.3.0"
+"react-rnd@npm:^10.3.7":
+  version: 10.3.7
+  resolution: "react-rnd@npm:10.3.7"
   dependencies:
-    re-resizable: 6.9.0
-    react-draggable: 4.4.3
-    tslib: 2.2.0
-  checksum: dada5b8bf16c82b7dd04576a5192e24f45e96b9536bd421ac5af3b403bcddbcc780902154f65483771d8fc5055a6b03c6409d6c3ee3fe94e99d744b5cdda2f5d
+    re-resizable: 6.9.6
+    react-draggable: 4.4.4
+    tslib: 2.3.1
+  peerDependencies:
+    react: ">=16.3.0"
+    react-dom: ">=16.3.0"
+  checksum: 312c08f21b6ef9dcfa2e4823ebf63a3142793168b02b2cd54327587ad8159d409577428c6c363e3805ba437403dcfc708df39ebc83b423e9d71002e3fca3f3fc
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "react-router-dom@npm:5.2.0"
+"react-router-dom@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "react-router-dom@npm:5.3.1"
   dependencies:
-    "@babel/runtime": ^7.1.2
+    "@babel/runtime": ^7.12.13
     history: ^4.9.0
     loose-envify: ^1.3.1
     prop-types: ^15.6.2
-    react-router: 5.2.0
+    react-router: 5.3.1
     tiny-invariant: ^1.0.2
     tiny-warning: ^1.0.0
   peerDependencies:
     react: ">=15"
-  checksum: 98d2d35f9540ac4a3c14dc023623fc8411a6a6338e95d726370e07b27c3bc6e854516537c8e3f9ad2483c4bbd579ba28cce9aff843a19fe8ebff663318886335
+  checksum: efbf80c91d64bf51e61fa5dd9e4b7e9c350a0a560d575992d3ee214e0e48da38210b5d8a03c6b270a21f8fd6fa020d076f2af191db5a722c28a68fcad9cefde6
   languageName: node
   linkType: hard
 
-"react-router@npm:5.2.0":
-  version: 5.2.0
-  resolution: "react-router@npm:5.2.0"
+"react-router@npm:5.3.1":
+  version: 5.3.1
+  resolution: "react-router@npm:5.3.1"
   dependencies:
-    "@babel/runtime": ^7.1.2
+    "@babel/runtime": ^7.12.13
     history: ^4.9.0
     hoist-non-react-statics: ^3.1.0
     loose-envify: ^1.3.1
@@ -15258,7 +15302,7 @@ fsevents@^1.2.7:
     tiny-warning: ^1.0.0
   peerDependencies:
     react: ">=15"
-  checksum: 6fc908729110a65a5676a9e41333e0f511a3c0ff84c93c0dc704330cf3e02124c93aaeab8031b0e2c71712390d9278fff848eeebfbdda36dca3201142f309973
+  checksum: b85c7b4dee5a011f542a654a673489bdedb8cd217e32838d13bc9b2c93f068fd37777bc7ef6cbebd6675cadc4e89add75f5e52e452be6c5b1f92070ad7f7e505
   languageName: node
   linkType: hard
 
@@ -17555,13 +17599,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.2.0, tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0":
-  version: 2.2.0
-  resolution: "tslib@npm:2.2.0"
-  checksum: a48c9639f7496fa701ea8ffe0561070fcb44c104a59632f7f845c0af00825c99b6373575ec59b2b5cdbfd7505875086dbe5dc83312304d8979f22ce571218ca3
-  languageName: node
-  linkType: hard
-
 "tslib@npm:2.3.0":
   version: 2.3.0
   resolution: "tslib@npm:2.3.0"
@@ -17580,6 +17617,13 @@ resolve@^2.0.0-next.3:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0":
+  version: 2.2.0
+  resolution: "tslib@npm:2.2.0"
+  checksum: a48c9639f7496fa701ea8ffe0561070fcb44c104a59632f7f845c0af00825c99b6373575ec59b2b5cdbfd7505875086dbe5dc83312304d8979f22ce571218ca3
   languageName: node
   linkType: hard
 
