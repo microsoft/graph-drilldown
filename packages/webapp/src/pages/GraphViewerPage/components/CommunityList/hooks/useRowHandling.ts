@@ -4,36 +4,32 @@
  */
 import { useCallback } from 'react'
 
-import {
-	useHoveredCommunity,
-	useSelectedCommunity,
-	useSetHoveredCommunity,
-	useSetSelectedCommunity,
-} from '~/state'
+import { useSelection } from '~/hooks/useSelection'
 
 export function useRowHandling() {
-	const hovered = useHoveredCommunity()
-	const setHoveredCommunity = useSetHoveredCommunity()
-	const onHover = useCallback(
-		community => setHoveredCommunity(community?.id),
-		[setHoveredCommunity],
-	)
+	const {
+		onSelectCommunity,
+		hoveredCommunity,
+		onHoverCommunity,
+		onResetSelection,
+	} = useSelection()
 
-	const selected = useSelectedCommunity()
-	const setSelectedCommunity = useSetSelectedCommunity()
+	const onHover = useCallback(
+		community => onHoverCommunity(community?.id),
+		[onHoverCommunity],
+	)
 
 	const onClick = useCallback(
 		community => {
-			setSelectedCommunity(community?.id)
-			setHoveredCommunity(undefined)
+			onResetSelection()
+			onSelectCommunity(community?.id)
 		},
-		[setSelectedCommunity, setHoveredCommunity],
+		[onSelectCommunity, onResetSelection],
 	)
 
 	return {
-		hovered,
+		hoveredCommunity,
 		onHover,
-		selected,
 		onClick,
 	}
 }

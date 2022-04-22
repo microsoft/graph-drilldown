@@ -20,7 +20,7 @@ export interface CommunityListProps {
  * Should be color-coded to match the graph, and hover/select.
  */
 export const CommunityList = ({ communities, style }: CommunityListProps) => {
-	const { hovered, onHover, onClick } = useRowHandling()
+	const { hoveredCommunity, onHover, onClick } = useRowHandling()
 
 	const columns = useColumns(communities)
 
@@ -51,7 +51,7 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 										community={comm}
 										onHover={onHover}
 										onClick={onClick}
-										hovered={comm.id === hovered}
+										hovered={comm.id === hoveredCommunity}
 										columns={columns}
 									/>
 								),

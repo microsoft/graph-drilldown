@@ -10,13 +10,8 @@ import type {
 import { useCallback, useEffect, useMemo } from 'react'
 
 import { ROOT_COMMUNITY_ID } from '~/constants'
-import {
-	useNavigationState,
-	useResetSelectedCommunity,
-	useSelectedCommunity,
-	useSetNavigationState,
-	useSetSelectedCommunity,
-} from '~/state'
+import { useSelection } from '~/hooks/useSelection'
+import { useNavigationState, useSetNavigationState } from '~/state'
 import type { Breadcrumb as IBreadcrumb } from '~/types'
 
 import { HierarchyNav } from './HierarchyNav'
@@ -31,9 +26,8 @@ export interface BreadcrumbPanelProps {
 }
 
 export const BreadcrumbPanel: React.FC<BreadcrumbPanelProps> = ({ styles }) => {
-	const selectedCommunity = useSelectedCommunity()
-	const setSelectedCommunity = useSetSelectedCommunity()
-	const resetSelectedCommunity = useResetSelectedCommunity()
+	const { selectedCommunity, onSelectCommunity, onResetSelection } =
+		useSelection()
 	const setNavState = useSetNavigationState()
 	const navState = useNavigationState()
 	useEffect(() => {
@@ -61,11 +55,9 @@ export const BreadcrumbPanel: React.FC<BreadcrumbPanelProps> = ({ styles }) => {
 
 	const handleBreadcrumbClick = useCallback(
 		item => {
-			item.key === 'root'
-				? resetSelectedCommunity()
-				: setSelectedCommunity(item.key)
+			item.key === 'root' ? onResetSelection() : onSelectCommunity(item.key)
 		},
-		[setSelectedCommunity, resetSelectedCommunity],
+		[onSelectCommunity, onResetSelection],
 	)
 
 	const items = useMemo(() => {
