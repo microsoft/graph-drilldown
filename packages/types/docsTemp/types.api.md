@@ -17,10 +17,10 @@ export interface ColorEncoding extends Encoding {
     value?: string;
 }
 
-// Warning: (ae-missing-release-tag) "ColumnDef" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "ColumnDefinition" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
-export interface ColumnDef {
+export interface ColumnDefinition {
     // (undocumented)
     dataType: string;
     // (undocumented)
@@ -167,16 +167,6 @@ export interface TableBackedItem {
     get: (column: string) => any;
     // (undocumented)
     id: string;
-}
-
-// Warning: (ae-missing-release-tag) "TableDef" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
-export interface TableDef {
-    // (undocumented)
-    table: ColumnTable;
-    // (undocumented)
-    type: ItemType;
 }
 
 // (No @packageDocumentation comment for this package)

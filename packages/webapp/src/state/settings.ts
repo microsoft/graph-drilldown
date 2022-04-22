@@ -76,20 +76,9 @@ const settingsGroupsState = atom({
 	default: SETTINGS_GROUPS,
 })
 
-const visibleBrowserColumns = atom({
+const visibleBrowserColumnsState = atom({
 	key: 'browser-columns',
 	default: FIXED_COLUMNS,
-})
-
-const visibleBrowserState = selector<Set<string>>({
-	key: 'browser-column-state',
-	get: ({ get }) => {
-		return get(visibleBrowserColumns)
-	},
-	set: ({ set }, newValue) => {
-		// TODO: use selectorFamily and do the merge here with a partial + overlay?
-		set(visibleBrowserColumns, newValue)
-	},
 })
 
 export const themeState = selector<Theme>({
@@ -113,7 +102,7 @@ export function useSettingsGroups() {
 }
 
 export function useBrowserColumns() {
-	return useRecoilState(visibleBrowserState)
+	return useRecoilState(visibleBrowserColumnsState)
 }
 
 export function useTheme() {

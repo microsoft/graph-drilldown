@@ -24,7 +24,7 @@ import {
 import { GraphView } from '~/react-patch/graspologic'
 import {
 	useGraphViewType,
-	useSelectedNodesState,
+	useSelectedNode,
 	useSetHoveredNode,
 	useSettings,
 } from '~/state'
@@ -73,10 +73,8 @@ export const GraphViewer = ({
 	const view = useGraphViewType()
 	const positionMaps = usePositions(view)
 	const nodePositions = useNodePositions(positionMaps, view, transition)
-	const selectedIds = useSelectedNodesState() // selection via search
+	const selectedNode = useSelectedNode()
 	const hoveredNodeIds = useNodeIds(hoveredNodes)
-
-	const selectedNodeIds = useNodeIds(selectedIds)
 
 	const backgroundColor = useBackgroundColor()
 	const hoverColor = useHoveredNodeColor()
@@ -144,7 +142,7 @@ export const GraphViewer = ({
 				/>
 				<NodeSetHighlight
 					key={`selected`}
-					vertexIds={selectedNodeIds}
+					vertexIds={selectedNode ? [selectedNode.id] : []}
 					color={hoverColor}
 				/>
 				<HighlightHoveredNode color={hoverColor} onHover={handleNodeHover} />

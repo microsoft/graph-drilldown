@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { findGroupIndices, NodeCollection } from '@graph-drilldown/arquero'
+import type { Node } from '@graph-drilldown/types'
 import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 
 import { ROOT_COMMUNITY_ID } from '../constants'
@@ -22,17 +23,17 @@ export function useSetHoveredNode() {
 }
 
 // Tracks nodes selected from search
-const selectedNodesState = atom<NodeCollection | undefined>({
+const selectedNodeState = atom<Node | undefined>({
 	key: 'selected-node',
 	default: undefined,
 })
 
-export function useSelectedNodesState() {
-	return useRecoilValue(selectedNodesState)
+export function useSelectedNode() {
+	return useRecoilValue(selectedNodeState)
 }
 
-export function useSetSelectedNodes() {
-	return useSetRecoilState(selectedNodesState)
+export function useSetSelectedNode() {
+	return useSetRecoilState(selectedNodeState)
 }
 
 // this is a list of the unique nodes, which is defined as all those for

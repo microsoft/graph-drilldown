@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { ColumnDef } from '@graph-drilldown/types'
+import type { ColumnDefinition } from '@graph-drilldown/types'
 import { all, not, op } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
@@ -490,10 +490,10 @@ export function checkAndAddNodeCount(main: ColumnTable) {
  * @param table - table to start with
  * @param readOnlyNames - list of columns to flag as read only
  */
-export function listColumnDefs(
+export function listColumnDefinitions(
 	table: ColumnTable,
 	readOnlyNames?: Set<string>,
-): ColumnDef[] {
+): ColumnDefinition[] {
 	if (table.numRows() === 0) {
 		return []
 	}
@@ -506,7 +506,7 @@ export function listColumnDefs(
 }
 
 export function listColumnNames(table: ColumnTable): string[] {
-	const defs = listColumnDefs(table)
+	const defs = listColumnDefinitions(table)
 	return defs.map(d => d.name)
 }
 

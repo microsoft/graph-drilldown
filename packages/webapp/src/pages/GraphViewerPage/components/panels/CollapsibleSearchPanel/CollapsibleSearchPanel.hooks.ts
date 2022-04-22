@@ -5,7 +5,7 @@
 
 import {
 	CommunityCollection,
-	listColumnDefs,
+	listColumnDefinitions,
 	listColumnNames,
 	NodeCollection,
 } from '@graph-drilldown/arquero'
@@ -14,58 +14,12 @@ import { op, table } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo, useState } from 'react'
 
-import { ROOT_COMMUNITY_ID } from '~/constants'
-import {
-	useHoveredCommunity,
-	useHoveredNode,
-	useSelectedCommunity,
-	useSelectedNodesState,
-	useSetHoveredCommunity,
-	useSetHoveredNode,
-	useSetSelectedCommunity,
-	useSetSelectedNodes,
-} from '~/state'
-
 export interface SearchByIndex {
 	index: number
 	matchColumns: string[]
 	'community.id': string
 	'node.id'?: string
 	[col: string]: unknown
-}
-
-export function useSelection() {
-	const selectedNodes = useSelectedNodesState()
-
-	const onSelectNodes = useSetSelectedNodes()
-
-	const selectedCommunity = useSelectedCommunity()
-	const onSelectCommunity = useSetSelectedCommunity()
-
-	const hoveredNode = useHoveredNode()
-	const onHoverNode = useSetHoveredNode()
-
-	const hoveredCommunity = useHoveredCommunity()
-	const onHoverCommunity = useSetHoveredCommunity()
-
-	const onResetSelection = useCallback(() => {
-		onSelectNodes(undefined)
-		onSelectCommunity(ROOT_COMMUNITY_ID)
-		onHoverNode(undefined)
-		onHoverCommunity(undefined)
-	}, [onSelectNodes, onSelectCommunity, onHoverNode, onHoverCommunity])
-
-	return {
-		selectedNodes,
-		onSelectNodes,
-		selectedCommunity,
-		onSelectCommunity,
-		hoveredNode,
-		onHoverNode,
-		hoveredCommunity,
-		onHoverCommunity,
-		onResetSelection,
-	}
 }
 
 export function useSearch(
@@ -216,7 +170,7 @@ export function useInteraction() {
 export function useSearchableTable(nodes: ColumnTable) {
 	return useMemo(() => {
 		if (nodes.numRows() > 0) {
-			const def = listColumnDefs(nodes)
+			const def = listColumnDefinitions(nodes)
 			const columns = def
 				.filter(d => d.dataType === 'string')
 				.filter(d => d.name !== 'community.pid')

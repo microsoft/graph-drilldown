@@ -2,42 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
-/*!
- * Copyright (c) Microsoft. All rights reserved.
- * Licensed under the MIT license. See LICENSE file in the project.
- */
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 
 export interface TableBackedItem {
@@ -65,14 +29,7 @@ export interface Edge extends TableBackedItem {
 
 export type ItemType = 'node' | 'community' | 'edge' | 'join'
 
-export interface TableDef {
-	table: ColumnTable
-	// NOTE: these are the supported types of aggregation
-	// however, there is no reason this can't allow completely arbitrary "types"
-	type: ItemType
-}
-
-export interface ColumnDef {
+export interface ColumnDefinition {
 	name: string
 	type: ItemType
 	dataType: string

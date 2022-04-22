@@ -6,9 +6,9 @@ import type { GraphRenderer } from '@graspologic/renderer'
 import { memo, useCallback } from 'react'
 import styled from 'styled-components'
 
-import { useHoveredNodes } from '~/arquero'
 import { GraphViewer } from '~/components/GraphViewer'
 import { useDynamicCameraBounds, useInputGraph } from '~/hooks/graph'
+import { useSelection } from '~/hooks/useSelection'
 
 const TRANSITION = 1000
 
@@ -24,7 +24,7 @@ export const GraphPanel: React.FC<GraphPanelProps> = memo(function GraphPanel({
 	onRendererReady,
 }) {
 	const data = useInputGraph()
-	const hoveredNodes = useHoveredNodes()
+	const { hoveredNodes } = useSelection()
 	const cameraBounds = useDynamicCameraBounds()
 
 	const handleRendererInitialized = useCallback(

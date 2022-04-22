@@ -4,7 +4,7 @@
 
 ```ts
 
-import type { ColumnDef } from '@graph-drilldown/types';
+import type { ColumnDefinition } from '@graph-drilldown/types';
 import { ColumnGetter } from 'arquero/dist/types/table/table';
 import type { ColumnStats } from '@graph-drilldown/types';
 import type ColumnTable from 'arquero/dist/types/table/column-table';
@@ -159,10 +159,10 @@ export function joinNodeCommunityTables(nodes: ColumnTable, communities: ColumnT
 // @public
 export function joinWithReplace(left: ColumnTable, right: ColumnTable, joinDefinition: any): ColumnTable;
 
-// Warning: (ae-missing-release-tag) "listColumnDefs" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "listColumnDefinitions" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public
-export function listColumnDefs(table: ColumnTable, readOnlyNames?: Set<string>): ColumnDef[];
+export function listColumnDefinitions(table: ColumnTable, readOnlyNames?: Set<string>): ColumnDefinition[];
 
 // Warning: (ae-missing-release-tag) "listColumnNames" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //

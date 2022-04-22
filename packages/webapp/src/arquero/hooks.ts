@@ -6,67 +6,22 @@ import type { TableCollection } from '@graph-drilldown/arquero'
 import {
 	CommunityCollection,
 	EdgeCollection,
-	findNodesCollectionForCommunity,
-	listColumnDefs,
 	NodeCollection,
 } from '@graph-drilldown/arquero'
-import type {
-	ColumnDef,
-	Community,
-	Edge,
-	ItemType,
-} from '@graph-drilldown/types'
+import type { Community, Edge, ItemType } from '@graph-drilldown/types'
 import type { PositionMap } from '@graspologic/graph'
-import { not, table } from 'arquero'
-import { useCallback, useMemo } from 'react'
+import { table } from 'arquero'
+import { useMemo } from 'react'
 
 import {
-	useBigTable,
 	useCommunitiesTable,
 	useCommunityNodesTable,
 	useEdgeTable,
-	useGroupedByCommunityTable,
-	useGroupedByParentTable,
-	useHoveredCommunity,
 	useSelectedCommunity,
-	useSetBigTable,
 	useUniqueNodes,
 } from '~/state'
 
-import { ROOT_COMMUNITY_ID } from '../constants'
 import { deriveLayoutPositions, deriveSmallMultiplePositions } from './layout'
-
-export function useRemoveColumns() {
-	const bigTable = useBigTable()
-	const setBigTable = useSetBigTable()
-	return useCallback(
-		(columnNames: string[]) => {
-			// TODO: we could inadvertently use this to remove required columns, such as node.id which should be blocked
-			// TODO: if a removed column is the current visual encoding, it will error - find a fallback
-			console.log('removing columns', columnNames)
-			const derived = bigTable.select(not(columnNames))
-			derived.print()
-			setBigTable(derived)
-		},
-		[bigTable, setBigTable],
-	)
-}
-
-const fixed = new Set([
-	'node.id',
-	'node.x',
-	'node.y',
-	'node.d',
-	'community.id',
-	'community.pid',
-	'community.childCount',
-	'community.nodeCount',
-])
-
-export function useColumnList(): ColumnDef[] {
-	const bigTable = useBigTable()
-	return useMemo(() => listColumnDefs(bigTable, fixed), [bigTable])
-}
 
 export function useNodeCount() {
 	const nodes = useUniqueNodes()
@@ -115,26 +70,6 @@ export function useVisibleNodesTable() {
 export function useArqueroVisibleEdges(id?: string) {
 	const edges = useEdgeTable()
 	return useMemo(() => new EdgeCollection(edges), [edges])
-}
-
-export function useHoveredNodes() {
-	const hovered = useHoveredCommunity()
-	const byParent = useGroupedByParentTable()
-	const byCommunity = useGroupedByCommunityTable()
-	return useMemo(
-		() => findNodesCollectionForCommunity(hovered, byParent, byCommunity),
-		[hovered, byParent, byCommunity],
-	)
-}
-
-export function useSelectedNodes() {
-	const selected = useSelectedCommunity()
-	const table = useVisibleNodesTable()
-	return useMemo(
-		() =>
-			new NodeCollection(selected === ROOT_COMMUNITY_ID ? undefined : table),
-		[selected, table],
-	)
 }
 
 // for a list of communities, get a map of [cid]: nodepositions[]

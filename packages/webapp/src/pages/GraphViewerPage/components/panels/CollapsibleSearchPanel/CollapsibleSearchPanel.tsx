@@ -5,6 +5,7 @@
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
+import { useSelection } from '~/hooks/useSelection'
 import { CollapsiblePanel } from '~/react-patch/themed-components'
 import { useBigTable, useCommunitiesTable } from '~/state'
 
@@ -12,7 +13,6 @@ import {
 	useInteraction,
 	useSearch,
 	useSearchableTable,
-	useSelection,
 } from './CollapsibleSearchPanel.hooks'
 import { SearchPanelHeader } from './SearchPanelHeader'
 import { SearchResults } from './SearchResults'

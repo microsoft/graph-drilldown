@@ -3,23 +3,21 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Pivot, PivotItem } from '@fluentui/react'
-import type { CommunityCollection} from '@graph-drilldown/arquero';
-import { NodeCollection } from '@graph-drilldown/arquero'
-import { from } from 'arquero'
+import type {
+	CommunityCollection,
+	NodeCollection,
+} from '@graph-drilldown/arquero'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
 import { useSortHandling } from '~/hooks/communities'
-import { useNodeIds } from '~/hooks/graph'
+import { useSelection } from '~/hooks/useSelection'
 
 import { useColumns } from '../../CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../../CommunityList/CommunityList.types'
 import { CommunityRow } from '../../CommunityList/CommunityRow'
 import { NodeListItem } from '../NodeListItem'
-import {
-	useSearchResultsText,
-	useSelection,
-} from './CollapsibleSearchPanel.hooks'
+import { useSearchResultsText } from './CollapsibleSearchPanel.hooks'
 import { SearchResultsHeader } from './SearchResultsHeader'
 
 const ItemStyles = {
@@ -38,8 +36,8 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 	errorMessage,
 }: SearchResultsProps) => {
 	const {
-		selectedNodes,
-		onSelectNodes,
+		selectedNode,
+		onSelectNode,
 		selectedCommunity,
 		onSelectCommunity,
 		onHoverNode,
@@ -48,19 +46,16 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 		onResetSelection,
 	} = useSelection()
 
-	const selectedNodeIds = useNodeIds(selectedNodes)
-
 	const { sorted } = useSortHandling(communities)
 
-	const handleRowHover = useCallback(
+	const handleCommunityHover = useCallback(
 		community => onHoverCommunity(community?.id),
 		[onHoverCommunity],
 	)
 
 	const handleNodeClick = useCallback(
 		(nodeid: string) => {
-			const alreadySelected = (selectedNodeIds as string[]).includes(nodeid)
-			if (alreadySelected) {
+			if (selectedNode?.id === nodeid) {
 				onResetSelection()
 			} else {
 				if (nodes) {
@@ -70,21 +65,14 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 						if (commId) {
 							onSelectCommunity(commId)
 						}
-						const tbl = from([found])
-						onSelectNodes(new NodeCollection(tbl))
+						onSelectNode(found)
 					}
 				}
 			}
 		},
-		[
-			nodes,
-			onSelectNodes,
-			onSelectCommunity,
-			onResetSelection,
-			selectedNodeIds,
-		],
+		[nodes, onSelectNode, onSelectCommunity, onResetSelection, selectedNode],
 	)
-	const handleRowClick = useCallback(
+	const handleCommunityClick = useCallback(
 		community => {
 			onResetSelection()
 			if (community && community.id !== selectedCommunity) {
@@ -129,8 +117,8 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 													return (
 														<CommunityRow
 															community={comm}
-															onHover={handleRowHover}
-															onClick={handleRowClick}
+															onHover={handleCommunityHover}
+															onClick={handleCommunityClick}
 															hovered={comm.id === hoveredCommunity}
 															columns={columns}
 															styles={ItemStyles}
@@ -161,9 +149,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 										{nodes
 											? nodes.map(node => {
 													const nodeid = node.get('node.id')
-													const selected = (
-														selectedNodeIds as string[]
-													).includes(nodeid)
+													const selected = nodeid === selectedNode?.id
 													return (
 														<NodeListItem
 															nodeId={nodeid}
