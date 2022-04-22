@@ -2,21 +2,27 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { EdgeCollection } from '@graph-drilldown/arquero'
 import type { EdgeColorizer, EdgeWeighter } from '@graspologic/graph'
 import { useMemo } from 'react'
 
-import { useArqueroVisibleEdges } from '~/arquero'
 import {
 	useEdgeColorEncoding,
 	useEdgeOpacityEncoding,
 	useEdgeSizeEncoding,
+	useEdgeTable,
 } from '~/state'
 
 import { useColorizer, useRange, useWeighter } from './graspologic'
 
+export function useEdgeCount() {
+	const edges = useEdgeTable()
+	return edges.numRows()
+}
+
 function useVisibleEdgeMap() {
-	const edges = useArqueroVisibleEdges()
-	return useMemo(() => edges.toMap(), [edges])
+	const edges = useEdgeTable()
+	return useMemo(() => new EdgeCollection(edges).toMap(), [edges])
 }
 
 /**

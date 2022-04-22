@@ -4,7 +4,7 @@
  */
 import { HeaderLegend } from '@graph-drilldown/components'
 
-import { useNodeCount } from '~/arquero'
+import { useNodeCount } from '~/hooks/graph'
 import { useNodeOpacityEncoding } from '~/state'
 
 export const NodeOpacityHeaderLegend: React.FC = () => {

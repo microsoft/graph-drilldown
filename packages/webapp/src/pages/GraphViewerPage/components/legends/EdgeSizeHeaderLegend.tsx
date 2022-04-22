@@ -4,7 +4,7 @@
  */
 import { HeaderLegend } from '@graph-drilldown/components'
 
-import { useEdgeCount } from '~/arquero'
+import { useEdgeCount } from '~/hooks/graph'
 import { useEdgeSizeEncoding } from '~/state/vis'
 
 export const EdgeSizeHeaderLegend: React.FC = () => {

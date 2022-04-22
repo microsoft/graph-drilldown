@@ -7,8 +7,8 @@ import { format } from 'd3-format'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
-import { useEdgeCount, useNodeCount } from '~/arquero'
 import { QuickDrop } from '~/components/QuickDrop'
+import { useEdgeCount, useNodeCount } from '~/hooks/graph'
 import {
 	CollapsiblePanel,
 	CollapsiblePanelContainer,

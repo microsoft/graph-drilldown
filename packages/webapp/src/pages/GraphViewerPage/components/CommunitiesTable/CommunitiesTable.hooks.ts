@@ -3,11 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { TableCollection } from '@graph-drilldown/arquero'
-import type { Community } from '@graph-drilldown/types'
+import type { Community, Edge, ItemType, Node } from '@graph-drilldown/types'
 import { desc } from 'arquero'
 import { useMemo } from 'react'
-
-import { useColumnArray } from '~/arquero'
 
 const MIN_COLUMN_WIDTH = 100
 
@@ -60,4 +58,33 @@ function sortColumns(columns: string[]) {
 	}
 	const alpha = [...columns.sort()].filter(s => !defs[s])
 	return [...Object.keys(defs), ...alpha]
+}
+
+// Get Column array for given table. ColAttribute specify col prefix of interest. If non present, return all
+// hiddenFields is optional parameter specifying fields that will not be return in hook
+function useColumnArray(
+	collection: TableCollection<Node | Community | Edge>,
+	colAttribute: ItemType[] | undefined,
+	hiddenFields: string[] | undefined,
+): string[] {
+	return useMemo(() => {
+		const allColumns = collection.table.columnNames()
+		if (allColumns.length > 0) {
+			return allColumns.reduce((acc, col) => {
+				const split = col.split('.')
+				const [prefix, value] = split
+				const hidden = hiddenFields
+					? hiddenFields.find(name => name === value)
+					: false
+				const colType = colAttribute
+					? colAttribute.find(name => name === prefix)
+					: true
+				if (colType && !hidden) {
+					acc.push(col)
+				}
+				return acc
+			}, [] as string[])
+		}
+		return []
+	}, [collection, hiddenFields, colAttribute])
 }

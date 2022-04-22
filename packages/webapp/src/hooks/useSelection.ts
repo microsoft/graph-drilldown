@@ -8,7 +8,6 @@ import {
 } from '@graph-drilldown/arquero'
 import { useCallback, useMemo } from 'react'
 
-import { useVisibleNodesTable } from '~/arquero'
 import { ROOT_COMMUNITY_ID } from '~/constants'
 import {
 	useGroupedByCommunityTable,
@@ -22,6 +21,8 @@ import {
 	useSetSelectedCommunity,
 	useSetSelectedNode,
 } from '~/state'
+
+import { useVisibleNodesTable } from './graph'
 /**
  * Provides business logic methods for manipulating the
  * currently hovered and selected nodes and communities.

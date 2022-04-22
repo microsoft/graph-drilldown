@@ -5,14 +5,15 @@
 import type { PositionMap } from '@graspologic/graph'
 import { useMemo } from 'react'
 
-import { useGriddedNodePositions, useStandardNodePositions } from '~/arquero'
 import {
 	useEdgeColorizer,
 	useEdgeSizeRange,
 	useEdgeWeighter,
+	useGriddedNodePositions,
 	useNodeColorScale,
 	useNodeSizeRange,
 	useNodeWeighter,
+	useStandardNodePositions,
 } from '~/hooks/graph'
 import { useEdgesVisible, useNodesVisible } from '~/state'
 import { ViewType } from '~/types'

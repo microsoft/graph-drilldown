@@ -10,6 +10,7 @@ import { Layout } from './types'
 import { layoutUmap } from './umap'
 
 export * from './grid'
+export * from './layout'
 export * from './random'
 export * from './types'
 

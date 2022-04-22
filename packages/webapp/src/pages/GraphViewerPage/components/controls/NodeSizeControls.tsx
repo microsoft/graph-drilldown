@@ -6,7 +6,7 @@
 import { NumericSelector } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
-import { useVisibleNodesTable } from '~/arquero'
+import { useVisibleNodesTable } from '~/hooks/graph'
 import { useNodeSizeEncoding, useUpdateNodeSizeEncoding } from '~/state'
 
 export const NodeSizeControls = () => {

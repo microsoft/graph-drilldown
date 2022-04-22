@@ -2,12 +2,15 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { CommunityCollection } from '@graph-drilldown/arquero'
-import { getColumnStats } from '@graph-drilldown/arquero'
-import { desc } from 'arquero'
+import { CommunityCollection, getColumnStats } from '@graph-drilldown/arquero'
+import { desc, table } from 'arquero'
 import { useCallback, useMemo } from 'react'
 
-import { useCommunitySort } from '~/state'
+import {
+	useCommunitiesTable,
+	useCommunitySort,
+	useSelectedCommunity,
+} from '~/state'
 
 export function useNodeCountDomain(
 	communities: CommunityCollection,
@@ -62,4 +65,23 @@ export function useSortHandling(communities: CommunityCollection) {
 		sorted,
 		onSortClick,
 	}
+}
+
+// visible communities are always derived from the selected parent
+export function useVisibleCommunities() {
+	const pid = useSelectedCommunity()
+	const communities = useCommunitiesTable()
+	const tbl = useMemo(() => {
+		if (communities.numCols() > 0 && pid) {
+			const filtered = communities
+				.params({
+					pid,
+				})
+				.filter((d: any, $: any) => d['community.pid'] === $.pid)
+				.ungroup()
+			return filtered
+		}
+		return table({})
+	}, [pid, communities])
+	return useMemo(() => new CommunityCollection(tbl), [tbl])
 }

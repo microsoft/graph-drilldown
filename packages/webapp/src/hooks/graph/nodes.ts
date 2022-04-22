@@ -11,16 +11,24 @@ import type {
 } from '@graspologic/graph'
 import { useMemo } from 'react'
 
+import { deriveLayoutPositions, deriveSmallMultiplePositions } from '~/layout'
 import {
+	useCommunityNodesTable,
 	useNodeColorEncoding,
 	useNodeSizeEncoding,
 	useSelectedCommunity,
+	useUniqueNodes,
 } from '~/state'
 import { useVisibleNodeMap } from '~/state/caches'
 import { useNodeOpacityEncoding } from '~/state/vis/nodeOpacity'
 import { ViewType } from '~/types'
 
 import { useColorizer, useRange, useWeighter } from './graspologic'
+
+export function useNodeCount() {
+	const nodes = useUniqueNodes()
+	return nodes.size
+}
 
 export function useNodeIds(nodes?: NodeCollection) {
 	return useMemo(() => (nodes ? nodes.map(node => node.id) : []), [nodes])
@@ -78,4 +86,26 @@ export function useNodePositions(
 			y: id => positions[id!]?.y || 0,
 		}
 	}, [positionMaps, view, duration])
+}
+
+// for a list of communities, get a map of [cid]: nodepositions[]
+export function useStandardNodePositions() {
+	const table = useVisibleNodesTable()
+	return useMemo(() => deriveLayoutPositions(table), [table])
+}
+
+export function useGriddedNodePositions(compute?: boolean) {
+	const nodes = useVisibleNodesTable()
+	const positions = useMemo(() => {
+		if (compute) {
+			return deriveSmallMultiplePositions(nodes)
+		}
+		return {} as PositionMap
+	}, [nodes, compute])
+	return positions
+}
+
+export function useVisibleNodesTable() {
+	const pid = useSelectedCommunity()
+	return useCommunityNodesTable(pid)
 }

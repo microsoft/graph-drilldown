@@ -4,7 +4,7 @@
  */
 import { HeaderLegend } from '@graph-drilldown/components'
 
-import { useNodeCount } from '~/arquero'
+import { useNodeCount } from '~/hooks/graph'
 import { useNodeColorEncoding } from '~/state'
 
 export const NodeColorHeaderLegend: React.FC = () => {

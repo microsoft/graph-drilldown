@@ -5,7 +5,7 @@
 
 import { ColorSelector } from '@graph-drilldown/components'
 
-import { useVisibleNodesTable } from '~/arquero'
+import { useVisibleNodesTable } from '~/hooks/graph'
 import { useNodeColorEncoding, useUpdateNodeColorEncoding } from '~/state'
 
 export const NodeColorControls = () => {

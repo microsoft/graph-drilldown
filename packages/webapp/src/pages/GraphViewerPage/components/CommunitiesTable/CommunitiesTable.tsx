@@ -6,7 +6,7 @@ import { ArqueroDetailsList } from '@essex/arquero-react'
 import { memo } from 'react'
 import styled from 'styled-components'
 
-import { useVisibleCommunities } from '~/arquero'
+import { useVisibleCommunities } from '~/hooks/communities'
 
 import {
 	useColumnConfig,
