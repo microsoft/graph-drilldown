@@ -3494,10 +3494,10 @@ __metadata:
     "@graph-drilldown/hooks": "workspace:packages/hooks"
     "@graph-drilldown/types": "workspace:packages/types"
     "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.0
-    "@thematic/d3": ^2.0.8
-    "@thematic/fluent": ^3.0.8
-    "@thematic/react": ^2.0.8
+    "@thematic/core": ^2.1.1
+    "@thematic/d3": ^2.0.9
+    "@thematic/fluent": ^3.0.9
+    "@thematic/react": ^2.0.9
     "@types/d3-brush": ^3.0.1
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -3544,9 +3544,9 @@ __metadata:
     "@fluentui/react": ^8.67.2
     "@graph-drilldown/types": "workspace:packages/types"
     "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.0
-    "@thematic/fluent": ^3.0.8
-    "@thematic/react": ^2.0.8
+    "@thematic/core": ^2.1.1
+    "@thematic/fluent": ^3.0.9
+    "@thematic/react": ^2.0.9
     "@types/d3-scale": ^4.0.2
     "@types/node": ^17.0.31
     "@types/react": ^18.0.8
@@ -3617,7 +3617,7 @@ __metadata:
   dependencies:
     "@essex/scripts": ^22.0.1
     "@essex/tsconfig-base": ^1.0.2
-    "@thematic/core": ^2.1.0
+    "@thematic/core": ^2.1.1
     "@types/node": ^17.0.31
     "@types/react": ^18.0.8
     arquero: ^4.8.8
@@ -3664,10 +3664,10 @@ __metadata:
     "@graspologic/render-controls-react": 0.7.0-13
     "@graspologic/renderer": 0.7.0-13
     "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.0
-    "@thematic/d3": ^2.0.8
-    "@thematic/fluent": ^3.0.8
-    "@thematic/react": ^2.0.8
+    "@thematic/core": ^2.1.1
+    "@thematic/d3": ^2.0.9
+    "@thematic/fluent": ^3.0.9
+    "@thematic/react": ^2.0.9
     "@types/d3-dsv": ^3.0.0
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -4576,9 +4576,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thematic/core@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@thematic/core@npm:2.1.0"
+"@thematic/core@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@thematic/core@npm:2.1.1"
   dependencies:
     "@thematic/color": ^2.0.8
     d3-scale: ^4.0.2
@@ -4592,15 +4592,15 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 0fd773c343c287adcf94db92aec1458fef16bd0dcad67a4434e047d0c9a3c239f98c42c8ee917b0990321e234860fc532ca1cc2076bce14a11f568a6c9e03530
+  checksum: 77d9c82209910e30bb43a6479b4fd4fa1423bbaf80a0f71cbae01d6729b8f714a172d0a52c92f56cfc5d1987f345000d9cb0a7c3c648ae959e160af686035a7e
   languageName: node
   linkType: hard
 
-"@thematic/d3@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@thematic/d3@npm:2.0.8"
+"@thematic/d3@npm:^2.0.9":
+  version: 2.0.9
+  resolution: "@thematic/d3@npm:2.0.9"
   dependencies:
-    "@thematic/core": ^2.1.0
+    "@thematic/core": ^2.1.1
     d3-axis: ^3.0.0
     d3-selection: ^3.0.0
   peerDependencies:
@@ -4614,17 +4614,17 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 78a397d4236e8702b792f3f07b05d8f2eefd5cc67abf858e34d6ad601736845c390fdbb393d9d1dbf514da86809f0108c6f184a0ee5541ef4822e84545fec573
+  checksum: 886e23ea8c49c3438df56a330b7d0e15cc6b249557d075fba521bfd6bb67ca4a13e2977126a46c0afd2f8a20ae6c97d8becdb20bae1a7e3022abe7f0c2e0324e
   languageName: node
   linkType: hard
 
-"@thematic/fluent@npm:^3.0.8":
-  version: 3.0.8
-  resolution: "@thematic/fluent@npm:3.0.8"
+"@thematic/fluent@npm:^3.0.9":
+  version: 3.0.9
+  resolution: "@thematic/fluent@npm:3.0.9"
   dependencies:
     "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.0
-    "@thematic/react": ^2.0.8
+    "@thematic/core": ^2.1.1
+    "@thematic/react": ^2.0.9
     d3-scale: ^4.0.2
   peerDependencies:
     "@fluentui/font-icons-mdl2": ">= 8"
@@ -4643,16 +4643,16 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: 95214f922384f9a58b1fc6c3585673f11957b4de3bac7e1a087b3a55e670bf39624deb4aa883edcec5c8ac9a45599ed2aecf0efb27994d626c6886e50b7efc3b
+  checksum: 1b2d41b22393791f53221d274aa405b5cb20f765cef571098b63ce316dbc66878e8e6be8e8f0fc293eeabf61f167c7c5feef2bad927919824994312b709f1dd8
   languageName: node
   linkType: hard
 
-"@thematic/react@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@thematic/react@npm:2.0.8"
+"@thematic/react@npm:^2.0.9":
+  version: 2.0.9
+  resolution: "@thematic/react@npm:2.0.9"
   dependencies:
     "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.0
+    "@thematic/core": ^2.1.1
   peerDependencies:
     "@types/node": "*"
     "@types/react": ">= 17"
@@ -4664,7 +4664,7 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: 8edae6a072d2e38cbde904659c31ea5cc5834f6f5bc9251bce1964e9284663ffefddadff24bb16f42b8c73d4f43971d62718edae9d2dc11f82dc5de89570dce9
+  checksum: 9bcce5fce6bea6847c33e15563aa3c9afc438ba928c02fa27a4ac3c0d4546e044f3ea00d1c8388689eb0f40bd60b08a089d3aae4f50f215002abc6a77facdb52
   languageName: node
   linkType: hard
 
