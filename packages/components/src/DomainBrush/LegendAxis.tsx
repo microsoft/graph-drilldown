@@ -2,14 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { chooseScale } from '@thematic/core'
 import { rect, svg, text } from '@thematic/d3'
 import { useThematic } from '@thematic/react'
 import { scaleLinear } from 'd3-scale'
 import { select } from 'd3-selection'
 import { memo, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
-
-import { chooseScale } from '../thematic/chooseScale.js'
 
 export interface LegendAxisProps {
 	domain: [number, number]

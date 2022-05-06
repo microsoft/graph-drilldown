@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { CollapsiblePanel } from '@essex/themed-components'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
 import { useSelection } from '~/hooks/useSelection'
-import { CollapsiblePanel } from '~/react-patch/themed-components'
 import { useBigTable, useCommunitiesTable } from '~/state'
 
 import {
