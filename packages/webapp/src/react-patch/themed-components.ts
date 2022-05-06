@@ -5,7 +5,7 @@
 import {
 	CollapsiblePanel as CollapsiblePanelOriginal,
 	CollapsiblePanelContainer as CollapsiblePanelContainerOriginal,
-} from '@essex-js-toolkit/themed-components'
+} from '@essex/themed-components'
 
 export const CollapsiblePanelContainer =
 	CollapsiblePanelContainerOriginal as any
