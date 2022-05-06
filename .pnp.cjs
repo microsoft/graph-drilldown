@@ -4719,13 +4719,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/cache/@essex-js-toolkit-hooks-npm-3.1.0-89e4150d45-9000b1b327.zip/node_modules/@essex-js-toolkit/hooks/",\
-          "packageDependencies": [\
-            ["@essex-js-toolkit/hooks", "npm:3.1.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["virtual:52b77318853ac64425054636d9a9ddae07cd115cb8350e24f36d4b1d35fdba29a6d936153f1cd21244fb5cc4bffb172b51bfa083b2cc2358b5877453cac09f3a#npm:1.1.5", {\
           "packageLocation": "./.yarn/__virtual__/@essex-js-toolkit-hooks-virtual-6b4a4dfd3f/0/cache/@essex-js-toolkit-hooks-npm-1.1.5-81e3e0df00-5f0c9b9386.zip/node_modules/@essex-js-toolkit/hooks/",\
           "packageDependencies": [\
@@ -4771,106 +4764,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react"\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:3.1.0", {\
-          "packageLocation": "./.yarn/__virtual__/@essex-js-toolkit-hooks-virtual-f7bcc902bb/0/cache/@essex-js-toolkit-hooks-npm-3.1.0-89e4150d45-9000b1b327.zip/node_modules/@essex-js-toolkit/hooks/",\
-          "packageDependencies": [\
-            ["@essex-js-toolkit/hooks", "virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:3.1.0"],\
-            ["@essex-js-toolkit/toolbox", "npm:2.0.3"],\
-            ["@types/node", "npm:17.0.31"],\
-            ["@types/react", "npm:18.0.8"],\
-            ["@types/react-dom", "npm:18.0.3"],\
-            ["core-js", "npm:3.22.0"],\
-            ["lodash", "npm:4.17.21"],\
-            ["react", "npm:18.1.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/node",\
-            "@types/react-dom",\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@essex-js-toolkit/themed-components", [\
-        ["npm:1.4.0", {\
-          "packageLocation": "./.yarn/cache/@essex-js-toolkit-themed-components-npm-1.4.0-e6d145cfa4-f77c1b52bc.zip/node_modules/@essex-js-toolkit/themed-components/",\
-          "packageDependencies": [\
-            ["@essex-js-toolkit/themed-components", "npm:1.4.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:1.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/@essex-js-toolkit-themed-components-virtual-62ac52d4b9/0/cache/@essex-js-toolkit-themed-components-npm-1.4.0-e6d145cfa4-f77c1b52bc.zip/node_modules/@essex-js-toolkit/themed-components/",\
-          "packageDependencies": [\
-            ["@essex-js-toolkit/themed-components", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:1.4.0"],\
-            ["@essex-js-toolkit/hooks", "virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:3.1.0"],\
-            ["@essex-js-toolkit/toolbox", "npm:2.0.3"],\
-            ["@fluentui/react", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:8.67.2"],\
-            ["@thematic/color", "virtual:29b921400154a2c9c6bb945464977b44a63a51dd66856cb5de27e9543097bca8d596f72935bf0dc9c6affbe4f08553b341b601681a5d97ade091d5e227679afd#npm:2.0.8"],\
-            ["@thematic/core", "virtual:f9a4842c7b075eb92bdeeb7715ba88028f4ae9d675eacbfa80906f226af79f145916fa09eb0e91e4a0f44d1b7731302a3c8e8d2ecce9a25e4fc2d14a07f2a11d#npm:2.1.0"],\
-            ["@thematic/d3", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.0.8"],\
-            ["@thematic/fluent", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:3.0.8"],\
-            ["@thematic/react", "virtual:f9a4842c7b075eb92bdeeb7715ba88028f4ae9d675eacbfa80906f226af79f145916fa09eb0e91e4a0f44d1b7731302a3c8e8d2ecce9a25e4fc2d14a07f2a11d#npm:2.0.8"],\
-            ["@types/d3", null],\
-            ["@types/d3-array", "npm:3.0.2"],\
-            ["@types/d3-axis", "npm:3.0.1"],\
-            ["@types/d3-brush", "npm:3.0.1"],\
-            ["@types/d3-scale", "npm:4.0.2"],\
-            ["@types/d3-selection", "npm:3.0.2"],\
-            ["@types/fluentui__react", null],\
-            ["@types/node", "npm:17.0.31"],\
-            ["@types/office-ui-fabric-react", null],\
-            ["@types/react", "npm:18.0.8"],\
-            ["@types/react-dom", "npm:18.0.3"],\
-            ["@types/styled-components", "npm:5.1.25"],\
-            ["@types/thematic__color", null],\
-            ["@types/thematic__core", null],\
-            ["@types/thematic__d3", null],\
-            ["@types/thematic__fluent", null],\
-            ["@types/thematic__react", null],\
-            ["@types/uifabric__icons", null],\
-            ["@uifabric/icons", null],\
-            ["core-js", "npm:3.22.0"],\
-            ["d3-array", "npm:3.1.6"],\
-            ["d3-axis", "npm:3.0.0"],\
-            ["d3-brush", "npm:3.0.0"],\
-            ["d3-scale", "npm:4.0.2"],\
-            ["d3-selection", "npm:3.0.0"],\
-            ["office-ui-fabric-react", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:7.185.3"],\
-            ["react", "npm:18.1.0"],\
-            ["react-animate-height", "virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:2.0.23"],\
-            ["react-dom", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:18.1.0"],\
-            ["styled-components", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:5.3.5"]\
-          ],\
-          "packagePeers": [\
-            "@fluentui/react",\
-            "@thematic/color",\
-            "@thematic/core",\
-            "@thematic/d3",\
-            "@thematic/fluent",\
-            "@thematic/react",\
-            "@types/d3",\
-            "@types/fluentui__react",\
-            "@types/node",\
-            "@types/office-ui-fabric-react",\
-            "@types/react-dom",\
-            "@types/react",\
-            "@types/styled-components",\
-            "@types/thematic__color",\
-            "@types/thematic__core",\
-            "@types/thematic__d3",\
-            "@types/thematic__fluent",\
-            "@types/thematic__react",\
-            "@types/uifabric__icons",\
-            "@uifabric/icons",\
-            "office-ui-fabric-react",\
-            "react-dom",\
-            "react",\
-            "styled-components"\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["@essex-js-toolkit/toolbox", [\
@@ -4880,14 +4773,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex-js-toolkit/toolbox", "npm:1.1.4"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["npm:2.0.3", {\
-          "packageLocation": "./.yarn/cache/@essex-js-toolkit-toolbox-npm-2.0.3-a6bac96d79-515d7f7ce2.zip/node_modules/@essex-js-toolkit/toolbox/",\
-          "packageDependencies": [\
-            ["@essex-js-toolkit/toolbox", "npm:2.0.3"],\
-            ["core-js", "npm:3.22.0"]\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:6b4a4dfd3f77fd7ce713f9ec9c0420d2e8c452012c3e3cfdf6a8acb52553db4eea679d49c2315956aad66c9b0a319690d9f962331e1ee909e7b6cd3c92e0b5a9#npm:1.1.4", {\
           "packageLocation": "./.yarn/__virtual__/@essex-js-toolkit-toolbox-virtual-9c712fe4ee/0/cache/@essex-js-toolkit-toolbox-npm-1.1.4-66a760e95a-3675886360.zip/node_modules/@essex-js-toolkit/toolbox/",\
@@ -5437,6 +5322,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@essex/react-animate-height", [\
+        ["npm:2.1.4", {\
+          "packageLocation": "./.yarn/cache/@essex-react-animate-height-npm-2.1.4-2a72cc76fd-6730118efd.zip/node_modules/@essex/react-animate-height/",\
+          "packageDependencies": [\
+            ["@essex/react-animate-height", "npm:2.1.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a3c656f45369915c97f23a7bed4d488e494c30be13b1ffd2d57be0503650c45bf6b05bd823affc581727b272bdd35c15d88cf20a87eeaf710651ce24a7b5c2fc#npm:2.1.4", {\
+          "packageLocation": "./.yarn/__virtual__/@essex-react-animate-height-virtual-45e98df144/0/cache/@essex-react-animate-height-npm-2.1.4-2a72cc76fd-6730118efd.zip/node_modules/@essex/react-animate-height/",\
+          "packageDependencies": [\
+            ["@essex/react-animate-height", "virtual:a3c656f45369915c97f23a7bed4d488e494c30be13b1ffd2d57be0503650c45bf6b05bd823affc581727b272bdd35c15d88cf20a87eeaf710651ce24a7b5c2fc#npm:2.1.4"],\
+            ["@types/prop-types", null],\
+            ["@types/react", "npm:18.0.8"],\
+            ["classnames", "npm:2.3.1"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.1.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/prop-types",\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@essex/scripts", [\
         ["npm:22.0.1", {\
           "packageLocation": "./.yarn/cache/@essex-scripts-npm-22.0.1-ebc196b299-592364b14a.zip/node_modules/@essex/scripts/",\
@@ -5672,6 +5583,78 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/core", "npm:1.2.172"],\
             ["lodash", "npm:4.17.21"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@essex/themed-components", [\
+        ["npm:2.2.5", {\
+          "packageLocation": "./.yarn/cache/@essex-themed-components-npm-2.2.5-6d0c203f83-96493afcec.zip/node_modules/@essex/themed-components/",\
+          "packageDependencies": [\
+            ["@essex/themed-components", "npm:2.2.5"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.2.5", {\
+          "packageLocation": "./.yarn/__virtual__/@essex-themed-components-virtual-a3c656f453/0/cache/@essex-themed-components-npm-2.2.5-6d0c203f83-96493afcec.zip/node_modules/@essex/themed-components/",\
+          "packageDependencies": [\
+            ["@essex/themed-components", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.2.5"],\
+            ["@essex/hooks", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.0.11"],\
+            ["@essex/react-animate-height", "virtual:a3c656f45369915c97f23a7bed4d488e494c30be13b1ffd2d57be0503650c45bf6b05bd823affc581727b272bdd35c15d88cf20a87eeaf710651ce24a7b5c2fc#npm:2.1.4"],\
+            ["@essex/toolbox", "npm:3.0.7"],\
+            ["@fluentui/react", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:8.67.2"],\
+            ["@thematic/color", "virtual:29b921400154a2c9c6bb945464977b44a63a51dd66856cb5de27e9543097bca8d596f72935bf0dc9c6affbe4f08553b341b601681a5d97ade091d5e227679afd#npm:2.0.8"],\
+            ["@thematic/core", "virtual:f9a4842c7b075eb92bdeeb7715ba88028f4ae9d675eacbfa80906f226af79f145916fa09eb0e91e4a0f44d1b7731302a3c8e8d2ecce9a25e4fc2d14a07f2a11d#npm:2.1.0"],\
+            ["@thematic/d3", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.0.8"],\
+            ["@thematic/fluent", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:3.0.8"],\
+            ["@thematic/react", "virtual:f9a4842c7b075eb92bdeeb7715ba88028f4ae9d675eacbfa80906f226af79f145916fa09eb0e91e4a0f44d1b7731302a3c8e8d2ecce9a25e4fc2d14a07f2a11d#npm:2.0.8"],\
+            ["@types/d3", null],\
+            ["@types/d3-array", "npm:3.0.2"],\
+            ["@types/d3-axis", "npm:3.0.1"],\
+            ["@types/d3-brush", "npm:3.0.1"],\
+            ["@types/d3-scale", "npm:4.0.2"],\
+            ["@types/d3-selection", "npm:3.0.2"],\
+            ["@types/fluentui__react", null],\
+            ["@types/node", "npm:17.0.31"],\
+            ["@types/react", "npm:18.0.8"],\
+            ["@types/react-dom", "npm:18.0.3"],\
+            ["@types/thematic__color", null],\
+            ["@types/thematic__core", null],\
+            ["@types/thematic__d3", null],\
+            ["@types/thematic__fluent", null],\
+            ["@types/thematic__react", null],\
+            ["@types/uifabric__icons", null],\
+            ["@uifabric/icons", null],\
+            ["d3-array", "npm:3.1.6"],\
+            ["d3-axis", "npm:3.0.0"],\
+            ["d3-brush", "npm:3.0.0"],\
+            ["d3-scale", "npm:4.0.2"],\
+            ["d3-selection", "npm:3.0.0"],\
+            ["lodash-es", "npm:4.17.21"],\
+            ["react", "npm:18.1.0"],\
+            ["react-dom", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:18.1.0"]\
+          ],\
+          "packagePeers": [\
+            "@fluentui/react",\
+            "@thematic/color",\
+            "@thematic/core",\
+            "@thematic/d3",\
+            "@thematic/fluent",\
+            "@thematic/react",\
+            "@types/d3",\
+            "@types/fluentui__react",\
+            "@types/node",\
+            "@types/react-dom",\
+            "@types/react",\
+            "@types/thematic__color",\
+            "@types/thematic__core",\
+            "@types/thematic__d3",\
+            "@types/thematic__fluent",\
+            "@types/thematic__react",\
+            "@types/uifabric__icons",\
+            "@uifabric/icons",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6631,11 +6614,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/webapp/",\
           "packageDependencies": [\
             ["@graph-drilldown/webapp", "workspace:packages/webapp"],\
-            ["@essex-js-toolkit/themed-components", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:1.4.0"],\
             ["@essex/arquero-react", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:1.0.5"],\
             ["@essex/hierarchy-browser", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.0.10"],\
             ["@essex/hooks", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:4.0.11"],\
             ["@essex/scripts", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:22.0.1"],\
+            ["@essex/themed-components", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.2.5"],\
             ["@essex/toolbox", "npm:3.0.7"],\
             ["@essex/webpack-config", "virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:21.0.2"],\
             ["@fluentui/font-icons-mdl2", "npm:8.3.2"],\
@@ -12630,13 +12613,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["core-js", [\
-        ["npm:3.22.0", {\
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.22.0-9a29e3a96f/node_modules/core-js/",\
-          "packageDependencies": [\
-            ["core-js", "npm:3.22.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:3.22.4", {\
           "packageLocation": "./.yarn/unplugged/core-js-npm-3.22.4-4469b89edf/node_modules/core-js/",\
           "packageDependencies": [\
@@ -20699,38 +20675,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["react-animate-height", [\
-        ["npm:2.0.23", {\
-          "packageLocation": "./.yarn/cache/react-animate-height-npm-2.0.23-821206c434-280f504b38.zip/node_modules/react-animate-height/",\
-          "packageDependencies": [\
-            ["react-animate-height", "npm:2.0.23"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["npm:2.1.2", {\
           "packageLocation": "./.yarn/cache/react-animate-height-npm-2.1.2-025672d353-56f0db8a8a.zip/node_modules/react-animate-height/",\
           "packageDependencies": [\
             ["react-animate-height", "npm:2.1.2"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:2.0.23", {\
-          "packageLocation": "./.yarn/__virtual__/react-animate-height-virtual-1a1e66e662/0/cache/react-animate-height-npm-2.0.23-821206c434-280f504b38.zip/node_modules/react-animate-height/",\
-          "packageDependencies": [\
-            ["react-animate-height", "virtual:62ac52d4b9906c78cd13c9f3a30b49e39ac12b866b4866e4a04ad3c48f05225dd0f36fcf1baff2fd4e7c16fede4e0f3d865e8cb6a9fa529f7b96fbb6fc67b8a5#npm:2.0.23"],\
-            ["@types/react", "npm:18.0.8"],\
-            ["@types/react-dom", "npm:18.0.3"],\
-            ["classnames", "npm:2.3.1"],\
-            ["prop-types", "npm:15.7.2"],\
-            ["react", "npm:18.1.0"],\
-            ["react-dom", "virtual:6d9aabd8f5483787e2dbe940b43dd8e3fbd6b3c4b7413d9a54b1214d97b7b4b9929594a04ca11ac717420c56ae3bff89bd46858d5209dab13ca02e7dbb653875#npm:18.1.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react-dom",\
-            "@types/react",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:ab707d185f10541278b9ecde58184453683750a0176c3dcb7b66df543308b186988a937232da617fe8778a3d9206dd626ab3288047a0533f021a2e1016f22e5e#npm:2.1.2", {\
           "packageLocation": "./.yarn/__virtual__/react-animate-height-virtual-2ec840bec5/0/cache/react-animate-height-npm-2.1.2-025672d353-56f0db8a8a.zip/node_modules/react-animate-height/",\
