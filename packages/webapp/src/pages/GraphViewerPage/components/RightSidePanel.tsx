@@ -2,6 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import {
+	CollapsiblePanel,
+	CollapsiblePanelContainer,
+} from '@essex/themed-components'
 import { ToggleHeader } from '@graph-drilldown/components'
 import { format } from 'd3-format'
 import { useCallback } from 'react'
@@ -9,10 +13,6 @@ import styled from 'styled-components'
 
 import { QuickDrop } from '~/components/QuickDrop'
 import { useEdgeCount, useNodeCount } from '~/hooks/graph'
-import {
-	CollapsiblePanel,
-	CollapsiblePanelContainer,
-} from '~/react-patch/themed-components'
 import {
 	useEdgesVisible,
 	useNodesVisible,
