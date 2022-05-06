@@ -1,11 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-node_modules/
+**/node_modules/
 
 # testing
-/coverage
+**/coverage
 
 # production
-/build
+**/build
+**/dist
+**/docsTemp
 
 
 # misc
@@ -28,4 +30,4 @@ yarn-error.log*
 !.yarn/sdks
 !.yarn/versions
 
-public/data/msft*
+**/public/data/msft*

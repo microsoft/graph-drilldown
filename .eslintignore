@@ -1,8 +1,9 @@
-build
-dist
-lib
+**/build
+**/dist
+**/lib
+**/docs
 static
-node_modules
+**/node_modules
 webapp.d.ts
 .yarn/
 *.d.ts
