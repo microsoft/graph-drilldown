@@ -1,0 +1,7 @@
+releases:
+  "@graph-drilldown/arquero": patch
+  "@graph-drilldown/components": patch
+  "@graph-drilldown/hooks": patch
+  "@graph-drilldown/project": patch
+  "@graph-drilldown/types": patch
+  "@graph-drilldown/webapp": patch
