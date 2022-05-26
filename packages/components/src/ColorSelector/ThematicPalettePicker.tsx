@@ -7,7 +7,7 @@ import { useThematic } from '@thematic/react'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import type { ColorSelectorProps } from './ColorSelector.types'
+import type { ColorSelectorProps } from './ColorSelector.types.js'
 
 export const ThematicPalettePicker: React.FC<ColorSelectorProps> = ({
 	encoding,
