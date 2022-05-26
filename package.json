@@ -5,7 +5,8 @@
 	"scripts": {
 		"clean": "turbo run clean --parallel",
 		"build": "turbo run build",
-		"start": "turbo  run start",
+		"bundle": "turbo run bundle",
+		"start": "turbo run start",
 		"ci": "turbo run ci",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
