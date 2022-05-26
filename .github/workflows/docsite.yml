@@ -41,8 +41,9 @@ jobs:
 
       - run: find packages/webapp/build
 
-      - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./packages/webapp/build
+          branch: gh-pages
+          folder: packages/webapp/build
+          clean: true
