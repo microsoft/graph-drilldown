@@ -7,7 +7,6 @@
 		"build": "turbo run build",
 		"start": "turbo  run start",
 		"ci": "turbo run ci",
-		"lint": "essex lint --fix",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
 		"is_clean": "git diff-index HEAD --quiet || git status"
