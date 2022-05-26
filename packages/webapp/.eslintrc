@@ -1,0 +1,6 @@
+{
+	"extends": "../../.eslintrc",
+	"rules": {
+		"@essex/extensions": "off"
+	}
+}

@@ -3,42 +3,42 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"clean": "yarn workspaces foreach -pv run clean",
-		"build": "yarn workspaces foreach -pivt run build",
-		"start": "yarn workspaces foreach -piv run start",
-		"ci": "run-s clean lint build",
-		"lint": "essex lint --fix",
+		"clean": "turbo run clean --parallel",
+		"build": "turbo run build",
+		"start": "turbo  run start",
+		"ci": "turbo run ci",
 		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
-		"git_is_clean": "essex git-is-clean"
+		"is_clean": "git diff-index HEAD --quiet || git status",
+		"update_sdks": "yarn dlx @yarnpkg/sdks vscode"
 	},
 	"workspaces": [
 		"packages/*"
 	],
 	"devDependencies": {
-		"@essex/eslint-config": "^20.3.4",
-		"@essex/eslint-plugin": "^20.3.5",
-		"@essex/jest-config": "^21.0.10",
+		"@essex/eslint-config": "^20.3.5",
+		"@essex/eslint-plugin": "^20.3.7",
+		"@essex/jest-config": "^21.0.12",
 		"@essex/prettier-config": "^18.0.2",
-		"@essex/scripts": "^22.0.1",
-		"@fluentui/font-icons-mdl2": "^8.3.2",
-		"@fluentui/react": "^8.67.2",
-		"@fluentui/react-hooks": "^8.5.4",
-		"@fluentui/utilities": "^8.8.2",
-		"@types/jest": "^27.5.0",
-		"@types/node": "^17.0.31",
-		"@types/react": "^18.0.8",
-		"@types/react-dom": "^18.0.3",
+		"@essex/scripts": "^22.0.4",
+		"@fluentui/font-icons-mdl2": "^8.4.0",
+		"@fluentui/react": "^8.70.0",
+		"@fluentui/react-hooks": "^8.5.5",
+		"@fluentui/utilities": "^8.8.3",
+		"@types/jest": "^27.5.1",
+		"@types/node": "^17.0.35",
+		"@types/react": "^18.0.9",
+		"@types/react-dom": "^18.0.5",
 		"@types/react-rnd": "^8.0.0",
 		"@types/react-router-dom": "^5.3.3",
-		"core-js": "^3.22.4",
-		"eslint": "^8.14.0",
+		"core-js": "^3.22.7",
+		"eslint": "^8.16.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"husky": "^7.0.4",
 		"lint-staged": "^11.2.6",
 		"ncp": "^2.0.0",
 		"npm-run-all": "^4.1.5",
-		"office-ui-fabric-react": "^7.185.3",
+		"office-ui-fabric-react": "^7.185.7",
 		"prettier": "^2.6.2",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
@@ -46,7 +46,8 @@
 		"react-router-dom": "^5.3.1",
 		"regenerator-runtime": "^0.13.9",
 		"tslib": "^2.4.0",
-		"typescript": "^4.6.4"
+		"turbo": "^1.2.14",
+		"typescript": "^4.7.2"
 	},
 	"browserslist": [
 		">0.2%",
@@ -54,5 +55,5 @@
 		"not ie 11",
 		"not op_mini all"
 	],
-	"packageManager": "yarn@3.2.0"
+	"packageManager": "yarn@3.2.1"
 }
