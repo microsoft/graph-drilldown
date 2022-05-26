@@ -39,6 +39,8 @@ jobs:
 
       - run: yarn bundle --api="http://127.0.0.1:9080" --token="${{ secrets.TURBO_SERVER_TOKEN }}" --team="essex"
 
+      - run: find packages/webapp/build
+
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
