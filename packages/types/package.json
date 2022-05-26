@@ -16,7 +16,8 @@
 	},
 	"scripts": {
 		"clean": "essex clean",
-		"build": "essex build --skipExportCheck --docs"
+		"build": "essex build --skipExportCheck --docs",
+		"lint": "essex lint --fix"
 	},
 	"devDependencies": {
 		"@essex/scripts": "^22.0.1",
