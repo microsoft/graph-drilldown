@@ -14,8 +14,13 @@ import { LegendLabel } from './LegendLabel.js'
 import { NumericRangeText } from './NumericRangeText.js'
 
 // TODO: width should flex
-const LEGEND_WIDTH = 260
-const LEGEND_HEIGHT = 20
+// base + padding accounts for border-box in css, literal in svg
+const LEGEND_WIDTH_BASE = 250
+const LEGEND_WIDTH_PADDING = 10
+const LEGEND_WIDTH = LEGEND_WIDTH_BASE + LEGEND_WIDTH_PADDING
+const LEGEND_HEIGHT_BASE = 20
+const LEGEND_HEIGHT_PADDING = 10
+const LEGEND_HEIGHT = LEGEND_HEIGHT_BASE + LEGEND_HEIGHT_PADDING
 const LEGEND_ITEMS = 11
 const RANGE_HEIGHT = 12
 
@@ -97,8 +102,8 @@ const LabeledLegend: React.FC<HeaderLegendProps> = ({
 					colorEncoding={colorEncoding}
 					sizeEncoding={sizeEncoding}
 					opacityEncoding={opacityEncoding}
-					width={LEGEND_WIDTH}
-					height={LEGEND_HEIGHT}
+					width={LEGEND_WIDTH_BASE}
+					height={LEGEND_HEIGHT_BASE}
 					maxItems={LEGEND_ITEMS}
 				/>
 			</LegendSection>

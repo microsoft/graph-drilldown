@@ -112,7 +112,7 @@ export const RightSidePanel: React.FC<RightSidePanelProps> = ({ style }) => {
 						<Layout />
 					</CollapsiblePanel>
 					<CollapsiblePanel title={'Quick drop'} defaultExpanded={true}>
-						<QuickDrop dropWidthSize={40} dropHeightSize={20} compact />
+						<QuickDrop dropWidthSize={56} dropHeightSize={36} compact />
 					</CollapsiblePanel>
 				</CollapsiblePanelContainer>
 			</DisplayRelative>

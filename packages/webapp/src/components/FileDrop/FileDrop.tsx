@@ -58,7 +58,7 @@ const Container = styled.div<{
 }>`
 	display: flex;
 	justify-content: center;
-	align-ttems: center;
+	align-items: center;
 	text-align: center;
 	padding: 8px;
 	width: ${({ width }) => width}px;

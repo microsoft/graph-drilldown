@@ -14,7 +14,7 @@ import { variants } from '~/styles'
 
 import { FileDrop } from '../FileDrop'
 
-const SQUARE = 80
+const SQUARE = 96
 
 export interface QuickDropProps {
 	dropWidthSize?: number

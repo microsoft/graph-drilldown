@@ -6,7 +6,7 @@ import type { TableCollection } from '@graph-drilldown/arquero'
 import type { Community, Edge, ItemType, Node } from '@graph-drilldown/types'
 import { desc } from 'arquero'
 import { useMemo } from 'react'
-
+import { introspect } from '@datashaper/tables'
 const MIN_COLUMN_WIDTH = 100
 
 export function useColumnConfig(
@@ -21,7 +21,7 @@ export function useColumnConfig(
 		return []
 	}, [columnList])
 	return useMemo(() => {
-		const w = width / columns.length - 20 // padding
+		const w = width / columns.length
 		const mw = w < MIN_COLUMN_WIDTH ? MIN_COLUMN_WIDTH : w
 		return columns.map(name => ({
 			key: name,
@@ -40,6 +40,10 @@ export function useDefaultSortedTable(communities: TableCollection<Community>) {
 			? table?.orderby(desc('community.nodeCount'))
 			: table
 	}, [communities])
+}
+
+export function useTableMetadata(table) {
+	return useMemo(() => introspect(table, true), [table])
 }
 
 // TODO: we want to use this, but DWC table doesn't currently support labels named differently than the column key

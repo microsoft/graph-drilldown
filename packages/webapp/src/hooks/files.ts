@@ -10,8 +10,9 @@ import {
 } from '@graph-drilldown/arquero'
 import type { DataFile } from '@graph-drilldown/types'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
-import { useCallback } from 'react'
-
+import { useCallback, useMemo } from 'react'
+import type { TableMetadata } from '@datashaper/tables'
+import { introspect } from '@datashaper/tables'
 import {
 	useAddFile,
 	useBigTable,
@@ -33,10 +34,10 @@ import {
  */
 export function useFileManagement(): {
 	files: DataFile[]
-
 	doAddFile: (file: DataFile) => void
 	doClearAll: () => void
 	selectedFile: DataFile | undefined
+	metadata: TableMetadata | undefined
 	onFileSelected: (file: DataFile | undefined) => void
 	hasData: boolean
 } {
@@ -69,11 +70,13 @@ export function useFileManagement(): {
 		setSelectedFile(undefined)
 	}, [resetTables, resetFiles, setSelectedFile])
 
+	const metadata = useMemo(() => selectedFile?.table ? introspect(selectedFile.table, true) : undefined, [selectedFile])
 	return {
 		files,
 		doAddFile,
 		doClearAll,
 		selectedFile,
+		metadata,
 		onFileSelected,
 		hasData:
 			bigTable.numRows() > 0 || edgeTable.numRows() > 0 || files.length > 0,
