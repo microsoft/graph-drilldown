@@ -13,9 +13,9 @@
 	},
 	"dependencies": {
 		"@essex/arquero-react": "^1.0.6",
+		"@essex/components": "^3.2.1",
 		"@essex/hierarchy-browser": "4.0.11",
 		"@essex/hooks": "^4.0.12",
-		"@essex/themed-components": "^2.2.7",
 		"@essex/toolbox": "3.0.8",
 		"@fluentui/font-icons-mdl2": "^8.5.4",
 		"@fluentui/react": "^8.103.2",

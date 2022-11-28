@@ -2,10 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import {
-	CollapsiblePanel,
-	CollapsiblePanelContainer,
-} from '@essex/themed-components'
+import { CollapsiblePanel, CollapsiblePanelContainer } from '@essex/components'
 import { ToggleHeader } from '@graph-drilldown/components'
 import { format } from 'd3-format'
 import { useCallback } from 'react'

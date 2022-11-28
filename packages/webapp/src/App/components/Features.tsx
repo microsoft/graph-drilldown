@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Settings as AutoSettings } from '@essex/themed-components'
+import { Settings as AutoSettings } from '@essex/components'
 import { useCallback } from 'react'
 
 export interface FeaturesProps {

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { NumberSpinButton } from '@essex/themed-components'
+import { NumberSpinButton } from '@essex/components'
 import { TextField } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'

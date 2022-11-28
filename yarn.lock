@@ -2989,6 +2989,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex/components@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@essex/components@npm:3.2.1"
+  dependencies:
+    "@essex/hooks": ^4.0.13
+    "@essex/react-animate-height": ^2.1.4
+    "@essex/toolbox": ^3.0.9
+    "@fluentui/utilities": ^8.13.1
+    "@types/d3-array": ^3.0.3
+    "@types/d3-axis": ^3.0.1
+    "@types/d3-brush": ^3.0.1
+    "@types/d3-scale": ^4.0.2
+    "@types/d3-selection": ^3.0.3
+    d3-array: ^3.2.0
+    d3-axis: ^3.0.0
+    d3-brush: ^3.0.0
+    d3-scale: ^4.0.2
+    d3-selection: ^3.0.0
+    lodash-es: ^4.17.21
+    react-if: ^4.1.4
+  peerDependencies:
+    "@fluentui/react": ">= 7.114.2"
+    "@thematic/color": ">= 0.8.0"
+    "@thematic/core": ">= 0.8.0"
+    "@thematic/d3": ">= 0.8.0"
+    "@thematic/fluent": ">= 0.8.0"
+    "@thematic/react": ">= 0.8.0"
+    "@types/d3": "*"
+    "@types/d3-axis": ^2.0.0
+    "@types/node": "*"
+    "@types/react": ">= 18"
+    "@uifabric/icons": ">= 7.3.38"
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: c9452fe9cd7e49b4f47ceb3d8321b9fb90d6070153f6d2cbb82c2b9697c999fbb64dac9ec10a4ee60118ee7c600093399588602f9464f687d4c19b479eca9f19
+  languageName: node
+  linkType: hard
+
 "@essex/eslint-config@npm:^20.3.5":
   version: 20.3.5
   resolution: "@essex/eslint-config@npm:20.3.5"
@@ -3076,6 +3114,21 @@ __metadata:
     "@types/react-dom": "*"
     react: ">= 18"
   checksum: 8a4e96234028f7e3ad9feb94d3d9941b63a52ae94b05fe08f71f3072985a6e0161d7496634d1ea9c448f79bf667ef51fbb7458a0b0fab0c059841539479b10d7
+  languageName: node
+  linkType: hard
+
+"@essex/hooks@npm:^4.0.13":
+  version: 4.0.13
+  resolution: "@essex/hooks@npm:4.0.13"
+  dependencies:
+    "@essex/toolbox": ^3.0.9
+    lodash-es: ^4.17.21
+  peerDependencies:
+    "@types/node": "*"
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ">= 18"
+  checksum: 7d54bbae6c023db2d3a9ccc857bdeb71d7265d5e1997e016ad25f89358600330b62f1712eda320a081bf485af6aac8bbf453abc9ad94c6a8c80c5b15a4dcca1f
   languageName: node
   linkType: hard
 
@@ -3220,46 +3273,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/themed-components@npm:^2.2.7":
-  version: 2.2.7
-  resolution: "@essex/themed-components@npm:2.2.7"
-  dependencies:
-    "@essex/hooks": ^4.0.12
-    "@essex/react-animate-height": ^2.1.4
-    "@essex/toolbox": ^3.0.8
-    "@types/d3-array": ^3.0.3
-    "@types/d3-axis": ^3.0.1
-    "@types/d3-brush": ^3.0.1
-    "@types/d3-scale": ^4.0.2
-    "@types/d3-selection": ^3.0.2
-    d3-array: ^3.1.6
-    d3-axis: ^3.0.0
-    d3-brush: ^3.0.0
-    d3-scale: ^4.0.2
-    d3-selection: ^3.0.0
-    lodash-es: ^4.17.21
-  peerDependencies:
-    "@fluentui/react": ">= 7.114.2"
-    "@thematic/color": ">= 0.8.0"
-    "@thematic/core": ">= 0.8.0"
-    "@thematic/d3": ">= 0.8.0"
-    "@thematic/fluent": ">= 0.8.0"
-    "@thematic/react": ">= 0.8.0"
-    "@types/d3": "*"
-    "@types/d3-axis": ^2.0.0
-    "@types/node": "*"
-    "@types/react": ">= 18"
-    "@uifabric/icons": ">= 7.3.38"
-    react: ">= 18"
-    react-dom: ">= 18"
-  checksum: 17e6f2db3ae3e51b0a3dd5c070c942a430d231223d25faea4cdf06428b344928a9bebe64c6c2592da637784e07aee8ec84bf132ea452eb3ff70cf32386709a65
-  languageName: node
-  linkType: hard
-
 "@essex/toolbox@npm:3.0.8, @essex/toolbox@npm:^3.0.8":
   version: 3.0.8
   resolution: "@essex/toolbox@npm:3.0.8"
   checksum: 70cecf83f223a182c0a142e721f3d8689b0ec816174733e5403576d06b697bb8a8489f655479a2d358830f58fc71aef033dee6e64b2e90c6d1cb332f73bee18d
+  languageName: node
+  linkType: hard
+
+"@essex/toolbox@npm:^3.0.9":
+  version: 3.0.9
+  resolution: "@essex/toolbox@npm:3.0.9"
+  checksum: f39aac63b878532ec7fea8055c77afe9d493ca5b328479396e39a10a49a5af388298d0c96a38120fbc581657bc40407806ee0749a4e2fa8b4a5266bf1e3ee6ce
   languageName: node
   linkType: hard
 
@@ -3518,7 +3542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/utilities@npm:^8.13.4":
+"@fluentui/utilities@npm:^8.13.1, @fluentui/utilities@npm:^8.13.4":
   version: 8.13.4
   resolution: "@fluentui/utilities@npm:8.13.4"
   dependencies:
@@ -3723,10 +3747,10 @@ __metadata:
   resolution: "@graph-drilldown/webapp@workspace:packages/webapp"
   dependencies:
     "@essex/arquero-react": ^1.0.6
+    "@essex/components": ^3.2.1
     "@essex/hierarchy-browser": 4.0.11
     "@essex/hooks": ^4.0.12
     "@essex/scripts": ^22.0.4
-    "@essex/themed-components": ^2.2.7
     "@essex/toolbox": 3.0.8
     "@essex/webpack-config": ^21.0.4
     "@fluentui/font-icons-mdl2": ^8.5.4
@@ -4908,7 +4932,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/d3-selection@npm:*, @types/d3-selection@npm:^3.0.2":
+"@types/d3-selection@npm:*":
   version: 3.0.2
   resolution: "@types/d3-selection@npm:3.0.2"
   checksum: 0b9e258d3a3f31639b4191051ad29f4e18441a069b99ca88d8a7b3d390fe6c87716a526e933d4cec95eb4c42a7b7688e6548cbf054359a436f4ff3dae5e29e10
@@ -8656,6 +8680,15 @@ __metadata:
   dependencies:
     internmap: 1 - 2
   checksum: 32f515bd2559624681048ca86b0bd395047887b3473ddf136ddb4276620c39a0f3996865320ac49c74969a06a8e30e6f9d2d2097e908ba49c11b0f7fe0cbebda
+  languageName: node
+  linkType: hard
+
+"d3-array@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "d3-array@npm:3.2.0"
+  dependencies:
+    internmap: 1 - 2
+  checksum: e236f6670b60b64abb6c435da25b5cbbdc2c7c0decdbf9355bc4cf6803d6da4fa820b7b78b9cbd127edb493555934a9788d45084c2f39d7c2e1a2b7aa48264a4
   languageName: node
   linkType: hard
 

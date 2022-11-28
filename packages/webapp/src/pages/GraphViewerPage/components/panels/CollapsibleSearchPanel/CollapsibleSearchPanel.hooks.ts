@@ -144,6 +144,9 @@ export function useInteraction() {
 		[setIsExpanded, isInFocus],
 	)
 
+	const onIconClick = useCallback(() => {
+		setIsExpanded(prev => !prev)
+	}, [setIsExpanded])
 	const onReset = useCallback(() => {
 		onError(undefined)
 		setIsExpanded(false)
@@ -153,9 +156,9 @@ export function useInteraction() {
 	return {
 		isExpanded,
 		errorMessage,
-
 		onFocusChange,
 		onPanelClick,
+		onIconClick,
 		onReset,
 		onError,
 		doSearchExpand,
