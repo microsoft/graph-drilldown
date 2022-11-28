@@ -37,7 +37,7 @@
 		"@thematic/fluent": "^3.0.9",
 		"@thematic/react": "^2.0.9",
 		"ahooks": "^3.7.2",
-		"arquero": "^4.8.8",
+		"arquero": "^5.1.0",
 		"core-js": "^3.26.1",
 		"d3-dsv": "^3.0.1",
 		"d3-format": "^3.1.0",
