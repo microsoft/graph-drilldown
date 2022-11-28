@@ -3074,18 +3074,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/hierarchy-browser@npm:4.0.11":
-  version: 4.0.11
-  resolution: "@essex/hierarchy-browser@npm:4.0.11"
+"@essex/hierarchy-browser@npm:4.0.14":
+  version: 4.0.14
+  resolution: "@essex/hierarchy-browser@npm:4.0.14"
   dependencies:
-    "@essex/hooks": ^4.0.12
-    d3-array: ^3.1.6
+    "@essex/hooks": ^4.0.13
+    d3-array: ^3.2.0
     d3-scale: ^4.0.2
     d3-selection: ^3.0.0
     react-infinite-scroller: ^1.2.6
     styled-components: ^5.3.5
   peerDependencies:
-    "@fluent/react": ">=7.146.1"
+    "@fluentui/react": ">=7.146.1"
     "@thematic/core": ">= 0.9.0"
     "@thematic/fluent": ">= 0.9.0"
     "@thematic/react": ">= 0.9.0"
@@ -3098,22 +3098,7 @@ __metadata:
     react: ">=18"
     react-is: ">=  17"
     regenerator-runtime: "*"
-  checksum: 9af4dc90ea127dc1446e9de236035cbcd32a66319dba4ee4b33ba7a3f4ab299d47b5a1c3b99994ab07e4115c538c0e591217a11b3a7d6070f52e97042e4bc0f0
-  languageName: node
-  linkType: hard
-
-"@essex/hooks@npm:^4.0.12":
-  version: 4.0.12
-  resolution: "@essex/hooks@npm:4.0.12"
-  dependencies:
-    "@essex/toolbox": ^3.0.8
-    lodash-es: ^4.17.21
-  peerDependencies:
-    "@types/node": "*"
-    "@types/react": "*"
-    "@types/react-dom": "*"
-    react: ">= 18"
-  checksum: 8a4e96234028f7e3ad9feb94d3d9941b63a52ae94b05fe08f71f3072985a6e0161d7496634d1ea9c448f79bf667ef51fbb7458a0b0fab0c059841539479b10d7
+  checksum: 1cfd82d1470eeda0e664c4cfa8d517c23c54b49438a3a7975388890a0c94b13f19ed7a79635020fd09d7234e3da95ea93c138b89f44e1b418701d44ef27a4edd
   languageName: node
   linkType: hard
 
@@ -3273,14 +3258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/toolbox@npm:3.0.8, @essex/toolbox@npm:^3.0.8":
-  version: 3.0.8
-  resolution: "@essex/toolbox@npm:3.0.8"
-  checksum: 70cecf83f223a182c0a142e721f3d8689b0ec816174733e5403576d06b697bb8a8489f655479a2d358830f58fc71aef033dee6e64b2e90c6d1cb332f73bee18d
-  languageName: node
-  linkType: hard
-
-"@essex/toolbox@npm:^3.0.9":
+"@essex/toolbox@npm:3.0.9, @essex/toolbox@npm:^3.0.9":
   version: 3.0.9
   resolution: "@essex/toolbox@npm:3.0.9"
   checksum: f39aac63b878532ec7fea8055c77afe9d493ca5b328479396e39a10a49a5af388298d0c96a38120fbc581657bc40407806ee0749a4e2fa8b4a5266bf1e3ee6ce
@@ -3562,7 +3540,7 @@ __metadata:
   resolution: "@graph-drilldown/arquero@workspace:packages/arquero"
   dependencies:
     "@essex/scripts": ^22.0.4
-    "@essex/toolbox": 3.0.8
+    "@essex/toolbox": 3.0.9
     "@essex/tsconfig-base": ^1.0.2
     "@graph-drilldown/types": "workspace:packages/types"
     "@types/d3-format": ^3.0.1
@@ -3589,7 +3567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/components@workspace:packages/components"
   dependencies:
-    "@essex/hooks": ^4.0.12
+    "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.103.2
@@ -3641,7 +3619,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/hooks@workspace:packages/hooks"
   dependencies:
-    "@essex/hooks": ^4.0.12
+    "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.103.2
@@ -3748,10 +3726,10 @@ __metadata:
   dependencies:
     "@essex/arquero-react": ^1.0.6
     "@essex/components": ^3.2.1
-    "@essex/hierarchy-browser": 4.0.11
-    "@essex/hooks": ^4.0.12
+    "@essex/hierarchy-browser": 4.0.14
+    "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
-    "@essex/toolbox": 3.0.8
+    "@essex/toolbox": 3.0.9
     "@essex/webpack-config": ^21.0.4
     "@fluentui/font-icons-mdl2": ^8.5.4
     "@fluentui/react": ^8.103.2
@@ -8674,7 +8652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3, d3-array@npm:^3.1.6":
+"d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3":
   version: 3.1.6
   resolution: "d3-array@npm:3.1.6"
   dependencies:

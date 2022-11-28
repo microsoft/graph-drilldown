@@ -20,7 +20,7 @@
 		"lint": "essex lint --fix"
 	},
 	"dependencies": {
-		"@essex/hooks": "^4.0.12",
+		"@essex/hooks": "^4.0.13",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"d3-scale": "^4.0.2"
 	},

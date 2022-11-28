@@ -20,7 +20,7 @@
 		"lint": "essex lint --fix"
 	},
 	"dependencies": {
-		"@essex/toolbox": "3.0.8",
+		"@essex/toolbox": "3.0.9",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"arquero": "^5.1.0",
 		"d3-format": "^3.1.0"

@@ -20,7 +20,7 @@
 		"lint": "essex lint --fix"
 	},
 	"dependencies": {
-		"@essex/hooks": "^4.0.12",
+		"@essex/hooks": "^4.0.13",
 		"@graph-drilldown/arquero": "workspace:packages/arquero",
 		"@graph-drilldown/hooks": "workspace:packages/hooks",
 		"@graph-drilldown/types": "workspace:packages/types",
