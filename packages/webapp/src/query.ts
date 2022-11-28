@@ -7,7 +7,7 @@ import { parse } from 'query-string'
 export function getQuery() {
 	// TODO: react-router hash router messes up the standard location.search
 	// this just hacks a quick extracton in
-	const search = window.location.href.split('?')[1]
+	const search = window.location.href.replace(/#\/?/g, '').split('?')[1]
 	return parse(search, {
 		parseBooleans: true,
 		parseNumbers: true,
