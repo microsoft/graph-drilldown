@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { initializeIcons } from '@fluentui/react/lib/Icons'
+import { initializeIcons } from '@fluentui/font-icons-mdl2'
 import { createRoot } from 'react-dom/client'
 
 import { App } from './App'
