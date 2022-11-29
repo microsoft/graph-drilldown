@@ -4,7 +4,6 @@
  */
 import { useDropdownProps } from '@essex/components'
 import { Dropdown } from '@fluentui/react'
-import { NominalLegend } from '@graph-drilldown/components'
 import { useIsNominal } from '@graph-drilldown/hooks'
 import { ScaleDropdown } from '@thematic/fluent'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
@@ -63,15 +62,13 @@ export const ScaledPicker: React.FC<ColorSelectorProps> = ({
 				/>
 			</Group>
 			<Group>
-				{isNominal ? (
-					<NominalLegend encoding={encoding} />
-				) : (
+				{!isNominal ? (
 					<NumericDomainEditor
 						table={table}
 						encoding={encoding}
 						onChange={onChange}
 					/>
-				)}
+				) : null}
 			</Group>
 		</Container>
 	)

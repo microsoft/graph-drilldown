@@ -59,6 +59,7 @@ const sliderBase = {
 	styles: {
 		valueLabel: {
 			width: 20,
+			marginRight: 0,
 		},
 	},
 }
