@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Theme } from '@thematic/core'
-import { load, ThemeVariant } from '@thematic/core'
+import { load } from '@thematic/core'
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
 
 import { parseParams } from '../query'
@@ -87,7 +87,7 @@ export const themeState = selector<Theme>({
 	get: ({ get }) => {
 		const settings = get(settingsState)
 		const theme = load({
-			dark: settings.darkMode
+			dark: settings.darkMode,
 		})
 		return theme
 	},

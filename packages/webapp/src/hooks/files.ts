@@ -2,6 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { TableMetadata } from '@datashaper/tables'
+import { introspect } from '@datashaper/tables'
 import {
 	initializeEdgeTable,
 	initializeNodeTable,
@@ -11,8 +13,7 @@ import {
 import type { DataFile } from '@graph-drilldown/types'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { useCallback, useMemo } from 'react'
-import type { TableMetadata } from '@datashaper/tables'
-import { introspect } from '@datashaper/tables'
+
 import {
 	useAddFile,
 	useBigTable,
@@ -70,7 +71,11 @@ export function useFileManagement(): {
 		setSelectedFile(undefined)
 	}, [resetTables, resetFiles, setSelectedFile])
 
-	const metadata = useMemo(() => selectedFile?.table ? introspect(selectedFile.table, true) : undefined, [selectedFile])
+	const metadata = useMemo(
+		() =>
+			selectedFile?.table ? introspect(selectedFile.table, true) : undefined,
+		[selectedFile],
+	)
 	return {
 		files,
 		doAddFile,

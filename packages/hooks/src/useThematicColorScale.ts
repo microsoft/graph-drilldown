@@ -7,9 +7,9 @@ import type {
 	ContinuousColorScaleFunction,
 	NominalColorScaleFunction,
 } from '@thematic/core'
+import { chooseScale } from '@thematic/core'
 import { useThematic } from '@thematic/react'
 import { useMemo } from 'react'
-import { chooseScale } from '@thematic/core'
 
 export function useThematicColorScale(
 	encoding: ColorEncoding,
@@ -18,6 +18,12 @@ export function useThematicColorScale(
 	return useMemo(() => {
 		const { scaleType, domain, uniques = [] } = encoding
 		// TODO: update thematic scale name to be optional since it defaults to nominal
-		return chooseScale(theme, encoding.scaleName || 'nominal', uniques.length, domain, scaleType)
+		return chooseScale(
+			theme,
+			encoding.scaleName || 'nominal',
+			uniques.length,
+			domain,
+			scaleType,
+		)
 	}, [theme, encoding])
 }

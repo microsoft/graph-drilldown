@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { introspect } from '@datashaper/tables'
 import type { TableCollection } from '@graph-drilldown/arquero'
 import type { Community, Edge, ItemType, Node } from '@graph-drilldown/types'
 import { desc } from 'arquero'
 import { useMemo } from 'react'
-import { introspect } from '@datashaper/tables'
 const MIN_COLUMN_WIDTH = 100
 
 export function useColumnConfig(

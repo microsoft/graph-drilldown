@@ -4,8 +4,8 @@
  */
 import { loadFluentTheme, ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
-import { ReactNode, useMemo } from 'react'
-import { memo } from 'react'
+import type { ReactNode } from 'react'
+import { memo, useMemo } from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 import { ThemeProvider } from '~/react-patch/styled-components'
