@@ -3,4 +3,4 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 export const BAR_HEIGHT = 13
-export const BAR_WIDTH = 100
+export const BAR_WIDTH = 80

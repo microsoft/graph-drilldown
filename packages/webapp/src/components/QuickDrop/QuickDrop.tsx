@@ -14,7 +14,7 @@ import { useFileManagement } from '~/hooks/files'
 import { smallButtonProps, variants } from '~/styles'
 
 import { FileDrop } from '../FileDrop'
-const SQUARE = 96
+const SQUARE = 84
 
 export interface QuickDropProps {
 	dropWidthSize?: number
@@ -113,9 +113,11 @@ const HelperText = styled.div`
 `
 
 const DropArea = styled.div`
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	gap: 12px;
+	justify-content: center;
 `
 
 const Reset = styled.div`

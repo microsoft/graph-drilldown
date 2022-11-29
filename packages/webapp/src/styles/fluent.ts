@@ -16,7 +16,7 @@ export const COMMANDBAR_HEIGHT = 32
 export const COMMANDBAR_MARGIN = 12
 export const HEADER_HEIGHT = COMMANDBAR_HEIGHT + COMMANDBAR_MARGIN * 2
 
-export const PANEL_WIDTH = 260
+export const PANEL_WIDTH = 240
 export const APP_PADDING_LEFT = 30
 
 export const BREAD_CRUMB_STYLES = {
