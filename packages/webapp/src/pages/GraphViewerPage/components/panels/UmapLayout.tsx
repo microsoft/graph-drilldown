@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useButtonProps } from '@essex/components'
 import { DefaultButton } from '@fluentui/react'
 import { memo } from 'react'
 
@@ -18,10 +19,11 @@ export interface UmapLayoutProps {
 export const UmapLayout: React.FC<UmapLayoutProps> = memo(function UmapLayout({
 	onClick,
 }) {
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<>
 			{AUTOLAYOUT_URL ? (
-				<DefaultButton text={'UMAP'} onClick={onClick} />
+				<DefaultButton text={'UMAP'} onClick={onClick} {...buttonProps} />
 			) : null}
 		</>
 	)

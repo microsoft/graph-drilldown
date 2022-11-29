@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useToggleProps } from '@essex/components'
 import { Toggle } from '@fluentui/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'
-
 export interface ToggleHeaderProps {
 	title: string
 	subtitle?: string
@@ -25,6 +25,7 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 		(_, v) => onChange && onChange(v),
 		[onChange],
 	)
+	const toggleProps = useToggleProps({}, 'small')
 	return (
 		<Container>
 			<Title>{title}</Title>
@@ -32,34 +33,15 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 			<ToggleSection>
 				<Toggle
 					disabled={disabled}
-					styles={toggleStyles}
 					onText="on"
 					offText="off"
 					checked={checked}
 					onChange={handleChange}
+					{...toggleProps}
 				/>
 			</ToggleSection>
 		</Container>
 	)
-}
-
-// create a "micro toggle"
-const toggleStyles = {
-	root: {
-		margin: 0,
-	},
-	pill: {
-		height: 14,
-		width: 28,
-		padding: 1,
-		fontSize: 12,
-	},
-	thumb: {
-		fontSize: 12,
-	},
-	text: {
-		fontSize: '0.8em',
-	},
 }
 
 const Container = styled.div`

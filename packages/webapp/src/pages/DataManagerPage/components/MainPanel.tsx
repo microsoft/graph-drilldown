@@ -3,15 +3,18 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { ArqueroDetailsList } from '@datashaper/react'
+import { useButtonProps } from '@essex/components'
 import { DefaultButton } from '@fluentui/react'
 import { FileTable } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
 import { useFileManagement } from '~/hooks/files'
-
+import { smallButtonProps } from '~/styles'
 export const MainPanel: React.FC = () => {
 	const { files, selectedFile, metadata, onFileSelected, doClearAll, hasData } =
 		useFileManagement()
+
+	const buttonProps = useButtonProps(smallButtonProps, 'small')
 
 	return (
 		<Container>
@@ -23,7 +26,11 @@ export const MainPanel: React.FC = () => {
 				/>
 				<Reset>
 					{hasData ? (
-						<DefaultButton text="Clear all" onClick={doClearAll} />
+						<DefaultButton
+							text="Clear all"
+							onClick={doClearAll}
+							{...buttonProps}
+						/>
 					) : null}
 				</Reset>
 			</Files>

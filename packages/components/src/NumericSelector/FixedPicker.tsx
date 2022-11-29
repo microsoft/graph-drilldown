@@ -2,13 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useSliderProps } from '@essex/components'
 import { Slider } from '@fluentui/react'
 import { useDebounceFn } from 'ahooks'
 import { useState } from 'react'
 import styled from 'styled-components'
 
 import type { NumericSelectorProps } from './NumericSelector.types.js'
-
 export const FixedPicker: React.FC<NumericSelectorProps> = ({
 	encoding,
 	onChange,
@@ -28,6 +28,7 @@ export const FixedPicker: React.FC<NumericSelectorProps> = ({
 		},
 	)
 
+	const sliderProps = useSliderProps(sliderBase, 'small')
 	return (
 		<Container>
 			<Controls>
@@ -41,6 +42,7 @@ export const FixedPicker: React.FC<NumericSelectorProps> = ({
 						useDebounce.run(value)
 						setRangeValue(value)
 					}}
+					{...sliderProps}
 				/>
 			</Controls>
 		</Container>
@@ -52,3 +54,11 @@ const Container = styled.div`
 `
 
 const Controls = styled.div``
+
+const sliderBase = {
+	styles: {
+		valueLabel: {
+			width: 20,
+		},
+	},
+}

@@ -2,15 +2,16 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useTextFieldProps } from '@essex/components'
 import { useDimensions } from '@essex/hooks'
 import { Label, TextField } from '@fluentui/react'
 import { format } from 'd3-format'
 import { useCallback, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 
+import { textFieldStyles } from '../styles.js'
 import { LegendAxis } from './LegendAxis.js'
 import { Sparkbar } from './Sparkbar.js'
-
 export interface DomainBrushProps {
 	min?: number
 	max?: number
@@ -29,11 +30,6 @@ const CHART_HEIGHT = 30
 const AXIS_HEIGHT = 16
 const EMPTY = []
 
-const TEXT_STYLES = {
-	field: {
-		textAlign: 'center',
-	},
-}
 export const DomainBrush: React.FC<DomainBrushProps> = ({
 	min = 0,
 	max = 1,
@@ -86,6 +82,7 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 	const x = useCallback((d: any, i: number) => (d.x1 - d.x0) / 2 + d.x0, [])
 	const y = useCallback((d: any, i: number) => d.length, [])
 
+	const textFieldProps = useTextFieldProps({ styles: textFieldStyles }, 'small')
 	return (
 		<Container ref={ref}>
 			<Sparkbar
@@ -110,18 +107,18 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 					<TextItem>
 						<TextField
 							label="min"
-							styles={TEXT_STYLES}
 							value={`${flo}`}
 							onChange={handleMinChange}
+							{...textFieldProps}
 						/>
 						<Label>Min</Label>
 					</TextItem>
 					<TextItem>
 						<TextField
 							label="max"
-							styles={TEXT_STYLES}
 							value={`${fhi}`}
 							onChange={handleMaxChange}
+							{...textFieldProps}
 						/>
 						<Label>Max</Label>
 					</TextItem>

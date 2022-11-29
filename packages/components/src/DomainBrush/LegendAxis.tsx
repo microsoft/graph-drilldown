@@ -10,6 +10,8 @@ import { select } from 'd3-selection'
 import { memo, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 
+const TEXT_SIZE = 10
+
 export interface LegendAxisProps {
 	domain: [number, number]
 	brushedDomain?: [number, number]
@@ -114,7 +116,7 @@ export const LegendAxis: React.FC<LegendAxisProps> = memo(function LegendAxis({
 				.attr('dominant-baseline', 'middle')
 				.attr('x', scaleRange[0] + 1)
 				.attr('y', height / 2 + 1)
-				.attr('font-size', height - 2)
+				.attr('font-size', TEXT_SIZE)
 			axisGroup
 				.append('text')
 				.text(displayedDomain[1])
@@ -123,7 +125,7 @@ export const LegendAxis: React.FC<LegendAxisProps> = memo(function LegendAxis({
 				.attr('text-anchor', 'end')
 				.attr('x', scaleRange[1] - 1)
 				.attr('y', height / 2 + 1)
-				.attr('font-size', height - 2)
+				.attr('font-size', TEXT_SIZE)
 		}
 	}, [theme, axisGroup, scaleRange, displayedDomain, height])
 

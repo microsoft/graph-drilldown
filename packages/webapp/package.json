@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@datashaper/react": "^19.0.3",
 		"@datashaper/tables": "^5.3.1",
-		"@essex/components": "^3.2.1",
+		"@essex/components": "^3.2.2",
 		"@essex/hierarchy-browser": "4.0.14",
 		"@essex/hooks": "^4.0.13",
 		"@essex/toolbox": "3.0.9",

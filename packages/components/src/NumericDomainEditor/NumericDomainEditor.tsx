@@ -13,6 +13,8 @@ import { format } from 'd3-format'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
+import { labelStyles } from '../styles'
+
 export interface NumericDomainEditorProps {
 	/**
 	 * table the encoding will be binding to, so we can lookup stats
@@ -34,10 +36,10 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 	const fmt = useMemo(() => format(`.${precision}f`), [precision])
 
 	const handleTypeChange = useCallback(
-		scaleType =>
+		(_e, option) =>
 			onChange &&
 			onChange({
-				scaleType,
+				scaleType: option.key as ScaleType,
 			}),
 		[onChange],
 	)
@@ -55,9 +57,9 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 
 	return (
 		<Container>
-			<Label>{`Input domain (data extent: ${fmt(domain[0])} - ${fmt(
-				domain[1],
-			)})`}</Label>
+			<Label styles={labelStyles}>{`Input domain (data extent: ${fmt(
+				domain[0],
+			)} - ${fmt(domain[1])})`}</Label>
 			<DomainBrush
 				histogram={histogram}
 				min={domain[0]}
@@ -67,16 +69,23 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 				onChange={handleDomainChange}
 				showTextInputs
 			/>
-			<ScaleTypeChoiceGroup
-				selectedKey={encoding.scaleType || ScaleType.Linear}
-				onChange={handleTypeChange}
-				suppressQuantile
-			/>
+			<ChoiceContainer>
+				<ScaleTypeChoiceGroup
+					size={'small'}
+					selectedKey={encoding.scaleType || ScaleType.Linear}
+					onChange={handleTypeChange}
+					suppressQuantile
+				/>
+			</ChoiceContainer>
 		</Container>
 	)
 }
 
 const Container = styled.div``
+
+const ChoiceContainer = styled.div`
+	margin-top: 4px;
+`
 
 function useColumnStats(table: ColumnTable, field?: string) {
 	return useMemo(() => getColumnStats(table, field), [table, field])

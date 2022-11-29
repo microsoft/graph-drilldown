@@ -3350,6 +3350,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex/components@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@essex/components@npm:3.2.2"
+  dependencies:
+    "@essex/hooks": ^4.0.13
+    "@essex/react-animate-height": ^2.1.4
+    "@essex/toolbox": ^3.0.9
+    "@fluentui/utilities": ^8.13.1
+    "@types/d3-array": ^3.0.3
+    "@types/d3-axis": ^3.0.1
+    "@types/d3-brush": ^3.0.1
+    "@types/d3-scale": ^4.0.2
+    "@types/d3-selection": ^3.0.3
+    d3-array: ^3.2.0
+    d3-axis: ^3.0.0
+    d3-brush: ^3.0.0
+    d3-scale: ^4.0.2
+    d3-selection: ^3.0.0
+    lodash-es: ^4.17.21
+    react-if: ^4.1.4
+  peerDependencies:
+    "@fluentui/react": ">= 7.114.2"
+    "@thematic/color": ">= 0.8.0"
+    "@thematic/core": ">= 0.8.0"
+    "@thematic/d3": ">= 0.8.0"
+    "@thematic/fluent": ">= 0.8.0"
+    "@thematic/react": ">= 0.8.0"
+    "@types/d3": "*"
+    "@types/d3-axis": ^2.0.0
+    "@types/node": "*"
+    "@types/react": ">= 18"
+    "@uifabric/icons": ">= 7.3.38"
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 6a7503e660c785e67c0de70e140a67984ac87f14a46bbc3408293d6a158067b20edffab40493992ee3b8432b95d3bd28b06f186b66ad51c3c6f03728360956e7
+  languageName: node
+  linkType: hard
+
 "@essex/eslint-config@npm:^20.3.5":
   version: 20.3.5
   resolution: "@essex/eslint-config@npm:20.3.5"
@@ -3945,6 +3983,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/components@workspace:packages/components"
   dependencies:
+    "@essex/components": ^3.2.2
     "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
@@ -4104,7 +4143,7 @@ __metadata:
   dependencies:
     "@datashaper/react": ^19.0.3
     "@datashaper/tables": ^5.3.1
-    "@essex/components": ^3.2.1
+    "@essex/components": ^3.2.2
     "@essex/hierarchy-browser": 4.0.14
     "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4

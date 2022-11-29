@@ -15,7 +15,7 @@ import { NumericRangeText } from './NumericRangeText.js'
 
 // TODO: width should flex
 // base + padding accounts for border-box in css, literal in svg
-const LEGEND_WIDTH_BASE = 250
+const LEGEND_WIDTH_BASE = 210 // TODO: this should be tied to the PANEL_WIDTH in webapp
 const LEGEND_WIDTH_PADDING = 10
 const LEGEND_WIDTH = LEGEND_WIDTH_BASE + LEGEND_WIDTH_PADDING
 const LEGEND_HEIGHT_BASE = 20

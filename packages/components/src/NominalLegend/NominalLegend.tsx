@@ -8,6 +8,7 @@ import type { ColorEncoding } from '@graph-drilldown/types'
 import { useRef } from 'react'
 import styled from 'styled-components'
 
+import { labelStyles } from '../styles.js'
 import { VerticalNominalChips } from './VerticalNominalChips.js'
 
 const ITEM_HEIGHT = 16
@@ -22,7 +23,7 @@ export const NominalLegend: React.FC<NominalLegendProps> = ({ encoding }) => {
 	const dimensions = useDimensions(ref)
 	return (
 		<Container ref={ref}>
-			<Label>Legend</Label>
+			<Label styles={labelStyles}>Legend</Label>
 			<VerticalNominalChips
 				encoding={encoding}
 				width={dimensions?.width}

@@ -4,7 +4,8 @@
  */
 import './HierarchyNav.css'
 
-import type { IIconProps } from '@fluentui/react'
+import { useIconButtonProps } from '@essex/components'
+import type { IButtonProps } from '@fluentui/react'
 import { ActionButton } from '@fluentui/react'
 import { SelectionState } from '@thematic/core'
 import { useThematic } from '@thematic/react'
@@ -13,7 +14,7 @@ import styled from 'styled-components'
 
 import type { Breadcrumb } from '~/types'
 
-const caretIcon: IIconProps = { iconName: 'ChevronDownSmall' }
+const caretIcon: IButtonProps = { iconProps: { iconName: 'ChevronDownSmall' } }
 
 export interface IHierarchyNav {
 	items: Breadcrumb[]
@@ -31,8 +32,8 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 						.fill()
 						.hex(),
 				},
-				root: { cursor: 'revert', maxHeight: 20 },
-				label: { fontSize: 'large', fontWeight: 500 },
+				root: { cursor: 'revert', maxHeight: 14 },
+				label: { fontSize: 'small' },
 			}),
 			[theme],
 		)
@@ -60,6 +61,7 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 			[handleBreadcrumbClick],
 		)
 
+		const smallIconButtonCaretProps = useIconButtonProps(caretIcon, 'small')
 		const nestedContent = useMemo(() => {
 			return reverseList.reduce((prevContent, item, i) => {
 				const colorStyle = i === 0 ? highlight : normal
@@ -82,8 +84,8 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 								) : (
 									<ActionButton
 										styles={colorStyle}
-										iconProps={caretIcon}
 										checked={true}
+										{...smallIconButtonCaretProps}
 									>
 										{item.text}
 									</ActionButton>
@@ -96,7 +98,13 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 				prevContent = content
 				return prevContent
 			}, undefined as any)
-		}, [reverseList, highlight, normal, handleListClick])
+		}, [
+			reverseList,
+			highlight,
+			normal,
+			handleListClick,
+			smallIconButtonCaretProps,
+		])
 
 		return <Container>{nestedContent}</Container>
 	},

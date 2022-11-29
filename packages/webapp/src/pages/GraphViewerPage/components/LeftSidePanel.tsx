@@ -68,7 +68,7 @@ export const LeftSidePanel: React.FC<LeftSidePanelProps> = memo(
 				</BreadcrumbContainer>
 				<CommunityContainer style={communityStyle}>
 					<HeaderLabel style={headerLabelStyle}>
-						<Text variant={variants.mediumPlus}>
+						<Text variant={variants.medium}>
 							{' '}
 							<b>Communities</b>
 						</Text>

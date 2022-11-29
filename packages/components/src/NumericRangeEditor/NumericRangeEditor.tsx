@@ -9,6 +9,7 @@ import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { DomainBrush } from '../DomainBrush/index.js'
+import { labelStyles } from '../styles.js'
 
 export interface NumericRangeEditorProps {
 	encoding: Encoding
@@ -39,7 +40,9 @@ export const NumericRangeEditor: React.FC<NumericRangeEditorProps> = ({
 
 	return (
 		<Container>
-			<Label>{`Output range (${fmt(min)} - ${fmt(max)})`}</Label>
+			<Label styles={labelStyles}>{`Output range (${fmt(min)} - ${fmt(
+				max,
+			)})`}</Label>
 			<DomainBrush
 				min={min}
 				max={max}
