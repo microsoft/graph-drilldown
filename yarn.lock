@@ -3211,10 +3211,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/prettier-config@npm:^18.0.2":
-  version: 18.0.2
-  resolution: "@essex/prettier-config@npm:18.0.2"
-  checksum: 1b1a1a1f29c144b3c28a905daf9ca3700fbec1c71c38873862b05e868e0c6a888dbad87503d1e9f3c041edd7a1a0ce8062e3d9ed4d01d15ab3f2e1909753a015
+"@essex/prettier-config@npm:^18.0.4":
+  version: 18.0.4
+  resolution: "@essex/prettier-config@npm:18.0.4"
+  checksum: 365123a6c51972bd34d0db8490e0c08d405287488dc11823650948019cd62300cc6633d990be3a3c04e1db49d9179e648b4dcdcfc94c37e6db3a0ecca578b197
   languageName: node
   linkType: hard
 
@@ -3745,7 +3745,7 @@ __metadata:
     "@essex/eslint-config": ^20.3.5
     "@essex/eslint-plugin": ^20.3.7
     "@essex/jest-config": ^21.0.12
-    "@essex/prettier-config": ^18.0.2
+    "@essex/prettier-config": ^18.0.4
     "@essex/scripts": ^22.0.4
     "@fluentui/font-icons-mdl2": ^8.5.4
     "@fluentui/react": ^8.103.2

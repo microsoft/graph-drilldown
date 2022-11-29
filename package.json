@@ -20,7 +20,7 @@
 		"@essex/eslint-config": "^20.3.5",
 		"@essex/eslint-plugin": "^20.3.7",
 		"@essex/jest-config": "^21.0.12",
-		"@essex/prettier-config": "^18.0.2",
+		"@essex/prettier-config": "^18.0.4",
 		"@essex/scripts": "^22.0.4",
 		"@fluentui/font-icons-mdl2": "^8.5.4",
 		"@fluentui/react": "^8.103.2",
