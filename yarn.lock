@@ -3658,11 +3658,11 @@ __metadata:
     "@graph-drilldown/arquero": "workspace:packages/arquero"
     "@graph-drilldown/hooks": "workspace:packages/hooks"
     "@graph-drilldown/types": "workspace:packages/types"
-    "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.1
-    "@thematic/d3": ^2.0.9
-    "@thematic/fluent": ^3.0.9
-    "@thematic/react": ^2.0.9
+    "@thematic/color": ^4.0.0
+    "@thematic/core": ^4.0.0
+    "@thematic/d3": ^2.0.15
+    "@thematic/fluent": ^5.0.1
+    "@thematic/react": ^2.1.2
     "@types/d3-brush": ^3.0.1
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -3708,10 +3708,10 @@ __metadata:
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.103.2
     "@graph-drilldown/types": "workspace:packages/types"
-    "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.1
-    "@thematic/fluent": ^3.0.9
-    "@thematic/react": ^2.0.9
+    "@thematic/color": ^4.0.0
+    "@thematic/core": ^4.0.0
+    "@thematic/fluent": ^5.0.1
+    "@thematic/react": ^2.1.2
     "@types/d3-scale": ^4.0.2
     "@types/node": ^17.0.45
     "@types/react": ^18.0.25
@@ -3782,7 +3782,7 @@ __metadata:
   dependencies:
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
-    "@thematic/core": ^2.1.1
+    "@thematic/core": ^4.0.0
     "@types/node": ^17.0.45
     "@types/react": ^18.0.25
     arquero: ^5.1.0
@@ -3830,11 +3830,11 @@ __metadata:
     "@graspologic/render-controls": 0.7.0-13
     "@graspologic/render-controls-react": 0.7.0-13
     "@graspologic/renderer": 0.7.0-13
-    "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.1
-    "@thematic/d3": ^2.0.9
-    "@thematic/fluent": ^3.0.9
-    "@thematic/react": ^2.0.9
+    "@thematic/color": ^4.0.0
+    "@thematic/core": ^4.0.0
+    "@thematic/d3": ^2.0.15
+    "@thematic/fluent": ^5.0.1
+    "@thematic/react": ^2.1.2
     "@types/d3-dsv": ^3.0.0
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -4760,13 +4760,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thematic/color@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@thematic/color@npm:2.0.8"
+"@thematic/color@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@thematic/color@npm:4.0.0"
   dependencies:
     chroma-js: ^2.4.2
-    color-blind: ^0.1.1
-    hsluv: ^0.1.0
+    color-blind: ^0.1.3
+    hsluv: ^1.0.0
   peerDependencies:
     "@types/chroma-js": "*"
     "@types/node": "*"
@@ -4775,15 +4775,15 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 14c39024512cd8088fe6237ea60bf1137901320f6c372b4753b871388d6349287947e4d838976d62b85503f1832e657c9bea3d60eee63e3ab0e204746e01e8d4
+  checksum: 5410af1a0584f5d3a01b217107143a7898d3594c6b33214151ac4b45afa6f62cb6315657e00025f90f7e30e2d097debfb00c117fd1999f73d7af22803e3e5d5b
   languageName: node
   linkType: hard
 
-"@thematic/core@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@thematic/core@npm:2.1.1"
+"@thematic/core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@thematic/core@npm:4.0.0"
   dependencies:
-    "@thematic/color": ^2.0.8
+    "@thematic/color": ^4.0.0
     d3-scale: ^4.0.2
     lodash-es: ^4.17.21
     murmurhash-js: ^1.0.0
@@ -4795,15 +4795,15 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 77d9c82209910e30bb43a6479b4fd4fa1423bbaf80a0f71cbae01d6729b8f714a172d0a52c92f56cfc5d1987f345000d9cb0a7c3c648ae959e160af686035a7e
+  checksum: 9d4f15f1d40c5108c1cdd8c0d4947a5fe5c26a03984682849a2cc26908192f65b3ac25c19b0b281ab5acc15324c24d382b72e0dbd4d2a2c99e3ef11928006124
   languageName: node
   linkType: hard
 
-"@thematic/d3@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "@thematic/d3@npm:2.0.9"
+"@thematic/d3@npm:^2.0.15":
+  version: 2.0.15
+  resolution: "@thematic/d3@npm:2.0.15"
   dependencies:
-    "@thematic/core": ^2.1.1
+    "@thematic/core": ^4.0.0
     d3-axis: ^3.0.0
     d3-selection: ^3.0.0
   peerDependencies:
@@ -4817,27 +4817,28 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 886e23ea8c49c3438df56a330b7d0e15cc6b249557d075fba521bfd6bb67ca4a13e2977126a46c0afd2f8a20ae6c97d8becdb20bae1a7e3022abe7f0c2e0324e
+  checksum: e8bbb387ee56a2ec750ff269b9b3f34371c48019ef4880b866e54f108957e0c883cb85c2a0405e8252e5d7c4c1617bc5d055da0f3ff3a895ce10c224944c1423
   languageName: node
   linkType: hard
 
-"@thematic/fluent@npm:^3.0.9":
-  version: 3.0.9
-  resolution: "@thematic/fluent@npm:3.0.9"
+"@thematic/fluent@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@thematic/fluent@npm:5.0.1"
   dependencies:
-    "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.1
-    "@thematic/react": ^2.0.9
+    "@essex/components": ^3.2.1
+    "@thematic/color": ^4.0.0
+    "@thematic/core": ^4.0.0
+    "@thematic/d3": ^2.0.15
+    "@thematic/react": ^2.1.2
+    ahooks: ^3.7.2
     d3-scale: ^4.0.2
+    lodash-es: ^4.17.21
   peerDependencies:
-    "@fluentui/font-icons-mdl2": ">= 8"
     "@fluentui/react": ">= 8"
     "@types/node": "*"
     "@types/react": ">= 17"
     react: ">= 17"
   peerDependenciesMeta:
-    "@fluentui/font-icons-mdl2":
-      optional: false
     "@fluentui/react":
       optional: false
     "@types/node":
@@ -4846,16 +4847,16 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: 1b2d41b22393791f53221d274aa405b5cb20f765cef571098b63ce316dbc66878e8e6be8e8f0fc293eeabf61f167c7c5feef2bad927919824994312b709f1dd8
+  checksum: cacbc539528f263de2d90c29683de5c28d823fd97f3bafd7328c8156e18710f227727ae1bcc0aefc3b9e38f43acfeda700f03627200fba176ee28e24aa5a7867
   languageName: node
   linkType: hard
 
-"@thematic/react@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "@thematic/react@npm:2.0.9"
+"@thematic/react@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@thematic/react@npm:2.1.2"
   dependencies:
-    "@thematic/color": ^2.0.8
-    "@thematic/core": ^2.1.1
+    "@thematic/color": ^4.0.0
+    "@thematic/core": ^4.0.0
   peerDependencies:
     "@types/node": "*"
     "@types/react": ">= 17"
@@ -4867,7 +4868,7 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: 9bcce5fce6bea6847c33e15563aa3c9afc438ba928c02fa27a4ac3c0d4546e044f3ea00d1c8388689eb0f40bd60b08a089d3aae4f50f215002abc6a77facdb52
+  checksum: e60bb0c6903ccd36c742f6d445da264cdb1fa4997b5d8f095a93508b17e1ecb9f256f3a25e2ec5405ac1ba2c88380e0b2b606de028ac8fe9febedbc10be562db
   languageName: node
   linkType: hard
 
@@ -8152,12 +8153,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-blind@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "color-blind@npm:0.1.1"
+"color-blind@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "color-blind@npm:0.1.3"
   dependencies:
-    onecolor: ^2.5.0
-  checksum: 06dee1b914daae4269b8b7bc556f64b0deb130b40b924c34ecadbfb407e9bd3eb1913b89e9d7e170b1f51e273c52558bb0affd5fa01210fcd3bbe98487454469
+    onecolor: ^3.1.0
+  checksum: 6e630df0c9efff21080599ef7691868874591612222bc5cfb294eb5e8cdb289df7a5b3d16465307ca8063d4bd9ac0bbf9b6b0bddfb86ed4cf523cad41694b745
   languageName: node
   linkType: hard
 
@@ -11697,10 +11698,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"hsluv@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "hsluv@npm:0.1.0"
-  checksum: e7ad3c16363a74949dbb6bd28c84752ae4bddf84a8ec9cb50236693c32f6724dd1b1d9ae506b77e7c176b5b22c486f82a91905b30da1e7ef4397a604580a5498
+"hsluv@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "hsluv@npm:1.0.0"
+  checksum: bb6f0a3d7b06cf0086e72044554f77517df2d4ca57d16fba36d30aa9e70c9c51ae6c7d0c09266c5eeba70821080e7b8483cd6fc156d7e34ec7da208688d55fc0
   languageName: node
   linkType: hard
 
@@ -14469,10 +14470,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"onecolor@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "onecolor@npm:2.5.0"
-  checksum: e3c2a16fe0a3d0c452649e584195874449f6f948c9d7f53d2844baac516971127d46a231c46108ffc974668ea8bfed3f61ab03e06e43842fa1926b63941008b3
+"onecolor@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "onecolor@npm:3.1.0"
+  checksum: 7d2fbe56143eb1666aee6b7381073bc7372050d588be3ccaa2cfff820be6e167d727f8ee7099c5f1e2d0a771a46d917542162907e9d45eb45a85985b6ea92dde
   languageName: node
   linkType: hard
 

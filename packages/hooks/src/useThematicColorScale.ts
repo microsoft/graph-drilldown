@@ -9,31 +9,15 @@ import type {
 } from '@thematic/core'
 import { useThematic } from '@thematic/react'
 import { useMemo } from 'react'
+import { chooseScale } from '@thematic/core'
 
 export function useThematicColorScale(
 	encoding: ColorEncoding,
 ): ContinuousColorScaleFunction | NominalColorScaleFunction {
 	const theme = useThematic()
 	return useMemo(() => {
-		const scales = theme.scales()
 		const { scaleType, domain, uniques = [] } = encoding
-		switch (encoding.scaleName) {
-			case 'nominalMuted':
-				return scales.nominalMuted(uniques.length)
-			case 'nominalBold':
-				return scales.nominalBold(uniques.length)
-			case 'sequential':
-				return scales.sequential(domain, scaleType)
-			case 'sequential2':
-				return scales.sequential2(domain, scaleType)
-			case 'diverging':
-				return scales.diverging(domain, scaleType)
-			case 'diverging2':
-				return scales.diverging2(domain, scaleType)
-			case 'greys':
-				return scales.greys(domain, scaleType)
-			default:
-				return scales.nominal(uniques.length)
-		}
+		// TODO: update thematic scale name to be optional since it defaults to nominal
+		return chooseScale(theme, encoding.scaleName || 'nominal', uniques.length, domain, scaleType)
 	}, [theme, encoding])
 }
