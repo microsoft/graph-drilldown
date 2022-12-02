@@ -12,8 +12,8 @@
 		"lint": "essex lint --fix"
 	},
 	"dependencies": {
-		"@datashaper/react": "^19.0.3",
-		"@datashaper/tables": "^5.3.1",
+		"@datashaper/react": "^19.2.0",
+		"@datashaper/tables": "^5.3.3",
 		"@essex/components": "^3.3.0",
 		"@essex/hierarchy-browser": "4.0.14",
 		"@essex/hooks": "^4.0.13",
