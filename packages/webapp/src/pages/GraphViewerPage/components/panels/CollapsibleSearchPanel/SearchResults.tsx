@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { usePivotProps } from '@essex/components'
 import { Pivot, PivotItem } from '@fluentui/react'
 import type {
 	CommunityCollection,
@@ -12,7 +13,7 @@ import styled from 'styled-components'
 
 import { useSortHandling } from '~/hooks/communities'
 import { useSelection } from '~/hooks/useSelection'
-import { pivotStyles } from '~/styles'
+import { pivotBaseProps } from '~/styles'
 
 import { useColumns } from '../../CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../../CommunityList/CommunityList.types'
@@ -91,7 +92,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 	)
 
 	const searchText = useSearchResultsText(communities, nodes)
-
+	const pivotProps = usePivotProps(pivotBaseProps, 'small')
 	return (
 		<>
 			<SearchResultsHeader
@@ -100,7 +101,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 				errorMessage={errorMessage}
 			/>
 			<Container>
-				<Pivot aria-label={'Community or node selection'} styles={pivotStyles}>
+				<Pivot aria-label={'Community or node selection'} {...pivotProps}>
 					{communities && communities.size > 0 ? (
 						<PivotItem
 							headerText="Communities"

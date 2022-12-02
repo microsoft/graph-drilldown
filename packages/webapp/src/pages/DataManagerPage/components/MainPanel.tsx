@@ -9,12 +9,12 @@ import { FileTable } from '@graph-drilldown/components'
 import styled from 'styled-components'
 
 import { useFileManagement } from '~/hooks/files'
-import { smallButtonProps } from '~/styles'
+
 export const MainPanel: React.FC = () => {
 	const { files, selectedFile, metadata, onFileSelected, doClearAll, hasData } =
 		useFileManagement()
 
-	const buttonProps = useButtonProps(smallButtonProps, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 
 	return (
 		<Container>

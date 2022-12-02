@@ -7,12 +7,11 @@ import { DefaultButton } from '@fluentui/react'
 import styled from 'styled-components'
 
 import { useFileManagement } from '~/hooks/files'
-import { smallButtonProps } from '~/styles'
 
 import { ColumnEditor } from '../ColumnEditor'
 export const ColumnEditorPanel = () => {
 	const { doClearAll, hasData } = useFileManagement()
-	const buttonProps = useButtonProps(smallButtonProps, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<Content>
 			<ColumnEditor />

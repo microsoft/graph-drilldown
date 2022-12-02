@@ -11,7 +11,7 @@ import styled from 'styled-components'
 
 import { parseDSVTable } from '~/api'
 import { useFileManagement } from '~/hooks/files'
-import { smallButtonProps, variants } from '~/styles'
+import { variants } from '~/styles'
 
 import { FileDrop } from '../FileDrop'
 const SQUARE = 84
@@ -49,7 +49,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 		[doAddFile],
 	)
 
-	const buttonProps = useButtonProps(smallButtonProps, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 
 	return (
 		<Container>

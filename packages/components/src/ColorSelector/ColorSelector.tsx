@@ -3,17 +3,17 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
+import { usePivotProps } from '@essex/components'
 import { Pivot, PivotItem } from '@fluentui/react'
 import { DataBinding } from '@graph-drilldown/types'
 import { useCallback } from 'react'
-import { pivotStyles } from '../styles.js'
 import styled from 'styled-components'
 
+import { pivotBaseProps } from '../styles.js'
 import type { ColorSelectorProps } from './ColorSelector.types.js'
 import { FixedPicker } from './FixedPicker.js'
 import { ScaledPicker } from './ScaledPicker.js'
 import { ThematicPalettePicker } from './ThematicPalettePicker.js'
-
 /**
  * Represents a complex color selector for a dataset.
  * Provides the options for each FieldBinding enum value:
@@ -31,11 +31,12 @@ export const ColorSelector: React.FC<ColorSelectorProps> = props => {
 		},
 		[onChange],
 	)
+	const pivotProps = usePivotProps(pivotBaseProps, 'small')
 	return (
 		<Container>
 			<Pivot
+				{...pivotProps}
 				onLinkClick={handlePivotLinkClick}
-				styles={pivotStyles}
 				selectedKey={encoding.binding}
 			>
 				<PivotItem headerText={'Scaled'} itemKey={DataBinding.Scaled}>

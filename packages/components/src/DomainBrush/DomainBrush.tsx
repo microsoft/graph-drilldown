@@ -135,6 +135,6 @@ const TextContainer = styled.div`
 	justify-content: space-between;
 `
 const TextItem = styled.div`
-	width: 80px;
+	width: 60px;
 	text-align: center;
 `

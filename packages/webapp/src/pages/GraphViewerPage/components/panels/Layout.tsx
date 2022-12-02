@@ -18,7 +18,6 @@ import {
 	useSetBigTable,
 	useSetGraphViewType,
 } from '~/state'
-import { smallButtonProps } from '~/styles'
 import { ViewType } from '~/types'
 
 import { UmapLayout } from './UmapLayout'
@@ -73,7 +72,7 @@ export const Layout: React.FC = memo(function Layout() {
 		[setGraphView],
 	)
 	const toggleProps = useToggleProps({}, 'small')
-	const buttonProps = useButtonProps(smallButtonProps, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<Container>
 			{features.enableSmallMultiples ? (

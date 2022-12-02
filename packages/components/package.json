@@ -20,7 +20,7 @@
 		"lint": "essex lint --fix"
 	},
 	"dependencies": {
-		"@essex/components": "^3.2.2",
+		"@essex/components": "^3.3.0",
 		"@essex/hooks": "^4.0.13",
 		"@graph-drilldown/arquero": "workspace:packages/arquero",
 		"@graph-drilldown/hooks": "workspace:packages/hooks",
@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@essex/scripts": "^22.0.4",
 		"@essex/tsconfig-base": "^1.0.2",
-		"@fluentui/react": "^8.103.2",
+		"@fluentui/react": "^8.103.4",
 		"@thematic/color": "^4.0.0",
 		"@thematic/core": "^4.0.0",
 		"@thematic/d3": "^2.0.15",
@@ -45,7 +45,7 @@
 		"@types/d3-scale": "^4.0.2",
 		"@types/d3-selection": "^3.0.3",
 		"@types/node": "^17.0.45",
-		"@types/react": "^18.0.25",
+		"@types/react": "^18.0.26",
 		"arquero": "^5.1.0",
 		"react": "^18.2.0",
 		"styled-components": "^5.3.6"

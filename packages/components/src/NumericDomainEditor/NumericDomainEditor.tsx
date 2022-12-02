@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useLabelProps } from '@essex/components'
 import { Label } from '@fluentui/react'
 import { getColumnHistogram, getColumnStats } from '@graph-drilldown/arquero'
 import { DomainBrush } from '@graph-drilldown/components/src/DomainBrush'
@@ -12,8 +13,6 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { format } from 'd3-format'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-
-import { labelStyles } from '../styles'
 
 export interface NumericDomainEditorProps {
 	/**
@@ -55,9 +54,10 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 
 	const histogram = useColumnHistogram(table, encoding.field)
 
+	const labelProps = useLabelProps({}, 'small')
 	return (
 		<Container>
-			<Label styles={labelStyles}>{`Input domain (data extent: ${fmt(
+			<Label {...labelProps}>{`Input domain (data extent: ${fmt(
 				domain[0],
 			)} - ${fmt(domain[1])})`}</Label>
 			<DomainBrush

@@ -3350,9 +3350,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/components@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "@essex/components@npm:3.2.2"
+"@essex/components@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@essex/components@npm:3.3.0"
   dependencies:
     "@essex/hooks": ^4.0.13
     "@essex/react-animate-height": ^2.1.4
@@ -3384,7 +3384,7 @@ __metadata:
     "@uifabric/icons": ">= 7.3.38"
     react: ">= 18"
     react-dom: ">= 18"
-  checksum: 6a7503e660c785e67c0de70e140a67984ac87f14a46bbc3408293d6a158067b20edffab40493992ee3b8432b95d3bd28b06f186b66ad51c3c6f03728360956e7
+  checksum: 1c97a8846b3e48c37a896e20c022a8aadac0a7a161beb4843769da77df0a6b6f818d14a90acce821c4db5044ab85993d821f54e31a85821715c628ce4ca1f033
   languageName: node
   linkType: hard
 
@@ -3871,9 +3871,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.103.2":
-  version: 8.103.2
-  resolution: "@fluentui/react@npm:8.103.2"
+"@fluentui/react@npm:^8.103.4":
+  version: 8.103.4
+  resolution: "@fluentui/react@npm:8.103.4"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.3
     "@fluentui/font-icons-mdl2": ^8.5.4
@@ -3894,7 +3894,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: a86f536cb92bc1e86a7e1dd884f139aae796a8fb3f7391ec46d3764585b9dc71d325ecd4a664cd8fdb9927ce6828d17dd70cb56a2e6ad13f82c0c14f82c687ad
+  checksum: 8e2bb42848bbd60bae92ada23f3588bc535a1dd3ec1447a9888428ff22ff35e2246c3d46534d9c9f4744c6fdee6cf30f678eebaf1569db42dff0dffd7885d106
   languageName: node
   linkType: hard
 
@@ -3961,7 +3961,7 @@ __metadata:
     "@graph-drilldown/types": "workspace:packages/types"
     "@types/d3-format": ^3.0.1
     "@types/node": ^17.0.45
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     arquero: ^5.1.0
     d3-format: ^3.1.0
     react: ^18.2.0
@@ -3983,11 +3983,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@graph-drilldown/components@workspace:packages/components"
   dependencies:
-    "@essex/components": ^3.2.2
+    "@essex/components": ^3.3.0
     "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
-    "@fluentui/react": ^8.103.2
+    "@fluentui/react": ^8.103.4
     "@graph-drilldown/arquero": "workspace:packages/arquero"
     "@graph-drilldown/hooks": "workspace:packages/hooks"
     "@graph-drilldown/types": "workspace:packages/types"
@@ -4001,7 +4001,7 @@ __metadata:
     "@types/d3-scale": ^4.0.2
     "@types/d3-selection": ^3.0.3
     "@types/node": ^17.0.45
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     ahooks: ^3.7.2
     arquero: ^5.1.0
     d3-brush: 3.0.0
@@ -4039,7 +4039,7 @@ __metadata:
     "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
-    "@fluentui/react": ^8.103.2
+    "@fluentui/react": ^8.103.4
     "@graph-drilldown/types": "workspace:packages/types"
     "@thematic/color": ^4.0.0
     "@thematic/core": ^4.0.0
@@ -4047,7 +4047,7 @@ __metadata:
     "@thematic/react": ^2.1.2
     "@types/d3-scale": ^4.0.2
     "@types/node": ^17.0.45
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     d3-scale: ^4.0.2
     react: ^18.2.0
     styled-components: ^5.3.6
@@ -4081,12 +4081,12 @@ __metadata:
     "@essex/prettier-config": ^18.0.4
     "@essex/scripts": ^22.0.4
     "@fluentui/font-icons-mdl2": ^8.5.4
-    "@fluentui/react": ^8.103.2
+    "@fluentui/react": ^8.103.4
     "@fluentui/react-hooks": ^8.6.14
     "@fluentui/utilities": ^8.13.4
     "@types/jest": ^29.2.3
     "@types/node": ^17.0.45
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
     "@types/react-rnd": ^8.0.0
     "@types/react-router-dom": ^5.3.3
@@ -4117,7 +4117,7 @@ __metadata:
     "@essex/tsconfig-base": ^1.0.2
     "@thematic/core": ^4.0.0
     "@types/node": ^17.0.45
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     arquero: ^5.1.0
     react: ^18.2.0
     typescript: ^4.9.3
@@ -4143,14 +4143,14 @@ __metadata:
   dependencies:
     "@datashaper/react": ^19.0.3
     "@datashaper/tables": ^5.3.1
-    "@essex/components": ^3.2.2
+    "@essex/components": ^3.3.0
     "@essex/hierarchy-browser": 4.0.14
     "@essex/hooks": ^4.0.13
     "@essex/scripts": ^22.0.4
     "@essex/toolbox": 3.0.9
     "@essex/webpack-config": ^21.0.4
     "@fluentui/font-icons-mdl2": ^8.5.4
-    "@fluentui/react": ^8.103.2
+    "@fluentui/react": ^8.103.4
     "@fluentui/react-hooks": ^8.6.14
     "@fluentui/utilities": ^8.13.4
     "@graph-drilldown/arquero": "workspace:packages/arquero"
@@ -4176,7 +4176,7 @@ __metadata:
     "@types/prettier": ^2.7.1
     "@types/prop-types": ^15.7.5
     "@types/query-string": ^6.3.0
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
     "@types/react-infinite-scroller": ^1.2.3
     "@types/react-rnd": ^8.0.0
@@ -5922,14 +5922,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.25":
-  version: 18.0.25
-  resolution: "@types/react@npm:18.0.25"
+"@types/react@npm:^18.0.26":
+  version: 18.0.26
+  resolution: "@types/react@npm:18.0.26"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 231d658c45abdef044a716b4502774f1585d8336d73b2f5bd68f181acbfc874b7a457686ecd29b415b43ed0922c309bab7e2cf96832d188a3f4f1b02f2af760a
+  checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
   languageName: node
   linkType: hard
 

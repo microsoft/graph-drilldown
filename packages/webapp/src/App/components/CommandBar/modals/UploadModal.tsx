@@ -9,11 +9,10 @@ import styled from 'styled-components'
 
 import { QuickDrop } from '~/components/QuickDrop'
 import { useFileManagement } from '~/hooks/files'
-import { smallButtonProps } from '~/styles'
 
 export const UploadModal: React.FC = () => {
 	const { files, doClearAll, hasData } = useFileManagement()
-	const buttonProps = useButtonProps(smallButtonProps, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<Container>
 			<QuickDrop />
