@@ -5,6 +5,7 @@
 import { Pivot, PivotItem } from '@fluentui/react'
 import { DataBinding } from '@graph-drilldown/types'
 import { useCallback } from 'react'
+import { pivotStyles } from '../styles.js'
 import styled from 'styled-components'
 
 import { FixedPicker } from './FixedPicker.js'
@@ -32,11 +33,7 @@ export const NumericSelector: React.FC<NumericSelectorProps> = props => {
 		<Container>
 			<Pivot
 				onLinkClick={handlePivotLinkClick}
-				styles={{
-					root: {
-						textAlign: 'center',
-					},
-				}}
+				styles={pivotStyles}
 				selectedKey={encoding.binding}
 			>
 				<PivotItem headerText={'Scaled'} itemKey={DataBinding.Scaled}>

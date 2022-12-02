@@ -6,6 +6,7 @@
 import { Pivot, PivotItem } from '@fluentui/react'
 import { DataBinding } from '@graph-drilldown/types'
 import { useCallback } from 'react'
+import { pivotStyles } from '../styles.js'
 import styled from 'styled-components'
 
 import type { ColorSelectorProps } from './ColorSelector.types.js'
@@ -34,11 +35,7 @@ export const ColorSelector: React.FC<ColorSelectorProps> = props => {
 		<Container>
 			<Pivot
 				onLinkClick={handlePivotLinkClick}
-				styles={{
-					root: {
-						textAlign: 'center',
-					},
-				}}
+				styles={pivotStyles}
 				selectedKey={encoding.binding}
 			>
 				<PivotItem headerText={'Scaled'} itemKey={DataBinding.Scaled}>

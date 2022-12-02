@@ -16,7 +16,7 @@ export const NodeSizeControls = () => {
 	return (
 		<Container>
 			<NumericSelector
-				label="node size"
+				label="Node size"
 				table={table}
 				encoding={encoding}
 				onChange={updateEncoding}

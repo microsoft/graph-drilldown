@@ -21,3 +21,14 @@ export const textFieldStyles = {
 		},
 	},
 }
+
+// TODO: get from essex-toolkit
+export const pivotStyles = {
+	root: {
+		textAlign: 'center'
+	},
+	link: {
+		height: 24,
+		fontSize: 12
+	}
+}

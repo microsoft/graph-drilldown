@@ -12,6 +12,7 @@ import styled from 'styled-components'
 
 import { useSortHandling } from '~/hooks/communities'
 import { useSelection } from '~/hooks/useSelection'
+import { pivotStyles } from '~/styles'
 
 import { useColumns } from '../../CommunityList/CommunityList.hooks'
 import type { CommunityRowStyles } from '../../CommunityList/CommunityList.types'
@@ -99,7 +100,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 				errorMessage={errorMessage}
 			/>
 			<Container>
-				<Pivot aria-label={'Community or node selection'}>
+				<Pivot aria-label={'Community or node selection'} styles={pivotStyles}>
 					{communities && communities.size > 0 ? (
 						<PivotItem
 							headerText="Communities"

@@ -81,3 +81,13 @@ export const smallButtonProps = {
 		},
 	},
 }
+
+export const pivotStyles = {
+	root: {
+		textAlign: 'center'
+	},
+	link: {
+		height: 28,
+		fontSize: 12
+	}
+}
