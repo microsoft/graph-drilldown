@@ -3312,7 +3312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/components@npm:^3.1.0, @essex/components@npm:^3.2.1":
+"@essex/components@npm:^3.1.0":
   version: 3.2.1
   resolution: "@essex/components@npm:3.2.1"
   dependencies:
@@ -3991,11 +3991,11 @@ __metadata:
     "@graph-drilldown/arquero": "workspace:packages/arquero"
     "@graph-drilldown/hooks": "workspace:packages/hooks"
     "@graph-drilldown/types": "workspace:packages/types"
-    "@thematic/color": ^4.0.0
-    "@thematic/core": ^4.0.0
-    "@thematic/d3": ^2.0.15
-    "@thematic/fluent": ^5.0.1
-    "@thematic/react": ^2.1.2
+    "@thematic/color": ^4.0.1
+    "@thematic/core": ^4.0.1
+    "@thematic/d3": ^2.0.16
+    "@thematic/fluent": ^5.0.2
+    "@thematic/react": ^2.1.3
     "@types/d3-brush": ^3.0.1
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -4041,10 +4041,10 @@ __metadata:
     "@essex/tsconfig-base": ^1.0.2
     "@fluentui/react": ^8.103.4
     "@graph-drilldown/types": "workspace:packages/types"
-    "@thematic/color": ^4.0.0
-    "@thematic/core": ^4.0.0
-    "@thematic/fluent": ^5.0.1
-    "@thematic/react": ^2.1.2
+    "@thematic/color": ^4.0.1
+    "@thematic/core": ^4.0.1
+    "@thematic/fluent": ^5.0.2
+    "@thematic/react": ^2.1.3
     "@types/d3-scale": ^4.0.2
     "@types/node": ^17.0.45
     "@types/react": ^18.0.26
@@ -4115,7 +4115,7 @@ __metadata:
   dependencies:
     "@essex/scripts": ^22.0.4
     "@essex/tsconfig-base": ^1.0.2
-    "@thematic/core": ^4.0.0
+    "@thematic/core": ^4.0.1
     "@types/node": ^17.0.45
     "@types/react": ^18.0.26
     arquero: ^5.1.0
@@ -4163,11 +4163,11 @@ __metadata:
     "@graspologic/render-controls": 0.7.0-13
     "@graspologic/render-controls-react": 0.7.0-13
     "@graspologic/renderer": 0.7.0-13
-    "@thematic/color": ^4.0.0
-    "@thematic/core": ^4.0.0
-    "@thematic/d3": ^2.0.15
-    "@thematic/fluent": ^5.0.1
-    "@thematic/react": ^2.1.2
+    "@thematic/color": ^4.0.1
+    "@thematic/core": ^4.0.1
+    "@thematic/d3": ^2.0.16
+    "@thematic/fluent": ^5.0.2
+    "@thematic/react": ^2.1.3
     "@types/d3-dsv": ^3.0.0
     "@types/d3-format": ^3.0.1
     "@types/d3-scale": ^4.0.2
@@ -5270,9 +5270,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thematic/color@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@thematic/color@npm:4.0.0"
+"@thematic/color@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@thematic/color@npm:4.0.1"
   dependencies:
     chroma-js: ^2.4.2
     color-blind: ^0.1.3
@@ -5285,15 +5285,15 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 5410af1a0584f5d3a01b217107143a7898d3594c6b33214151ac4b45afa6f62cb6315657e00025f90f7e30e2d097debfb00c117fd1999f73d7af22803e3e5d5b
+  checksum: 236f3e405581e56b990aa6af47e2122f26f9edf91181e614fd1b66aba28c3b2e994a1d6c61acd10d1e08d6b1f046e43d3dc4c68fea413a57ca2c2a0eaf517737
   languageName: node
   linkType: hard
 
-"@thematic/core@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@thematic/core@npm:4.0.0"
+"@thematic/core@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@thematic/core@npm:4.0.1"
   dependencies:
-    "@thematic/color": ^4.0.0
+    "@thematic/color": ^4.0.1
     d3-scale: ^4.0.2
     lodash-es: ^4.17.21
     murmurhash-js: ^1.0.0
@@ -5305,15 +5305,15 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 9d4f15f1d40c5108c1cdd8c0d4947a5fe5c26a03984682849a2cc26908192f65b3ac25c19b0b281ab5acc15324c24d382b72e0dbd4d2a2c99e3ef11928006124
+  checksum: e9353a1a0b2749e3070d1f2812b96b5b14d1d92845ef8aa7587ef6e632e9af1662be6b91182a7e1c24eb9ceb4121e42b5dbb9e9356ccdbb7ea86c57854901dc4
   languageName: node
   linkType: hard
 
-"@thematic/d3@npm:^2.0.15":
-  version: 2.0.15
-  resolution: "@thematic/d3@npm:2.0.15"
+"@thematic/d3@npm:^2.0.16":
+  version: 2.0.16
+  resolution: "@thematic/d3@npm:2.0.16"
   dependencies:
-    "@thematic/core": ^4.0.0
+    "@thematic/core": ^4.0.1
     d3-axis: ^3.0.0
     d3-selection: ^3.0.0
   peerDependencies:
@@ -5327,19 +5327,19 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: e8bbb387ee56a2ec750ff269b9b3f34371c48019ef4880b866e54f108957e0c883cb85c2a0405e8252e5d7c4c1617bc5d055da0f3ff3a895ce10c224944c1423
+  checksum: 942536a200c84312cbd094d3ac6f0c586c228971d564dd33c6bae3f5e2cea5e90a0578d42ea3b7e8cb031df0fc5218fff687b67a5a026626272899ef06295954
   languageName: node
   linkType: hard
 
-"@thematic/fluent@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@thematic/fluent@npm:5.0.1"
+"@thematic/fluent@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@thematic/fluent@npm:5.0.2"
   dependencies:
-    "@essex/components": ^3.2.1
-    "@thematic/color": ^4.0.0
-    "@thematic/core": ^4.0.0
-    "@thematic/d3": ^2.0.15
-    "@thematic/react": ^2.1.2
+    "@essex/components": ^3.3.0
+    "@thematic/color": ^4.0.1
+    "@thematic/core": ^4.0.1
+    "@thematic/d3": ^2.0.16
+    "@thematic/react": ^2.1.3
     ahooks: ^3.7.2
     d3-scale: ^4.0.2
     lodash-es: ^4.17.21
@@ -5357,16 +5357,16 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: cacbc539528f263de2d90c29683de5c28d823fd97f3bafd7328c8156e18710f227727ae1bcc0aefc3b9e38f43acfeda700f03627200fba176ee28e24aa5a7867
+  checksum: ca1eee68250ad1169f2b42bc5db1e9e1bee2cda55ec4897d94dfc1111103a86478311794d133308d711ba4bbc35e064b70627d5051604522ef6c1ea3dd204dc1
   languageName: node
   linkType: hard
 
-"@thematic/react@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "@thematic/react@npm:2.1.2"
+"@thematic/react@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@thematic/react@npm:2.1.3"
   dependencies:
-    "@thematic/color": ^4.0.0
-    "@thematic/core": ^4.0.0
+    "@thematic/color": ^4.0.1
+    "@thematic/core": ^4.0.1
   peerDependencies:
     "@types/node": "*"
     "@types/react": ">= 17"
@@ -5378,7 +5378,7 @@ __metadata:
       optional: true
     react:
       optional: false
-  checksum: e60bb0c6903ccd36c742f6d445da264cdb1fa4997b5d8f095a93508b17e1ecb9f256f3a25e2ec5405ac1ba2c88380e0b2b606de028ac8fe9febedbc10be562db
+  checksum: 52f100898055da5401b25f2ccd8af67154d1cf349c9c57c755171a33757dd914c977d31e0a5eaa8a362e62badcab3c301fcec1dddf987f90f4e6459d1f1a3677
   languageName: node
   linkType: hard
 
