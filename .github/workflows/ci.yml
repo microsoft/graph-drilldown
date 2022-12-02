@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        with:   G
+        with:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn install
