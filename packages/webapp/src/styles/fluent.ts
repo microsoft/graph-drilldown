@@ -71,9 +71,6 @@ export const variants = {
 	mega,
 }
 
-export const headerLabel = variants.mediumPlus as ITextProps['variant']
-export const subHeaderLabel = variants.small as ITextProps['variant']
-
 export const pivotBaseProps = {
 	styles: {
 		root: {

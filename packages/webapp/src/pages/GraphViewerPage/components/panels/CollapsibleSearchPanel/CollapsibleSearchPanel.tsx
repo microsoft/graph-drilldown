@@ -60,10 +60,8 @@ export const CollapsibleSearchPanel: React.FC = () => {
 		<CollapsiblePanel
 			onRenderHeader={onRenderSearchHeader}
 			onHeaderClick={onPanelClick}
+			onIconClick={onIconClick}
 			expanded={isExpanded}
-			buttonProps={{
-				onClick: onIconClick,
-			}}
 		>
 			<Content>
 				{communityResults && nodeResults && (
