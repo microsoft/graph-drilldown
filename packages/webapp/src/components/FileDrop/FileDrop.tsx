@@ -2,12 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Text } from '@fluentui/react'
 import type { ItemType } from '@graph-drilldown/types'
 import { useDropzone } from 'react-dropzone'
 import styled from 'styled-components'
-
-import { subHeaderLabel } from '~/styles'
 
 import { useDrop } from './FileDrop.hooks'
 
@@ -39,13 +36,11 @@ export const FileDrop: React.FC<FileDropProps> = ({
 		>
 			<input {...getInputProps()} />
 			<TextContainer>
-				{!compact && <Text variant={subHeaderLabel}>Drop</Text>}
+				{!compact && <Text>Drop</Text>}
 				<Type>
-					<Text variant={subHeaderLabel}>
-						{compact ? type.substr(0, 4) : type}
-					</Text>
+					<Text>{compact ? type.substr(0, 4) : type}</Text>
 				</Type>
-				{!compact && <Text variant={subHeaderLabel}>data file here</Text>}
+				{!compact && <Text>data file here</Text>}
 			</TextContainer>
 		</Container>
 	)
@@ -58,14 +53,12 @@ const Container = styled.div<{
 }>`
 	display: flex;
 	justify-content: center;
-	align-ttems: center;
+	align-items: center;
 	text-align: center;
 	padding: 8px;
 	width: ${({ width }) => width}px;
 	height: ${({ height }) => height}px;
-	font-size: 11px;
 	border-radius: 4px;
-	margin: 4px;
 	border: 1px dashed
 		${({ theme, isDragging }) =>
 			isDragging
@@ -73,11 +66,12 @@ const Container = styled.div<{
 				: theme.application().border().hex()};
 `
 
-const TextContainer = styled.div`
-	font-size: 14px;
-`
+const TextContainer = styled.div``
 
 const Type = styled.div`
 	font-weight: bold;
 	color: ${({ theme }) => theme.application().accent().hex()};
+`
+const Text = styled.div`
+	font-size: 12px;
 `

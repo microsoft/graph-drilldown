@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ArqueroDetailsList } from '@essex/arquero-react'
+import { ArqueroDetailsList } from '@datashaper/react'
 import { memo } from 'react'
 import styled from 'styled-components'
 
@@ -11,6 +11,7 @@ import { useVisibleCommunities } from '~/hooks/communities'
 import {
 	useColumnConfig,
 	useDefaultSortedTable,
+	useTableMetadata,
 } from './CommunitiesTable.hooks'
 import type { CommunitiesTableProps } from './CommunitiesTable.types'
 
@@ -21,19 +22,19 @@ export const CommunitiesTable: React.FC<CommunitiesTableProps> = memo(
 		const communities = useVisibleCommunities()
 		const columns = useColumnConfig(communities, width)
 		const table = useDefaultSortedTable(communities)
+		const metadata = useTableMetadata(table)
 		return (
 			<Container width={width} height={height}>
 				<ArqueroDetailsList
 					table={table}
+					metadata={metadata}
 					columns={columns}
 					features={{
 						smartHeaders: true,
-						smartCells: true,
 					}}
 					compact
-					isSortable
-					isHeadersFixed
-					includeAllColumns={false}
+					sortable
+					isHeaderFixed
 				/>
 			</Container>
 		)

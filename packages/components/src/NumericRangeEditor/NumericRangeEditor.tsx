@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useLabelProps } from '@essex/components'
 import { Label } from '@fluentui/react'
 import type { Encoding } from '@graph-drilldown/types'
 import { format } from 'd3-format'
@@ -37,9 +38,12 @@ export const NumericRangeEditor: React.FC<NumericRangeEditorProps> = ({
 
 	const fmt = useMemo(() => format(`.${precision}f`), [precision])
 
+	const labelProps = useLabelProps({}, 'small')
 	return (
 		<Container>
-			<Label>{`Output range (${fmt(min)} - ${fmt(max)})`}</Label>
+			<Label {...labelProps}>{`Output range (${fmt(min)} - ${fmt(
+				max,
+			)})`}</Label>
 			<DomainBrush
 				min={min}
 				max={max}

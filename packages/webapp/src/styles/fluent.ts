@@ -16,14 +16,14 @@ export const COMMANDBAR_HEIGHT = 32
 export const COMMANDBAR_MARGIN = 12
 export const HEADER_HEIGHT = COMMANDBAR_HEIGHT + COMMANDBAR_MARGIN * 2
 
-export const PANEL_WIDTH = 300
+export const PANEL_WIDTH = 240
 export const APP_PADDING_LEFT = 30
 
 export const BREAD_CRUMB_STYLES = {
 	root: {
 		marginTop: 0,
 	},
-	item: { fontSize: 'xxLarge' },
+	item: { fontSize: 'medium' },
 }
 
 export const SPINNER_STYLE: IStyleFunctionOrObject<
@@ -71,5 +71,10 @@ export const variants = {
 	mega,
 }
 
-export const headerLabel = variants.mediumPlus as ITextProps['variant']
-export const subHeaderLabel = variants.medium as ITextProps['variant']
+export const pivotBaseProps = {
+	styles: {
+		root: {
+			textAlign: 'center',
+		},
+	},
+}

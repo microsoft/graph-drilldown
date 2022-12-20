@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useDropdownProps } from '@essex/components'
 import { Dropdown } from '@fluentui/react'
 import { columnTypes } from '@graph-drilldown/arquero'
 import {
@@ -33,6 +34,8 @@ export const ScaledPicker: React.FC<NumericSelectorProps> = ({
 		[onChange],
 	)
 
+	const dropdownProps = useDropdownProps({}, 'small')
+
 	return (
 		<Container>
 			<Group>
@@ -42,6 +45,7 @@ export const ScaledPicker: React.FC<NumericSelectorProps> = ({
 					selectedKey={encoding.field}
 					onChange={handleFieldChange}
 					placeholder={'Select data column'}
+					{...dropdownProps}
 				/>
 			</Group>
 			<Group>

@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useIconButtonProps } from '@essex/components'
 import { IconButton } from '@fluentui/react'
 import type { ColumnDefinition } from '@graph-drilldown/types'
 import { useCallback, useMemo } from 'react'
@@ -51,6 +52,22 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 		[deletionDisabled, index],
 	)
 
+	const iconButtonDeleteProps = useIconButtonProps(
+		{
+			iconProps: {
+				iconName: 'delete',
+			},
+		},
+		'small',
+	)
+	const iconButtonViewProps = useIconButtonProps(
+		{
+			iconProps: {
+				iconName,
+			},
+		},
+		'small',
+	)
 	return (
 		<tr>
 			<td>{column.name}</td>
@@ -63,8 +80,8 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 				>
 					<IconButton
 						title="delete"
-						iconProps={{ iconName: 'delete' }}
 						disabled={column.readOnly || column.name === encoding.field}
+						{...iconButtonDeleteProps}
 					/>
 				</Cell>
 			</td>
@@ -75,7 +92,7 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 						onKeyDown={handleVisibleClick}
 						tabIndex={index}
 					>
-						<IconButton title="toggle view" iconProps={{ iconName }} />
+						<IconButton title="toggle view" {...iconButtonViewProps} />
 					</Cell>
 				</td>
 			) : null}

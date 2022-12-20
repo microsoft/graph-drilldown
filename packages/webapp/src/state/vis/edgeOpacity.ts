@@ -65,7 +65,7 @@ function getDefaultEdgeOpacityOptions(
 	stats: ColumnStats,
 ): NumericEncoding {
 	return getDefaultNumericOptions(field, stats, {
-		value: 0.2,
+		value: 0.1,
 		range: [0.1, 1],
 	})
 }

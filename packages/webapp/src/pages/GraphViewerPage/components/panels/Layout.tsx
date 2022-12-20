@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useButtonProps, useToggleProps } from '@essex/components'
 import { DefaultButton, Spinner, Toggle } from '@fluentui/react'
 import { all, not } from 'arquero'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
@@ -70,6 +71,8 @@ export const Layout: React.FC = memo(function Layout() {
 		(e, v) => setGraphView(v ? ViewType.SmallMultiple : ViewType.SingleGraph),
 		[setGraphView],
 	)
+	const toggleProps = useToggleProps({}, 'small')
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<Container>
 			{features.enableSmallMultiples ? (
@@ -78,10 +81,15 @@ export const Layout: React.FC = memo(function Layout() {
 					label="Community isolation"
 					checked={graphView === ViewType.SmallMultiple}
 					onChange={handleViewChanged}
+					{...toggleProps}
 				/>
 			) : null}
 			<Buttons>
-				<DefaultButton text={'Grid'} onClick={handleGridClick} />
+				<DefaultButton
+					text={'Grid'}
+					onClick={handleGridClick}
+					{...buttonProps}
+				/>
 				{edges.numRows() > 0 ? (
 					<>
 						<UmapLayout onClick={handleUmapClick} />

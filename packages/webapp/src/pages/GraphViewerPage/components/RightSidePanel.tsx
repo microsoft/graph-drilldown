@@ -2,10 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import {
-	CollapsiblePanel,
-	CollapsiblePanelContainer,
-} from '@essex/themed-components'
+import { CollapsiblePanel, CollapsiblePanelContainer } from '@essex/components'
 import { ToggleHeader } from '@graph-drilldown/components'
 import { format } from 'd3-format'
 import { useCallback } from 'react'
@@ -115,7 +112,7 @@ export const RightSidePanel: React.FC<RightSidePanelProps> = ({ style }) => {
 						<Layout />
 					</CollapsiblePanel>
 					<CollapsiblePanel title={'Quick drop'} defaultExpanded={true}>
-						<QuickDrop dropWidthSize={40} dropHeightSize={20} compact />
+						<QuickDrop dropWidthSize={40} dropHeightSize={32} compact />
 					</CollapsiblePanel>
 				</CollapsiblePanelContainer>
 			</DisplayRelative>

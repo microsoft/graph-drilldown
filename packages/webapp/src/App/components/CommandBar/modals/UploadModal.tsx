@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useButtonProps } from '@essex/components'
 import { DefaultButton } from '@fluentui/react'
 import { FileTable } from '@graph-drilldown/components'
 import styled from 'styled-components'
@@ -11,7 +12,7 @@ import { useFileManagement } from '~/hooks/files'
 
 export const UploadModal: React.FC = () => {
 	const { files, doClearAll, hasData } = useFileManagement()
-
+	const buttonProps = useButtonProps({}, 'small')
 	return (
 		<Container>
 			<QuickDrop />
@@ -20,7 +21,11 @@ export const UploadModal: React.FC = () => {
 			</Files>
 			<Reset>
 				{hasData ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
+					<DefaultButton
+						text="Clear all"
+						onClick={doClearAll}
+						{...buttonProps}
+					/>
 				) : null}
 			</Reset>
 		</Container>

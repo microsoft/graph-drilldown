@@ -40,7 +40,7 @@ export const ColumnEditor = () => {
 }
 
 const Table = styled.table`
-	font-size: 12px;
+	font-size: 11px;
 	width: 100%;
 	text-align: left;
 	align-content: center;

@@ -5,7 +5,6 @@
 		"baseUrl": ".",
 		"lib": ["ESNext", "DOM", "DOM.Iterable", "ES2020.BigInt"],
 		"outDir": "lib",
-		"jsx": "react-jsx",
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,

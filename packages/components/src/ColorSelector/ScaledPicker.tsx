@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useDropdownProps } from '@essex/components'
 import { Dropdown } from '@fluentui/react'
-import { NominalLegend } from '@graph-drilldown/components'
 import { useIsNominal } from '@graph-drilldown/hooks'
 import { ScaleDropdown } from '@thematic/fluent'
 import type ColumnTable from 'arquero/dist/types/table/column-table'
@@ -40,6 +40,7 @@ export const ScaledPicker: React.FC<ColorSelectorProps> = ({
 		[onChange],
 	)
 
+	const dropdownProps = useDropdownProps({}, 'small')
 	return (
 		<Container>
 			<Group>
@@ -49,25 +50,25 @@ export const ScaledPicker: React.FC<ColorSelectorProps> = ({
 					selectedKey={encoding.field}
 					onChange={handleFieldChange}
 					placeholder={'Select data column'}
+					{...dropdownProps}
 				/>
 			</Group>
 			<Group>
 				<ScaleDropdown
 					label={'Scale'}
+					size={'small'}
 					selectedKey={encoding.scaleName}
 					onChange={handleScaleChange}
 				/>
 			</Group>
 			<Group>
-				{isNominal ? (
-					<NominalLegend encoding={encoding} />
-				) : (
+				{!isNominal ? (
 					<NumericDomainEditor
 						table={table}
 						encoding={encoding}
 						onChange={onChange}
 					/>
-				)}
+				) : null}
 			</Group>
 		</Container>
 	)

@@ -43,7 +43,7 @@ export const Dots: React.FC<DotsProps> = ({
 	const opacityScale = useLegendNumericScale(opacityEncoding, maxItems, 0.9)
 
 	const dots = useMemo(() => {
-		const mid = height / 2 - 1
+		const mid = height / 2
 		const x = scaleLinear()
 			.domain([0, maxItems - 1])
 			.range([mid, width - mid])

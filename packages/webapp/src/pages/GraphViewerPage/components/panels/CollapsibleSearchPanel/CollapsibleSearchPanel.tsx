@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { CollapsiblePanel } from '@essex/themed-components'
+import { CollapsiblePanel } from '@essex/components'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -27,6 +27,7 @@ export const CollapsibleSearchPanel: React.FC = () => {
 		errorMessage,
 		onFocusChange,
 		onPanelClick,
+		onIconClick,
 		onReset,
 		onError,
 		doSearchExpand,
@@ -58,9 +59,9 @@ export const CollapsibleSearchPanel: React.FC = () => {
 	return (
 		<CollapsiblePanel
 			onRenderHeader={onRenderSearchHeader}
-			defaultExpanded={false}
 			onHeaderClick={onPanelClick}
-			expandedState={isExpanded}
+			onIconClick={onIconClick}
+			expanded={isExpanded}
 		>
 			<Content>
 				{communityResults && nodeResults && (

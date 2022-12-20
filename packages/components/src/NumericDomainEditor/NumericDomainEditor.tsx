@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useLabelProps } from '@essex/components'
 import { Label } from '@fluentui/react'
 import { getColumnHistogram, getColumnStats } from '@graph-drilldown/arquero'
 import { DomainBrush } from '@graph-drilldown/components/src/DomainBrush'
@@ -34,10 +35,10 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 	const fmt = useMemo(() => format(`.${precision}f`), [precision])
 
 	const handleTypeChange = useCallback(
-		scaleType =>
+		(_e, option) =>
 			onChange &&
 			onChange({
-				scaleType,
+				scaleType: option.key as ScaleType,
 			}),
 		[onChange],
 	)
@@ -53,11 +54,12 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 
 	const histogram = useColumnHistogram(table, encoding.field)
 
+	const labelProps = useLabelProps({}, 'small')
 	return (
 		<Container>
-			<Label>{`Input domain (data extent: ${fmt(domain[0])} - ${fmt(
-				domain[1],
-			)})`}</Label>
+			<Label {...labelProps}>{`Input domain (data extent: ${fmt(
+				domain[0],
+			)} - ${fmt(domain[1])})`}</Label>
 			<DomainBrush
 				histogram={histogram}
 				min={domain[0]}
@@ -67,17 +69,23 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 				onChange={handleDomainChange}
 				showTextInputs
 			/>
-			<ScaleTypeChoiceGroup
-				label={''}
-				selectedType={encoding.scaleType || ScaleType.Linear}
-				onChange={handleTypeChange}
-				suppressQuantile
-			/>
+			<ChoiceContainer>
+				<ScaleTypeChoiceGroup
+					size={'small'}
+					selectedKey={encoding.scaleType || ScaleType.Linear}
+					onChange={handleTypeChange}
+					suppressQuantile
+				/>
+			</ChoiceContainer>
 		</Container>
 	)
 }
 
 const Container = styled.div``
+
+const ChoiceContainer = styled.div`
+	margin-top: 4px;
+`
 
 function useColumnStats(table: ColumnTable, field?: string) {
 	return useMemo(() => getColumnStats(table, field), [table, field])

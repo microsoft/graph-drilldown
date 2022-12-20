@@ -134,16 +134,16 @@ export function useInteraction() {
 		[setIsInFocus],
 	)
 
-	const onPanelClick = useCallback(
-		(state: boolean) => {
-			// dont set expand state if using searchbox
-			if (!isInFocus) {
-				setIsExpanded(state)
-			}
-		},
-		[setIsExpanded, isInFocus],
-	)
+	const onPanelClick = useCallback(() => {
+		// dont set expand state if using searchbox
+		if (!isInFocus) {
+			setIsExpanded(prev => !prev)
+		}
+	}, [setIsExpanded, isInFocus])
 
+	const onIconClick = useCallback(() => {
+		setIsExpanded(prev => !prev)
+	}, [setIsExpanded])
 	const onReset = useCallback(() => {
 		onError(undefined)
 		setIsExpanded(false)
@@ -153,9 +153,9 @@ export function useInteraction() {
 	return {
 		isExpanded,
 		errorMessage,
-
 		onFocusChange,
 		onPanelClick,
+		onIconClick,
 		onReset,
 		onError,
 		doSearchExpand,

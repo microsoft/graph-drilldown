@@ -86,19 +86,6 @@ export interface HeaderLegendProps {
     sizeEncoding?: NumericEncoding;
 }
 
-// Warning: (ae-missing-release-tag) "NominalLegend" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
-export const NominalLegend: React.FC<NominalLegendProps>;
-
-// Warning: (ae-missing-release-tag) "NominalLegendProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
-export interface NominalLegendProps {
-    // (undocumented)
-    encoding: ColorEncoding;
-}
-
 // Warning: (ae-missing-release-tag) "NumericDomainEditor" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)

@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useColorPickerProps } from '@essex/components'
 import type { IColor } from '@fluentui/react'
 import { ColorPicker } from '@fluentui/react'
 import { useCallback } from 'react'
@@ -22,12 +23,14 @@ export const FixedPicker: React.FC<ColorSelectorProps> = ({
 		[onChange],
 	)
 
+	const colorPickerProps = useColorPickerProps({}, 'small')
 	return (
 		<Container>
 			<ColorPicker
 				color={encoding.value || 'none'}
 				onChange={handlePickerChange}
 				alphaType="none"
+				{...colorPickerProps}
 			/>
 		</Container>
 	)

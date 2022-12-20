@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { ArqueroDetailsList } from '@essex/arquero-react'
+import { ArqueroDetailsList } from '@datashaper/react'
+import { useButtonProps } from '@essex/components'
 import { DefaultButton } from '@fluentui/react'
 import { FileTable } from '@graph-drilldown/components'
 import styled from 'styled-components'
@@ -10,8 +11,10 @@ import styled from 'styled-components'
 import { useFileManagement } from '~/hooks/files'
 
 export const MainPanel: React.FC = () => {
-	const { files, selectedFile, onFileSelected, doClearAll, hasData } =
+	const { files, selectedFile, metadata, onFileSelected, doClearAll, hasData } =
 		useFileManagement()
+
+	const buttonProps = useButtonProps({}, 'small')
 
 	return (
 		<Container>
@@ -23,7 +26,11 @@ export const MainPanel: React.FC = () => {
 				/>
 				<Reset>
 					{hasData ? (
-						<DefaultButton text="Clear all" onClick={doClearAll} />
+						<DefaultButton
+							text="Clear all"
+							onClick={doClearAll}
+							{...buttonProps}
+						/>
 					) : null}
 				</Reset>
 			</Files>
@@ -32,7 +39,8 @@ export const MainPanel: React.FC = () => {
 				<Viewer>
 					<ArqueroDetailsList
 						table={selectedFile.table}
-						isHeadersFixed
+						metadata={metadata}
+						isHeaderFixed
 						features={{
 							smartHeaders: true,
 						}}

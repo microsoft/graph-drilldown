@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { useButtonProps } from '@essex/components'
 import { DefaultButton, Text } from '@fluentui/react'
 import type { ItemType } from '@graph-drilldown/types'
 import { FileOrigin } from '@graph-drilldown/types'
@@ -13,8 +14,7 @@ import { useFileManagement } from '~/hooks/files'
 import { variants } from '~/styles'
 
 import { FileDrop } from '../FileDrop'
-
-const SQUARE = 80
+const SQUARE = 84
 
 export interface QuickDropProps {
 	dropWidthSize?: number
@@ -48,6 +48,8 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 		},
 		[doAddFile],
 	)
+
+	const buttonProps = useButtonProps({}, 'small')
 
 	return (
 		<Container>
@@ -91,7 +93,11 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 			) : null}
 			<Reset>
 				{hasData && compact ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
+					<DefaultButton
+						text="Clear all"
+						onClick={doClearAll}
+						{...buttonProps}
+					/>
 				) : null}
 			</Reset>
 		</Container>
@@ -107,9 +113,11 @@ const HelperText = styled.div`
 `
 
 const DropArea = styled.div`
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	gap: 12px;
+	justify-content: center;
 `
 
 const Reset = styled.div`
