@@ -6,7 +6,7 @@
  * This scales in this module map visual encodings to raw underlying scales.
  * I.e., the inputs to these scales are base primitives.
  */
-import { useThematicColorScale } from '@graph-drilldown/hooks'
+import { useThematicColorScale } from './useThematicColorScale.js'
 import type { ColorEncoding, NumericEncoding } from '@graph-drilldown/types'
 import { DataBinding } from '@graph-drilldown/types'
 import { Color, getNamedSchemeColor } from '@thematic/color'
