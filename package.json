@@ -16,7 +16,6 @@
 		"fix": "run-s _fix_packages rome_fix format",
 		"check": "run-s _check_packages rome_check",
 		"format": "rome format . --write",
-		"prettify": "essex prettify",
 		"deploy": "essex deploy --type azure-blob-storage --storageAccount $STORAGE_ACCOUNT --storageAccountKey $STORAGE_KEY --verbose",
 		"is_clean": "git diff-index HEAD --quiet || git status",
 		"update_sdks": "yarn dlx @yarnpkg/sdks vscode"
@@ -28,7 +27,6 @@
 		"@essex/eslint-config": "^21.0.1",
 		"@essex/eslint-plugin": "^21.0.1",
 		"@essex/jest-config": "^22.0.0",
-		"@essex/prettier-config": "^18.0.7",
 		"@essex/scripts": "^26.0.0",
 		"@fluentui/font-icons-mdl2": "^8.5.24",
 		"@fluentui/react": "^8.111.1",
@@ -46,7 +44,6 @@
 		"ncp": "^2.0.0",
 		"npm-run-all": "^4.1.5",
 		"office-ui-fabric-react": "^7.204.0",
-		"prettier": "^2.8.8",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-rnd": "^10.3.7",

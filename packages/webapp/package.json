@@ -67,7 +67,6 @@
 		"@types/d3-scale": "^4.0.2",
 		"@types/dotenv-webpack": "^7.0.3",
 		"@types/node": "^20.5.7",
-		"@types/prettier": "^2.6.1",
 		"@types/prop-types": "^15.7.5",
 		"@types/query-string": "^6.3.0",
 		"@types/react": "^18.2.21",
