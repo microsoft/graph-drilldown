@@ -218,7 +218,7 @@ export class TableCollection<T> {
 		if (this._indices) {
 			const data = this._table.data()
 			const cont = true
-			const stop = () => cont === false
+			const stop = () => false // cont === false <NOTE: this is always false>
 			this._indices.every((idx) => {
 				callback(idx, data, stop)
 				return cont

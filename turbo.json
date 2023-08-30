@@ -22,7 +22,7 @@
 			"outputs": ["build/**"]
 		},
 		"ci": {
-			"dependsOn": ["build", "lint", "test", "bundle"],
+			"dependsOn": ["build", "check", "test", "bundle"],
 			"outputs": ["dist/**", "docs/**", "build/**"]
 		},
 		"clean": {

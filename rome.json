@@ -4,6 +4,7 @@
 			"dist",
 			"lib",
 			"build",
+			"docs",
 			"storybook-static",
 			".turbo",
 			".pnp.cjs",
