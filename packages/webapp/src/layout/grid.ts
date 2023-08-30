@@ -13,7 +13,7 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
  * @param nodes
  */
 export async function layoutGrid(nodes: ColumnTable): Promise<ColumnTable> {
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		const ranked = nodes
 			.params({
 				rows: nodes.numRows(),

@@ -16,7 +16,7 @@ export const NodeOpacityControls = () => {
 	return (
 		<Container>
 			<NumericSelector
-				label="node opacity"
+				label='node opacity'
 				table={table}
 				encoding={encoding}
 				onChange={updateEncoding}

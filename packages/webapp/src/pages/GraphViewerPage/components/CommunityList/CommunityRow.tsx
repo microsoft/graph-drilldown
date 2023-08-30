@@ -51,7 +51,7 @@ export const CommunityRow = ({
 			style={styles.tableRow || {}}
 			selected={selected}
 		>
-			{columns.map(c => {
+			{columns.map((c) => {
 				return (
 					<Cell
 						key={`comm-row-col-${c.header}-${community.id}`}

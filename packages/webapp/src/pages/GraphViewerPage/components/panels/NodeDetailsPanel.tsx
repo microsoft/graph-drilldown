@@ -33,7 +33,7 @@ export const NodeDetailsPanel = () => {
 	return (
 		<Content height={height}>
 			{details ? (
-				Object.entries(details).map(entry => (
+				Object.entries(details).map((entry) => (
 					<Field key={`node-details-${entry[0]}`}>
 						<Name>{entry[0]}</Name>
 						<Value>{entry[1]}</Value>

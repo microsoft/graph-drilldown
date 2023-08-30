@@ -8,7 +8,7 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
  * @param table
  */
 export async function layoutRandom(nodes: ColumnTable): Promise<ColumnTable> {
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		resolve(
 			nodes.derive({
 				'node.x': () => Math.random(),

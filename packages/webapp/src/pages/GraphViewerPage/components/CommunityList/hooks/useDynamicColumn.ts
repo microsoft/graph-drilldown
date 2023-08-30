@@ -8,7 +8,7 @@ import { useCallback, useMemo } from 'react'
 import { useDataBoundColorScale } from '~/hooks/graph'
 
 import { BAR_HEIGHT } from '../CommunityList.styles'
-import type { Column} from '../CommunityList.types';
+import type { Column } from '../CommunityList.types'
 import { Mark } from '../CommunityList.types'
 
 export function useDynamicColumn(

@@ -30,7 +30,7 @@ export const VerticalNominalChips: React.FC<NominalChipsProps> = ({
 	const items = useMemo(
 		() =>
 			[...uniques]
-				.map(v => `${v}`)
+				.map((v) => `${v}`)
 				.sort((a: any, b: any) => a.localeCompare(b))
 				.slice(0, maxItems),
 		[uniques, maxItems],
@@ -79,6 +79,7 @@ export const VerticalNominalChips: React.FC<NominalChipsProps> = ({
 	}, [theme, scale, height, items, uniques])
 	return (
 		<svg width={width} height={totalHeight}>
+			<title>Nominal Legend</title>
 			{rows}
 		</svg>
 	)

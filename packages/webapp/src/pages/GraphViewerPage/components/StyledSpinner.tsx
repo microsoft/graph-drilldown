@@ -9,7 +9,7 @@ import { SPINNER_STYLE } from '~/styles'
 export const StyledSpinnner = () => {
 	return (
 		<Spinner
-			label="Loading graph..."
+			label='Loading graph...'
 			styles={SPINNER_STYLE}
 			size={SpinnerSize.large}
 		/>

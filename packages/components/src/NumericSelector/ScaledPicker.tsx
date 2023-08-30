@@ -70,7 +70,7 @@ function useFieldDropdownOptions(table: ColumnTable) {
 	return useMemo(() => {
 		const types = columnTypes(table)
 		return types
-			.filter(t => t.type === 'number')
+			.filter((t) => t.type === 'number')
 			.map(({ name }) => ({
 				key: name,
 				text: name,

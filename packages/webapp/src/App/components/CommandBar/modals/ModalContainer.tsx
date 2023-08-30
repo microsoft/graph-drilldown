@@ -68,7 +68,7 @@ export const ModalContainer: React.FC<ModalContainerProps> = memo(
 						<IconButton
 							styles={iconButtonStyles}
 							iconProps={cancelIcon}
-							ariaLabel="Close popup modal"
+							ariaLabel='Close popup modal'
 							onClick={onDismiss}
 						/>
 					</Header>

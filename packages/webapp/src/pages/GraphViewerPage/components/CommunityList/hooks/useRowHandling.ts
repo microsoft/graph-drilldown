@@ -15,12 +15,12 @@ export function useRowHandling() {
 	} = useSelection()
 
 	const onHover = useCallback(
-		community => onHoverCommunity(community?.id),
+		(community) => onHoverCommunity(community?.id),
 		[onHoverCommunity],
 	)
 
 	const onClick = useCallback(
-		community => {
+		(community) => {
 			onResetSelection()
 			onSelectCommunity(community?.id)
 		},

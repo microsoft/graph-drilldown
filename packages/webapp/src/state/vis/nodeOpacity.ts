@@ -26,14 +26,12 @@ const encodingState = atomFamily<NumericEncoding, string>({
 	key: 'node-opacity-encoding-state',
 	default: selectorFamily<NumericEncoding, string>({
 		key: 'node-opacity-encoding-state-default',
-		get:
-			(field: string) =>
-			({ get }) => {
-				const pid = get(selectedCommunityState)
-				const table = get(communityNodesTableState(pid))
-				const stats = getColumnStats(table, field)
-				return getDefaultNodeOpacityOptions(field, stats)
-			},
+		get: (field: string) => ({ get }) => {
+			const pid = get(selectedCommunityState)
+			const table = get(communityNodesTableState(pid))
+			const stats = getColumnStats(table, field)
+			return getDefaultNodeOpacityOptions(field, stats)
+		},
 	}),
 })
 

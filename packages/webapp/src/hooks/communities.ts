@@ -44,7 +44,7 @@ export function useSortHandling(communities: CommunityCollection) {
 	}, [communities, sort])
 
 	const onSortClick = useCallback(
-		column => {
+		(column) => {
 			if (sort.field === column.field) {
 				setSort({
 					...sort,

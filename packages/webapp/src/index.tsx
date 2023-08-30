@@ -11,7 +11,10 @@ function mount(): void {
 	try {
 		const container = document.getElementById('root')
 		initializeIcons(undefined, { disableWarnings: true })
-		const root = createRoot(container!)
+		if (container == null) {
+			throw new Error('could not find root container')
+		}
+		const root = createRoot(container)
 		root.render(<App />)
 	} catch (err) {
 		console.error('error rendering application', err)

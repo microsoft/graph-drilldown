@@ -20,7 +20,7 @@ export const UploadModal: React.FC = () => {
 			</Files>
 			<Reset>
 				{hasData ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
+					<DefaultButton text='Clear all' onClick={doClearAll} />
 				) : null}
 			</Reset>
 		</Container>

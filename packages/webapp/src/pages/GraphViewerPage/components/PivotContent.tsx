@@ -26,7 +26,7 @@ export const PivotContent: React.FC<PivotContentProps> = memo(
 	function PivotContent({ setSelectedKey, selectedKey }) {
 		const handleLinkClick = useCallback(
 			(item?: PivotItem | undefined) => {
-				if (item && item.props.itemKey) {
+				if (item?.props.itemKey) {
 					setSelectedKey(item.props.itemKey as BrowserOptions)
 				}
 			},
@@ -35,18 +35,18 @@ export const PivotContent: React.FC<PivotContentProps> = memo(
 		return (
 			<Container>
 				<Pivot
-					aria-label="Community table and Hierarchy browser pivot"
+					aria-label='Community table and Hierarchy browser pivot'
 					selectedKey={selectedKey}
 					onLinkClick={handleLinkClick}
 					headersOnly={true}
 					styles={styles}
 				>
 					<PivotItem
-						headerText="Hierarchy browser"
+						headerText='Hierarchy browser'
 						itemKey={BrowserOptions.Browser}
 					/>
 					<PivotItem
-						headerText="Community table"
+						headerText='Community table'
 						itemKey={BrowserOptions.Table}
 					/>
 				</Pivot>

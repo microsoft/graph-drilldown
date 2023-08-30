@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { findGroupIndices, NodeCollection } from '@graph-drilldown/arquero'
+import { NodeCollection, findGroupIndices } from '@graph-drilldown/arquero'
 import type { Node } from '@graph-drilldown/types'
 import { atom, selector, useRecoilValue, useSetRecoilState } from 'recoil'
 

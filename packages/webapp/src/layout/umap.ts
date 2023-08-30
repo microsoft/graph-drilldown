@@ -14,7 +14,7 @@ import { umapLayout } from '../api'
  */
 export async function layoutUmap(edges: ColumnTable) {
 	const positions = await umapLayout(new EdgeCollection(edges))
-	const transformed = positions.map(n => ({
+	const transformed = positions.map((n) => ({
 		'node.id': n.id,
 		'node.x': n.x,
 		'node.y': n.y,

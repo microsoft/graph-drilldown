@@ -20,10 +20,10 @@ import { ThematicPalettePicker } from './ThematicPalettePicker.js'
  * - Palette: a thematic-bound named color (so it auto-updates with theme changes)
  * - Scale: field-bound to a thematic scale with domain, range, etc.
  */
-export const ColorSelector: React.FC<ColorSelectorProps> = props => {
+export const ColorSelector: React.FC<ColorSelectorProps> = (props) => {
 	const { encoding, onChange } = props
 	const handlePivotLinkClick = useCallback(
-		item => {
+		(item) => {
 			onChange({
 				binding: item.props.itemKey,
 			})

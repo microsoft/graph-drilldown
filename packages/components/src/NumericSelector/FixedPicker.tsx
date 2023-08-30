@@ -20,7 +20,7 @@ export const FixedPicker: React.FC<NumericSelectorProps> = ({
 	const [rangeValue, setRangeValue] = useState(encoding.value)
 
 	const useDebounce = useDebounceFn(
-		value => {
+		(value) => {
 			onChange({ value })
 		},
 		{

@@ -22,22 +22,20 @@ export const ImageSettings: React.FC<ImageSettingsProps> = ({
 }) => {
 	const handleFilenameChange = useCallback(
 		(e, value) => {
-			onChange &&
-				onChange({
-					...settings,
-					filename: value,
-				})
+			onChange?.({
+				...settings,
+				filename: value,
+			})
 		},
 		[onChange, settings],
 	)
 
 	const handleSizeChange = useCallback(
-		value => {
-			onChange &&
-				onChange({
-					...settings,
-					size: value,
-				})
+		(value) => {
+			onChange?.({
+				...settings,
+				size: value,
+			})
 		},
 		[onChange, settings],
 	)
@@ -61,8 +59,8 @@ export const ImageSettings: React.FC<ImageSettingsProps> = ({
 					label={'Size (px)'}
 					value={settings.size}
 					onChange={handleSizeChange}
-					incrementButtonAriaLabel="increment size (px)"
-					decrementButtonAriaLabel="decrement size (px)"
+					incrementButtonAriaLabel='increment size (px)'
+					decrementButtonAriaLabel='decrement size (px)'
 				/>
 			</Size>
 		</Container>

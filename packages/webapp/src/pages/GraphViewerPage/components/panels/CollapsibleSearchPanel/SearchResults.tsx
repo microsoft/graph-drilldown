@@ -49,7 +49,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 	const { sorted } = useSortHandling(communities)
 
 	const handleCommunityHover = useCallback(
-		community => onHoverCommunity(community?.id),
+		(community) => onHoverCommunity(community?.id),
 		[onHoverCommunity],
 	)
 
@@ -73,7 +73,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 		[nodes, onSelectNode, onSelectCommunity, onResetSelection, selectedNode],
 	)
 	const handleCommunityClick = useCallback(
-		community => {
+		(community) => {
 			onResetSelection()
 			if (community && community.id !== selectedCommunity) {
 				onSelectCommunity(community.id)
@@ -86,7 +86,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 		communities,
 		0,
 		0,
-		col => col.field === 'community.id',
+		(col) => col.field === 'community.id',
 	)
 
 	const searchText = useSearchResultsText(communities, nodes)
@@ -102,7 +102,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 				<Pivot aria-label={'Community or node selection'}>
 					{communities && communities.size > 0 ? (
 						<PivotItem
-							headerText="Communities"
+							headerText='Communities'
 							headerButtonProps={{
 								'data-order': 1,
 								'data-title': 'community matches',
@@ -113,7 +113,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 								<Table tabIndex={0}>
 									<tbody>
 										{sorted && columns.length > 0
-											? sorted.map(comm => {
+											? sorted.map((comm) => {
 													return (
 														<CommunityRow
 															community={comm}
@@ -136,7 +136,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 
 					{nodes && nodes.size > 0 ? (
 						<PivotItem
-							headerText="Nodes"
+							headerText='Nodes'
 							headerButtonProps={{
 								'data-order': 2,
 								'data-title': 'node matches',
@@ -147,7 +147,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
 								<Table tabIndex={0}>
 									<tbody>
 										{nodes
-											? nodes.map(node => {
+											? nodes.map((node) => {
 													const nodeid = node.get('node.id')
 													const selected = nodeid === selectedNode?.id
 													return (

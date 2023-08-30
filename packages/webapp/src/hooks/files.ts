@@ -57,8 +57,10 @@ export function useFileManagement(): {
 
 	const doAddFile = useCallback(
 		(dataFile: DataFile) => {
-			addFile(dataFile)
-			addTable(dataFile.table!, dataFile.tableType!)
+			if (dataFile.table != null && dataFile.tableType != null) {
+				addFile(dataFile)
+				addTable(dataFile.table, dataFile.tableType)
+			}
 		},
 		[addTable, addFile],
 	)

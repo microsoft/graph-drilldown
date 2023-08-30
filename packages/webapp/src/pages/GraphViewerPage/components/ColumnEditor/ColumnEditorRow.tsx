@@ -38,7 +38,7 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 		[column, onDeleteRequested, deletionDisabled],
 	)
 	const handleVisibleClick = useCallback(
-		() => onVisibilityChange && onVisibilityChange(column, browserVisible),
+		() => onVisibilityChange?.(column, browserVisible),
 		[onVisibilityChange, browserVisible, column],
 	)
 	const iconName = useMemo(
@@ -62,7 +62,7 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 					tabIndex={tabIndex}
 				>
 					<IconButton
-						title="delete"
+						title='delete'
 						iconProps={{ iconName: 'delete' }}
 						disabled={column.readOnly || column.name === encoding.field}
 					/>
@@ -75,7 +75,7 @@ export const ColumnEditorRow: React.FC<ColumnEditorRowProps> = ({
 						onKeyDown={handleVisibleClick}
 						tabIndex={index}
 					>
-						<IconButton title="toggle view" iconProps={{ iconName }} />
+						<IconButton title='toggle view' iconProps={{ iconName }} />
 					</Cell>
 				</td>
 			) : null}

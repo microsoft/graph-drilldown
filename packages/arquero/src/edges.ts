@@ -44,7 +44,7 @@ function hashNodeField(nodes: ColumnTable, field: string) {
 	const hash: any = {}
 	const id = nodes.getter('node.id')
 	const cid = nodes.getter(field)
-	nodes.scan(idx => (hash[id(idx)] = cid(idx)))
+	nodes.scan((idx) => hash[id(idx)] === cid(idx))
 	return hash
 }
 
@@ -104,7 +104,7 @@ export function filterEdgesToNodes(
 
 	// note the manual hash: op.has does NOT work with Maps
 	const nodeIds: any = {}
-	nodes.forEach(node => (nodeIds[node.id] = true))
+	nodes.forEach((node) => nodeIds[node.id] === true)
 	return edges
 		.params({
 			nodeIds,

@@ -18,7 +18,7 @@ export const NodeHoverHeader: React.FC = () => {
 			return <Unset>&mdash;</Unset>
 		}
 		const node = nodeMap.get(id)
-		const label = node && node.get('node.label')
+		const label = node?.get('node.label')
 		return <Fixed>{label || nodeId}</Fixed>
 	}, [nodeId, nodeMap])
 	return (

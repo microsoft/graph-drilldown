@@ -65,11 +65,11 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 				const colorStyle = i === 0 ? highlight : normal
 				const className = i === reverseList.length - 1 ? 'tree' : 'nested'
 				const ranking = reverseList.length - 1 - i
-				const content = (
+				return (
 					<ul className={className}>
 						<li>
 							<NestedContent
-								className="tree_label"
+								className='tree_label'
 								id={`list-item-${ranking}`}
 								onClick={() => handleListClick(item, i)}
 								onKeyDown={() => handleListClick(item, i)}
@@ -93,8 +93,6 @@ export const HierarchyNav: React.FC<IHierarchyNav> = memo(
 						</li>
 					</ul>
 				)
-				prevContent = content
-				return prevContent
 			}, undefined as any)
 		}, [reverseList, highlight, normal, handleListClick])
 

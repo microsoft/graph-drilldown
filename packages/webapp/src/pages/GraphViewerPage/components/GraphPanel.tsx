@@ -28,7 +28,7 @@ export const GraphPanel: React.FC<GraphPanelProps> = memo(function GraphPanel({
 	const cameraBounds = useDynamicCameraBounds()
 
 	const handleRendererInitialized = useCallback(
-		renderer => {
+		(renderer) => {
 			if (onRendererReady) {
 				onRendererReady(renderer)
 			}

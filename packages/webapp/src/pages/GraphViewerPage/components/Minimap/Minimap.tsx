@@ -4,7 +4,7 @@
  */
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import type { GraphContainer, InputGraph } from '@graspologic/graph'
-import { Nodes, NodeSetHighlight } from '@graspologic/react'
+import { NodeSetHighlight, Nodes } from '@graspologic/react'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -65,12 +65,12 @@ export const Minimap = ({
 			>
 				<Nodes color={colorize} minRadius={minRadius} maxRadius={maxRadius} />
 				<NodeSetHighlight
-					key={`selected`}
+					key={'selected'}
 					vertexIds={selectedNodeIds}
 					color={selectedColor}
 				/>
 				<NodeSetHighlight
-					key={`hovered`}
+					key={'hovered'}
 					vertexIds={hoveredNodeIds}
 					color={hoverColor}
 				/>

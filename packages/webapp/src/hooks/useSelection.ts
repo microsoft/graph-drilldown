@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import {
-	findNodesCollectionForCommunity,
 	NodeCollection,
+	findNodesCollectionForCommunity,
 } from '@graph-drilldown/arquero'
 import { useCallback, useMemo } from 'react'
 

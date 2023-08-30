@@ -26,15 +26,13 @@ const encodingState = atomFamily<NumericEncoding, string>({
 	key: 'node-size-encoding-state',
 	default: selectorFamily<NumericEncoding, string>({
 		key: 'node-size-encoding-state-default',
-		get:
-			(field: string) =>
-			({ get }) => {
-				// always use the root for size, which has the unique node list
-				const pid = ROOT_COMMUNITY_ID
-				const table = get(communityNodesTableState(pid))
-				const stats = getColumnStats(table, field)
-				return getDefaultNodeSizeOptions(field, stats)
-			},
+		get: (field: string) => ({ get }) => {
+			// always use the root for size, which has the unique node list
+			const pid = ROOT_COMMUNITY_ID
+			const table = get(communityNodesTableState(pid))
+			const stats = getColumnStats(table, field)
+			return getDefaultNodeSizeOptions(field, stats)
+		},
 	}),
 })
 

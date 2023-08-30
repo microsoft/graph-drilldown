@@ -109,7 +109,7 @@ export const Sparkbar: React.FC<SparkbarProps> = memo(function Sparkbar({
 
 	const theme = useThematic()
 	const ref = useRef(null)
-	const handleClick = useCallback(d => onClick && onClick(d), [onClick])
+	const handleClick = useCallback((d) => onClick?.(d), [onClick])
 	const nodataFn = useCallback(
 		(d: unknown) => {
 			if (nodata) {
@@ -120,12 +120,12 @@ export const Sparkbar: React.FC<SparkbarProps> = memo(function Sparkbar({
 		[nodata],
 	)
 	const [hovered, setHovered] = useState<any>(null)
-	const handleHover = useCallback(d => setHovered(d), [])
+	const handleHover = useCallback((d) => setHovered(d), [])
 	const [barGroup, setBarGroup] = useState<any>()
 	const [brushSelection, setBrushSelection] = useState<any>()
 
 	const handleBrushEnd = useCallback(
-		event => {
+		(event) => {
 			if (onBrushEnd) {
 				if (event?.sourceEvent) {
 					const { selection } = event

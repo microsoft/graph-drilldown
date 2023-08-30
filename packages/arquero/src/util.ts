@@ -4,7 +4,7 @@
  */
 import type { Histogram } from '@essex/toolbox'
 import { histogram } from '@essex/toolbox'
-import { one, TableCollection } from '@graph-drilldown/arquero'
+import { TableCollection, one } from '@graph-drilldown/arquero'
 import type { ColumnStats } from '@graph-drilldown/types'
 // eslint-disable-next-line
 import { op } from 'arquero'
@@ -60,7 +60,7 @@ function checkWhole(numbers?: number[]): boolean {
 	if (!numbers) {
 		return false
 	}
-	return numbers.every(n => Number.isInteger(n))
+	return numbers.every((n) => Number.isInteger(n))
 }
 
 export function getColumnHistogram(
@@ -119,7 +119,7 @@ export function binTableColumn(table: ColumnTable, column: string): any[] {
 	// fill the bins
 	table.scan((idx: number | undefined) => {
 		const value = table.get(column, idx)
-		const binIndex = bins.findIndex(bin => value >= bin.x0 && value < bin.x1)
+		const binIndex = bins.findIndex((bin) => value >= bin.x0 && value < bin.x1)
 		// bin maxes are exclusive except for the last bin
 		// https://github.com/d3/d3-array/blob/v2.8.0/README.md#_bin
 		const bin = binIndex < 0 ? bins.length - 1 : binIndex

@@ -18,10 +18,10 @@ import { ScaledPicker } from './ScaledPicker.js'
  * - Palette: a thematic-bound named color (so it auto-updates with theme changes)
  * - Scale: field-bound to a thematic scale with domain, range, etc.
  */
-export const NumericSelector: React.FC<NumericSelectorProps> = props => {
+export const NumericSelector: React.FC<NumericSelectorProps> = (props) => {
 	const { encoding, onChange } = props
 	const handlePivotLinkClick = useCallback(
-		item => {
+		(item) => {
 			onChange({
 				binding: item.props.itemKey,
 			})

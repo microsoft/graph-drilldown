@@ -71,6 +71,7 @@ export const Dots: React.FC<DotsProps> = ({
 	}
 	return (
 		<svg width={width} height={height}>
+			<title>Header Legend</title>
 			<g>{dots}</g>
 		</svg>
 	)

@@ -27,14 +27,12 @@ const encodingState = atomFamily<ColorEncoding, string>({
 	key: 'edge-color-encoding-state',
 	default: selectorFamily<ColorEncoding, string>({
 		key: 'edge-color-encoding-state-default',
-		get:
-			(field: string) =>
-			({ get }) => {
-				const theme = get(themeState)
-				const table = get(edgeTableState)
-				const stats = getColumnStats(table, field)
-				return getDefaultEdgeColorOptions(stats, theme, field)
-			},
+		get: (field: string) => ({ get }) => {
+			const theme = get(themeState)
+			const table = get(edgeTableState)
+			const stats = getColumnStats(table, field)
+			return getDefaultEdgeColorOptions(stats, theme, field)
+		},
 	}),
 })
 

@@ -43,14 +43,14 @@ export function rename(table: ColumnTable, prefix: string, exclude?: string[]) {
 }
 
 export function hasColumn(table: ColumnTable, column: string) {
-	return table.columnNames().some(name => name === column)
+	return table.columnNames().some((name) => name === column)
 }
 
 export function columnTypes(table: ColumnTable) {
 	if (table.numRows() === 0) {
 		return []
 	}
-	return table.columnNames().map(name => ({
+	return table.columnNames().map((name) => ({
 		name,
 		type: typeof table.get(name, 0),
 	}))
@@ -85,7 +85,7 @@ function ensureColumn(
 		return table
 	}
 	let fixed
-	variants.some(variant => {
+	variants.some((variant) => {
 		if (hasColumn(table, variant)) {
 			fixed = table.select(all(), {
 				[variant]: name,
@@ -104,7 +104,7 @@ function ensureColumn(
  * @param table - table to ensure has a standard node id column
  */
 function ensureNodeId(table: ColumnTable) {
-	return ensureColumn(table, 'node.id', ['id', 'ID', 'nodeId'], table => {
+	return ensureColumn(table, 'node.id', ['id', 'ID', 'nodeId'], (table) => {
 		// just pick the first - this is risky, but sometimes we don't have a header at all
 		const column = table.columnNames()[0]
 		return table.select(all(), {
@@ -124,7 +124,7 @@ function ensureCommunityId(table: ColumnTable) {
 		table,
 		'community.id',
 		['node.community', 'cid', 'community', 'clusterId'],
-		table => {
+		(table) => {
 			return table.derive({
 				'community.id': () => '0',
 			})
@@ -137,7 +137,7 @@ function ensureParentCommunityId(table: ColumnTable) {
 		table,
 		'community.pid',
 		['pid', 'parentCluster', 'parent'],
-		table => {
+		(table) => {
 			return table
 				.params({
 					pid: ROOT_COMMUNITY_ID,
@@ -163,7 +163,7 @@ function fixPid(table: ColumnTable) {
 }
 
 function ensureX(table: ColumnTable) {
-	return ensureColumn(table, 'node.x', ['x', 'X'], table => {
+	return ensureColumn(table, 'node.x', ['x', 'X'], (table) => {
 		return table.derive({
 			'node.x': () => Math.random(),
 		})
@@ -171,7 +171,7 @@ function ensureX(table: ColumnTable) {
 }
 
 function ensureY(table: ColumnTable) {
-	return ensureColumn(table, 'node.y', ['y', 'Y'], table => {
+	return ensureColumn(table, 'node.y', ['y', 'Y'], (table) => {
 		return table.derive({
 			'node.y': () => Math.random(),
 		})
@@ -179,15 +179,20 @@ function ensureY(table: ColumnTable) {
 }
 
 function ensureD(table: ColumnTable) {
-	return ensureColumn(table, 'node.d', ['d', 'D', 'size', 'weight'], table => {
-		return table.derive({
-			'node.d': () => 1,
-		})
-	})
+	return ensureColumn(
+		table,
+		'node.d',
+		['d', 'D', 'size', 'weight'],
+		(table) => {
+			return table.derive({
+				'node.d': () => 1,
+			})
+		},
+	)
 }
 
 function ensureNodeLabel(table: ColumnTable) {
-	return ensureColumn(table, 'node.label', ['label', 'name'], table => {
+	return ensureColumn(table, 'node.label', ['label', 'name'], (table) => {
 		return table.derive({
 			'node.label': (d: any) => d['node.id'],
 		})
@@ -195,7 +200,7 @@ function ensureNodeLabel(table: ColumnTable) {
 }
 
 function ensureEdgeSource(table: ColumnTable) {
-	return ensureColumn(table, 'edge.source', ['source', 'src'], table => {
+	return ensureColumn(table, 'edge.source', ['source', 'src'], (table) => {
 		return table.derive({
 			'edge.source': () => '0',
 		})
@@ -203,7 +208,7 @@ function ensureEdgeSource(table: ColumnTable) {
 }
 
 function ensureEdgeTarget(table: ColumnTable) {
-	return ensureColumn(table, 'edge.target', ['target', 'tgt'], table => {
+	return ensureColumn(table, 'edge.target', ['target', 'tgt'], (table) => {
 		return table.derive({
 			'edge.target': () => '1',
 		})
@@ -211,7 +216,7 @@ function ensureEdgeTarget(table: ColumnTable) {
 }
 
 function ensureEdgeWeight(table: ColumnTable) {
-	return ensureColumn(table, 'edge.weight', ['weight', 'value'], table => {
+	return ensureColumn(table, 'edge.weight', ['weight', 'value'], (table) => {
 		return table.derive({
 			'edge.weight': () => 1,
 		})
@@ -219,7 +224,7 @@ function ensureEdgeWeight(table: ColumnTable) {
 }
 
 function ensureEdgeId(table: ColumnTable) {
-	return ensureColumn(table, 'edge.id', ['id', 'edgeId'], table => {
+	return ensureColumn(table, 'edge.id', ['id', 'edgeId'], (table) => {
 		return table.derive({
 			'edge.id': (d: any) => `${d['edge.source']}-${d['edge.target']}`,
 		})
@@ -278,7 +283,7 @@ const prefixes = {
 // used for filtering views, etc.
 // this will find any unprefixed columns and add the specified one to them
 function prefixRemaining(table: ColumnTable, prefix: string) {
-	const columns = table.columnNames(name => {
+	const columns = table.columnNames((name) => {
 		const pref = name.split('.')[0]
 		return !prefixes[pref]
 	})
@@ -326,7 +331,7 @@ export function initializeNodeTable(table: ColumnTable, fromEdges = false) {
 		ensureD,
 		normalizeXY,
 		normalizeD,
-		table => prefixRemaining(table, 'node'),
+		(table) => prefixRemaining(table, 'node'),
 		checkAndAddChildCount,
 		checkAndAddNodeCount,
 	])
@@ -342,14 +347,14 @@ export function initializeEdgeTable(table: ColumnTable) {
 		ensureEdgeTarget,
 		ensureEdgeId,
 		ensureEdgeWeight,
-		table => prefixRemaining(table, 'edge'),
+		(table) => prefixRemaining(table, 'edge'),
 	])
 }
 
 export function initializeCommunityTable(table: ColumnTable) {
 	return chain(table, [
 		ensureCommunityId,
-		table => prefixRemaining(table, 'community'),
+		(table) => prefixRemaining(table, 'community'),
 	])
 }
 
@@ -366,7 +371,7 @@ export function joinNodeCommunityTables(
 		ensureCommunityId,
 		ensureParentCommunityId,
 		fixPid,
-		table => prefixRemaining(table, 'community'),
+		(table) => prefixRemaining(table, 'community'),
 	])
 
 	const joined = joinWithReplace(nodes, safe, [leftKey, rightKey])
@@ -497,17 +502,17 @@ export function listColumnDefinitions(
 	if (table.numRows() === 0) {
 		return []
 	}
-	return table.columnNames().map(name => ({
+	return table.columnNames().map((name) => ({
 		name,
 		type: name.split('.')[0] as 'node' | 'community',
 		dataType: typeof table.get(name, 0),
-		readOnly: readOnlyNames && readOnlyNames.has(name),
+		readOnly: readOnlyNames?.has(name),
 	}))
 }
 
 export function listColumnNames(table: ColumnTable): string[] {
 	const defs = listColumnDefinitions(table)
-	return defs.map(d => d.name)
+	return defs.map((d) => d.name)
 }
 
 export function findGroupIndices(

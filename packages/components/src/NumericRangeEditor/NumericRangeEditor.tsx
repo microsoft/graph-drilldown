@@ -26,11 +26,10 @@ export const NumericRangeEditor: React.FC<NumericRangeEditorProps> = ({
 	precision = 1,
 }) => {
 	const handleRangeChange = useCallback(
-		d => {
-			onChange &&
-				onChange({
-					range: d,
-				})
+		(d) => {
+			onChange?.({
+				range: d,
+			})
 		},
 		[onChange],
 	)

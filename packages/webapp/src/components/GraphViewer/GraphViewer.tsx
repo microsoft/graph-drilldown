@@ -8,8 +8,8 @@ import {
 	Camera,
 	Edges,
 	HighlightHoveredNode,
-	Nodes,
 	NodeSetHighlight,
+	Nodes,
 } from '@graspologic/react'
 import type { GraphRenderer } from '@graspologic/renderer'
 import { useCallback } from 'react'
@@ -94,7 +94,7 @@ export const GraphViewer = ({
 	)
 
 	const handleInitialize = useCallback(
-		renderer => onRendererInitialized && onRendererInitialized(renderer),
+		(renderer) => onRendererInitialized?.(renderer),
 		[onRendererInitialized],
 	)
 
@@ -136,12 +136,12 @@ export const GraphViewer = ({
 					maxRadius={nodeRange[1]}
 				/>
 				<NodeSetHighlight
-					key={`hovered`}
+					key={'hovered'}
 					vertexIds={hoveredNodeIds}
 					color={hoverColor}
 				/>
 				<NodeSetHighlight
-					key={`selected`}
+					key={'selected'}
 					vertexIds={selectedNode ? [selectedNode.id] : []}
 					color={hoverColor}
 				/>

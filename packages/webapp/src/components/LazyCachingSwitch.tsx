@@ -27,7 +27,7 @@ export const LazyCachingSwitch: any = withRouter(({ location, children }) => {
 		let isDirty = false
 		// first route match wins, mimicking behavior from Switch
 		let foundFirst = false
-		Children.forEach(children, child => {
+		Children.forEach(children, (child) => {
 			if (!foundFirst && isValidElement(child)) {
 				const props = child.props as any
 				const { path } = props
@@ -50,7 +50,7 @@ export const LazyCachingSwitch: any = withRouter(({ location, children }) => {
 
 	// second iteration creates a set of rendered components from the cache, hidden if not matched
 	const rendered = useMemo(() => {
-		return Children.map(children, child => {
+		return Children.map(children, (child) => {
 			if (isValidElement(child)) {
 				const props = child.props as any
 				const { path } = props

@@ -22,7 +22,7 @@ export const NumericRangeText: React.FC<NumericRangeTextProps> = ({
 		const mid = (max - min) / 2
 		const fmt = format(`.${precision}f`)
 		const values = mid === 0 ? [max] : [min, mid, max]
-		return values.map(v => fmt(v))
+		return values.map((v) => fmt(v))
 	}, [domain, precision])
 
 	return (

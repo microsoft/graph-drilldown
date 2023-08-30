@@ -19,6 +19,6 @@ export async function fetchUrl(url: string): Promise<ColumnTable> {
 		case 'tsv':
 			return fetchDSVTable(url)
 		default:
-			throw new Error(`Unsupported file type: ` + ext)
+			throw new Error(`Unsupported file type: ${ext}`)
 	}
 }

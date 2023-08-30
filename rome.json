@@ -1,0 +1,45 @@
+{
+	"files": {
+		"ignore": [
+			"dist",
+			"lib",
+			"build",
+			"storybook-static",
+			".turbo",
+			".pnp.cjs",
+			".pnp.loader.mjs",
+			"*.csv",
+			".devcontainer",
+			".github",
+			".vscode"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"recommended": true,
+				"noExplicitAny": "off"
+			},
+			"a11y": {
+				"recommended": true,
+				"useKeyWithClickEvents": "off"
+			}
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single",
+			"trailingComma": "all",
+			"quoteProperties": "asNeeded"
+		}
+	},
+	"formatter": {
+		"indentStyle": "tab"
+	}
+}

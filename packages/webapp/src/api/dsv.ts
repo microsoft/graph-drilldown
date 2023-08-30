@@ -27,8 +27,8 @@ const fns = {
 
 export async function fetchDSVTable(url: string): Promise<ColumnTable> {
 	return fetch(url)
-		.then(res => res.text())
-		.then(content => parseDSVTable(url, content))
+		.then((res) => res.text())
+		.then((content) => parseDSVTable(url, content))
 }
 
 export function parseDSVTable(filename: string, content: string): ColumnTable {

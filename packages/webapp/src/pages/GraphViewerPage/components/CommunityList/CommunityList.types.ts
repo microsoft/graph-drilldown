@@ -5,9 +5,9 @@
 import type { Color } from '@thematic/color'
 
 export enum Mark {
-	None,
-	Circle,
-	Rect,
+	None = 0,
+	Circle = 1,
+	Rect = 2,
 }
 
 export interface Column {

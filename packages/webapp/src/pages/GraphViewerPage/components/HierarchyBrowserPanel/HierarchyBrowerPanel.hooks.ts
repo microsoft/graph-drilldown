@@ -37,7 +37,7 @@ function useCommunitySizes(ids: string[]): NavTreeArray[] {
 	const byCommunity = useGroupedByCommunityTable()
 	const byParent = useGroupedByParentTable()
 	return useMemo(() => {
-		return ids.map(id => {
+		return ids.map((id) => {
 			const nodes = findNodesCollectionForCommunity(id, byParent, byCommunity)
 			return { id, size: nodes.size }
 		})
@@ -74,7 +74,7 @@ function nodeColumns(
 	const columnNames = nodes.table.columnNames()
 	const { offset, count } = loadParams
 	const values = nodes.page(
-		node => nodeToEntityDetail(node, columnNames),
+		(node) => nodeToEntityDetail(node, columnNames),
 		offset,
 		count,
 	)
@@ -162,7 +162,7 @@ function getNeighborIds(counts: ColumnTable, communityId: string) {
 					} as INeighborCommunityDetail)
 				}
 				if (output.length > max) {
-					stop && stop()
+					stop?.()
 				}
 			},
 			true,
