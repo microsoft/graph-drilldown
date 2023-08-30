@@ -12,7 +12,8 @@
 			"*.csv",
 			".devcontainer",
 			".github",
-			".vscode"
+			".vscode",
+			".yarn"
 		]
 	},
 	"linter": {
