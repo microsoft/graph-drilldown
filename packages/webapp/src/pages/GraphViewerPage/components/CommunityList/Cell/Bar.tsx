@@ -27,6 +27,7 @@ export const Bar: React.FC<CellComponentProps> = ({
 	const size = sizeScale(value) || 0
 	return (
 		<svg width={width} height={height}>
+			<title>Community Bar</title>
 			<rect
 				width={size}
 				height={height}

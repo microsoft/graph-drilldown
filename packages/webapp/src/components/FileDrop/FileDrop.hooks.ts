@@ -17,8 +17,9 @@ export function useDrop(
 				reader.onabort = () => console.log('file reading was aborted')
 				reader.onerror = () => console.log('file reading has failed')
 				reader.onload = () => {
+					/* eslint-disable-next-line @typescript-eslint/no-base-to-string */
 					const text = reader.result ? reader.result.toString() : ''
-					onFileLoad && onFileLoad(text, type, name)
+					onFileLoad?.(text, type, name)
 				}
 				reader.readAsBinaryString(file)
 			})

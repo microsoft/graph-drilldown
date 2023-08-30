@@ -75,7 +75,7 @@ export const ScaledPicker: React.FC<ColorSelectorProps> = ({
 
 function useFieldDropdownOptions(table: ColumnTable) {
 	return useMemo(() => {
-		return table.columnNames().map(key => ({
+		return table.columnNames().map((key) => ({
 			key,
 			text: key,
 		}))

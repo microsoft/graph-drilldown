@@ -4,8 +4,8 @@
  */
 import type { GraphRenderer } from '@graspologic/renderer'
 import { ThematicProvider, useThematic } from '@thematic/react'
-import { useCallback, useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { createRoot } from 'react-dom/client'
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from 'recoil'
 
 import { GraphViewer } from '~/components/GraphViewer'
@@ -29,10 +29,12 @@ export function useCreateRenderer() {
 
 	const RecoilBridge = useRecoilBridgeAcrossReactRoots_UNSTABLE()
 
+	const domNode = useMemo(() => document.createElement('div'), [])
+	const root = useMemo(() => createRoot(domNode), [domNode])
+
 	useEffect(() => {
-		const domNode = document.createElement('div')
 		if (create) {
-			ReactDOM.render(
+			root.render(
 				<RecoilBridge>
 					<ThematicProvider theme={theme}>
 						<GraphViewer
@@ -42,15 +44,23 @@ export function useCreateRenderer() {
 						/>
 					</ThematicProvider>
 				</RecoilBridge>,
-				domNode,
 			)
 		}
 		return () => {
 			// trash the node on unmount to prevent memory leaks
-			ReactDOM.unmountComponentAtNode(domNode)
+			root.unmount()
 			domNode.parentNode?.removeChild(domNode)
 		}
-	}, [create, theme, data, cameraBounds, setRenderer, RecoilBridge])
+	}, [
+		create,
+		theme,
+		data,
+		cameraBounds,
+		setRenderer,
+		RecoilBridge,
+		domNode,
+		root,
+	])
 
 	return {
 		renderer,

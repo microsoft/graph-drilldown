@@ -96,7 +96,7 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 			<StyledRnd
 				size={{ width, height: position.height }}
 				position={{ x: 0, y: position.y }}
-				bounds="parent"
+				bounds='parent'
 				onResizeStop={handleResizeStop}
 				disableDragging={true}
 				enableResizing={enabledState}
@@ -108,8 +108,8 @@ export const ResizableBrowser: React.FC<GraphPanelProps> = memo(
 							iconProps={{
 								iconName,
 							}}
-							text="Resize viewer"
-							title="Resize viewer"
+							text='Resize viewer'
+							title='Resize viewer'
 							onClick={handleClick}
 						/>
 						<PivotContent

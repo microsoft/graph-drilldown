@@ -19,6 +19,7 @@ export const Circle: React.FC<CellComponentProps> = ({
 		<>
 			{value}
 			<svg width={size * 2} height={size * 2}>
+				<title>Community Cell</title>
 				<circle
 					cx={size}
 					cy={size}

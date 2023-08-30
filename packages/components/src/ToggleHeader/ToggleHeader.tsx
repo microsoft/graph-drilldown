@@ -21,10 +21,7 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 	disabled,
 	onChange,
 }) => {
-	const handleChange = useCallback(
-		(_, v) => onChange && onChange(v),
-		[onChange],
-	)
+	const handleChange = useCallback((_, v) => onChange?.(v), [onChange])
 	return (
 		<Container>
 			<Title>{title}</Title>
@@ -33,8 +30,8 @@ export const ToggleHeader: React.FC<ToggleHeaderProps> = ({
 				<Toggle
 					disabled={disabled}
 					styles={toggleStyles}
-					onText="on"
-					offText="off"
+					onText='on'
+					offText='off'
 					checked={checked}
 					onChange={handleChange}
 				/>

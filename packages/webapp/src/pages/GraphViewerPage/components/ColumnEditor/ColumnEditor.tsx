@@ -17,7 +17,7 @@ export const ColumnEditor = () => {
 				<tr>
 					<th>column</th>
 					<th>data type</th>
-					<th></th>
+					<th />
 				</tr>
 			</thead>
 			<tbody>

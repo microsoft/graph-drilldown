@@ -2,21 +2,21 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { memo, Suspense, useMemo, useRef, useState } from 'react'
+import { Suspense, memo, useMemo, useRef, useState } from 'react'
 import type { RndResizeStartCallback } from 'react-rnd'
 import styled from 'styled-components'
 
-import { GraphPanel } from './components/GraphPanel'
-import { LeftSidePanel } from './components/LeftSidePanel'
-import { ResizableBrowser } from './components/ResizableBrowser'
-import { RightSidePanel } from './components/RightSidePanel'
-import { StyledSpinnner } from './components/StyledSpinner'
 import {
 	CSSFilter,
 	useGraphDimensions,
 	useLayoutStyle,
 	useResizeHandlers,
 } from './GraphViewerPage.hooks'
+import { GraphPanel } from './components/GraphPanel'
+import { LeftSidePanel } from './components/LeftSidePanel'
+import { ResizableBrowser } from './components/ResizableBrowser'
+import { RightSidePanel } from './components/RightSidePanel'
+import { StyledSpinnner } from './components/StyledSpinner'
 
 export const GraphViewerPage: React.FC = memo(function GraphViewerPage() {
 	const ref = useRef(null)

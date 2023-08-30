@@ -6,10 +6,7 @@ import type { DataFile } from '@graph-drilldown/types'
 import { useCallback, useState } from 'react'
 
 export function useRowHandling(onClick) {
-	const onRowClick = useCallback(
-		(file: DataFile) => onClick && onClick(file),
-		[onClick],
-	)
+	const onRowClick = useCallback((file: DataFile) => onClick?.(file), [onClick])
 	const [hovered, setHovered] = useState<DataFile | undefined>()
 	const onRowHover = useCallback((file?) => setHovered(file), [setHovered])
 	return {

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
-	"baseBranch": "origin/main",
 	"pipeline": {
 		"build": {
 			"dependsOn": [],
@@ -10,7 +9,11 @@
 			"dependsOn": [],
 			"outputs": []
 		},
-		"lint": {
+		"check": {
+			"dependsOn": [],
+			"outputs": []
+		},
+		"fix": {
 			"dependsOn": [],
 			"outputs": []
 		},
@@ -19,7 +22,7 @@
 			"outputs": ["build/**"]
 		},
 		"ci": {
-			"dependsOn": ["build", "lint", "test", "bundle"],
+			"dependsOn": ["build", "check", "test", "bundle"],
 			"outputs": ["dist/**", "docs/**", "build/**"]
 		},
 		"clean": {

@@ -37,7 +37,7 @@ export const SearchPanelHeader = ({
 	return (
 		<Container>
 			<SearchBox
-				placeholder="Search graph"
+				placeholder='Search graph'
 				styles={searchBoxStyle}
 				disabled={disabled}
 				onClear={onClear}
@@ -48,7 +48,7 @@ export const SearchPanelHeader = ({
 			<IconButton
 				iconProps={!isSearching ? searchIcon : {}}
 				styles={searchButtonStyle}
-				title="Search"
+				title='Search'
 				ariaLabel={'Search'}
 				disabled={disabled}
 				onClick={() => onSearch()}

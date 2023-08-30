@@ -23,7 +23,7 @@ export function useColumnConfig(
 	return useMemo(() => {
 		const w = width / columns.length - 20 // padding
 		const mw = w < MIN_COLUMN_WIDTH ? MIN_COLUMN_WIDTH : w
-		return columns.map(name => ({
+		return columns.map((name) => ({
 			key: name,
 			name,
 			fieldName: name,
@@ -56,7 +56,7 @@ function sortColumns(columns: string[]) {
 		'community.nodeCount': true,
 		'community.childCount': true,
 	}
-	const alpha = [...columns.sort()].filter(s => !defs[s])
+	const alpha = [...columns.sort()].filter((s) => !defs[s])
 	return [...Object.keys(defs), ...alpha]
 }
 
@@ -74,10 +74,10 @@ function useColumnArray(
 				const split = col.split('.')
 				const [prefix, value] = split
 				const hidden = hiddenFields
-					? hiddenFields.find(name => name === value)
+					? hiddenFields.find((name) => name === value)
 					: false
 				const colType = colAttribute
-					? colAttribute.find(name => name === prefix)
+					? colAttribute.find((name) => name === prefix)
 					: true
 				if (colType && !hidden) {
 					acc.push(col)

@@ -17,7 +17,7 @@ export const ColumnEditorPanel = () => {
 			<ColumnEditor />
 			<Reset>
 				{hasData ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
+					<DefaultButton text='Clear all' onClick={doClearAll} />
 				) : null}
 			</Reset>
 		</Content>

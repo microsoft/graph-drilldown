@@ -28,15 +28,13 @@ const encodingState = atomFamily<ColorEncoding, string>({
 	key: 'node-color-encoding-state',
 	default: selectorFamily<ColorEncoding, string>({
 		key: 'node-color-encoding-state-default',
-		get:
-			(field: string) =>
-			({ get }) => {
-				const pid = get(selectedCommunityState)
-				const table = get(communityNodesTableState(pid))
-				const stats = getColumnStats(table, field)
-				const theme = get(themeState)
-				return getDefaultNodeColorOptions(field, stats, theme)
-			},
+		get: (field: string) => ({ get }) => {
+			const pid = get(selectedCommunityState)
+			const table = get(communityNodesTableState(pid))
+			const stats = getColumnStats(table, field)
+			const theme = get(themeState)
+			return getDefaultNodeColorOptions(field, stats, theme)
+		},
 	}),
 })
 

@@ -17,23 +17,24 @@
 	"scripts": {
 		"clean": "essex clean",
 		"build": "essex build --skipExportCheck --docs",
-		"lint": "essex lint --fix"
+		"fix": "essex fix",
+		"check": "essex check"
 	},
 	"dependencies": {
-		"@essex/hooks": "^4.0.12",
+		"@essex/hooks": "^4.0.21",
 		"@graph-drilldown/arquero": "workspace:packages/arquero",
 		"@graph-drilldown/hooks": "workspace:packages/hooks",
 		"@graph-drilldown/types": "workspace:packages/types",
-		"ahooks": "^3.4.0",
+		"ahooks": "^3.7.8",
 		"d3-brush": "3.0.0",
 		"d3-format": "^3.1.0",
 		"d3-scale": "^4.0.2",
 		"d3-selection": "3.0.0"
 	},
 	"devDependencies": {
-		"@essex/scripts": "^22.0.4",
-		"@essex/tsconfig-base": "^1.0.2",
-		"@fluentui/react": "^8.70.0",
+		"@essex/scripts": "^26.0.0",
+		"@essex/tsconfig-base": "^3.0.0",
+		"@fluentui/react": "^8.111.1",
 		"@thematic/color": "^2.0.8",
 		"@thematic/core": "^2.1.1",
 		"@thematic/d3": "^2.0.9",
@@ -43,11 +44,11 @@
 		"@types/d3-format": "^3.0.1",
 		"@types/d3-scale": "^4.0.2",
 		"@types/d3-selection": "^3.0.2",
-		"@types/node": "^17.0.35",
-		"@types/react": "^18.0.9",
+		"@types/node": "^20.5.7",
+		"@types/react": "^18.2.21",
 		"arquero": "^4.8.8",
-		"react": "^18.1.0",
-		"styled-components": "^5.3.5"
+		"react": "^18.2.0",
+		"styled-components": "^6.0.7"
 	},
 	"peerDependencies": {
 		"@fluentui/react": ">= 8",
@@ -60,7 +61,7 @@
 		"@types/react": ">= 17",
 		"arquero": ">= 4",
 		"react": ">= 17",
-		"styled-components": ">= 5"
+		"styled-components": ">= 6"
 	},
 	"peerDependenciesMeta": {
 		"@types/node": {

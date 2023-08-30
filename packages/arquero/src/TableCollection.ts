@@ -135,7 +135,7 @@ export class TableCollection<T> {
 	}
 	map(callback: Callback<T>, ordered = false): any[] {
 		const output: T[] = []
-		this.scan(idx => {
+		this.scan((idx) => {
 			const n = new this._Ctor(this._table, idx)
 			if (idx === undefined) return
 			output.push(callback(n, idx))
@@ -217,9 +217,9 @@ export class TableCollection<T> {
 		// note that we assume provided indices are already ordered
 		if (this._indices) {
 			const data = this._table.data()
-			let cont = true
-			const stop = () => (cont = false)
-			this._indices.every(idx => {
+			const cont = true
+			const stop = () => false // cont === false <NOTE: this is always false>
+			this._indices.every((idx) => {
 				callback(idx, data, stop)
 				return cont
 			})
@@ -248,7 +248,7 @@ export class TableCollection<T> {
 						acc[col] = val
 						return acc
 					}, {})
-					stop && stop()
+					stop?.()
 				}
 			},
 			true,

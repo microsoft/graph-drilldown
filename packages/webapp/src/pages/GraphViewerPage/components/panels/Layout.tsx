@@ -8,7 +8,7 @@ import type ColumnTable from 'arquero/dist/types/table/column-table'
 import { memo, useCallback, useState } from 'react'
 import styled from 'styled-components'
 
-import { executeLayout, Layout as LayoutType } from '~/layout'
+import { Layout as LayoutType, executeLayout } from '~/layout'
 import {
 	useBigTable,
 	useEdgeTable,
@@ -75,7 +75,7 @@ export const Layout: React.FC = memo(function Layout() {
 			{features.enableSmallMultiples ? (
 				<Toggle
 					inlineLabel
-					label="Community isolation"
+					label='Community isolation'
 					checked={graphView === ViewType.SmallMultiple}
 					onChange={handleViewChanged}
 				/>

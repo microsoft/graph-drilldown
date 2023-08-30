@@ -38,7 +38,7 @@ export const Cell: React.FC<CellProps> = ({
 
 	const style = useMemo(() => {
 		const markType = Mark[mark].toLocaleLowerCase()
-		if (styles && styles[markType]) {
+		if (styles?.[markType]) {
 			return styles[markType]
 		}
 		return {

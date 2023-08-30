@@ -46,7 +46,7 @@ export function useLegendNumericScale(
 function useSizeScale(encoding, count) {
 	const scale = useNumericEncodingScale(encoding)
 	return useCallback(
-		index => {
+		(index) => {
 			const [min, max] = encoding.domain
 			const steps = (max - min) / count
 			const v = steps * index + min

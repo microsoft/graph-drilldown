@@ -91,7 +91,7 @@ export const QuickDrop: React.FC<QuickDropProps> = ({
 			) : null}
 			<Reset>
 				{hasData && compact ? (
-					<DefaultButton text="Clear all" onClick={doClearAll} />
+					<DefaultButton text='Clear all' onClick={doClearAll} />
 				) : null}
 			</Reset>
 		</Container>

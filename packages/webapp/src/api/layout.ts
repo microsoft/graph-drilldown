@@ -11,7 +11,7 @@ import { AUTOLAYOUT_URL } from '~/constants'
  * @param edges
  */
 function edgesToPOST(edges: EdgeCollection) {
-	return edges.map(e => ({
+	return edges.map((e) => ({
 		source: e.source,
 		target: e.target,
 		weight: e.weight,
@@ -43,9 +43,9 @@ export async function umapLayout(edges: EdgeCollection) {
 		mode: 'cors',
 		body: JSON.stringify(body),
 	})
-		.then(res => res.json())
-		.then(json =>
-			json.positions.map(p => ({
+		.then((res) => res.json())
+		.then((json) =>
+			json.positions.map((p) => ({
 				id: p.node_id,
 				x: p.x,
 				y: p.y,

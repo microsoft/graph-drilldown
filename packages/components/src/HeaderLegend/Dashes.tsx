@@ -78,6 +78,7 @@ export const Dashes: React.FC<DashesProps> = ({
 	}
 	return (
 		<svg width={width} height={height}>
+			<title>Header Legend Dashes</title>
 			<g>{dashes}</g>
 		</svg>
 	)

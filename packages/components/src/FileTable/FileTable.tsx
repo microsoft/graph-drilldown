@@ -39,7 +39,7 @@ export const FileTable: React.FC<FileTableProps> = memo(function FileTable({
 				</thead>
 				<tbody>
 					{files.length > 0 ? (
-						files.map(file => {
+						files.map((file) => {
 							const background =
 								selected === file
 									? theme.application().accent().hex()

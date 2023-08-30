@@ -5,9 +5,9 @@
 
 import {
 	CommunityCollection,
+	NodeCollection,
 	listColumnDefinitions,
 	listColumnNames,
-	NodeCollection,
 } from '@graph-drilldown/arquero'
 import { useDebounceFn } from 'ahooks'
 import { op, table } from 'arquero'
@@ -172,9 +172,9 @@ export function useSearchableTable(nodes: ColumnTable) {
 		if (nodes.numRows() > 0) {
 			const def = listColumnDefinitions(nodes)
 			const columns = def
-				.filter(d => d.dataType === 'string')
-				.filter(d => d.name !== 'community.pid')
-				.map(d => d.name)
+				.filter((d) => d.dataType === 'string')
+				.filter((d) => d.name !== 'community.pid')
+				.map((d) => d.name)
 
 			return nodes.select(columns)
 		}
@@ -184,7 +184,7 @@ export function useSearchableTable(nodes: ColumnTable) {
 
 function kFormatter(num: number): string {
 	return Math.abs(num) > 999
-		? (Math.abs(num) / 1000).toFixed(1) + 'k'
+		? `${(Math.abs(num) / 1000).toFixed(1)}k`
 		: `${Math.sign(num) * Math.abs(num)}`
 }
 
@@ -229,7 +229,7 @@ const getMatchingValuesByRow = (
 ): [CommunityCollection, NodeCollection, string | undefined] => {
 	console.time('match')
 	const matches: SearchByIndex[] = []
-	nodes.scan(row => {
+	nodes.scan((row) => {
 		const o = columns.reduce(
 			(acc, col) => {
 				const [value, isInSearch] = getColumnByRow(nodes, col, row, searchValue)
@@ -253,8 +253,8 @@ const getMatchingValuesByRow = (
 	const [nodeids, nodeCommIds, communityIds] = matches.reduce(
 		(acc, d) => {
 			if (d.matchColumns.includes('node.id')) {
-				const nodeid = d['node.id']!
-				if (!seen.has(nodeid)) {
+				const nodeid = d['node.id']
+				if (nodeid != null && !seen.has(nodeid)) {
 					acc[1].push(d['community.id'])
 					seen.add(nodeid)
 				}

@@ -8,11 +8,11 @@ import { LazyCachingSwitch } from '~/components/LazyCachingSwitch'
 import { DataManagerPage, GraphViewerPage } from '~/pages'
 import { HashRouter, Route } from '~/react-patch/react-router-dom'
 
-import { CommandBar } from './components/CommandBar'
-import { Footer } from './components/Footer'
 import { DataContext } from './DataContext'
 import { StateContext } from './StateContext'
 import { StyleContext } from './StyleContext'
+import { CommandBar } from './components/CommandBar'
+import { Footer } from './components/Footer'
 
 export const App: React.FC = () => {
 	return (
@@ -24,8 +24,8 @@ export const App: React.FC = () => {
 							<CommandBar />
 							<Main>
 								<LazyCachingSwitch>
-									<Route path="/" component={GraphViewerPage} />
-									<Route path="/files" component={DataManagerPage} />
+									<Route path='/' component={GraphViewerPage} />
+									<Route path='/files' component={DataManagerPage} />
 								</LazyCachingSwitch>
 								<Footer />
 							</Main>

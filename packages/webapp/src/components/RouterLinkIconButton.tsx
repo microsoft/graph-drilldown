@@ -14,7 +14,7 @@ export interface RouterLinkIconButtonProps
 	to: any
 }
 
-const LinkButton: React.FC<RouterLinkIconButtonProps> = props => {
+const LinkButton: React.FC<RouterLinkIconButtonProps> = (props) => {
 	const { history, location, match, staticContext, to, ...buttonProps } = props
 	const handleClick = useCallback(() => {
 		history.push(to)
@@ -22,4 +22,4 @@ const LinkButton: React.FC<RouterLinkIconButtonProps> = props => {
 	return <IconButton onClick={handleClick} {...buttonProps} />
 }
 
-export const RouterLinkIconButton: any = withRouter(LinkButton)
+export const RouterLinkIconButton: any = withRouter(LinkButton as any)

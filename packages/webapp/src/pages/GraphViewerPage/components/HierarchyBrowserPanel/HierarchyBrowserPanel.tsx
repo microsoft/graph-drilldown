@@ -74,7 +74,7 @@ export const HierarchyBrowserPanel: React.FC = memo(
 					visibleColumns: attrArray,
 					controls: { showLevel: false, showFilter: false },
 					styles: { cardOverview, table },
-				} as ISettings),
+				}) as ISettings,
 			[attrArray],
 		)
 
@@ -107,7 +107,7 @@ function findParentId(params: ILoadParams, communities: ICommunityDetail[]) {
 		return ROOT_COMMUNITY_ID
 	}
 	const currentIndex = communities.findIndex(
-		c => c.communityId === params.communityId,
+		(c) => c.communityId === params.communityId,
 	)
 	const parentIndex = currentIndex + 1
 	const id = communities[parentIndex].communityId

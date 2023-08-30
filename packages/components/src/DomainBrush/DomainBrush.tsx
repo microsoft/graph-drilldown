@@ -54,13 +54,13 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 	)
 	const handleMinChange = useCallback(
 		(_, v: string | undefined) => {
-			onChange && onChange([v ? Number.parseFloat(v) : domain[0], domain[1]])
+			onChange?.([v ? Number.parseFloat(v) : domain[0], domain[1]])
 		},
 		[onChange, domain],
 	)
 	const handleMaxChange = useCallback(
 		(_, v: string | undefined) => {
-			onChange && onChange([domain[0], v ? Number.parseFloat(v) : domain[1]])
+			onChange?.([domain[0], v ? Number.parseFloat(v) : domain[1]])
 		},
 		[onChange, domain],
 	)
@@ -78,7 +78,7 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 	// TOOD: it would be nice to use a synchronized internal brush state
 	// to update current displayed bounds visually before setting the encoding
 	const handleBrushEnd = useCallback(
-		newdomain => onChange && onChange(newdomain),
+		(newdomain) => onChange?.(newdomain),
 		[onChange],
 	)
 
@@ -109,7 +109,7 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 				<TextContainer>
 					<TextItem>
 						<TextField
-							label="min"
+							label='min'
 							styles={TEXT_STYLES}
 							value={`${flo}`}
 							onChange={handleMinChange}
@@ -118,7 +118,7 @@ export const DomainBrush: React.FC<DomainBrushProps> = ({
 					</TextItem>
 					<TextItem>
 						<TextField
-							label="max"
+							label='max'
 							styles={TEXT_STYLES}
 							value={`${fhi}`}
 							onChange={handleMaxChange}

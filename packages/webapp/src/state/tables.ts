@@ -80,13 +80,11 @@ export function useGroupedByParentTable() {
 // returns a table representing only the nodes for the selected community
 export const communityNodesTableState = selectorFamily<ColumnTable, string>({
 	key: 'community-nodes-table',
-	get:
-		cid =>
-		({ get }) => {
-			const byParent = get(groupedParentsTableState)
-			const byCommunity = get(groupedCommunitiesTableState)
-			return findNodesTableForCommunity(cid, byParent, byCommunity)
-		},
+	get: (cid) => ({ get }) => {
+		const byParent = get(groupedParentsTableState)
+		const byCommunity = get(groupedCommunitiesTableState)
+		return findNodesTableForCommunity(cid, byParent, byCommunity)
+	},
 	dangerouslyAllowMutability: true,
 })
 
@@ -117,13 +115,11 @@ const communityNodeStatsState = selectorFamily<
 	{ cid: string; quantile: number }
 >({
 	key: 'grouped-node-stats',
-	get:
-		param =>
-		({ get }) => {
-			const { cid, quantile } = param
-			const table = get(communityNodesTableState(cid))
-			return getNodeStats(table, quantile)
-		},
+	get: (param) => ({ get }) => {
+		const { cid, quantile } = param
+		const table = get(communityNodesTableState(cid))
+		return getNodeStats(table, quantile)
+	},
 })
 
 export function useNodeStatsByCommunity(cid: string, quantile: number) {

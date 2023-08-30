@@ -1,0 +1,3163 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.29.2",
+    "schemaVersion": 1009,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@graph-drilldown/arquero!",
+  "docComment": "",
+  "name": "@graph-drilldown/arquero",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@graph-drilldown/arquero!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@graph-drilldown/arquero!ArqueroNode:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ArqueroNode "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ArqueroNode",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@graph-drilldown/arquero!ArqueroNode#\"node.id\":member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "['node.id']: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"node.id\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@graph-drilldown/arquero!ArqueroNode#\"node.x\":member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "['node.x']: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"node.x\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@graph-drilldown/arquero!ArqueroNode#\"node.y\":member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "['node.y']: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"node.y\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!binTableColumn:function(1)",
+          "docComment": "/**\n * This function takes an arquero table and bins the values of a specified column into a fixed set of quantiles from 0-1.0. // TODO: use op.ntile??\n *\n * @param table - table to bin\n *\n * @param column - column to bin\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function binTableColumn(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", column: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "column",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "binTableColumn"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!chain:function(1)",
+          "docComment": "/**\n * Apply a list of functions to a table in series, returning the final output. Helper because Arquero does not have something akin to d3's `call`.\n *\n * @param table - table to apply function list to\n *\n * @param functions - list of function to apply, in order, to the input table\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function chain(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", functions: "
+            },
+            {
+              "kind": "Content",
+              "text": "((table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ")[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "functions",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "chain"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!checkAndAddChildCount:function(1)",
+          "docComment": "/**\n * This checks the main table for community.childCount column and computes if missing\n *\n * @param main - current fully-populated table with joined communities\n *\n * @param communities - flat community list to rollup childCount\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function checkAndAddChildCount(main: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "main",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "checkAndAddChildCount"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!checkAndAddNodeCount:function(1)",
+          "docComment": "/**\n * This checks the main table for a community.nodeCount column and computes if missing\n *\n * @param main - current fully-populated table with joined communities\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function checkAndAddNodeCount(main: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "main",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "checkAndAddNodeCount"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!columnTypes:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function columnTypes(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    name: string;\n    type: \"string\" | \"number\" | \"bigint\" | \"boolean\" | \"symbol\" | \"undefined\" | \"object\" | \"function\";\n}[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "columnTypes"
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@graph-drilldown/arquero!CommunityCollection:class",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class CommunityCollection extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "TableCollection",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Community",
+              "canonicalReference": "@graph-drilldown/types!Community:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "CommunityCollection",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@graph-drilldown/arquero!CommunityCollection:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `CommunityCollection` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(table?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnTable",
+                  "canonicalReference": "arquero!default:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", indices?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "table",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "indices",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ]
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@graph-drilldown/arquero!EdgeCollection:class",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class EdgeCollection extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "TableCollection",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Edge",
+              "canonicalReference": "@graph-drilldown/types!Edge:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "EdgeCollection",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@graph-drilldown/arquero!EdgeCollection:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `EdgeCollection` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(table?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnTable",
+                  "canonicalReference": "arquero!default:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", indices?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "table",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "indices",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ]
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!filterEdgesToNodes:function(1)",
+          "docComment": "/**\n * Filters an edge list to only include connections between the nodes in the provided collection\n *\n * @param edges - edge table\n *\n * @param nodes - nodes to filter with (as source/target)\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function filterEdgesToNodes(edges: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", nodes: "
+            },
+            {
+              "kind": "Reference",
+              "text": "NodeCollection",
+              "canonicalReference": "@graph-drilldown/arquero!NodeCollection:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "edges",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "nodes",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "filterEdgesToNodes"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!findGroupIndices:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function findGroupIndices(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", field: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "number[] | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "field",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "findGroupIndices"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!findNodesCollectionForCommunity:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function findNodesCollectionForCommunity(cid: "
+            },
+            {
+              "kind": "Content",
+              "text": "string | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ", byParent: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", byCommunity: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "NodeCollection",
+              "canonicalReference": "@graph-drilldown/arquero!NodeCollection:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "cid",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "byParent",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "byCommunity",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "findNodesCollectionForCommunity"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!findNodesTableForCommunity:function(1)",
+          "docComment": "/**\n * Gets a table of just the nodes for a matching community. The preferred outcome here is to use the grouped-by-parent table, because this retains child community differentiability. However, if the selected community is a leaf in the hierarchy, it will have no child communities and therefore filtering by 'parent' will not return it (because there are no rows with this cid as parent). In this case, we use the grouped-by-community variant to get the nodes.\n *\n * @param cid - community id\n *\n * @param byParent - table grouped by parent\n *\n * @param byCommunity - table grouped by community\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function findNodesTableForCommunity(cid: "
+            },
+            {
+              "kind": "Content",
+              "text": "string | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ", byParent: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", byCommunity: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "cid",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "byParent",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "byCommunity",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "findNodesTableForCommunity"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!findNodesTableForParent:function(1)",
+          "docComment": "/**\n * Find all of the node rows for communities that share a parent.\n *\n * @param pid - parent id\n *\n * @param byParent - table grouped by parent\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function findNodesTableForParent(pid: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", byParent: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "pid",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "byParent",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "findNodesTableForParent"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!getColumnHistogram:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getColumnHistogram(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", name?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Histogram",
+              "canonicalReference": "@essex/toolbox!Histogram:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "name",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getColumnHistogram"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!getColumnStats:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getColumnStats(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", name?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnStats",
+              "canonicalReference": "@graph-drilldown/types!ColumnStats:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "name",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getColumnStats"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!getEdgesFromTableByID:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getEdgesFromTableByID(selectedId: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", nodeTable: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", edges: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "selectedId",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "nodeTable",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "edges",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getEdgesFromTableByID"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!getNodeStats:function(1)",
+          "docComment": "/**\n * Gets default rolled up node stats within a quantile range.\n *\n * @param table - assumed pre-grouped table (e.g., by parent id)\n *\n * @param quantile - quanitile value (0-1)\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getNodeStats(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", quantile?: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, any> | {\n    minX: number;\n    maxX: number;\n    minY: number;\n    maxY: number;\n    minD: number;\n    maxD: number;\n}[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "quantile",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getNodeStats"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!getPrecision:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getPrecision(domain?: "
+            },
+            {
+              "kind": "Content",
+              "text": "number[]"
+            },
+            {
+              "kind": "Content",
+              "text": ", values?: "
+            },
+            {
+              "kind": "Content",
+              "text": "number[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "domain",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "values",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getPrecision"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!hasColumn:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function hasColumn(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", column: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "column",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "hasColumn"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!initializeCommunityTable:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function initializeCommunityTable(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "initializeCommunityTable"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!initializeEdgeTable:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function initializeEdgeTable(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "initializeEdgeTable"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!initializeJoinTable:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function initializeJoinTable(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "initializeJoinTable"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!initializeNodeTable:function(1)",
+          "docComment": "/**\n * Take a starter node table and ensure it has all the required columns (or default values)\n *\n * @param table - table to turn into a standard node table\n *\n * @param fromEdges - indicates that the table is a list of edges to derive nodes from\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function initializeNodeTable(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", fromEdges?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "fromEdges",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "initializeNodeTable"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!joinDataTables:function(1)",
+          "docComment": "/**\n * Join a new table to existing, using strict rules of id and prefix. I.e., this is not a general-purpose join util, but rather one that simplifies our joins by assuming an id column and a prefix for output columns.\n *\n * @param left - left side of join\n *\n * @param right - right side of join\n *\n * @param type - type of table (node, community, edge, join)\n *\n * @param leftKey - optional explicit left key, otherwise it will use `${type}.id`\n *\n * @param rightKey - optional explicit right key, otherwise it will use 'id'\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function joinDataTables(left: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", right: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", type: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", leftKey?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", rightKey?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "left",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "right",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "type",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "leftKey",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "rightKey",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "joinDataTables"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!joinNodeCommunityTables:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function joinNodeCommunityTables(nodes: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", communities: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "nodes",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "communities",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "joinNodeCommunityTables"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!joinWithReplace:function(1)",
+          "docComment": "/**\n * Simple join that replaces any columns in the left with matching columns in the right. Normal arquero behavior is the rename collisions, but we have so much dependence on expected columns that this causes problems. It's especially frequent because the join keys are renamed, so this lets us join and exclude the key\n *\n * @param left - left side of join\n *\n * @param right - right side of join\n *\n * @param leftKey - left side key column name\n *\n * @param rightKey - right side key column name\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function joinWithReplace(left: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", right: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", joinDefinition: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "left",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "right",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "joinDefinition",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "joinWithReplace"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!listColumnDefinitions:function(1)",
+          "docComment": "/**\n * Create a set of ColumnDefs by enumerating the table. Optional set of column names indicating they are read-only (i.e., not deletable in UI) TODO: this should reside in the webapp\n *\n * @param table - table to start with\n *\n * @param readOnlyNames - list of columns to flag as read only\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function listColumnDefinitions(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", readOnlyNames?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Set",
+              "canonicalReference": "!Set:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnDefinition",
+              "canonicalReference": "@graph-drilldown/types!ColumnDefinition:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "readOnlyNames",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "listColumnDefinitions"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!listColumnNames:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function listColumnNames(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "listColumnNames"
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@graph-drilldown/arquero!NodeCollection:class",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class NodeCollection extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "TableCollection",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Node",
+              "canonicalReference": "@graph-drilldown/types!Node:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "NodeCollection",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@graph-drilldown/arquero!NodeCollection:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `NodeCollection` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(table?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnTable",
+                  "canonicalReference": "arquero!default:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", indices?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "table",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "indices",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ]
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!normalizeXY:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function normalizeXY(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "normalizeXY"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!one:function(1)",
+          "docComment": "/**\n * Extracts the objects from a single-row table. This is commonly needed when doing rollups that output a single row of stats.\n *\n * @param table - table to extract row from\n *\n * @param transformer - optional transform to apply to the row\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function one(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", transformer?: "
+            },
+            {
+              "kind": "Content",
+              "text": "(d: any) => any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, any>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "transformer",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "one"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!recomputeCommunityStats:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function recomputeCommunityStats(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", force?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "force",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "recomputeCommunityStats"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@graph-drilldown/arquero!rename:function(1)",
+          "docComment": "/**\n * Return a selection mapping that renames columns with a prefix.\n *\n * @param table - table to enumerate and rename columns\n *\n * @param prefix - prefix to add to column names\n *\n * @param exclude - exclusion list if you want to retain some original columns\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function rename(table: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnTable",
+              "canonicalReference": "arquero!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", prefix: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", exclude?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "table",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "prefix",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "exclude",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "rename"
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@graph-drilldown/arquero!TableCollection:class",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class TableCollection<T> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "TableCollection",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `TableCollection` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(table: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnTable",
+                  "canonicalReference": "arquero!default:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", prefix: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", indices?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "table",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "prefix",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "indices",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#findById:member(1)",
+              "docComment": "/**\n * Scans the table to find a specific item using it's default id\n *\n * @param id - id of the item to find\n *\n * @returns \n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "findById(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "findById"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#forEach:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "forEach(callback: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Callback",
+                  "canonicalReference": "@graph-drilldown/arquero!~Callback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ordered?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "callback",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ordered",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "forEach"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#getter:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getter(name: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "import(\"arquero/dist/types/table/table\")."
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnGetter",
+                  "canonicalReference": "arquero!ColumnGetter:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "name",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "getter"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#map:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "map(callback: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Callback",
+                  "canonicalReference": "@graph-drilldown/arquero!~Callback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ordered?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "callback",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ordered",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "map"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#page:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "page(callback: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Callback",
+                  "canonicalReference": "@graph-drilldown/arquero!~Callback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", offset: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", count: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "callback",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "offset",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "count",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "page"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#sample:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sample(proportion: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "proportion",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "sample"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#scan:member(1)",
+              "docComment": "/**\n * Direct passthrough to table scan, but using provided indices if present. This lets us create collections that are a \"view\" over the top of a larger table. Arquero doesn't support the notion of iterating groups directly, so this provides that.\n *\n * @param callback - function to apply to each table row\n *\n * @param ordered - whether to scan according to orderby index underlying table\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "scan(callback: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(row?: number | undefined, data?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TableData",
+                  "canonicalReference": "arquero!TableData:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | any[] | undefined, stop?: (() => void) | undefined) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ordered?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "callback",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ordered",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "scan"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#size:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get size(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "size",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#sort:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sort(definition: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "definition",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "sort"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#table:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get table(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnTable",
+                  "canonicalReference": "arquero!default:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "table",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#toArray:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "toArray(ordered?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "ordered",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "name": "toArray"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#toMap:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "toMap(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Map",
+                  "canonicalReference": "!Map:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "toMap"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@graph-drilldown/arquero!TableCollection#toSet:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "toSet(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Set",
+                  "canonicalReference": "!Set:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "toSet"
+            }
+          ],
+          "implementsTokenRanges": []
+        }
+      ]
+    }
+  ]
+}

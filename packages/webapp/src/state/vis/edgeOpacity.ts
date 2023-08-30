@@ -25,14 +25,12 @@ const encodingState = atomFamily<NumericEncoding, string>({
 	key: 'edge-opacity-encoding-state',
 	default: selectorFamily<NumericEncoding, string>({
 		key: 'edge-opacity-encoding-state-default',
-		get:
-			(field: string) =>
-			({ get }) => {
-				// TODO: filter by parent
-				const table = get(edgeTableState)
-				const stats = getColumnStats(table, field)
-				return getDefaultEdgeOpacityOptions(field, stats)
-			},
+		get: (field: string) => ({ get }) => {
+			// TODO: filter by parent
+			const table = get(edgeTableState)
+			const stats = getColumnStats(table, field)
+			return getDefaultEdgeOpacityOptions(field, stats)
+		},
 	}),
 })
 

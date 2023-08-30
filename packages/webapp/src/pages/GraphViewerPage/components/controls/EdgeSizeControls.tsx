@@ -19,7 +19,7 @@ export const EdgeSizeControls = () => {
 	return (
 		<Container>
 			<NumericSelector
-				label="edge size"
+				label='edge size'
 				table={table}
 				encoding={encoding}
 				onChange={updateEncoding}

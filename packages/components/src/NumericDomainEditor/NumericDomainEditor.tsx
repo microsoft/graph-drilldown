@@ -34,18 +34,16 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 	const fmt = useMemo(() => format(`.${precision}f`), [precision])
 
 	const handleTypeChange = useCallback(
-		scaleType =>
-			onChange &&
-			onChange({
+		(scaleType) =>
+			onChange?.({
 				scaleType,
 			}),
 		[onChange],
 	)
 
 	const handleDomainChange = useCallback(
-		domain =>
-			onChange &&
-			onChange({
+		(domain) =>
+			onChange?.({
 				domain,
 			}),
 		[onChange],

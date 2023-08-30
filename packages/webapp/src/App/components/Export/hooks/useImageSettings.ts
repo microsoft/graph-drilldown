@@ -16,7 +16,7 @@ export function useImageSettings() {
 		DEFAULT_IMAGE_SETTINGS,
 	)
 
-	const onSettingsChange = useCallback(s => setImageSettings(s), [])
+	const onSettingsChange = useCallback((s) => setImageSettings(s), [])
 
 	return {
 		settings,

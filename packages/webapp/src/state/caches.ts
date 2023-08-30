@@ -96,13 +96,11 @@ export function useInternedMinimapGraph(): GraphContainer {
 
 const visibleNodeMapState = selectorFamily<Map<string, Node>, string>({
 	key: 'visible-nodes-map',
-	get:
-		cid =>
-		({ get }) => {
-			const table = get(communityNodesTableState(cid))
-			const nodes = new NodeCollection(table)
-			return nodes.toMap()
-		},
+	get: (cid) => ({ get }) => {
+		const table = get(communityNodesTableState(cid))
+		const nodes = new NodeCollection(table)
+		return nodes.toMap()
+	},
 })
 
 export function useVisibleNodeMap(cid: string) {

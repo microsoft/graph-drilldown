@@ -33,7 +33,7 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 					<Table>
 						<thead>
 							<tr>
-								{columns.map(c => (
+								{columns.map((c) => (
 									<Th
 										key={`comm-th-${c.header}`}
 										onClick={() => onSortClick(c)}
@@ -45,7 +45,7 @@ export const CommunityList = ({ communities, style }: CommunityListProps) => {
 						</thead>
 						<tbody>
 							{sorted.map(
-								comm => (
+								(comm) => (
 									<CommunityRow
 										key={`community-row-${comm.id}`}
 										community={comm}

@@ -21,7 +21,7 @@ import {
 } from '~/state'
 import { useVisibleNodeMap } from '~/state/caches'
 import { useNodeOpacityEncoding } from '~/state/vis/nodeOpacity'
-import { ViewType } from '~/types'
+import type { ViewType } from '~/types'
 
 import { useColorizer, useRange, useWeighter } from './graspologic'
 
@@ -31,13 +31,13 @@ export function useNodeCount() {
 }
 
 export function useNodeIds(nodes?: NodeCollection) {
-	return useMemo(() => (nodes ? nodes.map(node => node.id) : []), [nodes])
+	return useMemo(() => (nodes ? nodes.map((node) => node.id) : []), [nodes])
 }
 
 export function useNodeColumns(nodes?: NodeCollection) {
 	const ids = useMemo(() => {
 		if (nodes) {
-			return nodes.map(node => {
+			return nodes.map((node) => {
 				const attrs = { x: node.x, y: node.y, d: node.d }
 				return { id: node.id, attrs }
 			})
@@ -78,14 +78,12 @@ export function useNodePositions(
 	duration?: number,
 ): NodePositioner {
 	return useMemo(() => {
-		const positions =
-			view === ViewType.SingleGraph ? positionMaps[0] : positionMaps[1]
 		return {
 			duration,
-			x: id => positions[id!]?.x || 0,
-			y: id => positions[id!]?.y || 0,
+			x: (id) => id?.[id]?.x || 0,
+			y: (id) => id?.[id]?.y || 0,
 		}
-	}, [positionMaps, view, duration])
+	}, [duration])
 }
 
 // for a list of communities, get a map of [cid]: nodepositions[]

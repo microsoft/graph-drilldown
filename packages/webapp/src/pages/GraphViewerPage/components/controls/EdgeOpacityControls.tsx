@@ -19,7 +19,7 @@ export const EdgeOpacityControls = () => {
 	return (
 		<Container>
 			<NumericSelector
-				label="edge opacity"
+				label='edge opacity'
 				table={table}
 				encoding={encoding}
 				onChange={updateEncoding}

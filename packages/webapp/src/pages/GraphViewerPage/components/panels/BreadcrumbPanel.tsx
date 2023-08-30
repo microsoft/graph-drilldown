@@ -31,8 +31,8 @@ export const BreadcrumbPanel: React.FC<BreadcrumbPanelProps> = ({ styles }) => {
 	const setNavState = useSetNavigationState()
 	const navState = useNavigationState()
 	useEffect(() => {
-		setNavState(ids => {
-			const index = ids.findIndex(c => c === selectedCommunity)
+		setNavState((ids) => {
+			const index = ids.findIndex((c) => c === selectedCommunity)
 			if (index >= 0) {
 				const sliced = ids.slice(0, index + 1)
 				return sliced
@@ -42,7 +42,7 @@ export const BreadcrumbPanel: React.FC<BreadcrumbPanelProps> = ({ styles }) => {
 	}, [selectedCommunity, setNavState])
 
 	const crumbs = useMemo((): IBreadcrumb[] => {
-		return navState.map(id => {
+		return navState.map((id) => {
 			if (id === ROOT_COMMUNITY_ID) {
 				return DEFAULT_CRUMBS
 			}
@@ -54,14 +54,14 @@ export const BreadcrumbPanel: React.FC<BreadcrumbPanelProps> = ({ styles }) => {
 	}, [navState])
 
 	const handleBreadcrumbClick = useCallback(
-		item => {
+		(item) => {
 			item.key === 'root' ? onResetSelection() : onSelectCommunity(item.key)
 		},
 		[onSelectCommunity, onResetSelection],
 	)
 
 	const items = useMemo(() => {
-		return crumbs.map(c => ({
+		return crumbs.map((c) => ({
 			...c,
 			onClick: handleBreadcrumbClick,
 		}))

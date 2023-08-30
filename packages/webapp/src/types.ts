@@ -25,8 +25,8 @@ export interface Breadcrumb {
 }
 
 export enum ViewType {
-	SingleGraph,
-	SmallMultiple,
+	SingleGraph = 0,
+	SmallMultiple = 1,
 }
 
 export enum BrowserOptions {

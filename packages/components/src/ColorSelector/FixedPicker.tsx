@@ -27,7 +27,7 @@ export const FixedPicker: React.FC<ColorSelectorProps> = ({
 			<ColorPicker
 				color={encoding.value || 'none'}
 				onChange={handlePickerChange}
-				alphaType="none"
+				alphaType='none'
 			/>
 		</Container>
 	)
