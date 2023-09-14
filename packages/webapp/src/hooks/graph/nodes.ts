@@ -5,7 +5,6 @@
 import type { NodeCollection } from '@graph-drilldown/arquero'
 import type {
 	NodeColorizer,
-	NodePositioner,
 	NodeWeighter,
 	PositionMap,
 } from '@graspologic/graph'
@@ -21,7 +20,6 @@ import {
 } from '~/state'
 import { useVisibleNodeMap } from '~/state/caches'
 import { useNodeOpacityEncoding } from '~/state/vis/nodeOpacity'
-import type { ViewType } from '~/types'
 
 import { useColorizer, useRange, useWeighter } from './graspologic'
 
@@ -70,20 +68,6 @@ export function useNodeColorScale() {
 export function useNodeSizeRange(): [number, number] {
 	const encoding = useNodeSizeEncoding()
 	return useRange(encoding)
-}
-
-export function useNodePositions(
-	positionMaps: PositionMap[],
-	view: ViewType,
-	duration?: number,
-): NodePositioner {
-	return useMemo(() => {
-		return {
-			duration,
-			x: (id) => id?.[id]?.x || 0,
-			y: (id) => id?.[id]?.y || 0,
-		}
-	}, [duration])
 }
 
 // for a list of communities, get a map of [cid]: nodepositions[]

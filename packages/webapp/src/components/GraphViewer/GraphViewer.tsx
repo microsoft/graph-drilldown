@@ -19,7 +19,6 @@ import {
 	useBackgroundColor,
 	useHoveredNodeColor,
 	useNodeIds,
-	useNodePositions,
 } from '~/hooks/graph'
 import { GraphView } from '~/react-patch/graspologic'
 import {
@@ -72,7 +71,6 @@ export const GraphViewer = ({
 
 	const view = useGraphViewType()
 	const positionMaps = usePositions(view)
-	const nodePositions = useNodePositions(positionMaps, view, transition)
 	const selectedNode = useSelectedNode()
 	const hoveredNodeIds = useNodeIds(hoveredNodes)
 
@@ -130,7 +128,6 @@ export const GraphViewer = ({
 				<Nodes
 					disabled={!showNodes}
 					color={nodeColorizer}
-					position={nodePositions}
 					weight={nodeWeighter}
 					minRadius={nodeRange[0]}
 					maxRadius={nodeRange[1]}
