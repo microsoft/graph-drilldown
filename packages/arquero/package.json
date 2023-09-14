@@ -21,7 +21,7 @@
 		"check": "essex check"
 	},
 	"dependencies": {
-		"@essex/toolbox": "3.0.8",
+		"@essex/toolbox": "3.0.18",
 		"@graph-drilldown/types": "workspace:packages/types",
 		"arquero": "^4.8.8",
 		"d3-format": "^3.1.0"
@@ -30,7 +30,7 @@
 		"@essex/scripts": "^26.0.0",
 		"@essex/tsconfig-base": "^3.0.0",
 		"@types/d3-format": "^3.0.1",
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.6.0",
 		"@types/react": "^18.2.21",
 		"react": "^18.2.0"
 	},
