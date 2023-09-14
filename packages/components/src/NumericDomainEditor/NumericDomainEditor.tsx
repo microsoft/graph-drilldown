@@ -67,7 +67,7 @@ export const NumericDomainEditor: React.FC<NumericDomainEditorProps> = ({
 			/>
 			<ScaleTypeChoiceGroup
 				label={''}
-				selectedType={encoding.scaleType || ScaleType.Linear}
+				selectedKey={encoding.scaleType ?? ScaleType.Linear}
 				onChange={handleTypeChange}
 				suppressQuantile
 			/>

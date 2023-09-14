@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@essex/scripts": "^26.0.0",
 		"@essex/tsconfig-base": "^3.0.0",
-		"@thematic/core": "^2.1.1",
+		"@thematic/core": "^4.0.7",
 		"@types/node": "^20.5.7",
 		"@types/react": "^18.2.21",
 		"arquero": "^4.8.8",
