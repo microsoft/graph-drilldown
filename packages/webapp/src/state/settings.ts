@@ -87,7 +87,7 @@ export const themeState = selector<Theme>({
 	get: ({ get }) => {
 		const settings = get(settingsState)
 		const theme = load({
-			variant: settings.darkMode ? ThemeVariant.Dark : ThemeVariant.Light,
+			dark: settings.darkMode,
 		})
 		return theme
 	},
