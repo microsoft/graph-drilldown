@@ -78,7 +78,7 @@ export const GraphViewerPage: React.FC = memo(function GraphViewerPage() {
 
 const Container = styled.div`
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - 80px);
 	background: ${({ theme }) => theme.plotArea().fill().hex()};
 	overflow: hidden;
 `

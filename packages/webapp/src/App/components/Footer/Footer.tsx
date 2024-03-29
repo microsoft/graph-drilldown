@@ -5,7 +5,7 @@
 
 import { useMicrosoftConsentBanner } from '@essex/hooks'
 import type { FC, ReactNode } from 'react'
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { useTheme } from '~/state'
@@ -21,21 +21,44 @@ export const Footer: FC<{
 	}
 
 	const [, manageConsent] = useMicrosoftConsentBanner(CONSENT_CONF)
-
+	const style = useMemo(
+		() => ({
+			color: theme.application().midContrast().hex(),
+			cursor: 'pointer',
+			textDecoration: 'none !important',
+		}),
+		[theme],
+	)
 	return (
 		<FooterEl>
 			<Container>
-				<Link href={constants.privacyUrl}>Privacy</Link>
+				<Link href={constants.privacyUrl} style={style}>
+					Privacy
+				</Link>
 				{' | '}
-				<Link id={'managecookies'} onClick={manageConsent}>
+				<Link href={constants.consumerHealthUrl} style={style}>
+					Consumer Health Privacy
+				</Link>
+				{' | '}
+				<Link id={'managecookies'} onClick={manageConsent} style={style}>
 					Cookies
 				</Link>
 				{' | '}
-				<Link href={constants.termsOfUseUrl}>Terms of Use</Link>
+				<Link href={constants.termsOfUseUrl} style={style}>
+					Terms of Use
+				</Link>
 				{' | '}
-				<Link href={constants.trademarksUrl}>Trademarks</Link>
+				<Link href={constants.trademarksUrl} style={style}>
+					Trademarks
+				</Link>
 				{' | '}
-				<Link href={constants.microsoft}>{constants.copyright}</Link>
+				<Link href={constants.microsoft} style={style}>
+					{constants.copyright}
+				</Link>
+				{' | '}
+				<Link href={constants.github} style={style}>
+					GitHub
+				</Link>
 			</Container>
 		</FooterEl>
 	)
@@ -72,7 +95,7 @@ const FooterEl = styled.footer`
 `
 
 const Container = styled.div`
-	width: 500px;
+	width: 600px;
 	height: 20px;
 	font-size: 12px;
 	display: flex;
@@ -83,12 +106,14 @@ const Container = styled.div`
 	margin: auto;
 `
 
-const constants = {
+export const constants = {
 	privacyUrl: 'https://go.microsoft.com/fwlink/?LinkId=521839',
+	consumerHealthUrl: 'https://go.microsoft.com/fwlink/?LinkId=2259814',
 	termsOfUseUrl: 'https://go.microsoft.com/fwlink/?LinkID=206977',
 	trademarksUrl: 'https://www.microsoft.com/trademarks',
 	microsoft: 'https://www.microsoft.com',
 	copyright: `©️ ${new Date().getFullYear()} Microsoft`,
+	github: 'https://github.com/microsoft/graph-drilldown',
 }
 
 const LinkDiv = styled.div`

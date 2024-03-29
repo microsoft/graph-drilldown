@@ -26,6 +26,7 @@ export const DataManagerPage: FC = () => {
 
 const Container = styled.div`
 	display: flex;
+	height: calc(100vh - 80px);
 	flex: 1;
 `
 
