@@ -1,7 +1,6 @@
 name: 'CodeQL Config'
-
 paths:
-  - src/
+  - packages/
 
 paths-ignore:
   - .yarn/
