@@ -15,6 +15,7 @@ import { CommandBar } from './components/CommandBar'
 import { Footer } from './components/Footer'
 
 export const App: React.FC = () => {
+	console.log("v0.0");
 	return (
 		<StateContext>
 			<DataContext>
