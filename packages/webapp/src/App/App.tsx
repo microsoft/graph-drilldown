@@ -15,27 +15,27 @@ import { CommandBar } from './components/CommandBar'
 import { Footer } from './components/Footer'
 
 export const App: React.FC = () => {
-  return (
-    <StateContext>
-      <DataContext>
-        <StyleContext>
-          <HashRouter>
-            <Container>
-              <CommandBar />
-              <Main>
-                <LazyCachingSwitch>
-                  <Route path="/" component={GraphViewerPage} />
-                  <Route path="/files" component={DataManagerPage} />
-                </LazyCachingSwitch>
-                <Footer />
-              </Main>
-            </Container>
-          </HashRouter>
-        </StyleContext>
-      </DataContext>
-    </StateContext>
-  );
-};
+	return (
+		<StateContext>
+			<DataContext>
+				<StyleContext>
+					<HashRouter>
+						<Container>
+							<CommandBar />
+							<Main>
+								<LazyCachingSwitch>
+									<Route path='/' component={GraphViewerPage} />
+									<Route path='/files' component={DataManagerPage} />
+								</LazyCachingSwitch>
+								<Footer />
+							</Main>
+						</Container>
+					</HashRouter>
+				</StyleContext>
+			</DataContext>
+		</StateContext>
+	)
+}
 
 const Container = styled.div``
 
