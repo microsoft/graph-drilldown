@@ -1,4 +1,4 @@
-**This repository is the result of research efforts that are no longer active. It has been marked read-only on GitHub to preserve the public code, but is no longer maintained or accepting contributions.**<img width="468" height="84" alt="image" src="https://github.com/user-attachments/assets/6d7fd713-0ee7-4d72-a37a-bacfe17c946c" />
+**This repository is the result of research efforts that are no longer active. It has been marked read-only on GitHub to preserve the public code, but is no longer maintained or accepting contributions.**
 
 # graph-drill
 
